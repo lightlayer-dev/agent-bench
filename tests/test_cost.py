@@ -95,6 +95,65 @@ class TestClassBloat:
         assert len(class_findings) == 0
 
 
+class TestDollarCost:
+    def test_cost_in_details(self, monkeypatch):
+        html = "<html><body>" + "<p>content</p>" * 5000 + "</body></html>"
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert "cost_per_page_usd" in result.details
+        assert "cost_5_pages_usd" in result.details
+        assert "claude-sonnet" in result.details["cost_per_page_usd"]
+        assert result.details["cost_per_page_usd"]["claude-sonnet"] > 0
+
+    def test_small_page_cheap(self, monkeypatch):
+        html = "<html><body><p>Hello</p></body></html>"
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert any("affordable" in f or "cost" in f.lower() for f in result.findings)
+
+    def test_session_cost_is_5x(self, monkeypatch):
+        html = "<html><body>" + "<p>x</p>" * 1000 + "</body></html>"
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        for model in result.details.get("cost_per_page_usd", {}):
+            per_page = result.details["cost_per_page_usd"][model]
+            session = result.details["cost_5_pages_usd"][model]
+            assert abs(session - per_page * 5) < 0.001
+
+
+class TestInternalLinks:
+    def test_few_links(self, monkeypatch):
+        html = '<html><body><a href="/about">About</a><a href="/contact">Contact</a></body></html>'
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert result.details["internal_links"] == 2
+
+    def test_many_links(self, monkeypatch):
+        links = "".join(f'<a href="/page-{i}">Page {i}</a>' for i in range(150))
+        html = f"<html><body>{links}</body></html>"
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert result.details["internal_links"] == 150
+        assert any("internal links" in f for f in result.findings)
+
+    def test_external_links_not_counted(self, monkeypatch):
+        html = '<html><body><a href="https://other.com">Other</a><a href="/local">Local</a></body></html>'
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert result.details["internal_links"] == 1
+
+
+class TestDetailsOutput:
+    def test_details_populated(self, monkeypatch):
+        html = "<html><body><p>Test content</p></body></html>"
+        monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
+        result = CostCheck("https://example.com").execute()
+        assert "raw_tokens" in result.details
+        assert "signal_tokens" in result.details
+        assert "signal_ratio" in result.details
+        assert "max_dom_depth" in result.details
+
+
 class TestFetchFailure:
     def test_network_error(self, monkeypatch):
         def fail(*a, **kw):
