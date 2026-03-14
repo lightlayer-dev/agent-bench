@@ -82,6 +82,34 @@ You must provide your own API keys via environment variables:
 
 Static analysis (`agent-bench analyze`) does **not** call any LLMs and is free to run.
 
+## Bring Your Own Agent
+
+Don't want to use browser-use or Playwright? Plug in any agent via the custom adapter. Your agent just needs to speak a simple JSON-lines protocol over stdin/stdout:
+
+```bash
+AGENT_BENCH_CUSTOM_CMD="python my_agent.py" \
+agent-bench run tasks/example.yaml --model claude-sonnet --adapter custom
+```
+
+Your agent receives the task as JSON on stdin and reports steps + results on stdout:
+
+```python
+import json, sys
+
+# Read task
+task = json.loads(sys.stdin.readline())
+
+# Report steps
+print(json.dumps({"step": 1, "action": "navigate", "result": "loaded site"}))
+print(json.dumps({"step": 2, "action": "click", "result": "clicked button",
+                   "input_tokens": 500, "output_tokens": 100}))
+
+# Report final result
+print(json.dumps({"done": True, "success": True, "summary": "Task completed"}))
+```
+
+See [`examples/custom_agent.py`](examples/custom_agent.py) for a complete example.
+
 ## Task Definitions
 
 Tasks are defined in YAML:
