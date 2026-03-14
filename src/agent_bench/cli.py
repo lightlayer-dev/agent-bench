@@ -101,18 +101,31 @@ def classify(url: str, fmt: str) -> None:
 
 
 @cli.command()
-@click.option("--runs", "-r", multiple=True, type=click.Path(exists=True), help="Result files to compare")
+@click.option("--runs", "-r", multiple=True, type=click.Path(exists=True), help="Result files to compare (live runs)")
+@click.option("--before", "-b", type=click.Path(exists=True), help="Before analysis result (static)")
+@click.option("--after", "-a", type=click.Path(exists=True), help="After analysis result (static)")
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
-def compare(runs: tuple[str, ...], fmt: str) -> None:
-    """Compare results across different runs."""
-    from agent_bench.results.compare import compare_runs
+def compare(runs: tuple[str, ...], before: str | None, after: str | None, fmt: str) -> None:
+    """Compare results across different runs or analysis snapshots.
 
-    if not runs:
-        console.print("[red]Provide at least two result files to compare.[/red]")
-        return
+    For live run comparison: --runs file1.json --runs file2.json
+    For static analysis diff: --before old.json --after new.json
+    """
+    if before and after:
+        from agent_bench.results.compare import compare_analyses
 
-    comparison = compare_runs([Path(r) for r in runs])
-    console.print(comparison.render(fmt))
+        comparison = compare_analyses(Path(before), Path(after))
+        console.print(comparison.render(fmt))
+    elif runs:
+        from agent_bench.results.compare import compare_runs
+
+        if len(runs) < 2:
+            console.print("[red]Provide at least two result files to compare.[/red]")
+            return
+        comparison = compare_runs([Path(r) for r in runs])
+        console.print(comparison.render(fmt))
+    else:
+        console.print("[red]Use --before/--after for analysis diffs, or --runs for live run comparison.[/red]")
 
 
 @cli.command()
