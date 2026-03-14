@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-from urllib.parse import urljoin
 
 import httpx
 
@@ -206,7 +205,7 @@ class APICheck(BaseCheck):
 
         cors_header = resp.headers.get("access-control-allow-origin", "")
         cors_methods = resp.headers.get("access-control-allow-methods", "")
-        cors_headers = resp.headers.get("access-control-allow-headers", "")
+        resp.headers.get("access-control-allow-headers", "")
 
         details["cors_origin"] = cors_header
         details["cors_methods"] = cors_methods

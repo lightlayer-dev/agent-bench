@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agent_bench.runner.adapters.base import BaseAdapter, get_adapter
+from agent_bench.runner.adapters.base import get_adapter
 from agent_bench.runner.metrics import AggregateMetrics, RunMetrics
 from agent_bench.runner.task import Task
 from agent_bench.models.registry import ModelRegistry

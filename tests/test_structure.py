@@ -1,6 +1,5 @@
 """Tests for the structure analysis check."""
 
-from unittest.mock import patch, MagicMock
 from bs4 import BeautifulSoup
 
 from agent_bench.analysis.checks.structure import StructureCheck

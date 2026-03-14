@@ -1,8 +1,6 @@
 """Tests for leaderboard HTML generation."""
 
 import json
-import pytest
-from pathlib import Path
 from agent_bench.analysis.leaderboard import load_results, render_leaderboard, _score_color
 
 

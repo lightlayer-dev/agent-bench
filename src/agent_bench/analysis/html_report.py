@@ -73,7 +73,6 @@ def render_html_report(report: AnalysisReport) -> str:
         checks_html += _check_card_html(result)
 
     # Weight labels
-    weights = {"api": "30%", "docs": "20%", "structure": "20%", "auth": "15%", "errors": "15%"}
 
     return f"""<!DOCTYPE html>
 <html lang="en">

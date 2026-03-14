@@ -118,7 +118,7 @@ def compare(runs: tuple[str, ...], fmt: str) -> None:
 @cli.command()
 def models() -> None:
     """List available foundation models (built-in + config file)."""
-    from agent_bench.models.registry import ModelRegistry, _BUILTIN_MODELS, _custom_models
+    from agent_bench.models.registry import _BUILTIN_MODELS, _custom_models
 
     _load_config_models()
 

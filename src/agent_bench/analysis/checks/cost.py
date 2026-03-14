@@ -177,7 +177,7 @@ class CostCheck(BaseCheck):
                 f"Page read cost: ${cheapest:.3f}–${most_expensive:.3f} per load"
             )
         else:
-            findings.append(f"Page read cost: <$0.05 per load — affordable")
+            findings.append("Page read cost: <$0.05 per load — affordable")
 
         # 7. Check if common internal links exist (navigation cost proxy)
         internal_links = self._count_internal_links(soup)

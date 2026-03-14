@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
 
 from agent_bench.analysis.models import CheckResult
 from agent_bench.analysis.report import AnalysisReport
