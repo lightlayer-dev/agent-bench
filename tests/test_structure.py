@@ -90,3 +90,78 @@ class TestStableSelectors:
         details: dict = {}
         score, findings = check._check_stable_selectors(soup, details)
         assert score == 0.0
+
+
+class TestHeadingHierarchy:
+    def test_good_hierarchy(self):
+        check = _make_check()
+        html = "<h1>Title</h1><h2>Section</h2><h3>Subsection</h3>"
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_heading_hierarchy(soup, details)
+        assert score >= 0.8
+        assert details["h1_count"] == 1
+
+    def test_no_headings(self):
+        check = _make_check()
+        html = "<div>No headings here</div>"
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_heading_hierarchy(soup, details)
+        assert score == 0.0
+
+    def test_multiple_h1(self):
+        check = _make_check()
+        html = "<h1>First</h1><h1>Second</h1>"
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_heading_hierarchy(soup, details)
+        assert score < 1.0
+        assert any("Multiple h1" in f for f in findings)
+
+    def test_skipped_levels(self):
+        check = _make_check()
+        html = "<h1>Title</h1><h3>Skipped h2</h3>"
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_heading_hierarchy(soup, details)
+        assert score < 1.0
+        assert any("skip" in f for f in findings)
+
+
+class TestLinkAccessibility:
+    def test_descriptive_links(self):
+        check = _make_check()
+        html = '<a href="/about">About Us</a><a href="/docs">Documentation</a>'
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_link_accessibility(soup, details)
+        assert score == 1.0
+        assert details["descriptive_links"] == 2
+
+    def test_empty_links(self):
+        check = _make_check()
+        html = '<a href="/x"></a><a href="/y">Good</a>'
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_link_accessibility(soup, details)
+        assert details["empty_links"] == 1
+        assert score == 0.5
+
+    def test_generic_links(self):
+        check = _make_check()
+        html = '<a href="/x">click here</a><a href="/y">read more</a><a href="/z">Docs</a>'
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_link_accessibility(soup, details)
+        assert details["generic_links"] == 2
+        assert any("generic" in f for f in findings)
+
+    def test_aria_label_counts(self):
+        check = _make_check()
+        html = '<a href="/x" aria-label="Home page"></a>'
+        soup = BeautifulSoup(html, "html.parser")
+        details: dict = {}
+        score, findings = check._check_link_accessibility(soup, details)
+        assert details["empty_links"] == 0
+        assert score == 1.0
