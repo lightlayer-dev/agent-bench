@@ -143,5 +143,18 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
     console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
 
 
+@cli.command()
+@click.argument("result_files", nargs=-1, required=True, type=click.Path(exists=True))
+@click.option("--output", "-o", type=click.Path(), default="leaderboard.html", help="Output HTML file")
+def leaderboard(result_files: tuple[str, ...], output: str) -> None:
+    """Generate an HTML leaderboard from analysis result files."""
+    from agent_bench.analysis.leaderboard import load_results, render_leaderboard
+
+    results = load_results([Path(f) for f in result_files])
+    html = render_leaderboard(results)
+    Path(output).write_text(html)
+    console.print(f"[bold]Leaderboard generated:[/bold] {output} ({len(results)} sites)")
+
+
 if __name__ == "__main__":
     cli()
