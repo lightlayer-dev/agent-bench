@@ -83,6 +83,13 @@ class APICheck(BaseCheck):
         findings = []
         discovered: list[dict[str, object]] = []
 
+        # Fetch the main page to detect SPA catch-all behavior
+        main_resp = self._fetch(base_url)
+        main_body_hash = None
+        if main_resp and main_resp.status_code == 200:
+            # Hash first 500 chars to detect SPA catch-all (same HTML for every route)
+            main_body_hash = hash(main_resp.text[:500])
+
         for path in API_PATHS:
             url = f"{base_url}{path}"
             resp = self._fetch(url, headers={"Accept": "application/json"})
@@ -92,6 +99,15 @@ class APICheck(BaseCheck):
 
             content_type = resp.headers.get("content-type", "")
             is_json = "json" in content_type
+
+            # SPA false positive detection: if the response is HTML and matches
+            # the main page, this is a catch-all route, not a real API endpoint
+            if not is_json and "html" in content_type:
+                if main_body_hash and hash(resp.text[:500]) == main_body_hash:
+                    continue  # Skip — this is the SPA serving the same shell
+                # Even if it's different HTML, an HTML response to an
+                # Accept: application/json request is not a real API
+                continue
 
             endpoint_info: dict[str, object] = {
                 "path": path,
@@ -246,6 +262,9 @@ class APICheck(BaseCheck):
         elif "json" in json_ct:
             findings.append("Server returns JSON by default")
             return 0.8, findings
+        elif "html" in json_ct and "html" in html_ct:
+            findings.append("Server always returns HTML regardless of Accept header — no API content negotiation")
+            return 0.0, findings
         else:
             findings.append("Server ignores Accept header — always returns same content type")
-            return 0.2, findings
+            return 0.1, findings
