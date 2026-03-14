@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from agent_bench.analysis.scorer import CheckResult
+    from agent_bench.analysis.models import CheckResult
 
 
 @dataclass

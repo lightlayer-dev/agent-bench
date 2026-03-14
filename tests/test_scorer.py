@@ -1,6 +1,7 @@
 """Tests for the site scoring engine."""
 
-from agent_bench.analysis.scorer import CheckResult, SiteScorer, DEFAULT_WEIGHTS
+from agent_bench.analysis.models import CheckResult
+from agent_bench.analysis.scorer import SiteScorer, DEFAULT_WEIGHTS
 
 
 def test_check_result_defaults():

@@ -4,22 +4,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from agent_bench.analysis.checks.api import APICheck
-from agent_bench.analysis.checks.auth import AuthCheck
-from agent_bench.analysis.checks.docs import DocsCheck
-from agent_bench.analysis.checks.errors import ErrorsCheck
-from agent_bench.analysis.checks.structure import StructureCheck
+from agent_bench.analysis.models import CheckResult
 from agent_bench.analysis.report import AnalysisReport
 
-
-# Map of check name -> check class
-CHECK_REGISTRY: dict[str, type] = {
-    "api": APICheck,
-    "auth": AuthCheck,
-    "docs": DocsCheck,
-    "structure": StructureCheck,
-    "errors": ErrorsCheck,
-}
 
 # Default weights for each check category (sum to 1.0)
 DEFAULT_WEIGHTS: dict[str, float] = {
@@ -31,15 +18,21 @@ DEFAULT_WEIGHTS: dict[str, float] = {
 }
 
 
-@dataclass
-class CheckResult:
-    """Result from a single check category."""
+def _get_check_registry() -> dict[str, type]:
+    """Lazy-load check registry to avoid circular imports."""
+    from agent_bench.analysis.checks.api import APICheck
+    from agent_bench.analysis.checks.auth import AuthCheck
+    from agent_bench.analysis.checks.docs import DocsCheck
+    from agent_bench.analysis.checks.errors import ErrorsCheck
+    from agent_bench.analysis.checks.structure import StructureCheck
 
-    name: str
-    score: float  # 0.0 - 1.0
-    max_score: float = 1.0
-    details: dict[str, object] = field(default_factory=dict)
-    findings: list[str] = field(default_factory=list)
+    return {
+        "api": APICheck,
+        "auth": AuthCheck,
+        "docs": DocsCheck,
+        "structure": StructureCheck,
+        "errors": ErrorsCheck,
+    }
 
 
 class SiteScorer:
@@ -47,14 +40,15 @@ class SiteScorer:
 
     def __init__(self, url: str, checks: list[str] | None = None) -> None:
         self.url = url
-        self.check_names = checks or list(CHECK_REGISTRY.keys())
+        self.check_names = checks or list(DEFAULT_WEIGHTS.keys())
 
     def run(self) -> AnalysisReport:
         """Execute all checks and return a report."""
+        registry = _get_check_registry()
         results: list[CheckResult] = []
 
         for name in self.check_names:
-            check_cls = CHECK_REGISTRY.get(name)
+            check_cls = registry.get(name)
             if check_cls is None:
                 continue
             check = check_cls(url=self.url)

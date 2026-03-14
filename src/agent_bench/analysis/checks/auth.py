@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from agent_bench.analysis.checks import BaseCheck
-from agent_bench.analysis.scorer import CheckResult
+from agent_bench.analysis.models import CheckResult
 
 
 class AuthCheck(BaseCheck):
