@@ -1,0 +1,178 @@
+{
+  "url": "https://twitch.tv",
+  "overall_score": 0.47,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.35,
+      "findings": [
+        "Found 9 API endpoints (0 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server ignores Accept header \u2014 always returns same content type"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/api/v1",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/api/v2",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/v1",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/v2",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/rest",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/rest/v1",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/graphql",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          },
+          {
+            "path": "/gql",
+            "status": 200,
+            "content_type": "text/html",
+            "is_json": false
+          }
+        ],
+        "endpoint_count": 9,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html",
+          "html_request_ct": "text/html"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.625,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.7,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "sitemap.xml exists but appears empty or malformed",
+        "No OpenAPI/Swagger specification found",
+        "Found 1 JSON-LD blocks: unknown",
+        "llms.txt found at /llms.txt (180252 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 0,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 1,
+        "json_ld_types": [
+          "unknown"
+        ],
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 180252
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.49,
+      "findings": [
+        "Heavy div usage: 16 divs with only 2 semantic elements",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Likely a client-side SPA \u2014 minimal server-rendered content"
+      ],
+      "details": {
+        "total_elements": 170,
+        "div_count": 16,
+        "semantic_count": 2,
+        "elements_with_stable_selectors": 0,
+        "content_length": -165483,
+        "script_count": 65,
+        "has_noscript": false,
+        "rendering": "client-side"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.267,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Returns 405 but missing Allow header"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 405,
+        "allow_header": ""
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.45,
+      "findings": [
+        "Page is ~46,104 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 6 \u2014 clean structure"
+      ],
+      "details": {}
+    }
+  ]
+}

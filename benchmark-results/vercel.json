@@ -1,0 +1,188 @@
+{
+  "url": "https://vercel.com",
+  "overall_score": 0.421,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.35,
+      "findings": [
+        "Found 7 API endpoints (0 returning JSON)",
+        "7 endpoints show pagination support",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server ignores Accept header \u2014 always returns same content type"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/v1",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/v2",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/rest",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/rest/v1",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/graphql",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          },
+          {
+            "path": "/gql",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false,
+            "link_header_pagination": true
+          }
+        ],
+        "endpoint_count": 7,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.725,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: captcha",
+        "OAuth discovery found \u2014 supports client_credentials (machine-to-machine)",
+        "Login form at /login \u2014 no password field (possibly SSO/OAuth only)"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "captcha"
+        ],
+        "oauth_discovery": true,
+        "oauth_path": "/.well-known/openid-configuration",
+        "oauth_grant_types": [
+          "authorization_code",
+          "client_credentials",
+          "refresh_token",
+          "urn:ietf:params:oauth:grant-type:device_code"
+        ],
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "email"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 0
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.6,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "sitemap.xml found with ~4944 URLs",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (328824 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 4944,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 328824
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.44,
+      "findings": [
+        "Heavy div usage: 1221 divs with only 21 semantic elements",
+        "Poor accessibility: only 68/186 interactive elements have labels",
+        "Forms need work: 0/3 inputs have names, 3/3 have types",
+        "Found 144 elements with stable test selectors",
+        "Very little content without JavaScript"
+      ],
+      "details": {
+        "total_elements": 3264,
+        "div_count": 1221,
+        "semantic_count": 21,
+        "interactive_elements": 186,
+        "labeled_elements": 68,
+        "form_count": 0,
+        "input_count": 3,
+        "named_inputs": 0,
+        "elements_with_stable_selectors": 144,
+        "content_length": -431711,
+        "script_count": 313,
+        "has_noscript": false,
+        "rendering": "minimal"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.133,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Server accepts DELETE on main page (no method validation)"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html; charset=utf-8",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 200
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.35,
+      "findings": [
+        "Page is ~231,372 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 21 \u2014 moderately nested",
+        "CSS class attributes consume ~26,873 tokens (12% of page)"
+      ],
+      "details": {}
+    }
+  ]
+}
