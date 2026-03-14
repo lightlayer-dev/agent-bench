@@ -19,9 +19,17 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-browser = [
-    "playwright>=1.40",
+browser-use = [
     "browser-use>=0.1",
+    "langchain-anthropic>=0.3",
+    "playwright>=1.40",
+]
+playwright = [
+    "playwright>=1.40",
+    "httpx>=0.27",
+]
+all = [
+    "agent-bench[browser-use,playwright]",
 ]
 dev = [
     "pytest>=8.0",

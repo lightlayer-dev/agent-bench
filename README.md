@@ -44,11 +44,25 @@ See how different agent × model combinations perform on the same site — or ho
 ## Quick Start
 
 ```bash
-# Install
-pip install -e ".[browser,dev]"
+# Install (static analysis only)
+pip install -e ".[dev]"
+
+# Install with browser-use adapter
+pip install -e ".[browser-use,dev]"
+playwright install chromium
+
+# Install with Playwright adapter
+pip install -e ".[playwright,dev]"
+playwright install chromium
 
 # Static analysis
 agent-bench analyze https://example.com
+
+# Generate an HTML report
+agent-bench analyze https://example.com --format html -o report.html
+
+# Classify a site and see generated tasks
+agent-bench classify https://example.com
 
 # Run a task
 agent-bench run tasks/example.yaml --model claude-sonnet --adapter browser-use
@@ -56,6 +70,17 @@ agent-bench run tasks/example.yaml --model claude-sonnet --adapter browser-use
 # Compare results
 agent-bench compare --runs results/*.json
 ```
+
+## ⚠️ Cost Warning
+
+**Live agent runs call real LLM APIs and cost real money.** Each run sends multiple requests to your configured model (Claude, GPT-4, Gemini, etc.) as the agent navigates the site. Costs depend on the model, task complexity, and number of steps.
+
+You must provide your own API keys via environment variables:
+- `ANTHROPIC_API_KEY` for Claude models
+- `OPENAI_API_KEY` for GPT models
+- `GOOGLE_API_KEY` for Gemini models
+
+Static analysis (`agent-bench analyze`) does **not** call any LLMs and is free to run.
 
 ## Task Definitions
 
