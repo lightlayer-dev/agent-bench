@@ -1,0 +1,147 @@
+{
+  "url": "https://stackoverflow.com",
+  "overall_score": 0.413,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.35,
+      "findings": [
+        "Found 6 API endpoints (0 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server ignores Accept header \u2014 always returns same content type"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/v1",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          },
+          {
+            "path": "/v2",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          },
+          {
+            "path": "/rest",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          },
+          {
+            "path": "/rest/v1",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          },
+          {
+            "path": "/graphql",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          },
+          {
+            "path": "/gql",
+            "status": 429,
+            "content_type": "text/html; charset=UTF-8",
+            "is_json": false
+          }
+        ],
+        "endpoint_count": 6,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=UTF-8",
+          "html_request_ct": "text/html; charset=UTF-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.6,
+      "findings": [
+        "Active bot blocking detected: Cloudflare, Cloudflare Challenge (active blocking)",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [
+          "Cloudflare",
+          "Cloudflare Challenge (active blocking)"
+        ],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.0,
+      "findings": [
+        "No robots.txt found",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Could not fetch page for structured data check",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": false,
+        "sitemap": false,
+        "openapi": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.46,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript"
+      ],
+      "details": {
+        "total_elements": 16,
+        "div_count": 3,
+        "semantic_count": 0,
+        "elements_with_stable_selectors": 0,
+        "content_length": -5186,
+        "script_count": 1,
+        "has_noscript": true,
+        "rendering": "minimal"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "Non-existent path returned 429 instead of 404",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 429,
+        "404_content_type": "text/html; charset=UTF-8",
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.75,
+      "findings": [
+        "Page is ~1,766 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 4 \u2014 clean structure"
+      ],
+      "details": {}
+    }
+  ]
+}

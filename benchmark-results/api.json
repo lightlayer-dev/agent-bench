@@ -1,0 +1,110 @@
+{
+  "url": "https://api.github.com",
+  "overall_score": 0.595,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.45,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "CORS: open access (Access-Control-Allow-Origin: *)",
+        "Server returns JSON by default"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "*",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "application/json; charset=utf-8",
+          "html_request_ct": "application/json; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.0,
+      "findings": [
+        "No robots.txt found",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": false,
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.6,
+      "findings": [
+        "No HTML elements found",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No elements found",
+        "Good server-side rendering \u2014 content available without JavaScript"
+      ],
+      "details": {
+        "content_length": 2262,
+        "script_count": 0,
+        "has_noscript": false,
+        "rendering": "server-side"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.8,
+      "findings": [
+        "404 returns structured JSON error with code and message",
+        "Full rate limit info: x-ratelimit-limit=60, x-ratelimit-remaining=17",
+        "Unexpected status 404 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "application/json; charset=utf-8",
+        "404_is_json": true,
+        "404_structured": true,
+        "rate_limit_headers": {
+          "x-ratelimit-limit": "60",
+          "x-ratelimit-remaining": "17",
+          "x-ratelimit-reset": "1773500558"
+        },
+        "delete_main_status": 404
+      }
+    },
+    {
+      "name": "cost",
+      "score": 1.0,
+      "findings": [
+        "Page is ~566 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 100% \u2014 good content density",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 0 \u2014 clean structure"
+      ],
+      "details": {}
+    }
+  ]
+}

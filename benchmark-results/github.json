@@ -1,0 +1,172 @@
+{
+  "url": "https://github.com",
+  "overall_score": 0.5,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.55,
+      "findings": [
+        "Found 5 API endpoints (5 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server supports content negotiation (responds to Accept headers)"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/v1",
+            "status": 410,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/v2",
+            "status": 410,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/rest",
+            "status": 410,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/graphql",
+            "status": 410,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/gql",
+            "status": 410,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          }
+        ],
+        "endpoint_count": 5,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "application/json; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.7,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 complex, 16 inputs"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "hidden",
+          "hidden",
+          "text",
+          "password",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "text",
+          "hidden",
+          "hidden",
+          "submit"
+        ],
+        "login_has_csrf": true,
+        "login_hidden_inputs": 12
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.36,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (27482 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": false,
+        "blocked_ai_bots": [],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 27482
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.61,
+      "findings": [
+        "Heavy div usage: 360 divs with only 29 semantic elements",
+        "Poor accessibility: only 132/211 interactive elements have labels",
+        "Forms are well-structured: 13/14 inputs have names",
+        "Found 21 elements with stable test selectors",
+        "Very little content without JavaScript"
+      ],
+      "details": {
+        "total_elements": 1955,
+        "div_count": 360,
+        "semantic_count": 29,
+        "interactive_elements": 211,
+        "labeled_elements": 132,
+        "form_count": 5,
+        "input_count": 14,
+        "named_inputs": 13,
+        "elements_with_stable_selectors": 21,
+        "content_length": -123812,
+        "script_count": 80,
+        "has_noscript": false,
+        "rendering": "minimal"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.467,
+      "findings": [
+        "404 returns structured JSON error with code and message",
+        "No rate limit headers found",
+        "Unexpected status 404 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "application/json; charset=utf-8",
+        "404_is_json": true,
+        "404_structured": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 404
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.35,
+      "findings": [
+        "Page is ~141,790 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 23 \u2014 moderately nested",
+        "CSS class attributes consume ~15,921 tokens (11% of page)"
+      ],
+      "details": {}
+    }
+  ]
+}

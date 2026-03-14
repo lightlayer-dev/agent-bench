@@ -1,0 +1,184 @@
+{
+  "url": "https://spotify.com",
+  "overall_score": 0.445,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.35,
+      "findings": [
+        "Found 9 API endpoints (0 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server ignores Accept header \u2014 always returns same content type"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/api/v1",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/api/v2",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/v1",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/v2",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/rest",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/rest/v1",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/graphql",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          },
+          {
+            "path": "/gql",
+            "status": 200,
+            "content_type": "text/html; charset=utf-8",
+            "is_json": false
+          }
+        ],
+        "endpoint_count": 9,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.6,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 no password field (possibly SSO/OAuth only)"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "text"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 0
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.6,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "sitemap.xml found with ~10 URLs",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (21855 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 10,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 21855
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.652,
+      "findings": [
+        "Heavy div usage: 460 divs with only 1 semantic elements",
+        "Good accessibility: 91/95 interactive elements have labels",
+        "No form inputs found",
+        "Found 94 elements with stable test selectors",
+        "Very little content without JavaScript"
+      ],
+      "details": {
+        "total_elements": 825,
+        "div_count": 460,
+        "semantic_count": 1,
+        "interactive_elements": 95,
+        "labeled_elements": 91,
+        "elements_with_stable_selectors": 94,
+        "content_length": -29094,
+        "script_count": 9,
+        "has_noscript": false,
+        "rendering": "minimal"
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.267,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Returns 405 but missing Allow header"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html; charset=utf-8",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 405,
+        "allow_header": ""
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.25,
+      "findings": [
+        "Page is ~40,252 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 17 \u2014 moderately nested",
+        "CSS class attributes consume ~12,943 tokens (32% of page) \u2014 utility class bloat"
+      ],
+      "details": {}
+    }
+  ]
+}
