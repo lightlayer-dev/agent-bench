@@ -1,9 +1,8 @@
 """Tests for cost analysis check."""
 
 import httpx
-import pytest
 
-from agent_bench.analysis.checks.cost import CostCheck, CHARS_PER_TOKEN
+from agent_bench.analysis.checks.cost import CostCheck
 
 
 def _mock_response(html: str):

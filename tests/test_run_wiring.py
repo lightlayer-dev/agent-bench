@@ -1,11 +1,9 @@
 """Tests for run command config wiring."""
 
-import json
 import pytest
-from pathlib import Path
 from click.testing import CliRunner
 from agent_bench.cli import cli
-from agent_bench.config import BenchConfig, ModelConfig, ModelProvider
+from agent_bench.config import BenchConfig, ModelProvider
 from agent_bench.models.registry import ModelRegistry, _custom_models
 
 

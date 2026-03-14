@@ -159,7 +159,7 @@ class ErrorsCheck(BaseCheck):
             return 0.0, ["Could not test HTTP method handling"]
 
         details["delete_main_status"] = resp.status_code
-        content_type = resp.headers.get("content-type", "")
+        resp.headers.get("content-type", "")
 
         if resp.status_code == 405:
             # Check for Allow header

@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import re
-from urllib.parse import urljoin
 
 import httpx
 from bs4 import BeautifulSoup
@@ -171,7 +169,7 @@ class AuthCheck(BaseCheck):
 
                     # client_credentials is the best for agents (machine-to-machine)
                     if "client_credentials" in grant_types:
-                        findings.append(f"OAuth discovery found — supports client_credentials (machine-to-machine)")
+                        findings.append("OAuth discovery found — supports client_credentials (machine-to-machine)")
                         return 1.0, findings
                     else:
                         findings.append(f"OAuth discovery found — grant types: {', '.join(grant_types)}")

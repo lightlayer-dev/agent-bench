@@ -10,7 +10,6 @@ from agent_bench.config import ModelProvider
 from agent_bench.runner.adapters.base import BaseAdapter, register_adapter
 
 if TYPE_CHECKING:
-    from agent_bench.config import ModelConfig
     from agent_bench.runner.metrics import RunMetrics
     from agent_bench.runner.task import Task
 

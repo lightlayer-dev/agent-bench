@@ -1,10 +1,8 @@
 """Tests for results storage and comparison."""
 
 import json
-import pytest
-from pathlib import Path
 from agent_bench.results.store import ResultStore
-from agent_bench.results.compare import compare_runs, Comparison
+from agent_bench.results.compare import compare_runs
 
 
 class TestResultStore:
@@ -52,7 +50,7 @@ class TestResultStore:
 
     def test_creates_output_dir(self, tmp_path):
         new_dir = tmp_path / "nested" / "results"
-        store = ResultStore(new_dir)
+        ResultStore(new_dir)
         assert new_dir.exists()
 
 

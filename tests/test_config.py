@@ -1,7 +1,6 @@
 """Tests for configuration file loading."""
 
 import pytest
-from pathlib import Path
 from agent_bench.config import BenchConfig, ModelConfig, ModelProvider
 
 
