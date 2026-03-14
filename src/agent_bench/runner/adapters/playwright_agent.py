@@ -152,43 +152,21 @@ class PlaywrightAdapter(BaseAdapter):
                 await browser.close()
 
     async def _get_accessibility_tree(self, page) -> str:
-        """Get a simplified accessibility tree of the page."""
+        """Get the accessibility tree of the page using Playwright's aria snapshot."""
         try:
-            snapshot = await page.accessibility.snapshot()
+            snapshot = await page.locator("body").aria_snapshot()
             if snapshot:
-                return self._format_a11y_node(snapshot, depth=0, max_depth=4)
+                # Truncate to avoid blowing up context
+                return snapshot[:4000]
             return "(empty page)"
         except Exception:
             # Fallback: get page title and visible text
-            title = await page.title()
-            text = await page.inner_text("body")
-            return f"Title: {title}\n\nContent:\n{text[:2000]}"
-
-    def _format_a11y_node(self, node: dict, depth: int, max_depth: int) -> str:
-        """Format an accessibility tree node recursively."""
-        if depth > max_depth:
-            return ""
-
-        indent = "  " * depth
-        role = node.get("role", "")
-        name = node.get("name", "")
-        value = node.get("value", "")
-
-        parts = [role]
-        if name:
-            parts.append(f'"{name}"')
-        if value:
-            parts.append(f'value="{value}"')
-
-        line = f"{indent}{' '.join(parts)}"
-        lines = [line]
-
-        for child in node.get("children", []):
-            child_text = self._format_a11y_node(child, depth + 1, max_depth)
-            if child_text:
-                lines.append(child_text)
-
-        return "\n".join(lines)
+            try:
+                title = await page.title()
+                text = await page.inner_text("body")
+                return f"Title: {title}\n\nContent:\n{text[:2000]}"
+            except Exception:
+                return "(could not read page)"
 
     async def _call_llm(self, messages: list[dict]) -> str:
         """Call the LLM with the message history."""
@@ -196,6 +174,10 @@ class PlaywrightAdapter(BaseAdapter):
             import httpx
 
             api_key = os.environ.get(self.model_config.api_key_env or "ANTHROPIC_API_KEY")
+            if not api_key:
+                raise ValueError(
+                    f"API key not found. Set {self.model_config.api_key_env or 'ANTHROPIC_API_KEY'} environment variable."
+                )
             system = messages[0]["content"] if messages[0]["role"] == "system" else ""
             chat_messages = [m for m in messages if m["role"] != "system"]
 
@@ -223,6 +205,10 @@ class PlaywrightAdapter(BaseAdapter):
             import httpx
 
             api_key = os.environ.get(self.model_config.api_key_env or "OPENAI_API_KEY")
+            if not api_key:
+                raise ValueError(
+                    f"API key not found. Set {self.model_config.api_key_env or 'OPENAI_API_KEY'} environment variable."
+                )
 
             async with httpx.AsyncClient() as client:
                 resp = await client.post(

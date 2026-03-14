@@ -146,26 +146,11 @@ class TestPlaywrightAdapter:
         assert "https://example.com" in prompt
         assert "Use search bar" in prompt
 
-    def test_format_a11y_node(self):
+    def test_build_task_prompt_no_steps(self):
         from agent_bench.runner.adapters.playwright_agent import PlaywrightAdapter
 
         adapter = PlaywrightAdapter(_model_config())
-        node = {
-            "role": "button",
-            "name": "Submit",
-            "children": [
-                {"role": "text", "name": "Submit Form"},
-            ],
-        }
-        formatted = adapter._format_a11y_node(node, depth=0, max_depth=3)
-        assert "button" in formatted
-        assert "Submit" in formatted
-        assert "text" in formatted
-
-    def test_format_a11y_max_depth(self):
-        from agent_bench.runner.adapters.playwright_agent import PlaywrightAdapter
-
-        adapter = PlaywrightAdapter(_model_config())
-        node = {"role": "deep", "name": "too deep"}
-        result = adapter._format_a11y_node(node, depth=5, max_depth=4)
-        assert result == ""
+        task = Task(name="test", site="https://example.com", description="Just browse")
+        prompt = adapter._build_task_prompt(task)
+        assert "Just browse" in prompt
+        assert "https://example.com" in prompt
