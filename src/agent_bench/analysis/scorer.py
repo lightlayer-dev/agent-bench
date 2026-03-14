@@ -10,11 +10,12 @@ from agent_bench.analysis.report import AnalysisReport
 
 # Default weights for each check category (sum to 1.0)
 DEFAULT_WEIGHTS: dict[str, float] = {
-    "api": 0.30,
-    "auth": 0.15,
-    "docs": 0.20,
+    "api": 0.25,
+    "auth": 0.10,
+    "docs": 0.15,
     "structure": 0.20,
-    "errors": 0.15,
+    "errors": 0.10,
+    "cost": 0.20,
 }
 
 
@@ -24,6 +25,7 @@ def _get_check_registry() -> dict[str, type]:
     from agent_bench.analysis.checks.auth import AuthCheck
     from agent_bench.analysis.checks.docs import DocsCheck
     from agent_bench.analysis.checks.errors import ErrorsCheck
+    from agent_bench.analysis.checks.cost import CostCheck
     from agent_bench.analysis.checks.structure import StructureCheck
 
     return {
@@ -32,6 +34,7 @@ def _get_check_registry() -> dict[str, type]:
         "docs": DocsCheck,
         "structure": StructureCheck,
         "errors": ErrorsCheck,
+        "cost": CostCheck,
     }
 
 
