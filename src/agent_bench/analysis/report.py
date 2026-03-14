@@ -24,6 +24,9 @@ class AnalysisReport:
             return self.to_json()
         elif fmt == "markdown":
             return self._render_markdown()
+        elif fmt == "html":
+            from agent_bench.analysis.html_report import render_html_report
+            return render_html_report(self)
         else:
             return self._render_table()
 

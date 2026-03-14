@@ -20,7 +20,7 @@ def cli() -> None:
 @click.argument("url")
 @click.option("--checks", "-c", multiple=True, help="Specific checks to run (default: all)")
 @click.option("--output", "-o", type=click.Path(), help="Output file for results")
-@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
+@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="table")
 def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str) -> None:
     """Run static analysis on a website and produce an agent-readiness score."""
     from agent_bench.analysis.scorer import SiteScorer
