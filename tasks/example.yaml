@@ -1,0 +1,33 @@
+name: search-product
+site: https://example-store.com
+description: >
+  Navigate to an e-commerce site, search for "wireless headphones",
+  and add the first result under $50 to the cart.
+difficulty: medium
+tags:
+  - e-commerce
+  - search
+  - cart
+steps:
+  - action: navigate
+    params:
+      url: https://example-store.com
+  - action: search
+    params:
+      query: "wireless headphones"
+    description: Use the site's search to find wireless headphones
+  - action: select_result
+    params:
+      criteria: "first product under $50"
+    description: Pick the first result that costs less than $50
+  - action: add_to_cart
+    params: {}
+    description: Add the selected product to the shopping cart
+success_criteria:
+  - type: element_exists
+    value: "[data-testid='cart-count']:has-text('1')"
+    description: Cart should show 1 item
+  - type: url_matches
+    value: "*/cart*"
+    description: Should be on cart page or cart overlay visible
+expected_time_seconds: 60

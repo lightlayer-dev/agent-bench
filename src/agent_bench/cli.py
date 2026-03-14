@@ -1,0 +1,76 @@
+"""CLI entry point for agent-bench."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import click
+from rich.console import Console
+
+console = Console()
+
+
+@click.group()
+@click.version_option()
+def cli() -> None:
+    """agent-bench — Benchmark how AI-agent-native a website is."""
+
+
+@cli.command()
+@click.argument("url")
+@click.option("--checks", "-c", multiple=True, help="Specific checks to run (default: all)")
+@click.option("--output", "-o", type=click.Path(), help="Output file for results")
+@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
+def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str) -> None:
+    """Run static analysis on a website and produce an agent-readiness score."""
+    from agent_bench.analysis.scorer import SiteScorer
+
+    console.print(f"[bold]Analyzing[/bold] {url} ...\n")
+    scorer = SiteScorer(url=url, checks=list(checks) if checks else None)
+    report = scorer.run()
+    console.print(report.render(fmt))
+
+    if output:
+        Path(output).write_text(report.to_json())
+        console.print(f"\n[dim]Results saved to {output}[/dim]")
+
+
+@cli.command()
+@click.argument("task_file", type=click.Path(exists=True))
+@click.option("--model", "-m", required=True, help="Model name from registry (e.g. claude-sonnet)")
+@click.option("--adapter", "-a", default="browser-use", help="Agent adapter to use")
+@click.option("--runs", "-n", default=3, help="Number of runs per task")
+@click.option("--output-dir", "-o", type=click.Path(), default="results")
+def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str) -> None:
+    """Run live agent benchmarks against a website."""
+    from agent_bench.runner.executor import BenchExecutor
+
+    console.print(f"[bold]Running[/bold] {task_file} × {model} × {adapter} ({runs} runs)\n")
+    executor = BenchExecutor(
+        task_file=Path(task_file),
+        model_name=model,
+        adapter_name=adapter,
+        num_runs=runs,
+        output_dir=Path(output_dir),
+    )
+    results = executor.execute()
+    console.print(results.summary())
+
+
+@cli.command()
+@click.option("--runs", "-r", multiple=True, type=click.Path(exists=True), help="Result files to compare")
+@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
+def compare(runs: tuple[str, ...], fmt: str) -> None:
+    """Compare results across different runs."""
+    from agent_bench.results.compare import compare_runs
+
+    if not runs:
+        console.print("[red]Provide at least two result files to compare.[/red]")
+        return
+
+    comparison = compare_runs([Path(r) for r in runs])
+    console.print(comparison.render(fmt))
+
+
+if __name__ == "__main__":
+    cli()
