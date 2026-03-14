@@ -35,15 +35,37 @@ def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str) -> 
         console.print(f"\n[dim]Results saved to {output}[/dim]")
 
 
+def _load_config_models() -> None:
+    """Load config file and register any custom models."""
+    from agent_bench.config import BenchConfig
+    from agent_bench.models.registry import ModelRegistry
+
+    config = BenchConfig.load()
+    for model_cfg in config.models:
+        ModelRegistry.register(model_cfg)
+
+
 @cli.command()
 @click.argument("task_file", type=click.Path(exists=True))
-@click.option("--model", "-m", required=True, help="Model name from registry (e.g. claude-sonnet)")
+@click.option("--model", "-m", required=True, help="Model name from registry or config file")
 @click.option("--adapter", "-a", default="browser-use", help="Agent adapter to use")
 @click.option("--runs", "-n", default=3, help="Number of runs per task")
 @click.option("--output-dir", "-o", type=click.Path(), default="results")
-def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str) -> None:
-    """Run live agent benchmarks against a website."""
+@click.option("--config", "-c", "config_path", type=click.Path(exists=True), default=None, help="Config file path")
+def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str, config_path: str | None) -> None:
+    """Run live agent benchmarks against a website.
+
+    Loads models from agent-bench.yaml (auto-discovered) or --config.
+    Use 'agent-bench models' to see available models.
+    """
+    from agent_bench.config import BenchConfig
+    from agent_bench.models.registry import ModelRegistry
     from agent_bench.runner.executor import BenchExecutor
+
+    # Load config and register custom models
+    config = BenchConfig.load(Path(config_path) if config_path else None)
+    for model_cfg in config.models:
+        ModelRegistry.register(model_cfg)
 
     console.print(f"[bold]Running[/bold] {task_file} × {model} × {adapter} ({runs} runs)\n")
     executor = BenchExecutor(
@@ -95,8 +117,10 @@ def compare(runs: tuple[str, ...], fmt: str) -> None:
 
 @cli.command()
 def models() -> None:
-    """List available foundation models."""
+    """List available foundation models (built-in + config file)."""
     from agent_bench.models.registry import ModelRegistry, _BUILTIN_MODELS, _custom_models
+
+    _load_config_models()
 
     console.print("[bold]Built-in models:[/bold]\n")
     for name in sorted(_BUILTIN_MODELS):
@@ -104,7 +128,7 @@ def models() -> None:
         console.print(f"  {name:<20} {cfg.provider.value:<12} {cfg.model_id}")
 
     if _custom_models:
-        console.print("\n[bold]Custom models:[/bold]\n")
+        console.print("\n[bold]From config:[/bold]\n")
         for name in sorted(_custom_models):
             cfg = _custom_models[name]
             console.print(f"  {name:<20} {cfg.provider.value:<12} {cfg.model_id}")
