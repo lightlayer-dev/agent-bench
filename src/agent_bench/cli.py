@@ -164,6 +164,16 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
 
     # Save summary
     (out / "summary.json").write_text(json_mod.dumps(results, indent=2))
+
+    # Generate HTML leaderboard if requested
+    if fmt == "html" and results:
+        from agent_bench.analysis.leaderboard import render_leaderboard
+
+        html = render_leaderboard(results)
+        html_path = out / "leaderboard.html"
+        html_path.write_text(html)
+        console.print(f"\n[bold]Leaderboard:[/bold] {html_path}")
+
     console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
 
 

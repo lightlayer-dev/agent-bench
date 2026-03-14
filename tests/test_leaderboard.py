@@ -91,6 +91,22 @@ class TestRenderLeaderboard:
         assert "<!DOCTYPE html>" in html
         assert "0" in html  # count
 
+    def test_clickable_rows(self):
+        results = [_make_result("https://x.com", 0.5)]
+        html = render_leaderboard(results)
+        assert "toggleDetail" in html
+        assert "clickable" in html
+        assert "detail-0" in html
+
+    def test_findings_in_detail(self):
+        results = [
+            _make_result("https://x.com", 0.5, [
+                {"name": "api", "score": 0.8, "findings": ["Found 5 endpoints"]},
+            ]),
+        ]
+        html = render_leaderboard(results)
+        assert "Found 5 endpoints" in html
+
     def test_ranking_order(self):
         results = [
             _make_result("https://alpha.com", 0.9),
