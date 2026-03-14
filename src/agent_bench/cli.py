@@ -93,5 +93,55 @@ def compare(runs: tuple[str, ...], fmt: str) -> None:
     console.print(comparison.render(fmt))
 
 
+@cli.command()
+def models() -> None:
+    """List available foundation models."""
+    from agent_bench.models.registry import ModelRegistry, _BUILTIN_MODELS, _custom_models
+
+    console.print("[bold]Built-in models:[/bold]\n")
+    for name in sorted(_BUILTIN_MODELS):
+        cfg = _BUILTIN_MODELS[name]
+        console.print(f"  {name:<20} {cfg.provider.value:<12} {cfg.model_id}")
+
+    if _custom_models:
+        console.print("\n[bold]Custom models:[/bold]\n")
+        for name in sorted(_custom_models):
+            cfg = _custom_models[name]
+            console.print(f"  {name:<20} {cfg.provider.value:<12} {cfg.model_id}")
+
+
+@cli.command()
+@click.argument("urls", nargs=-1, required=True)
+@click.option("--output-dir", "-o", type=click.Path(), default="benchmark-results", help="Directory for results")
+@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="json")
+def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
+    """Run static analysis on multiple websites."""
+    from agent_bench.analysis.scorer import SiteScorer
+    import json as json_mod
+
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    results = []
+
+    for url in urls:
+        console.print(f"[bold]Analyzing[/bold] {url} ...")
+        try:
+            scorer = SiteScorer(url=url)
+            report = scorer.run()
+            data = json_mod.loads(report.to_json())
+            results.append(data)
+
+            # Save individual result
+            slug = url.replace("https://", "").replace("http://", "").replace("/", "_").rstrip("_")
+            (out / f"{slug}.json").write_text(json_mod.dumps(data, indent=2))
+            console.print(f"  Score: {data.get('overall_score', 'N/A')}\n")
+        except Exception as e:
+            console.print(f"  [red]Error: {e}[/red]\n")
+
+    # Save summary
+    (out / "summary.json").write_text(json_mod.dumps(results, indent=2))
+    console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
+
+
 if __name__ == "__main__":
     cli()
