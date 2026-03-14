@@ -45,7 +45,7 @@ class AnalysisConfig(BaseModel):
     """Configuration for static site analysis."""
 
     url: HttpUrl
-    checks: list[str] = ["api", "auth", "docs", "structure", "errors"]
+    checks: list[str] = ["api", "auth", "cost", "docs", "structure", "errors"]
     timeout_seconds: int = 30
 
 
