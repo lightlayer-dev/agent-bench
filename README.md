@@ -30,7 +30,10 @@ Define tasks (e.g., "search for a product", "submit a form") and run them across
 ## Quick Start
 
 ```bash
-# Install
+# Install from PyPI
+pip install agent-bench
+
+# Or install from source
 pip install -e ".[dev]"
 
 # Score a single site
