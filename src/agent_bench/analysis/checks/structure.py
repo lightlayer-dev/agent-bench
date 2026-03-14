@@ -71,6 +71,16 @@ class StructureCheck(BaseCheck):
         sub_scores.append(ssr_score)
         findings.extend(ssr_findings)
 
+        # 6. Heading hierarchy
+        heading_score, heading_findings = self._check_heading_hierarchy(soup, details)
+        sub_scores.append(heading_score)
+        findings.extend(heading_findings)
+
+        # 7. Link accessibility
+        link_score, link_findings = self._check_link_accessibility(soup, details)
+        sub_scores.append(link_score)
+        findings.extend(link_findings)
+
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
         return CheckResult(name=self.name, score=overall, findings=findings, details=details)
 
@@ -239,3 +249,81 @@ class StructureCheck(BaseCheck):
         findings.append("Very little content without JavaScript")
         details["rendering"] = "minimal"
         return 0.3, findings
+
+    def _check_heading_hierarchy(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+        """Check if headings follow a logical hierarchy (h1 → h2 → h3)."""
+        findings = []
+        headings = soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"])
+        h1_count = len(soup.find_all("h1"))
+
+        details["heading_count"] = len(headings)
+        details["h1_count"] = h1_count
+
+        if not headings:
+            findings.append("No headings found — agents can't understand page structure")
+            return 0.0, findings
+
+        # Check for exactly one h1
+        if h1_count == 0:
+            findings.append("No h1 heading — page lacks a clear title for agents")
+            h1_score = 0.0
+        elif h1_count == 1:
+            h1_score = 1.0
+        else:
+            findings.append(f"Multiple h1 headings ({h1_count}) — ambiguous page title")
+            h1_score = 0.5
+
+        # Check hierarchy: no skipping levels (h1 → h3 without h2)
+        levels = [int(h.name[1]) for h in headings]
+        skips = 0
+        for i in range(1, len(levels)):
+            if levels[i] > levels[i - 1] + 1:
+                skips += 1
+        skip_score = max(0, 1.0 - (skips * 0.2))
+
+        score = (h1_score + skip_score) / 2
+        if skips > 0:
+            findings.append(f"Heading hierarchy has {skips} level skip(s) (e.g., h1 → h3)")
+        elif score >= 0.8:
+            findings.append(f"Good heading hierarchy: {len(headings)} headings, well-structured")
+
+        return score, findings
+
+    def _check_link_accessibility(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+        """Check if links have descriptive text (not just 'click here' or bare URLs)."""
+        findings = []
+        links = soup.find_all("a", href=True)
+
+        if not links:
+            return 1.0, ["No links to check"]
+
+        bad_texts = {"click here", "here", "read more", "more", "link", "learn more"}
+        descriptive = 0
+        empty = 0
+        generic = 0
+
+        for link in links:
+            text = link.get_text(strip=True).lower()
+            if not text and not link.get("aria-label"):
+                empty += 1
+            elif text in bad_texts:
+                generic += 1
+            else:
+                descriptive += 1
+
+        total = len(links)
+        details["total_links"] = total
+        details["descriptive_links"] = descriptive
+        details["empty_links"] = empty
+        details["generic_links"] = generic
+
+        score = descriptive / total if total else 1.0
+
+        if empty > 0:
+            findings.append(f"{empty} links with no text or aria-label — invisible to agents")
+        if generic > 0:
+            findings.append(f"{generic} links with generic text ('click here', 'read more')")
+        if score >= 0.8:
+            findings.append(f"Good link accessibility: {descriptive}/{total} links are descriptive")
+
+        return score, findings
