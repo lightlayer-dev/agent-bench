@@ -9,6 +9,22 @@ description = "Benchmark suite for evaluating how AI-agent-native a website is"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
+authors = [
+    { name = "Isaac Chang", email = "chang.isaac97@gmail.com" },
+    { name = "Sylphie", email = "sylphie@lightlayer.dev" },
+]
+keywords = ["ai", "agents", "benchmark", "web", "automation", "llm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Internet :: WWW/HTTP",
+]
 dependencies = [
     "click>=8.1",
     "pydantic>=2.0",
@@ -35,6 +51,12 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.4",
 ]
+
+[project.urls]
+Homepage = "https://github.com/LightLayer-dev/agent-bench"
+Repository = "https://github.com/LightLayer-dev/agent-bench"
+Issues = "https://github.com/LightLayer-dev/agent-bench/issues"
+Documentation = "https://github.com/LightLayer-dev/agent-bench#readme"
 
 [project.scripts]
 agent-bench = "agent_bench.cli:cli"
