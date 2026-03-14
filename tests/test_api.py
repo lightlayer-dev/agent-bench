@@ -42,6 +42,8 @@ class TestAPIEndpoints:
         details: dict = {}
 
         def mock_fetch(url, **kwargs):
+            if url == "https://example.com":
+                return _mock_response(text="<html>main</html>", content_type="text/html")
             if "/api" in url and "/api/" not in url:
                 return _mock_response(text='{"users": []}', content_type="application/json")
             return _mock_response(status=404)
@@ -51,11 +53,28 @@ class TestAPIEndpoints:
         assert score >= 0.5
         assert details["endpoint_count"] >= 1
 
+    def test_spa_false_positive_filtered(self):
+        """SPA sites returning HTML for /api should not count as API endpoints."""
+        check = _make_check()
+        details: dict = {}
+        spa_html = "<html><div id='app'></div><script src='bundle.js'></script></html>"
+
+        def mock_fetch(url, **kwargs):
+            # SPA returns the same HTML shell for every route
+            return _mock_response(text=spa_html, content_type="text/html")
+
+        with patch.object(check, "_fetch", side_effect=mock_fetch):
+            score, findings = check._check_api_endpoints("https://example.com", details)
+        assert score == 0.0
+        assert details["endpoint_count"] == 0
+
     def test_paginated_endpoint(self):
         check = _make_check()
         details: dict = {}
 
         def mock_fetch(url, **kwargs):
+            if url == "https://example.com":
+                return _mock_response(text="<html>main</html>", content_type="text/html")
             if "/api" in url:
                 return _mock_response(
                     text='{"results": [], "next": "/api?page=2", "count": 100}',
@@ -149,4 +168,5 @@ class TestContentNegotiation:
         details: dict = {}
         with patch.object(check, "_fetch", return_value=_mock_response(content_type="text/html")):
             score, findings = check._check_content_negotiation("https://example.com", details)
-        assert score == 0.2
+        assert score == 0.0
+        assert "always returns HTML" in findings[0]
