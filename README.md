@@ -8,59 +8,85 @@ Most websites weren't built for AI agents. Some are easy to navigate programmati
 
 ### 1. Static Analysis — Score a site's agent-friendliness
 
-Evaluate a website across multiple dimensions without running any agents:
+Evaluate a website across six dimensions without running any agents:
 
-- **API surface** — REST/GraphQL endpoints, OpenAPI specs, response structure
-- **Documentation** — machine-readable docs, schema quality, examples
-- **Auth complexity** — OAuth flows, API keys, session management
-- **Structure** — semantic HTML, ARIA labels, predictable navigation
-- **Error handling** — structured errors, rate limit headers, retry guidance
+- **API Surface** — REST/GraphQL endpoints, OpenAPI specs, CORS, content negotiation
+- **Documentation** — robots.txt, sitemaps, OpenAPI specs, JSON-LD, `llms.txt`
+- **Auth Complexity** — bot detection, CAPTCHAs, OAuth discovery, login form analysis
+- **Structure** — semantic HTML, ARIA labels, stable selectors, SSR detection
+- **Error Handling** — proper 404s, rate limit headers, HTTP method validation
+- **Cost Efficiency** — token count, signal-to-noise ratio, DOM depth, CSS bloat
 
 Produces an overall **Agent-Readiness Score** with a detailed breakdown.
 
 ### 2. Live Agent Runs — Test real agents on real tasks
 
-Define tasks (e.g., "search for a product", "book a flight", "submit a form") and run them across:
+Define tasks (e.g., "search for a product", "submit a form") and run them across:
 
 - **Agent frameworks** — browser-use, Playwright-based agents, custom adapters
 - **Foundation models** — Claude, GPT-4, Gemini, open-source models
-
-### Metrics
-
-| Metric | Description |
-|--------|-------------|
-| ✅ Success rate | Did the agent complete the task? |
-| 🔢 Steps | How many actions were needed? |
-| 💰 Cost | Token/API costs per run |
-| ⏱️ Time | Wall-clock time to completion |
-| 🔄 Consistency | Success rate across repeated runs |
-
-### Compare
-
-See how different agent × model combinations perform on the same site — or how different sites compare for the same agent.
+- **Metrics** — success rate, step count, token cost, wall-clock time, consistency
 
 ## Quick Start
 
 ```bash
-# Install (static analysis only)
+# Install
 pip install -e ".[dev]"
 
+# Score a single site
+agent-bench analyze https://example.com
+
+# HTML report
+agent-bench analyze https://example.com --format html -o report.html
+
+# Classify a site and see what tasks agents would try
+agent-bench classify https://example.com
+
+# Score multiple sites at once
+agent-bench batch https://github.com https://stripe.com https://reddit.com
+
+# Generate a leaderboard from results
+agent-bench leaderboard benchmark-results/*.json -o leaderboard.html
+
+# List available models
+agent-bench models
+```
+
+## Configuration
+
+Create an `agent-bench.yaml` to define models and adapter settings. The CLI auto-discovers this file in the current directory.
+
+```yaml
+models:
+  - name: claude-sonnet
+    provider: anthropic
+    model_id: claude-sonnet-4-20250514
+    api_key_env: ANTHROPIC_API_KEY
+
+  - name: gpt-4o
+    provider: openai
+    model_id: gpt-4o
+    api_key_env: OPENAI_API_KEY
+
+adapters:
+  - type: browser-use
+    headless: true
+    timeout_seconds: 120
+    max_steps: 50
+
+default_timeout: 120
+```
+
+Also supports `.agent-bench.yaml`, `agent-bench.yml`, and `agent-bench.toml`.
+
+See [`agent-bench.example.yaml`](agent-bench.example.yaml) for a full example.
+
+## Live Agent Runs
+
+```bash
 # Install with browser-use adapter
 pip install -e ".[browser-use,dev]"
 playwright install chromium
-
-# Install with Playwright adapter
-pip install -e ".[playwright,dev]"
-playwright install chromium
-
-# Static analysis
-agent-bench analyze https://example.com
-
-# Generate an HTML report
-agent-bench analyze https://example.com --format html -o report.html
-
-# Classify a site and see generated tasks
-agent-bench classify https://example.com
 
 # Run a task
 agent-bench run tasks/example.yaml --model claude-sonnet --adapter browser-use
@@ -69,9 +95,9 @@ agent-bench run tasks/example.yaml --model claude-sonnet --adapter browser-use
 agent-bench compare --runs results/*.json
 ```
 
-## ⚠️ Cost Warning
+### ⚠️ Cost Warning
 
-**Live agent runs call real LLM APIs and cost real money.** Each run sends multiple requests to your configured model (Claude, GPT-4, Gemini, etc.) as the agent navigates the site. Costs depend on the model, task complexity, and number of steps.
+**Live agent runs call real LLM APIs and cost real money.** Each run sends multiple requests to your configured model as the agent navigates the site. Costs depend on the model, task complexity, and number of steps.
 
 You must provide your own API keys via environment variables:
 - `ANTHROPIC_API_KEY` for Claude models
@@ -80,81 +106,72 @@ You must provide your own API keys via environment variables:
 
 Static analysis (`agent-bench analyze`) does **not** call any LLMs and is free to run.
 
+## CLI Commands
+
+| Command | Description |
+|---------|-------------|
+| `analyze <url>` | Static analysis with agent-readiness score |
+| `batch <urls...>` | Analyze multiple sites, save results to a directory |
+| `classify <url>` | Classify site type and generate benchmark tasks |
+| `leaderboard <files...>` | Generate HTML leaderboard from result files |
+| `models` | List available foundation models (built-in + config) |
+| `run <task.yaml>` | Run live agent benchmarks (requires LLM API key) |
+| `compare` | Compare results across different runs |
+
 ## Bring Your Own Agent
 
-Don't want to use browser-use or Playwright? Plug in any agent via the custom adapter. Your agent just needs to speak a simple JSON-lines protocol over stdin/stdout:
+Plug in any agent via the custom adapter using a simple JSON-lines protocol over stdin/stdout:
 
 ```bash
 AGENT_BENCH_CUSTOM_CMD="python my_agent.py" \
 agent-bench run tasks/example.yaml --model claude-sonnet --adapter custom
 ```
 
-Your agent receives the task as JSON on stdin and reports steps + results on stdout:
-
 ```python
 import json, sys
 
-# Read task
 task = json.loads(sys.stdin.readline())
 
-# Report steps
 print(json.dumps({"step": 1, "action": "navigate", "result": "loaded site"}))
 print(json.dumps({"step": 2, "action": "click", "result": "clicked button",
                    "input_tokens": 500, "output_tokens": 100}))
 
-# Report final result
 print(json.dumps({"done": True, "success": True, "summary": "Task completed"}))
 ```
 
 See [`examples/custom_agent.py`](examples/custom_agent.py) for a complete example.
 
-## Task Definitions
-
-Tasks are defined in YAML:
-
-```yaml
-name: search-product
-site: https://example-store.com
-description: Search for a specific product and add it to cart
-steps:
-  - action: navigate
-    url: https://example-store.com
-  - action: search
-    query: "wireless headphones"
-  - action: select_result
-    criteria: "first product under $50"
-  - action: add_to_cart
-success_criteria:
-  - cart_count: 1
-```
-
 ## Architecture
 
 ```
 agent-bench/
-├── analysis/        # Static site scoring
-│   ├── checks/      # Individual check modules (API, auth, docs, etc.)
-│   ├── scorer.py    # Aggregates check results into a score
-│   └── report.py    # Human-readable reports
-├── runner/          # Live agent execution
-│   ├── adapters/    # Framework adapters (browser-use, Playwright, etc.)
-│   ├── executor.py  # Orchestrates runs
-│   ├── task.py      # Task loading and validation
-│   └── metrics.py   # Metrics collection
-├── models/          # Foundation model registry
-└── results/         # Storage and comparison
+├── analysis/           # Static site scoring
+│   ├── checks/         # Check modules (api, auth, cost, docs, errors, structure)
+│   ├── scorer.py       # Aggregates check results
+│   ├── report.py       # Text/JSON/Markdown reports
+│   ├── html_report.py  # Standalone HTML report
+│   └── leaderboard.py  # Multi-site HTML leaderboard
+├── runner/             # Live agent execution
+│   ├── adapters/       # Framework adapters (browser-use, Playwright, custom)
+│   ├── classifier.py   # Site classification (11 categories)
+│   ├── generator.py    # Dynamic task generation
+│   ├── executor.py     # Orchestrates runs
+│   ├── task.py         # Task loading and validation
+│   └── metrics.py      # Metrics collection
+├── models/             # Foundation model registry
+├── results/            # Storage and comparison
+└── config.py           # Config file loading (YAML/TOML)
 ```
 
 ## Development
 
 ```bash
-# Clone and install with dev dependencies
 git clone https://github.com/LightLayer-dev/agent-bench.git
 cd agent-bench
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-# Run tests (79 unit tests + 5 integration tests)
+# Run tests (137 unit tests + 5 integration tests)
 python -m pytest tests/ -v
 
 # Skip integration tests (which hit real websites)
