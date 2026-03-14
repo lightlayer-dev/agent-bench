@@ -58,6 +58,27 @@ def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str) ->
 
 
 @cli.command()
+@click.argument("url")
+@click.option("--format", "fmt", type=click.Choice(["json", "table", "yaml"]), default="table")
+def classify(url: str, fmt: str) -> None:
+    """Classify a website and generate benchmark tasks for it."""
+    from agent_bench.runner.classifier import SiteClassifier
+    from agent_bench.runner.generator import generate_tasks
+
+    classifier = SiteClassifier()
+    profile = classifier.classify(url)
+
+    console.print(f"[bold]Category:[/bold] {profile.category.value} ({profile.confidence:.0%} confidence)")
+    console.print(f"[bold]Signals:[/bold] {', '.join(profile.signals[:5]) or 'none'}")
+    console.print(f"[bold]Features:[/bold] {', '.join(k for k, v in profile.features.items() if v) or 'none'}")
+
+    tasks = generate_tasks(profile)
+    console.print(f"\n[bold]{len(tasks)} tasks generated:[/bold]\n")
+    for task in tasks:
+        console.print(f"  [{task.difficulty}] {task.name} — {task.description}")
+
+
+@cli.command()
 @click.option("--runs", "-r", multiple=True, type=click.Path(exists=True), help="Result files to compare")
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
 def compare(runs: tuple[str, ...], fmt: str) -> None:
