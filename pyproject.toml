@@ -40,3 +40,6 @@ src = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "integration: tests that hit the network (deselect with -m 'not integration')",
+]
