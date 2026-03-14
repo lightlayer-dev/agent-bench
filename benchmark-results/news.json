@@ -1,15 +1,15 @@
 {
   "url": "https://news.ycombinator.com",
-  "overall_score": 0.385,
+  "overall_score": 0.362,
   "checks": [
     {
       "name": "api",
-      "score": 0.1,
+      "score": 0.05,
       "findings": [
         "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
         "discovered_endpoints": [],
@@ -87,7 +87,7 @@
         "input_count": 1,
         "named_inputs": 1,
         "elements_with_stable_selectors": 0,
-        "content_length": 3459,
+        "content_length": 3378,
         "script_count": 1,
         "has_noscript": false,
         "rendering": "server-side"
@@ -112,15 +112,37 @@
     },
     {
       "name": "cost",
-      "score": 0.55,
+      "score": 0.5,
       "findings": [
-        "Page is ~8,608 tokens raw \u2014 moderate cost",
+        "Page is ~8,593 tokens raw \u2014 moderate cost",
         "Signal-to-noise ratio is 11% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 13 \u2014 clean structure",
-        "CSS class attributes consume ~858 tokens (10% of page)"
+        "CSS class attributes consume ~858 tokens (10% of page)",
+        "Page read cost: $0.011\u2013$0.129 per load",
+        "193 internal links \u2014 agents may waste tokens exploring"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 8592,
+        "signal_tokens": 948,
+        "signal_ratio": 0.11,
+        "max_dom_depth": 13,
+        "class_token_ratio": 0.1,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0258,
+          "gpt-4o": 0.0215,
+          "claude-opus": 0.1289,
+          "gemini-pro": 0.0107
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.1289,
+          "gpt-4o": 0.1074,
+          "claude-opus": 0.6445,
+          "gemini-pro": 0.0537
+        },
+        "internal_links": 193
+      }
     }
   ]
 }

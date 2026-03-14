@@ -1,26 +1,19 @@
 {
   "url": "https://figma.com",
-  "overall_score": 0.383,
+  "overall_score": 0.35,
   "checks": [
     {
       "name": "api",
-      "score": 0.183,
+      "score": 0.05,
       "findings": [
-        "Found 1 API endpoints (0 returning JSON)",
+        "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
-        "discovered_endpoints": [
-          {
-            "path": "/api",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          }
-        ],
-        "endpoint_count": 1,
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
         "graphql": false,
         "cors_origin": "",
         "cors_methods": "",
@@ -99,14 +92,14 @@
         "Likely a client-side SPA \u2014 minimal server-rendered content"
       ],
       "details": {
-        "total_elements": 1461,
+        "total_elements": 1462,
         "div_count": 258,
         "semantic_count": 50,
         "interactive_elements": 208,
         "labeled_elements": 130,
         "elements_with_stable_selectors": 0,
-        "content_length": -1062182,
-        "script_count": 109,
+        "content_length": -1062197,
+        "script_count": 110,
         "has_noscript": false,
         "rendering": "client-side"
       }
@@ -131,12 +124,33 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~366,768 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~366,776 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 24 \u2014 moderately nested"
+        "Max DOM depth is 24 \u2014 moderately nested",
+        "Reading this page costs $0.46\u2013$5.50 per load ($2.29\u2013$27.51 for a 5-page session)"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 366775,
+        "signal_tokens": 1339,
+        "signal_ratio": 0.004,
+        "max_dom_depth": 24,
+        "class_token_ratio": 0.007,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 1.1003,
+          "gpt-4o": 0.9169,
+          "claude-opus": 5.5016,
+          "gemini-pro": 0.4585
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 5.5016,
+          "gpt-4o": 4.5847,
+          "claude-opus": 27.5082,
+          "gemini-pro": 2.2923
+        },
+        "internal_links": 1
+      }
     }
   ]
 }

@@ -160,13 +160,34 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~141,790 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~141,791 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 23 \u2014 moderately nested",
-        "CSS class attributes consume ~15,921 tokens (11% of page)"
+        "CSS class attributes consume ~15,921 tokens (11% of page)",
+        "Reading this page costs $0.18\u2013$2.13 per load ($0.89\u2013$10.63 for a 5-page session)"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 141791,
+        "signal_tokens": 1384,
+        "signal_ratio": 0.01,
+        "max_dom_depth": 23,
+        "class_token_ratio": 0.112,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.4254,
+          "gpt-4o": 0.3545,
+          "claude-opus": 2.1269,
+          "gemini-pro": 0.1772
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 2.1269,
+          "gpt-4o": 1.7724,
+          "claude-opus": 10.6343,
+          "gemini-pro": 0.8862
+        },
+        "internal_links": 55
+      }
     }
   ]
 }

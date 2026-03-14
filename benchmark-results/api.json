@@ -68,7 +68,7 @@
         "Good server-side rendering \u2014 content available without JavaScript"
       ],
       "details": {
-        "content_length": 2262,
+        "content_length": 2395,
         "script_count": 0,
         "has_noscript": false,
         "rendering": "server-side"
@@ -79,7 +79,7 @@
       "score": 0.8,
       "findings": [
         "404 returns structured JSON error with code and message",
-        "Full rate limit info: x-ratelimit-limit=60, x-ratelimit-remaining=17",
+        "Full rate limit info: x-ratelimit-limit=60, x-ratelimit-remaining=16",
         "Unexpected status 404 for DELETE on main page"
       ],
       "details": {
@@ -89,8 +89,8 @@
         "404_structured": true,
         "rate_limit_headers": {
           "x-ratelimit-limit": "60",
-          "x-ratelimit-remaining": "17",
-          "x-ratelimit-reset": "1773500558"
+          "x-ratelimit-remaining": "16",
+          "x-ratelimit-reset": "1773518582"
         },
         "delete_main_status": 404
       }
@@ -99,12 +99,33 @@
       "name": "cost",
       "score": 1.0,
       "findings": [
-        "Page is ~566 tokens raw \u2014 efficient",
-        "Signal-to-noise ratio is 100% \u2014 good content density",
+        "Page is ~599 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 97% \u2014 good content density",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 0 \u2014 clean structure"
+        "Max DOM depth is 0 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 599,
+        "signal_tokens": 582,
+        "signal_ratio": 0.972,
+        "max_dom_depth": 0,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0018,
+          "gpt-4o": 0.0015,
+          "claude-opus": 0.009,
+          "gemini-pro": 0.0007
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.009,
+          "gpt-4o": 0.0075,
+          "claude-opus": 0.0449,
+          "gemini-pro": 0.0037
+        },
+        "internal_links": 0
+      }
     }
   ]
 }

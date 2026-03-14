@@ -1,74 +1,19 @@
 {
   "url": "https://spotify.com",
-  "overall_score": 0.445,
+  "overall_score": 0.37,
   "checks": [
     {
       "name": "api",
-      "score": 0.35,
+      "score": 0.05,
       "findings": [
-        "Found 9 API endpoints (0 returning JSON)",
+        "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
-        "discovered_endpoints": [
-          {
-            "path": "/api",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/api/v1",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/api/v2",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/v1",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/v2",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/rest",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/rest/v1",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/graphql",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          },
-          {
-            "path": "/gql",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false
-          }
-        ],
-        "endpoint_count": 9,
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
         "graphql": false,
         "cors_origin": "",
         "cors_methods": "",
@@ -144,7 +89,7 @@
         "interactive_elements": 95,
         "labeled_elements": 91,
         "elements_with_stable_selectors": 94,
-        "content_length": -29094,
+        "content_length": -29034,
         "script_count": 9,
         "has_noscript": false,
         "rendering": "minimal"
@@ -172,13 +117,34 @@
       "name": "cost",
       "score": 0.25,
       "findings": [
-        "Page is ~40,252 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~40,268 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 17 \u2014 moderately nested",
-        "CSS class attributes consume ~12,943 tokens (32% of page) \u2014 utility class bloat"
+        "CSS class attributes consume ~12,943 tokens (32% of page) \u2014 utility class bloat",
+        "Reading this page costs $0.05\u2013$0.60 per load ($0.25\u2013$3.02 for a 5-page session)"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 40267,
+        "signal_tokens": 396,
+        "signal_ratio": 0.01,
+        "max_dom_depth": 17,
+        "class_token_ratio": 0.321,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1208,
+          "gpt-4o": 0.1007,
+          "claude-opus": 0.604,
+          "gemini-pro": 0.0503
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.604,
+          "gpt-4o": 0.5033,
+          "claude-opus": 3.0201,
+          "gemini-pro": 0.2517
+        },
+        "internal_links": 94
+      }
     }
   ]
 }

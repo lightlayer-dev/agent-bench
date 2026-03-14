@@ -1,15 +1,15 @@
 {
   "url": "https://discord.com",
-  "overall_score": 0.321,
+  "overall_score": 0.298,
   "checks": [
     {
       "name": "api",
-      "score": 0.1,
+      "score": 0.05,
       "findings": [
         "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
         "discovered_endpoints": [],
@@ -87,7 +87,7 @@
         "interactive_elements": 130,
         "labeled_elements": 102,
         "elements_with_stable_selectors": 0,
-        "content_length": -11782,
+        "content_length": -11774,
         "script_count": 29,
         "has_noscript": false,
         "rendering": "minimal"
@@ -111,15 +111,37 @@
     },
     {
       "name": "cost",
-      "score": 0.35,
+      "score": 0.3,
       "findings": [
         "Page is ~40,364 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 20 \u2014 moderately nested",
-        "CSS class attributes consume ~4,096 tokens (10% of page)"
+        "CSS class attributes consume ~4,096 tokens (10% of page)",
+        "Reading this page costs $0.05\u2013$0.61 per load ($0.25\u2013$3.03 for a 5-page session)",
+        "105 internal links \u2014 agents may waste tokens exploring"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 40364,
+        "signal_tokens": 911,
+        "signal_ratio": 0.023,
+        "max_dom_depth": 20,
+        "class_token_ratio": 0.101,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1211,
+          "gpt-4o": 0.1009,
+          "claude-opus": 0.6055,
+          "gemini-pro": 0.0505
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.6055,
+          "gpt-4o": 0.5046,
+          "claude-opus": 3.0273,
+          "gemini-pro": 0.2523
+        },
+        "internal_links": 105
+      }
     }
   ]
 }

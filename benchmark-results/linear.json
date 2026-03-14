@@ -1,64 +1,19 @@
 {
   "url": "https://linear.app",
-  "overall_score": 0.421,
+  "overall_score": 0.346,
   "checks": [
     {
       "name": "api",
-      "score": 0.35,
+      "score": 0.05,
       "findings": [
-        "Found 7 API endpoints (0 returning JSON)",
-        "1 endpoints show pagination support",
+        "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
-        "discovered_endpoints": [
-          {
-            "path": "/api",
-            "status": 200,
-            "content_type": "text/html; charset=utf-8",
-            "is_json": false,
-            "link_header_pagination": true
-          },
-          {
-            "path": "/v1",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/v2",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/rest",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/rest/v1",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/graphql",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/gql",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          }
-        ],
-        "endpoint_count": 7,
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
         "graphql": false,
         "cors_origin": "",
         "cors_methods": "",
@@ -114,15 +69,15 @@
       "name": "structure",
       "score": 0.246,
       "findings": [
-        "Heavy div usage: 736 divs with only 22 semantic elements",
+        "Heavy div usage: 735 divs with only 22 semantic elements",
         "Poor accessibility: only 101/163 interactive elements have labels",
         "Forms need work: 0/4 inputs have names, 1/2 have types",
         "No stable test selectors found (data-testid, data-cy, etc.)",
         "Very little content without JavaScript"
       ],
       "details": {
-        "total_elements": 3957,
-        "div_count": 736,
+        "total_elements": 3956,
+        "div_count": 735,
         "semantic_count": 22,
         "interactive_elements": 163,
         "labeled_elements": 101,
@@ -130,7 +85,7 @@
         "input_count": 4,
         "named_inputs": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -1372069,
+        "content_length": -1371848,
         "script_count": 113,
         "has_noscript": false,
         "rendering": "minimal"
@@ -158,12 +113,33 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~562,064 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~562,065 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 22 \u2014 moderately nested"
+        "Max DOM depth is 22 \u2014 moderately nested",
+        "Reading this page costs $0.70\u2013$8.43 per load ($3.51\u2013$42.15 for a 5-page session)"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 562065,
+        "signal_tokens": 2386,
+        "signal_ratio": 0.004,
+        "max_dom_depth": 22,
+        "class_token_ratio": 0.023,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 1.6862,
+          "gpt-4o": 1.4052,
+          "claude-opus": 8.431,
+          "gemini-pro": 0.7026
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 8.431,
+          "gpt-4o": 7.0258,
+          "claude-opus": 42.1549,
+          "gemini-pro": 3.5129
+        },
+        "internal_links": 70
+      }
     }
   ]
 }
