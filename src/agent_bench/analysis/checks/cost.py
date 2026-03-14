@@ -24,6 +24,14 @@ MAX_ACCEPTABLE_PAGE_TOKENS = 15_000  # Starts getting expensive
 GOOD_SIGNAL_RATIO = 0.4  # 40%+ of content is meaningful
 POOR_SIGNAL_RATIO = 0.15  # Below 15% is mostly noise
 
+# Pricing per million input tokens (USD, as of early 2026)
+MODEL_PRICING = {
+    "claude-sonnet": 3.00,
+    "gpt-4o": 2.50,
+    "claude-opus": 15.00,
+    "gemini-pro": 1.25,
+}
+
 # Elements that are pure noise for agents
 NOISE_TAGS = {
     "script", "style", "noscript", "svg", "iframe", "canvas",
@@ -148,8 +156,51 @@ class CostCheck(BaseCheck):
                 f"CSS class attributes consume ~{class_tokens:,.0f} tokens ({class_ratio:.0%} of page)"
             )
 
+        # 6. Dollar cost estimates
+        cost_per_page = {
+            model: (raw_tokens / 1_000_000) * price
+            for model, price in MODEL_PRICING.items()
+        }
+        # Estimate for a 5-page agent session
+        session_cost = {
+            model: cost * 5 for model, cost in cost_per_page.items()
+        }
+        cheapest = min(cost_per_page.values())
+        most_expensive = max(cost_per_page.values())
+        if most_expensive > 0.50:
+            findings.append(
+                f"Reading this page costs ${cheapest:.2f}–${most_expensive:.2f} per load "
+                f"(${min(session_cost.values()):.2f}–${max(session_cost.values()):.2f} for a 5-page session)"
+            )
+        elif most_expensive > 0.05:
+            findings.append(
+                f"Page read cost: ${cheapest:.3f}–${most_expensive:.3f} per load"
+            )
+        else:
+            findings.append(f"Page read cost: <$0.05 per load — affordable")
+
+        # 7. Check if common internal links exist (navigation cost proxy)
+        internal_links = self._count_internal_links(soup)
+        if internal_links > 100:
+            deductions += 0.05
+            findings.append(
+                f"{internal_links} internal links — agents may waste tokens exploring"
+            )
+
+        details = {
+            "raw_tokens": int(raw_tokens),
+            "signal_tokens": int(signal_tokens),
+            "signal_ratio": round(signal_ratio, 3),
+            "max_dom_depth": max_depth,
+            "class_token_ratio": round(class_ratio, 3),
+            "inline_bloat_ratio": round(bloat_ratio, 3),
+            "cost_per_page_usd": {k: round(v, 4) for k, v in cost_per_page.items()},
+            "cost_5_pages_usd": {k: round(v, 4) for k, v in session_cost.items()},
+            "internal_links": internal_links,
+        }
+
         score = max(0.0, min(1.0, 1.0 - deductions))
-        return CheckResult(name=self.name, score=score, findings=findings)
+        return CheckResult(name=self.name, score=score, findings=findings, details=details)
 
     def _compute_signal_noise(self, soup: BeautifulSoup, raw_html: str) -> tuple[str, int]:
         """Extract meaningful text content vs noise.
@@ -195,6 +246,22 @@ class CostCheck(BaseCheck):
             return max_d
 
         return _depth(soup)
+
+    def _count_internal_links(self, soup: BeautifulSoup) -> int:
+        """Count internal (same-domain) links on the page."""
+        from urllib.parse import urlparse
+
+        base_domain = urlparse(self.url).netloc
+        count = 0
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if href.startswith("/") or href.startswith("#"):
+                count += 1
+            else:
+                parsed = urlparse(href)
+                if parsed.netloc == base_domain or not parsed.netloc:
+                    count += 1
+        return count
 
     def _measure_class_bloat(self, soup: BeautifulSoup) -> float:
         """Estimate tokens consumed by class attributes."""
