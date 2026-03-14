@@ -1,74 +1,19 @@
 {
   "url": "https://twitch.tv",
-  "overall_score": 0.47,
+  "overall_score": 0.395,
   "checks": [
     {
       "name": "api",
-      "score": 0.35,
+      "score": 0.05,
       "findings": [
-        "Found 9 API endpoints (0 returning JSON)",
+        "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
-        "discovered_endpoints": [
-          {
-            "path": "/api",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/api/v1",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/api/v2",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/v1",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/v2",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/rest",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/rest/v1",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/graphql",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          },
-          {
-            "path": "/gql",
-            "status": 200,
-            "content_type": "text/html",
-            "is_json": false
-          }
-        ],
-        "endpoint_count": 9,
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
         "graphql": false,
         "cors_origin": "",
         "cors_methods": "",
@@ -170,9 +115,30 @@
         "Page is ~46,104 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 6 \u2014 clean structure"
+        "Max DOM depth is 6 \u2014 clean structure",
+        "Reading this page costs $0.06\u2013$0.69 per load ($0.29\u2013$3.46 for a 5-page session)"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 46103,
+        "signal_tokens": 1,
+        "signal_ratio": 0.0,
+        "max_dom_depth": 6,
+        "class_token_ratio": 0.003,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1383,
+          "gpt-4o": 0.1153,
+          "claude-opus": 0.6916,
+          "gemini-pro": 0.0576
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.6916,
+          "gpt-4o": 0.5763,
+          "claude-opus": 3.4578,
+          "gemini-pro": 0.2881
+        },
+        "internal_links": 0
+      }
     }
   ]
 }

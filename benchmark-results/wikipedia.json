@@ -1,10 +1,10 @@
 {
   "url": "https://wikipedia.org",
-  "overall_score": 0.435,
+  "overall_score": 0.429,
   "checks": [
     {
       "name": "api",
-      "score": 0.1,
+      "score": 0.075,
       "findings": [
         "No API endpoints found at common paths",
         "No GraphQL endpoint found",
@@ -95,9 +95,30 @@
         "Page is ~32 tokens raw \u2014 efficient",
         "Signal-to-noise ratio is 99% \u2014 good content density",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 0 \u2014 clean structure"
+        "Max DOM depth is 0 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 31,
+        "signal_tokens": 31,
+        "signal_ratio": 0.992,
+        "max_dom_depth": 0,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0001,
+          "gpt-4o": 0.0001,
+          "claude-opus": 0.0005,
+          "gemini-pro": 0.0
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.0005,
+          "gpt-4o": 0.0004,
+          "claude-opus": 0.0024,
+          "gemini-pro": 0.0002
+        },
+        "internal_links": 0
+      }
     }
   ]
 }

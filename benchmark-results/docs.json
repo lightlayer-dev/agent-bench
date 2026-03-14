@@ -1,15 +1,15 @@
 {
   "url": "https://docs.python.org",
-  "overall_score": 0.438,
+  "overall_score": 0.425,
   "checks": [
     {
       "name": "api",
-      "score": 0.1,
+      "score": 0.05,
       "findings": [
         "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
         "discovered_endpoints": [],
@@ -111,9 +111,30 @@
         "Signal-to-noise ratio is 16% \u2014 room for improvement",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 12 \u2014 clean structure",
-        "CSS class attributes consume ~286 tokens (6% of page)"
+        "CSS class attributes consume ~286 tokens (6% of page)",
+        "Page read cost: $0.006\u2013$0.067 per load"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 4449,
+        "signal_tokens": 710,
+        "signal_ratio": 0.16,
+        "max_dom_depth": 12,
+        "class_token_ratio": 0.064,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0133,
+          "gpt-4o": 0.0111,
+          "claude-opus": 0.0667,
+          "gemini-pro": 0.0056
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.0667,
+          "gpt-4o": 0.0556,
+          "claude-opus": 0.3337,
+          "gemini-pro": 0.0278
+        },
+        "internal_links": 72
+      }
     }
   ]
 }

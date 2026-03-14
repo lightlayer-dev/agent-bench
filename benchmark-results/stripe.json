@@ -1,15 +1,15 @@
 {
   "url": "https://stripe.com",
-  "overall_score": 0.414,
+  "overall_score": 0.392,
   "checks": [
     {
       "name": "api",
-      "score": 0.225,
+      "score": 0.175,
       "findings": [
         "Found 1 API endpoints (1 returning JSON)",
         "No GraphQL endpoint found",
         "No CORS headers \u2014 API may not be accessible from browser-based agents",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
         "discovered_endpoints": [
@@ -93,7 +93,7 @@
         "interactive_elements": 203,
         "labeled_elements": 125,
         "elements_with_stable_selectors": 9,
-        "content_length": -189177,
+        "content_length": -189175,
         "script_count": 67,
         "has_noscript": true,
         "rendering": "client-side"
@@ -117,15 +117,37 @@
     },
     {
       "name": "cost",
-      "score": 0.35,
+      "score": 0.3,
       "findings": [
-        "Page is ~143,308 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~143,310 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 24 \u2014 moderately nested",
-        "CSS class attributes consume ~9,262 tokens (6% of page)"
+        "CSS class attributes consume ~9,262 tokens (6% of page)",
+        "Reading this page costs $0.18\u2013$2.15 per load ($0.90\u2013$10.75 for a 5-page session)",
+        "144 internal links \u2014 agents may waste tokens exploring"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 143310,
+        "signal_tokens": 3282,
+        "signal_ratio": 0.023,
+        "max_dom_depth": 24,
+        "class_token_ratio": 0.065,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.4299,
+          "gpt-4o": 0.3583,
+          "claude-opus": 2.1497,
+          "gemini-pro": 0.1791
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 2.1497,
+          "gpt-4o": 1.7914,
+          "claude-opus": 10.7483,
+          "gemini-pro": 0.8957
+        },
+        "internal_links": 144
+      }
     }
   ]
 }

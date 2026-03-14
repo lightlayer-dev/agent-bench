@@ -1,15 +1,15 @@
 {
   "url": "https://httpbin.org",
-  "overall_score": 0.482,
+  "overall_score": 0.469,
   "checks": [
     {
       "name": "api",
-      "score": 0.3,
+      "score": 0.25,
       "findings": [
         "No API endpoints found at common paths",
         "No GraphQL endpoint found",
         "CORS: open access (Access-Control-Allow-Origin: *)",
-        "Server ignores Accept header \u2014 always returns same content type"
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
       ],
       "details": {
         "discovered_endpoints": [],
@@ -88,7 +88,7 @@
       "findings": [
         "404 returns HTML error page (not machine-readable)",
         "No rate limit headers found",
-        "Proper 405 with Allow header: OPTIONS, GET, HEAD"
+        "Proper 405 with Allow header: HEAD, GET, OPTIONS"
       ],
       "details": {
         "404_status": 404,
@@ -96,7 +96,7 @@
         "404_is_json": false,
         "rate_limit_headers": {},
         "delete_main_status": 405,
-        "allow_header": "OPTIONS, GET, HEAD"
+        "allow_header": "HEAD, GET, OPTIONS"
       }
     },
     {
@@ -106,9 +106,30 @@
         "Page is ~2,398 tokens raw \u2014 efficient",
         "Signal-to-noise ratio is 3% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 12 \u2014 clean structure"
+        "Max DOM depth is 12 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
       ],
-      "details": {}
+      "details": {
+        "raw_tokens": 2397,
+        "signal_tokens": 71,
+        "signal_ratio": 0.03,
+        "max_dom_depth": 12,
+        "class_token_ratio": 0.022,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0072,
+          "gpt-4o": 0.006,
+          "claude-opus": 0.036,
+          "gemini-pro": 0.003
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.036,
+          "gpt-4o": 0.03,
+          "claude-opus": 0.1798,
+          "gemini-pro": 0.015
+        },
+        "internal_links": 2
+      }
     }
   ]
 }
