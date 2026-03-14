@@ -21,18 +21,46 @@ def cli() -> None:
 @click.option("--checks", "-c", multiple=True, help="Specific checks to run (default: all)")
 @click.option("--output", "-o", type=click.Path(), help="Output file for results")
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="table")
-def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str) -> None:
-    """Run static analysis on a website and produce an agent-readiness score."""
+@click.option("--threshold", "-t", type=float, default=None, help="Minimum score (0.0-1.0). Exit code 1 if below. For CI pipelines.")
+@click.option("--quiet", "-q", is_flag=True, help="Suppress human-readable output (useful with --output in CI)")
+def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, threshold: float | None, quiet: bool) -> None:
+    """Run static analysis on a website and produce an agent-readiness score.
+
+    Use --threshold in CI to fail builds when agent-readiness drops:
+
+      agent-bench analyze https://api.example.com --threshold 0.5 --output results.json
+
+    Exit codes: 0 = pass (or no threshold), 1 = below threshold.
+    """
+    import sys
+
     from agent_bench.analysis.scorer import SiteScorer
 
-    console.print(f"[bold]Analyzing[/bold] {url} ...\n")
+    if not quiet:
+        console.print(f"[bold]Analyzing[/bold] {url} ...\n")
+
     scorer = SiteScorer(url=url, checks=list(checks) if checks else None)
     report = scorer.run()
-    console.print(report.render(fmt))
+
+    if not quiet:
+        console.print(report.render(fmt))
 
     if output:
         Path(output).write_text(report.to_json())
-        console.print(f"\n[dim]Results saved to {output}[/dim]")
+        if not quiet:
+            console.print(f"\n[dim]Results saved to {output}[/dim]")
+
+    if threshold is not None:
+        if report.overall_score < threshold:
+            console.print(
+                f"\n[red bold]✗ FAIL[/red bold] — score {report.overall_score:.0%} is below threshold {threshold:.0%}"
+            )
+            sys.exit(1)
+        else:
+            if not quiet:
+                console.print(
+                    f"\n[green bold]✓ PASS[/green bold] — score {report.overall_score:.0%} meets threshold {threshold:.0%}"
+                )
 
 
 def _load_config_models() -> None:
