@@ -1,0 +1,98 @@
+# Agent-Readiness CI Check
+# Drop this into .github/workflows/ to gate PRs on agent-readiness score.
+#
+# What it does:
+#   1. Runs agent-bench against your deployed site
+#   2. Fails the build if the score drops below --threshold
+#   3. Saves the JSON result as a build artifact
+#   4. Posts a score summary as a PR comment (optional)
+#
+# Requirements:
+#   - Your site must be accessible from GitHub Actions runners
+#   - Python 3.11+
+#
+# Usage:
+#   Copy this file to .github/workflows/agent-readiness.yml
+#   Set SITE_URL and SCORE_THRESHOLD to your values
+
+name: Agent-Readiness Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  # Run weekly to catch regressions from dependency updates
+  schedule:
+    - cron: "0 9 * * 1" # Monday 9 AM UTC
+
+env:
+  SITE_URL: "https://api.example.com"  # ← Change this
+  SCORE_THRESHOLD: "0.5"                # ← Minimum passing score (0.0–1.0)
+
+jobs:
+  agent-readiness:
+    name: Agent-Readiness Score
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install agent-bench
+        run: pip install agent-bench
+
+      - name: Run analysis
+        run: |
+          agent-bench analyze "$SITE_URL" \
+            --threshold "$SCORE_THRESHOLD" \
+            --output agent-readiness.json \
+            --format json \
+            --quiet
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-readiness-report
+          path: agent-readiness.json
+
+      # Optional: Post score as PR comment
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let body = '### 🤖 Agent-Readiness Report\n\n';
+            try {
+              const data = JSON.parse(fs.readFileSync('agent-readiness.json', 'utf8'));
+              const score = (data.overall_score * 100).toFixed(0);
+              const emoji = data.overall_score >= ${{ env.SCORE_THRESHOLD }} ? '✅' : '❌';
+              body += `${emoji} **Score: ${score}%** (threshold: ${(${{ env.SCORE_THRESHOLD }} * 100).toFixed(0)}%)\n\n`;
+              body += '| Check | Score |\n|-------|-------|\n';
+              for (const check of data.checks || []) {
+                body += `| ${check.name} | ${(check.score * 100).toFixed(0)}% |\n`;
+              }
+              body += `\n<details><summary>Details</summary>\n\n`;
+              for (const check of data.checks || []) {
+                body += `**${check.name}**\n`;
+                for (const f of check.findings || []) {
+                  body += `- ${f}\n`;
+                }
+                body += '\n';
+              }
+              body += `</details>`;
+            } catch (e) {
+              body += '❌ Failed to parse results. Check the build log.';
+            }
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });

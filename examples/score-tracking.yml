@@ -1,0 +1,68 @@
+# Agent-Readiness Score Tracking
+# Runs weekly, saves results to a branch, and compares against the previous run.
+# Great for spotting regressions over time.
+#
+# Results are committed to a `agent-bench-history` branch.
+
+name: Agent-Readiness Tracking
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Monday 9 AM UTC
+  workflow_dispatch: # Manual trigger
+
+env:
+  SITE_URL: "https://api.example.com"
+  HISTORY_BRANCH: "agent-bench-history"
+
+jobs:
+  track:
+    name: Track Score
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install agent-bench
+        run: pip install agent-bench
+
+      - name: Run analysis
+        run: |
+          TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+          agent-bench analyze "$SITE_URL" \
+            --output "results/score_${TIMESTAMP}.json" \
+            --format json \
+            --quiet
+          echo "RESULT_FILE=results/score_${TIMESTAMP}.json" >> "$GITHUB_ENV"
+          echo "TIMESTAMP=${TIMESTAMP}" >> "$GITHUB_ENV"
+
+      - name: Fetch history
+        run: |
+          git fetch origin "$HISTORY_BRANCH" || true
+          git checkout "$HISTORY_BRANCH" -- results/ 2>/dev/null || mkdir -p results/
+
+      - name: Compare with previous
+        run: |
+          PREV=$(ls -t results/score_*.json 2>/dev/null | head -2 | tail -1)
+          if [ -n "$PREV" ] && [ "$PREV" != "$RESULT_FILE" ]; then
+            echo "Comparing $PREV → $RESULT_FILE"
+            agent-bench compare --before "$PREV" --after "$RESULT_FILE"
+          else
+            echo "No previous result to compare against."
+          fi
+
+      - name: Commit to history branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$HISTORY_BRANCH"
+          git add results/
+          git commit -m "score: $SITE_URL @ $TIMESTAMP" || echo "No changes"
+          git push origin "$HISTORY_BRANCH" --force

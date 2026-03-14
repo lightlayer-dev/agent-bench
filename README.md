@@ -166,6 +166,35 @@ agent-bench/
 └── config.py           # Config file loading (YAML/TOML)
 ```
 
+## CI Integration
+
+Gate your PRs on agent-readiness score. If the score drops below your threshold, the build fails.
+
+```bash
+# In your CI pipeline:
+agent-bench analyze https://api.example.com --threshold 0.5 --quiet
+# Exit code 1 if score < 0.5
+```
+
+### GitHub Actions
+
+Drop-in workflow examples in [`examples/`](examples/):
+
+- **[`github-actions-ci.yml`](examples/github-actions-ci.yml)** — PR gate with threshold check, artifact upload, and optional PR comment with score breakdown
+- **[`score-tracking.yml`](examples/score-tracking.yml)** — Weekly score tracking with history branch and automatic before/after comparison
+
+### Compare Scores Over Time
+
+```bash
+# Diff two analysis snapshots:
+agent-bench compare --before results/jan.json --after results/feb.json
+
+# Output:
+#   Overall: 38% → 65%  ▲ +27%
+#   api          30%     60%  ▲ +30%
+#   docs         40%     70%  ▲ +30%
+```
+
 ## Development
 
 ```bash
@@ -174,7 +203,7 @@ cd agent-bench
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-# Run tests (137 unit tests + 5 integration tests)
+# Run tests (169 unit tests + 5 integration tests)
 python -m pytest tests/ -v
 
 # Skip integration tests (which hit real websites)
