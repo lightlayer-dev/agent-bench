@@ -4,8 +4,6 @@
 
 Most websites weren't built for AI agents. Some are easy to navigate programmatically; others are a maze of SPAs, CAPTCHAs, and undocumented APIs. **agent-bench** measures exactly where a site falls on that spectrum — and then proves it by running real agents against real tasks.
 
-> 🚧 Early stage — architecture is set, implementation is in progress.
-
 ## Two Modes
 
 ### 1. Static Analysis — Score a site's agent-friendliness
@@ -145,6 +143,22 @@ agent-bench/
 │   └── metrics.py   # Metrics collection
 ├── models/          # Foundation model registry
 └── results/         # Storage and comparison
+```
+
+## Development
+
+```bash
+# Clone and install with dev dependencies
+git clone https://github.com/LightLayer-dev/agent-bench.git
+cd agent-bench
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+
+# Run tests (79 unit tests + 5 integration tests)
+python -m pytest tests/ -v
+
+# Skip integration tests (which hit real websites)
+python -m pytest tests/ -v -m "not integration"
 ```
 
 ## License
