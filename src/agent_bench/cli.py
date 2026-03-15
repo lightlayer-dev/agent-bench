@@ -202,7 +202,11 @@ def models() -> None:
 @click.argument("urls", nargs=-1, required=True)
 @click.option("--output-dir", "-o", type=click.Path(), default="benchmark-results", help="Directory for results")
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="json")
-def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
+@click.option("--threshold", "-t", type=float, default=None, help="Minimum overall score (0-100). Exit 1 if ANY site falls below.")
+@click.option("--quiet", "-q", is_flag=True, help="Minimal output for CI pipelines")
+@click.option("--post", "post_url", type=str, default=None, help="POST results to a LightLayer Dashboard URL")
+@click.option("--source", type=str, default="cli", help="Source tag for dashboard submissions")
+def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str) -> None:
     """Run static analysis on multiple websites."""
     from agent_bench.analysis.scorer import SiteScorer
     import json as json_mod
@@ -210,9 +214,11 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     results = []
+    failures: list[tuple[str, float]] = []
 
     for url in urls:
-        console.print(f"[bold]Analyzing[/bold] {url} ...")
+        if not quiet:
+            console.print(f"[bold]Analyzing[/bold] {url} ...")
         try:
             scorer = SiteScorer(url=url)
             report = scorer.run()
@@ -222,9 +228,35 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
             # Save individual result
             slug = url.replace("https://", "").replace("http://", "").replace("/", "_").rstrip("_")
             (out / f"{slug}.json").write_text(json_mod.dumps(data, indent=2))
-            console.print(f"  Score: {data.get('overall_score', 'N/A')}\n")
+
+            score = data.get("overall_score", 0)
+            if not quiet:
+                console.print(f"  Score: {score}\n")
+            else:
+                console.print(f"{url} {score}")
+
+            # Check threshold
+            if threshold is not None and score < threshold:
+                failures.append((url, score))
+
+            # Post to dashboard
+            if post_url:
+                try:
+                    import httpx
+
+                    resp = httpx.post(
+                        f"{post_url.rstrip('/')}/api/scans/",
+                        json={**data, "source": source},
+                        timeout=10,
+                    )
+                    resp.raise_for_status()
+                    if not quiet:
+                        console.print(f"  [green]Posted to dashboard[/green]")
+                except Exception as e:
+                    console.print(f"  [red]Failed to post: {e}[/red]")
+
         except Exception as e:
-            console.print(f"  [red]Error: {e}[/red]\n")
+            console.print(f"  [red]Error: {e}[/red]\n" if not quiet else f"{url} ERROR: {e}")
 
     # Save summary
     (out / "summary.json").write_text(json_mod.dumps(results, indent=2))
@@ -236,9 +268,16 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str) -> None:
         html = render_leaderboard(results)
         html_path = out / "leaderboard.html"
         html_path.write_text(html)
-        console.print(f"\n[bold]Leaderboard:[/bold] {html_path}")
+        if not quiet:
+            console.print(f"\n[bold]Leaderboard:[/bold] {html_path}")
 
-    console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
+    if not quiet:
+        console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
+
+    if failures:
+        for url, score in failures:
+            console.print(f"[red]FAIL[/red] {url}: {score} < {threshold}")
+        raise SystemExit(1)
 
 
 @cli.command()
