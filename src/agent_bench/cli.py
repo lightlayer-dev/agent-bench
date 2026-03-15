@@ -23,7 +23,9 @@ def cli() -> None:
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="table")
 @click.option("--threshold", "-t", type=float, default=None, help="Minimum score (0.0-1.0). Exit code 1 if below. For CI pipelines.")
 @click.option("--quiet", "-q", is_flag=True, help="Suppress human-readable output (useful with --output in CI)")
-def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, threshold: float | None, quiet: bool) -> None:
+@click.option("--post", "post_url", type=str, default=None, help="POST results to a LightLayer Dashboard URL (e.g. http://localhost:8000)")
+@click.option("--source", type=str, default="cli", help="Source label for dashboard (cli, ci, api)")
+def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str) -> None:
     """Run static analysis on a website and produce an agent-readiness score.
 
     Use --threshold in CI to fail builds when agent-readiness drops:
@@ -49,6 +51,27 @@ def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, thr
         Path(output).write_text(report.to_json())
         if not quiet:
             console.print(f"\n[dim]Results saved to {output}[/dim]")
+
+    if post_url:
+        import json
+        import urllib.request
+        import urllib.error
+
+        payload = json.loads(report.to_json())
+        payload["source"] = source
+        data = json.dumps(payload).encode()
+        req = urllib.request.Request(
+            f"{post_url.rstrip('/')}/api/scans/",
+            data=data,
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(req) as resp:
+                result = json.loads(resp.read())
+                if not quiet:
+                    console.print(f"\n[dim]Posted to dashboard → scan #{result.get('id', '?')}[/dim]")
+        except urllib.error.URLError as e:
+            console.print(f"\n[red]Failed to post to dashboard: {e}[/red]")
 
     if threshold is not None:
         if report.overall_score < threshold:
