@@ -3,7 +3,6 @@
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Thread
-from unittest.mock import patch
 
 from click.testing import CliRunner
 
