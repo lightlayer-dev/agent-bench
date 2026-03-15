@@ -34,10 +34,13 @@ class AnalysisReport:
 
     def to_json(self) -> str:
         """Serialize report to JSON."""
+        from agent_bench.analysis.schema import SCHEMA_VERSION
+
         return json.dumps(
             {
                 "url": self.url,
                 "timestamp": self.timestamp,
+                "schema_version": SCHEMA_VERSION,
                 "overall_score": round(self.overall_score, 3),
                 "checks": [
                     {
