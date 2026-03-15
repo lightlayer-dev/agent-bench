@@ -97,3 +97,68 @@ class TestBatchOptions:
             result = runner.invoke(cli, ["batch", "http://example.com", "-o", str(out), "-t", "50"])
             assert result.exit_code == 0
             assert "FAIL" not in result.output
+
+
+class TestBatchConfigSites:
+    """Tests for batch reading sites from config."""
+
+    def test_batch_no_urls_no_config_fails(self, tmp_path):
+        runner = CliRunner()
+        out = tmp_path / "results"
+        result = runner.invoke(cli, ["batch", "-o", str(out)])
+        assert result.exit_code != 0
+        assert "No URLs" in result.output
+
+    def test_batch_reads_from_config(self, tmp_path):
+        config = tmp_path / "agent-bench.yaml"
+        config.write_text("sites:\n  - url: http://localhost:99999\n")
+        out = tmp_path / "results"
+        runner = CliRunner()
+        result = runner.invoke(cli, ["batch", "--config", str(config), "-o", str(out)])
+        # Should run (may error on fetch but shouldn't crash)
+        assert out.exists()
+
+    def test_batch_config_with_checks(self, tmp_path):
+        from unittest.mock import MagicMock, patch
+        import json as json_mod
+
+        config = tmp_path / "agent-bench.yaml"
+        config.write_text('sites:\n  - url: http://example.com\n    checks: ["api", "docs"]\n')
+        out = tmp_path / "results"
+
+        fake_report = MagicMock()
+        fake_report.to_json.return_value = json_mod.dumps({"overall_score": 50, "url": "http://example.com", "checks": []})
+        mock_scorer = MagicMock()
+        mock_scorer.return_value.run.return_value = fake_report
+
+        with patch("agent_bench.analysis.scorer.SiteScorer", mock_scorer):
+            runner = CliRunner()
+            result = runner.invoke(cli, ["batch", "--config", str(config), "-o", str(out)])
+            assert result.exit_code == 0
+            # Verify checks were passed
+            mock_scorer.assert_called_once_with(url="http://example.com", checks=["api", "docs"])
+
+    def test_batch_merges_cli_and_config(self, tmp_path):
+        from unittest.mock import MagicMock, patch
+        import json as json_mod
+
+        config = tmp_path / "agent-bench.yaml"
+        config.write_text("sites:\n  - url: http://config-site.com\n")
+        out = tmp_path / "results"
+
+        fake_report = MagicMock()
+        fake_report.to_json.return_value = json_mod.dumps({"overall_score": 60, "url": "http://x.com", "checks": []})
+        mock_scorer = MagicMock()
+        mock_scorer.return_value.run.return_value = fake_report
+
+        with patch("agent_bench.analysis.scorer.SiteScorer", mock_scorer):
+            runner = CliRunner()
+            result = runner.invoke(cli, ["batch", "http://cli-site.com", "--config", str(config), "-o", str(out)])
+            assert result.exit_code == 0
+            assert mock_scorer.call_count == 2
+
+    def test_site_entry_label(self):
+        from agent_bench.config import SiteEntry
+        s = SiteEntry(url="http://example.com", label="Example")
+        assert s.label == "Example"
+        assert s.checks is None

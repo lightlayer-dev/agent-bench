@@ -59,11 +59,20 @@ class RunConfig(BaseModel):
     output_dir: Path = Path("results")
 
 
+class SiteEntry(BaseModel):
+    """A site to benchmark, with optional per-site config."""
+
+    url: str
+    checks: list[str] | None = None
+    label: str | None = None
+
+
 class BenchConfig(BaseModel):
     """Top-level configuration."""
 
     models: list[ModelConfig] = []
     adapters: list[AdapterConfig] = []
+    sites: list[SiteEntry] = []
     default_timeout: int = 120
 
     @classmethod

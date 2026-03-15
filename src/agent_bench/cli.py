@@ -199,28 +199,50 @@ def models() -> None:
 
 
 @cli.command()
-@click.argument("urls", nargs=-1, required=True)
+@click.argument("urls", nargs=-1, required=False)
 @click.option("--output-dir", "-o", type=click.Path(), default="benchmark-results", help="Directory for results")
 @click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="json")
 @click.option("--threshold", "-t", type=float, default=None, help="Minimum overall score (0-100). Exit 1 if ANY site falls below.")
 @click.option("--quiet", "-q", is_flag=True, help="Minimal output for CI pipelines")
 @click.option("--post", "post_url", type=str, default=None, help="POST results to a LightLayer Dashboard URL")
 @click.option("--source", type=str, default="cli", help="Source tag for dashboard submissions")
-def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str) -> None:
-    """Run static analysis on multiple websites."""
+@click.option("--config", "config_path", type=click.Path(exists=True), default=None, help="Config file with sites list")
+def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str, config_path: str | None) -> None:
+    """Run static analysis on multiple websites.
+
+    URLs can be passed as arguments or defined in agent-bench.yaml under 'sites'.
+    If both are provided, they are combined.
+    """
     from agent_bench.analysis.scorer import SiteScorer
+    from agent_bench.config import BenchConfig
     import json as json_mod
+
+    # Merge CLI URLs with config sites
+    config = BenchConfig.load(Path(config_path) if config_path else None)
+    site_entries: list[tuple[str, list[str] | None]] = []
+
+    # Add config sites
+    for site in config.sites:
+        site_entries.append((str(site.url), site.checks))
+
+    # Add CLI URLs (no per-site check overrides)
+    for url in (urls or ()):
+        site_entries.append((url, None))
+
+    if not site_entries:
+        console.print("[red]No URLs provided. Pass URLs as arguments or define 'sites' in agent-bench.yaml[/red]")
+        raise SystemExit(1)
 
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     results = []
     failures: list[tuple[str, float]] = []
 
-    for url in urls:
+    for url, checks in site_entries:
         if not quiet:
             console.print(f"[bold]Analyzing[/bold] {url} ...")
         try:
-            scorer = SiteScorer(url=url)
+            scorer = SiteScorer(url=url, checks=checks)
             report = scorer.run()
             data = json_mod.loads(report.to_json())
             results.append(data)
