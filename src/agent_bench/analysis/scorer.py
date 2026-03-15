@@ -19,8 +19,8 @@ DEFAULT_WEIGHTS: dict[str, float] = {
 }
 
 
-def _get_check_registry() -> dict[str, type]:
-    """Lazy-load check registry to avoid circular imports."""
+def _get_builtin_checks() -> dict[str, type]:
+    """Load built-in check classes."""
     from agent_bench.analysis.checks.a11y import A11yCheck
     from agent_bench.analysis.checks.api import APICheck
     from agent_bench.analysis.checks.auth import AuthCheck
@@ -38,6 +38,38 @@ def _get_check_registry() -> dict[str, type]:
         "errors": ErrorsCheck,
         "cost": CostCheck,
     }
+
+
+def _get_plugin_checks() -> dict[str, type]:
+    """Discover check plugins via entry points (group: agent_bench.checks)."""
+    import sys
+
+    plugins: dict[str, type] = {}
+
+    if sys.version_info >= (3, 12):
+        from importlib.metadata import entry_points
+        eps = entry_points(group="agent_bench.checks")
+    else:
+        from importlib.metadata import entry_points
+        all_eps = entry_points()
+        eps = all_eps.get("agent_bench.checks", [])
+
+    for ep in eps:
+        try:
+            check_cls = ep.load()
+            # Entry point name is the authoritative key (allows overriding builtins)
+            plugins[ep.name] = check_cls
+        except Exception:
+            pass  # Skip broken plugins silently
+
+    return plugins
+
+
+def _get_check_registry() -> dict[str, type]:
+    """Get all checks: built-in + plugins. Plugins override built-ins."""
+    registry = _get_builtin_checks()
+    registry.update(_get_plugin_checks())
+    return registry
 
 
 class SiteScorer:

@@ -315,5 +315,32 @@ def leaderboard(result_files: tuple[str, ...], output: str) -> None:
     console.print(f"[bold]Leaderboard generated:[/bold] {output} ({len(results)} sites)")
 
 
+@cli.command()
+def checks() -> None:
+    """List all available analysis checks (built-in + plugins)."""
+    from agent_bench.analysis.scorer import _get_builtin_checks, _get_plugin_checks, DEFAULT_WEIGHTS
+
+    builtins = _get_builtin_checks()
+    plugins = _get_plugin_checks()
+
+    console.print("\n[bold]Built-in checks:[/bold]\n")
+    for name in sorted(builtins):
+        weight = DEFAULT_WEIGHTS.get(name, 0)
+        doc = (builtins[name].__doc__ or "").strip().split("\n")[0]
+        console.print(f"  {name:<12} weight={weight:.0%}  {doc}")
+
+    if plugins:
+        console.print("\n[bold]Plugin checks:[/bold]\n")
+        for name in sorted(plugins):
+            doc = (plugins[name].__doc__ or "").strip().split("\n")[0]
+            source = plugins[name].__module__
+            console.print(f"  {name:<12} ({source})  {doc}")
+    else:
+        console.print("\n[dim]No plugin checks installed.[/dim]")
+        console.print("[dim]Install plugins that use the 'agent_bench.checks' entry point group.[/dim]")
+
+    console.print()
+
+
 if __name__ == "__main__":
     cli()
