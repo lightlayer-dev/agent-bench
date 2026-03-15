@@ -9,17 +9,19 @@ from agent_bench.analysis.report import AnalysisReport
 
 # Default weights for each check category (sum to 1.0)
 DEFAULT_WEIGHTS: dict[str, float] = {
-    "api": 0.25,
+    "api": 0.20,
     "auth": 0.10,
     "docs": 0.15,
-    "structure": 0.20,
+    "structure": 0.15,
     "errors": 0.10,
-    "cost": 0.20,
+    "cost": 0.15,
+    "a11y": 0.15,
 }
 
 
 def _get_check_registry() -> dict[str, type]:
     """Lazy-load check registry to avoid circular imports."""
+    from agent_bench.analysis.checks.a11y import A11yCheck
     from agent_bench.analysis.checks.api import APICheck
     from agent_bench.analysis.checks.auth import AuthCheck
     from agent_bench.analysis.checks.docs import DocsCheck
@@ -28,6 +30,7 @@ def _get_check_registry() -> dict[str, type]:
     from agent_bench.analysis.checks.structure import StructureCheck
 
     return {
+        "a11y": A11yCheck,
         "api": APICheck,
         "auth": AuthCheck,
         "docs": DocsCheck,
