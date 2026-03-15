@@ -22,9 +22,9 @@ class DummyCheck(BaseCheck):
 
 
 class TestBuiltinChecks:
-    def test_has_all_seven(self):
+    def test_has_all_eight(self):
         builtins = _get_builtin_checks()
-        assert set(builtins.keys()) == {"a11y", "api", "auth", "cost", "docs", "errors", "structure"}
+        assert set(builtins.keys()) == {"a11y", "api", "auth", "cost", "docs", "errors", "performance", "structure"}
 
     def test_registry_includes_builtins(self):
         registry = _get_check_registry()

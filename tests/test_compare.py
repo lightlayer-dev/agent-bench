@@ -44,10 +44,10 @@ class TestAnalysisComparison:
 
     def test_compare_analyses(self, tmp_path):
         before = self._make_result("https://example.com", 0.38, {
-            "a11y": 0.4, "api": 0.3, "docs": 0.4, "structure": 0.5, "auth": 0.2, "errors": 0.4, "cost": 0.5,
+            "a11y": 0.4, "api": 0.3, "docs": 0.4, "structure": 0.5, "auth": 0.2, "errors": 0.4, "cost": 0.5, "performance": 0.6,
         })
         after = self._make_result("https://example.com", 0.65, {
-            "a11y": 0.7, "api": 0.6, "docs": 0.7, "structure": 0.6, "auth": 0.5, "errors": 0.7, "cost": 0.8,
+            "a11y": 0.7, "api": 0.6, "docs": 0.7, "structure": 0.6, "auth": 0.5, "errors": 0.7, "cost": 0.8, "performance": 0.9,
         })
         bf = tmp_path / "before.json"
         af = tmp_path / "after.json"
@@ -60,7 +60,7 @@ class TestAnalysisComparison:
         assert comp.after_score == 0.65
         assert comp.overall_delta == pytest.approx(0.27)
         assert comp.overall_direction == "▲"
-        assert len(comp.deltas) == 7
+        assert len(comp.deltas) == 8
 
     def test_render_table(self, tmp_path):
         before = self._make_result("https://x.com", 0.30, {"api": 0.2, "docs": 0.4})
