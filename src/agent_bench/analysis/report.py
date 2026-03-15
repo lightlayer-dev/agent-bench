@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -17,6 +18,7 @@ class AnalysisReport:
     url: str
     overall_score: float
     check_results: list[CheckResult] = field(default_factory=list)
+    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
     def render(self, fmt: str = "table") -> str:
         """Render the report in the specified format."""
@@ -35,6 +37,7 @@ class AnalysisReport:
         return json.dumps(
             {
                 "url": self.url,
+                "timestamp": self.timestamp,
                 "overall_score": round(self.overall_score, 3),
                 "checks": [
                     {
