@@ -1,6 +1,8 @@
 {
   "url": "https://figma.com",
-  "overall_score": 0.35,
+  "timestamp": "2026-03-15T13:33:52.337770+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.517,
   "checks": [
     {
       "name": "api",
@@ -83,25 +85,34 @@
     },
     {
       "name": "structure",
-      "score": 0.443,
+      "score": 0.6,
       "findings": [
         "Moderate semantic HTML: 50 semantic elements vs 258 divs",
         "Poor accessibility: only 130/208 interactive elements have labels",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Likely a client-side SPA \u2014 minimal server-rendered content"
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "Good heading hierarchy: 41 headings, well-structured",
+        "2 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 184/186 links are descriptive"
       ],
       "details": {
-        "total_elements": 1462,
+        "total_elements": 1461,
         "div_count": 258,
         "semantic_count": 50,
         "interactive_elements": 208,
         "labeled_elements": 130,
         "elements_with_stable_selectors": 0,
-        "content_length": -1062197,
-        "script_count": 110,
+        "content_length": -1062171,
+        "script_count": 109,
         "has_noscript": false,
-        "rendering": "client-side"
+        "rendering": "client-side",
+        "heading_count": 41,
+        "h1_count": 1,
+        "total_links": 186,
+        "descriptive_links": 184,
+        "empty_links": 2,
+        "generic_links": 0
       }
     },
     {
@@ -124,14 +135,14 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~366,776 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~366,765 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 24 \u2014 moderately nested",
         "Reading this page costs $0.46\u2013$5.50 per load ($2.29\u2013$27.51 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 366775,
+        "raw_tokens": 366764,
         "signal_tokens": 1339,
         "signal_ratio": 0.004,
         "max_dom_depth": 24,
@@ -140,16 +151,80 @@
         "cost_per_page_usd": {
           "claude-sonnet": 1.1003,
           "gpt-4o": 0.9169,
-          "claude-opus": 5.5016,
+          "claude-opus": 5.5015,
           "gemini-pro": 0.4585
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 5.5016,
-          "gpt-4o": 4.5847,
-          "claude-opus": 27.5082,
+          "claude-sonnet": 5.5015,
+          "gpt-4o": 4.5846,
+          "claude-opus": 27.5074,
           "gemini-pro": 2.2923
         },
         "internal_links": 1
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.92,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "All 120 images have alt attributes (98 descriptive, 22 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 5 live region(s) \u2014 agents can detect dynamic content changes",
+        "3 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region"
+        ],
+        "landmark_count": 5,
+        "images_total": 120,
+        "images_with_alt": 98,
+        "images_decorative": 22,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#main",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 5,
+        "aria_live_values": [
+          "polite",
+          "polite",
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 3
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.937,
+      "findings": [
+        "Fast response: 360ms",
+        "Moderate payload: 203KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 360.2,
+        "payload_size_kb": 203.3,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://figma.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]

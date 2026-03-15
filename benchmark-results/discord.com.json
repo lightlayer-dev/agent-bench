@@ -1,6 +1,8 @@
 {
   "url": "https://discord.com",
-  "overall_score": 0.298,
+  "timestamp": "2026-03-15T13:33:21.819240+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.439,
   "checks": [
     {
       "name": "api",
@@ -72,13 +74,16 @@
     },
     {
       "name": "structure",
-      "score": 0.434,
+      "score": 0.575,
       "findings": [
         "Heavy div usage: 413 divs with only 18 semantic elements",
         "Poor accessibility: only 102/130 interactive elements have labels",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 9 headings, well-structured",
+        "19 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 110/129 links are descriptive"
       ],
       "details": {
         "total_elements": 956,
@@ -90,7 +95,13 @@
         "content_length": -11774,
         "script_count": 29,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 9,
+        "h1_count": 1,
+        "total_links": 129,
+        "descriptive_links": 110,
+        "empty_links": 19,
+        "generic_links": 0
       }
     },
     {
@@ -141,6 +152,58 @@
           "gemini-pro": 0.2523
         },
         "internal_links": 105
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.58,
+      "findings": [
+        "Missing essential landmarks: main",
+        "All 170 images have alt attributes (21 descriptive, 149 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "37 custom elements made focusable via tabindex=0"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "complementary",
+          "contentinfo",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 170,
+        "images_with_alt": 21,
+        "images_decorative": 149,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 37,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 70ms",
+        "Compact payload: 22KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 69.9,
+        "payload_size_kb": 22.1,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]

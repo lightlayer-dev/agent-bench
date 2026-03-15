@@ -1,6 +1,8 @@
 {
   "url": "https://news.ycombinator.com",
-  "overall_score": 0.362,
+  "timestamp": "2026-03-15T13:34:31.731955+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.413,
   "checks": [
     {
       "name": "api",
@@ -69,28 +71,38 @@
     },
     {
       "name": "structure",
-      "score": 0.574,
+      "score": 0.532,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
-        "Good accessibility: 197/227 interactive elements have labels",
+        "Good accessibility: 198/229 interactive elements have labels",
         "Forms are well-structured: 1/1 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Good server-side rendering \u2014 content available without JavaScript"
+        "Good server-side rendering \u2014 content available without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "31 links with no text or aria-label \u2014 invisible to agents",
+        "1 links with generic text ('click here', 'read more')",
+        "Good link accessibility: 196/228 links are descriptive"
       ],
       "details": {
-        "total_elements": 806,
-        "div_count": 29,
+        "total_elements": 810,
+        "div_count": 30,
         "semantic_count": 0,
-        "interactive_elements": 227,
-        "labeled_elements": 197,
+        "interactive_elements": 229,
+        "labeled_elements": 198,
         "form_count": 1,
         "input_count": 1,
         "named_inputs": 1,
         "elements_with_stable_selectors": 0,
-        "content_length": 3378,
+        "content_length": 3615,
         "script_count": 1,
         "has_noscript": false,
-        "rendering": "server-side"
+        "rendering": "server-side",
+        "heading_count": 0,
+        "h1_count": 0,
+        "total_links": 228,
+        "descriptive_links": 196,
+        "empty_links": 31,
+        "generic_links": 1
       }
     },
     {
@@ -114,34 +126,81 @@
       "name": "cost",
       "score": 0.5,
       "findings": [
-        "Page is ~8,593 tokens raw \u2014 moderate cost",
-        "Signal-to-noise ratio is 11% \u2014 most of the page is noise",
+        "Page is ~8,735 tokens raw \u2014 moderate cost",
+        "Signal-to-noise ratio is 12% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 13 \u2014 clean structure",
-        "CSS class attributes consume ~858 tokens (10% of page)",
-        "Page read cost: $0.011\u2013$0.129 per load",
-        "193 internal links \u2014 agents may waste tokens exploring"
+        "CSS class attributes consume ~862 tokens (10% of page)",
+        "Page read cost: $0.011\u2013$0.131 per load",
+        "196 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 8592,
-        "signal_tokens": 948,
-        "signal_ratio": 0.11,
+        "raw_tokens": 8735,
+        "signal_tokens": 1008,
+        "signal_ratio": 0.115,
         "max_dom_depth": 13,
-        "class_token_ratio": 0.1,
+        "class_token_ratio": 0.099,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.0258,
-          "gpt-4o": 0.0215,
-          "claude-opus": 0.1289,
-          "gemini-pro": 0.0107
+          "claude-sonnet": 0.0262,
+          "gpt-4o": 0.0218,
+          "claude-opus": 0.131,
+          "gemini-pro": 0.0109
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.1289,
-          "gpt-4o": 0.1074,
-          "claude-opus": 0.6445,
-          "gemini-pro": 0.0537
+          "claude-sonnet": 0.131,
+          "gpt-4o": 0.1092,
+          "claude-opus": 0.6551,
+          "gemini-pro": 0.0546
         },
-        "internal_links": 193
+        "internal_links": 196
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.24,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "2/2 images missing alt text \u2014 agents can't understand these images",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 2,
+        "images_with_alt": 0,
+        "images_decorative": 0,
+        "images_missing_alt": 2,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 299ms",
+        "Compact payload: 34KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 1 scripts, 1 styles, 2 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 299.4,
+        "payload_size_kb": 34.1,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 1,
+        "stylesheet_count": 1,
+        "image_count": 2,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

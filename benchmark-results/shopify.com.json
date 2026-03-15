@@ -1,6 +1,8 @@
 {
   "url": "https://shopify.com",
-  "overall_score": 0.344,
+  "timestamp": "2026-03-15T13:35:07.597360+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.523,
   "checks": [
     {
       "name": "api",
@@ -70,13 +72,16 @@
     },
     {
       "name": "structure",
-      "score": 0.335,
+      "score": 0.522,
       "findings": [
         "Heavy div usage: 570 divs with only 20 semantic elements",
         "Good accessibility: 250/311 interactive elements have labels",
         "Forms need work: 0/2 inputs have names, 2/2 have types",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 34 headings, well-structured",
+        "7 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 298/305 links are descriptive"
       ],
       "details": {
         "total_elements": 2270,
@@ -88,10 +93,16 @@
         "input_count": 2,
         "named_inputs": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -319841,
+        "content_length": -319906,
         "script_count": 6,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 34,
+        "h1_count": 1,
+        "total_links": 305,
+        "descriptive_links": 298,
+        "empty_links": 7,
+        "generic_links": 0
       }
     },
     {
@@ -115,7 +126,7 @@
       "name": "cost",
       "score": 0.2,
       "findings": [
-        "Page is ~157,674 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~157,690 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 17 \u2014 moderately nested",
@@ -124,25 +135,85 @@
         "260 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 157673,
+        "raw_tokens": 157689,
         "signal_tokens": 2193,
         "signal_ratio": 0.014,
         "max_dom_depth": 17,
         "class_token_ratio": 0.19,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.473,
+          "claude-sonnet": 0.4731,
           "gpt-4o": 0.3942,
-          "claude-opus": 2.3651,
+          "claude-opus": 2.3653,
           "gemini-pro": 0.1971
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.3651,
-          "gpt-4o": 1.9709,
-          "claude-opus": 11.8255,
-          "gemini-pro": 0.9855
+          "claude-sonnet": 2.3653,
+          "gpt-4o": 1.9711,
+          "claude-opus": 11.8267,
+          "gemini-pro": 0.9856
         },
         "internal_links": 260
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.86,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 75 images have alt attributes (29 descriptive, 46 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "12 custom elements made focusable via tabindex=0",
+        "13 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 75,
+        "images_with_alt": 29,
+        "images_decorative": 46,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#main",
+            "text": "Skip to Content"
+          }
+        ],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 12,
+        "tabindex_negative": 13
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.96,
+      "findings": [
+        "Fast response: 113ms",
+        "Compact payload: 98KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 113.0,
+        "payload_size_kb": 98.3,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://shopify.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]

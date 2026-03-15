@@ -1,6 +1,8 @@
 {
   "url": "https://amazon.com",
-  "overall_score": 0.336,
+  "timestamp": "2026-03-15T13:33:15.802811+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.426,
   "checks": [
     {
       "name": "api",
@@ -19,7 +21,7 @@
         "cors_methods": "",
         "content_negotiation": {
           "json_request_ct": "text/html",
-          "html_request_ct": "text/html;charset=UTF-8"
+          "html_request_ct": "text/html"
         }
       }
     },
@@ -77,13 +79,15 @@
     },
     {
       "name": "structure",
-      "score": 0.46,
+      "score": 0.543,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
         "Good accessibility: 6/6 interactive elements have labels",
         "Forms are well-structured: 3/3 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "No h1 heading \u2014 page lacks a clear title for agents",
+        "Good link accessibility: 2/2 links are descriptive"
       ],
       "details": {
         "total_elements": 44,
@@ -98,7 +102,13 @@
         "content_length": -934,
         "script_count": 3,
         "has_noscript": true,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 1,
+        "h1_count": 0,
+        "total_links": 2,
+        "descriptive_links": 2,
+        "empty_links": 0,
+        "generic_links": 0
       }
     },
     {
@@ -148,6 +158,55 @@
           "gemini-pro": 0.0079
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "All 1 images have alt attributes (0 descriptive, 1 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 1,
+        "images_with_alt": 0,
+        "images_decorative": 1,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.96,
+      "findings": [
+        "Fast response: 99ms",
+        "Compact payload: 5KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 1 styles, 1 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 99.4,
+        "payload_size_kb": 5.0,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://amazon.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 1,
+        "image_count": 1,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

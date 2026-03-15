@@ -1,6 +1,8 @@
 {
   "url": "https://httpbin.org",
-  "overall_score": 0.469,
+  "timestamp": "2026-03-15T13:34:05.087420+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.513,
   "checks": [
     {
       "name": "api",
@@ -61,13 +63,15 @@
     },
     {
       "name": "structure",
-      "score": 0.535,
+      "score": 0.596,
       "findings": [
         "Moderate semantic HTML: 3 semantic elements vs 16 divs",
         "Good accessibility: 5/5 interactive elements have labels",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "No h1 heading \u2014 page lacks a clear title for agents",
+        "Good link accessibility: 5/5 links are descriptive"
       ],
       "details": {
         "total_elements": 74,
@@ -79,7 +83,13 @@
         "content_length": -1776,
         "script_count": 4,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 2,
+        "h1_count": 0,
+        "total_links": 5,
+        "descriptive_links": 5,
+        "empty_links": 0,
+        "generic_links": 0
       }
     },
     {
@@ -88,7 +98,7 @@
       "findings": [
         "404 returns HTML error page (not machine-readable)",
         "No rate limit headers found",
-        "Proper 405 with Allow header: HEAD, GET, OPTIONS"
+        "Proper 405 with Allow header: GET, OPTIONS, HEAD"
       ],
       "details": {
         "404_status": 404,
@@ -96,7 +106,7 @@
         "404_is_json": false,
         "rate_limit_headers": {},
         "delete_main_status": 405,
-        "allow_header": "HEAD, GET, OPTIONS"
+        "allow_header": "GET, OPTIONS, HEAD"
       }
     },
     {
@@ -129,6 +139,51 @@
           "gemini-pro": 0.015
         },
         "internal_links": 2
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.86,
+      "findings": [
+        "Fast response: 87ms",
+        "Compact payload: 9KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 3 scripts, 2 styles, 0 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 87.4,
+        "payload_size_kb": 9.4,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 3,
+        "stylesheet_count": 2,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "none"
       }
     }
   ]
