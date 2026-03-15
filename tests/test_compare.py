@@ -1,12 +1,10 @@
 """Tests for results comparison."""
 
 import json
-from pathlib import Path
 
 import pytest
 
 from agent_bench.results.compare import (
-    AnalysisComparison,
     Comparison,
     ComparisonRow,
     ScoreDelta,
