@@ -355,11 +355,27 @@ def checks() -> None:
 @click.argument("url", required=False)
 @click.option("--store", "store_path", type=click.Path(), default="trend-history.json", help="Path to trend history file")
 @click.option("--all", "show_all", is_flag=True, help="Show trends for all tracked sites")
-def trend(url: str | None, store_path: str, show_all: bool) -> None:
+@click.option("--format", "fmt", type=click.Choice(["table", "html"]), default="table", help="Output format")
+@click.option("--output", "-o", type=click.Path(), default=None, help="Output file (for HTML format)")
+def trend(url: str | None, store_path: str, show_all: bool, fmt: str, output: str | None) -> None:
     """Show score trends over time for a site."""
     from agent_bench.analysis.trend import TrendStore, render_trend_table
 
     store = TrendStore(Path(store_path))
+
+    if fmt == "html":
+        from agent_bench.analysis.trend_chart import render_trend_html, render_multi_trend_html
+
+        if show_all or not url:
+            html = render_multi_trend_html(store)
+        else:
+            t = store.get_trend(url)
+            html = render_trend_html(t)
+
+        out_path = Path(output) if output else Path("trend.html")
+        out_path.write_text(html)
+        console.print(f"[bold]Trend chart:[/bold] {out_path}")
+        return
 
     if show_all:
         urls = store.all_urls()

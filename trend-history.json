@@ -188,6 +188,69 @@
       "check_scores": {
         "api": 0.65
       }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.538757+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.553458+00:00",
+      "overall_score": 0.3,
+      "check_scores": {
+        "api": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.561356+00:00",
+      "overall_score": 0.5,
+      "check_scores": {
+        "api": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.569202+00:00",
+      "overall_score": 0.1,
+      "check_scores": {
+        "api": 0.1
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.575336+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.580824+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.583932+00:00",
+      "overall_score": 0.3,
+      "check_scores": {
+        "api": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.588207+00:00",
+      "overall_score": 0.5,
+      "check_scores": {
+        "api": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:22:59.592356+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
     }
   ],
   "https://httpbin.org": [
@@ -419,6 +482,90 @@
     },
     {
       "timestamp": "2026-03-15T10:19:57.514034+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:23:07.758853+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:23:15.977105+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:23:22.766973+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:23:33.417492+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:23:39.952777+00:00",
+      "overall_score": 0.513,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86
+      }
+    },
+    {
+      "timestamp": "2026-03-15T11:24:20.491983+00:00",
       "overall_score": 0.513,
       "check_scores": {
         "api": 0.25,
