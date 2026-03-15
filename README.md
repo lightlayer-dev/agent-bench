@@ -8,7 +8,7 @@ Most websites weren't built for AI agents. Some are easy to navigate programmati
 
 ### 1. Static Analysis — Score a site's agent-friendliness
 
-Evaluate a website across six dimensions without running any agents:
+Evaluate a website across seven dimensions without running any agents:
 
 - **API Surface** — REST/GraphQL endpoints, OpenAPI specs, CORS, content negotiation
 - **Documentation** — robots.txt, sitemaps, OpenAPI specs, JSON-LD, `llms.txt`
@@ -16,6 +16,7 @@ Evaluate a website across six dimensions without running any agents:
 - **Structure** — semantic HTML, ARIA labels, stable selectors, SSR detection
 - **Error Handling** — proper 404s, rate limit headers, HTTP method validation
 - **Cost Efficiency** — token count, signal-to-noise ratio, DOM depth, CSS bloat
+- **Accessibility** — landmark roles, image alt text, skip links, ARIA live regions, focus management
 
 Produces an overall **Agent-Readiness Score** with a detailed breakdown.
 
@@ -48,16 +49,25 @@ agent-bench classify https://example.com
 # Score multiple sites at once
 agent-bench batch https://github.com https://stripe.com https://reddit.com
 
+# Batch with CI gating (exit 1 if any site < 50%)
+agent-bench batch https://api.example.com --threshold 50 --quiet
+
 # Generate a leaderboard from results
 agent-bench leaderboard benchmark-results/*.json -o leaderboard.html
 
+# List available checks (built-in + plugins)
+agent-bench checks
+
 # List available models
 agent-bench models
+
+# View score history for a site
+agent-bench trend https://example.com
 ```
 
 ## Configuration
 
-Create an `agent-bench.yaml` to define models and adapter settings. The CLI auto-discovers this file in the current directory.
+Create an `agent-bench.yaml` to define models, adapter settings, and sites to benchmark:
 
 ```yaml
 models:
@@ -77,7 +87,28 @@ adapters:
     timeout_seconds: 120
     max_steps: 50
 
+# Define sites for batch analysis
+sites:
+  - url: https://stripe.com
+    checks: ["api", "docs", "a11y"]
+    label: "Stripe"
+  - url: https://github.com
+  - url: https://reddit.com
+
 default_timeout: 120
+```
+
+Run `agent-bench batch` with no arguments to analyze all configured sites:
+
+```bash
+# Uses sites from agent-bench.yaml
+agent-bench batch
+
+# Mix config sites with CLI URLs
+agent-bench batch https://extra-site.com
+
+# Point at a specific config file
+agent-bench batch --config path/to/config.yaml
 ```
 
 Also supports `.agent-bench.yaml`, `agent-bench.yml`, and `agent-bench.toml`.
@@ -114,12 +145,63 @@ Static analysis (`agent-bench analyze`) does **not** call any LLMs and is free t
 | Command | Description |
 |---------|-------------|
 | `analyze <url>` | Static analysis with agent-readiness score |
-| `batch <urls...>` | Analyze multiple sites, save results to a directory |
+| `batch [urls...]` | Analyze multiple sites (CLI args + config `sites`) |
+| `checks` | List all available checks (built-in + plugins) |
 | `classify <url>` | Classify site type and generate benchmark tasks |
+| `compare` | Compare results across different runs or snapshots |
 | `leaderboard <files...>` | Generate HTML leaderboard from result files |
 | `models` | List available foundation models (built-in + config) |
 | `run <task.yaml>` | Run live agent benchmarks (requires LLM API key) |
-| `compare` | Compare results across different runs |
+| `trend <url>` | Show score history over time for a site |
+
+## Trend Tracking
+
+agent-bench automatically stores timestamped results. Track how a site's score changes over time:
+
+```bash
+# Record a snapshot (happens automatically with analyze/batch)
+agent-bench analyze https://example.com
+
+# View score history
+agent-bench trend https://example.com
+
+# Output:
+#   https://example.com — Score History
+#   2026-03-01  42%
+#   2026-03-08  48%  ▲ +6%
+#   2026-03-15  55%  ▲ +7%
+```
+
+## Plugin System
+
+Extend agent-bench with custom checks via Python entry points. Create a package that registers checks in the `agent_bench.checks` group:
+
+```toml
+# In your package's pyproject.toml:
+[project.entry-points.'agent_bench.checks']
+my_check = "my_package.checks:MyCustomCheck"
+```
+
+```python
+# my_package/checks.py
+from agent_bench.analysis.checks import BaseCheck
+from agent_bench.analysis.models import CheckResult
+
+class MyCustomCheck(BaseCheck):
+    name = "my_check"
+
+    def execute(self) -> CheckResult:
+        # Your custom analysis logic
+        return CheckResult(
+            name=self.name,
+            score=0.8,
+            findings=["Found something interesting"],
+        )
+```
+
+Plugins can also override built-in checks by using the same entry point name (e.g., `api`, `docs`).
+
+List all available checks: `agent-bench checks`
 
 ## Bring Your Own Agent
 
@@ -144,36 +226,20 @@ print(json.dumps({"done": True, "success": True, "summary": "Task completed"}))
 
 See [`examples/custom_agent.py`](examples/custom_agent.py) for a complete example.
 
-## Architecture
-
-```
-agent-bench/
-├── analysis/           # Static site scoring
-│   ├── checks/         # Check modules (api, auth, cost, docs, errors, structure)
-│   ├── scorer.py       # Aggregates check results
-│   ├── report.py       # Text/JSON/Markdown reports
-│   ├── html_report.py  # Standalone HTML report
-│   └── leaderboard.py  # Multi-site HTML leaderboard
-├── runner/             # Live agent execution
-│   ├── adapters/       # Framework adapters (browser-use, Playwright, custom)
-│   ├── classifier.py   # Site classification (11 categories)
-│   ├── generator.py    # Dynamic task generation
-│   ├── executor.py     # Orchestrates runs
-│   ├── task.py         # Task loading and validation
-│   └── metrics.py      # Metrics collection
-├── models/             # Foundation model registry
-├── results/            # Storage and comparison
-└── config.py           # Config file loading (YAML/TOML)
-```
-
 ## CI Integration
 
 Gate your PRs on agent-readiness score. If the score drops below your threshold, the build fails.
 
 ```bash
-# In your CI pipeline:
+# Single site
 agent-bench analyze https://api.example.com --threshold 0.5 --quiet
-# Exit code 1 if score < 0.5
+
+# Multi-site (exit 1 if ANY site drops below threshold)
+agent-bench batch --threshold 50 --quiet
+
+# Push results to LightLayer Dashboard
+agent-bench analyze https://example.com --post http://dashboard.example.com
+agent-bench batch --post http://dashboard.example.com --source ci
 ```
 
 ### GitHub Actions
@@ -195,6 +261,29 @@ agent-bench compare --before results/jan.json --after results/feb.json
 #   docs         40%     70%  ▲ +30%
 ```
 
+## Architecture
+
+```
+agent-bench/
+├── analysis/           # Static site scoring
+│   ├── checks/         # Check modules (a11y, api, auth, cost, docs, errors, structure)
+│   ├── scorer.py       # Aggregates check results + plugin discovery
+│   ├── report.py       # Text/JSON/Markdown reports
+│   ├── html_report.py  # Standalone HTML report
+│   ├── leaderboard.py  # Multi-site HTML leaderboard
+│   └── trend.py        # Score history tracking
+├── runner/             # Live agent execution
+│   ├── adapters/       # Framework adapters (browser-use, Playwright, custom)
+│   ├── classifier.py   # Site classification (11 categories)
+│   ├── generator.py    # Dynamic task generation
+│   ├── executor.py     # Orchestrates runs
+│   ├── task.py         # Task loading and validation
+│   └── metrics.py      # Metrics collection
+├── models/             # Foundation model registry
+├── results/            # Storage and comparison
+└── config.py           # Config file loading (YAML/TOML)
+```
+
 ## Development
 
 ```bash
@@ -203,7 +292,7 @@ cd agent-bench
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-# Run tests (169 unit tests + 5 integration tests)
+# Run tests (221 unit tests + integration tests)
 python -m pytest tests/ -v
 
 # Skip integration tests (which hit real websites)
