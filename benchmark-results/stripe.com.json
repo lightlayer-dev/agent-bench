@@ -1,6 +1,8 @@
 {
   "url": "https://stripe.com",
-  "overall_score": 0.392,
+  "timestamp": "2026-03-15T13:35:33.146220+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.505,
   "checks": [
     {
       "name": "api",
@@ -78,13 +80,17 @@
     },
     {
       "name": "structure",
-      "score": 0.561,
+      "score": 0.625,
       "findings": [
         "Heavy div usage: 541 divs with only 24 semantic elements",
         "Poor accessibility: only 125/203 interactive elements have labels",
         "No form inputs found",
         "Found 9 elements with stable test selectors",
-        "Likely a client-side SPA \u2014 minimal server-rendered content"
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "Multiple h1 headings (2) \u2014 ambiguous page title",
+        "28 links with no text or aria-label \u2014 invisible to agents",
+        "3 links with generic text ('click here', 'read more')",
+        "Good link accessibility: 143/174 links are descriptive"
       ],
       "details": {
         "total_elements": 1970,
@@ -96,7 +102,13 @@
         "content_length": -189175,
         "script_count": 67,
         "has_noscript": true,
-        "rendering": "client-side"
+        "rendering": "client-side",
+        "heading_count": 48,
+        "h1_count": 2,
+        "total_links": 174,
+        "descriptive_links": 143,
+        "empty_links": 28,
+        "generic_links": 3
       }
     },
     {
@@ -119,7 +131,7 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~143,310 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~143,308 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 24 \u2014 moderately nested",
@@ -128,7 +140,7 @@
         "144 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 143310,
+        "raw_tokens": 143308,
         "signal_tokens": 3282,
         "signal_ratio": 0.023,
         "max_dom_depth": 24,
@@ -137,16 +149,72 @@
         "cost_per_page_usd": {
           "claude-sonnet": 0.4299,
           "gpt-4o": 0.3583,
-          "claude-opus": 2.1497,
+          "claude-opus": 2.1496,
           "gemini-pro": 0.1791
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.1497,
+          "claude-sonnet": 2.1496,
           "gpt-4o": 1.7914,
-          "claude-opus": 10.7483,
+          "claude-opus": 10.7481,
           "gemini-pro": 0.8957
         },
         "internal_links": 144
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.78,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "All 35 images have alt attributes (5 descriptive, 30 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "Found 1 live region(s) \u2014 agents can detect dynamic content changes",
+        "19 custom elements made focusable via tabindex=0",
+        "33 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region"
+        ],
+        "landmark_count": 5,
+        "images_total": 35,
+        "images_with_alt": 5,
+        "images_decorative": 30,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 1,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 19,
+        "tabindex_negative": 33
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.818,
+      "findings": [
+        "Fast response: 101ms",
+        "Moderate payload: 561KB",
+        "No redirects \u2014 direct access",
+        "Resource heavy: 64 scripts (heavy JS), 6 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 100.7,
+        "payload_size_kb": 560.9,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 64,
+        "stylesheet_count": 6,
+        "image_count": 35,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

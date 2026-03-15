@@ -1,6 +1,8 @@
 {
   "url": "https://vercel.com",
-  "overall_score": 0.336,
+  "timestamp": "2026-03-15T13:35:59.524415+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.491,
   "checks": [
     {
       "name": "api",
@@ -80,16 +82,21 @@
     },
     {
       "name": "structure",
-      "score": 0.44,
+      "score": 0.543,
       "findings": [
         "Heavy div usage: 1261 divs with only 21 semantic elements",
         "Poor accessibility: only 68/186 interactive elements have labels",
         "Forms need work: 0/3 inputs have names, 3/3 have types",
         "Found 144 elements with stable test selectors",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Multiple h1 headings (2) \u2014 ambiguous page title",
+        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
+        "7 links with no text or aria-label \u2014 invisible to agents",
+        "1 links with generic text ('click here', 'read more')",
+        "Good link accessibility: 156/164 links are descriptive"
       ],
       "details": {
-        "total_elements": 3336,
+        "total_elements": 3335,
         "div_count": 1261,
         "semantic_count": 21,
         "interactive_elements": 186,
@@ -98,10 +105,16 @@
         "input_count": 3,
         "named_inputs": 0,
         "elements_with_stable_selectors": 144,
-        "content_length": -440180,
+        "content_length": -440053,
         "script_count": 315,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 36,
+        "h1_count": 2,
+        "total_links": 164,
+        "descriptive_links": 156,
+        "empty_links": 7,
+        "generic_links": 1
       }
     },
     {
@@ -125,7 +138,7 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~234,711 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~234,656 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 21 \u2014 moderately nested",
@@ -134,25 +147,80 @@
         "142 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 234711,
-        "signal_tokens": 1746,
+        "raw_tokens": 234656,
+        "signal_tokens": 1747,
         "signal_ratio": 0.007,
         "max_dom_depth": 21,
         "class_token_ratio": 0.118,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.7041,
-          "gpt-4o": 0.5868,
-          "claude-opus": 3.5207,
-          "gemini-pro": 0.2934
+          "claude-sonnet": 0.704,
+          "gpt-4o": 0.5866,
+          "claude-opus": 3.5198,
+          "gemini-pro": 0.2933
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 3.5207,
-          "gpt-4o": 2.9339,
-          "claude-opus": 17.6033,
-          "gemini-pro": 1.4669
+          "claude-sonnet": 3.5198,
+          "gpt-4o": 2.9332,
+          "claude-opus": 17.5992,
+          "gemini-pro": 1.4666
         },
         "internal_links": 142
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.76,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 23 images have alt attributes (16 descriptive, 7 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "Found 2 live region(s) \u2014 agents can detect dynamic content changes",
+        "21 custom elements made focusable via tabindex=0",
+        "6 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 23,
+        "images_with_alt": 16,
+        "images_decorative": 7,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 2,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 21,
+        "tabindex_negative": 6
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 121ms",
+        "Compact payload: 85KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 121.1,
+        "payload_size_kb": 85.4,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]

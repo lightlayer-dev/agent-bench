@@ -1,6 +1,8 @@
 {
   "url": "https://twitch.tv",
-  "overall_score": 0.395,
+  "timestamp": "2026-03-15T13:35:36.823981+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.478,
   "checks": [
     {
       "name": "api",
@@ -71,13 +73,15 @@
     },
     {
       "name": "structure",
-      "score": 0.49,
+      "score": 0.493,
       "findings": [
         "Heavy div usage: 16 divs with only 2 semantic elements",
         "No interactive elements to check",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Likely a client-side SPA \u2014 minimal server-rendered content"
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
       ],
       "details": {
         "total_elements": 170,
@@ -87,7 +91,9 @@
         "content_length": -165483,
         "script_count": 65,
         "has_noscript": false,
-        "rendering": "client-side"
+        "rendering": "client-side",
+        "heading_count": 0,
+        "h1_count": 0
       }
     },
     {
@@ -138,6 +144,53 @@
           "gemini-pro": 0.2881
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.96,
+      "findings": [
+        "Fast response: 63ms",
+        "Compact payload: 65KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 63.2,
+        "payload_size_kb": 64.9,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://twitch.tv"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]

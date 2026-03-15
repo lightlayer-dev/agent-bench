@@ -1,6 +1,8 @@
 {
   "url": "https://wikipedia.org",
-  "overall_score": 0.429,
+  "timestamp": "2026-03-15T13:36:05.439216+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.466,
   "checks": [
     {
       "name": "api",
@@ -58,19 +60,23 @@
     },
     {
       "name": "structure",
-      "score": 0.52,
+      "score": 0.514,
       "findings": [
         "No HTML elements found",
         "No interactive elements to check",
         "No form inputs found",
         "No elements found",
-        "Some server-rendered content, but limited"
+        "Some server-rendered content, but limited",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
       ],
       "details": {
         "content_length": 125,
         "script_count": 0,
         "has_noscript": false,
-        "rendering": "partial"
+        "rendering": "partial",
+        "heading_count": 0,
+        "h1_count": 0
       }
     },
     {
@@ -118,6 +124,51 @@
           "gemini-pro": 0.0002
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.86,
+      "findings": [
+        "Fast response: 118ms",
+        "Compact payload: 0KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 118.3,
+        "payload_size_kb": 0.1,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "none"
       }
     }
   ]

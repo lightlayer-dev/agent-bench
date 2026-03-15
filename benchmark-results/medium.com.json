@@ -1,6 +1,8 @@
 {
   "url": "https://medium.com",
-  "overall_score": 0.356,
+  "timestamp": "2026-03-15T13:34:17.074426+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.44,
   "checks": [
     {
       "name": "api",
@@ -67,23 +69,27 @@
     },
     {
       "name": "structure",
-      "score": 0.46,
+      "score": 0.471,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
         "No interactive elements to check",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
       ],
       "details": {
         "total_elements": 16,
         "div_count": 3,
         "semantic_count": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -5137,
+        "content_length": -5116,
         "script_count": 1,
         "has_noscript": true,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 0,
+        "h1_count": 0
       }
     },
     {
@@ -131,6 +137,53 @@
           "gemini-pro": 0.0109
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.47,
+      "findings": [
+        "Missing essential landmarks: navigation",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "main"
+        ],
+        "landmark_count": 1,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 49ms",
+        "Compact payload: 7KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 49.2,
+        "payload_size_kb": 6.8,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

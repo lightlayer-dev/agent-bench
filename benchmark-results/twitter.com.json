@@ -1,6 +1,8 @@
 {
   "url": "https://twitter.com",
-  "overall_score": 0.317,
+  "timestamp": "2026-03-15T13:35:46.538158+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.427,
   "checks": [
     {
       "name": "api",
@@ -73,13 +75,15 @@
     },
     {
       "name": "structure",
-      "score": 0.46,
+      "score": 0.614,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
         "Good accessibility: 8/8 interactive elements have labels",
         "Forms are well-structured: 1/1 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 1 headings, well-structured",
+        "Good link accessibility: 6/6 links are descriptive"
       ],
       "details": {
         "total_elements": 100,
@@ -94,7 +98,13 @@
         "content_length": -212908,
         "script_count": 10,
         "has_noscript": true,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 1,
+        "h1_count": 1,
+        "total_links": 6,
+        "descriptive_links": 6,
+        "empty_links": 0,
+        "generic_links": 0
       }
     },
     {
@@ -144,6 +154,55 @@
           "gemini-pro": 0.3732
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "All 1 images have alt attributes (1 descriptive, 0 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 1,
+        "images_with_alt": 1,
+        "images_decorative": 0,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.93,
+      "findings": [
+        "Fast response: 211ms",
+        "Moderate payload: 233KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 3 scripts, 0 styles, 1 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 211.1,
+        "payload_size_kb": 233.3,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://twitter.com"
+        ],
+        "script_count": 3,
+        "stylesheet_count": 0,
+        "image_count": 1,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

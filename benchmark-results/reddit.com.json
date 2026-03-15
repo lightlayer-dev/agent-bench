@@ -1,6 +1,8 @@
 {
   "url": "https://reddit.com",
-  "overall_score": 0.298,
+  "timestamp": "2026-03-15T13:34:51.100406+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.349,
   "checks": [
     {
       "name": "api",
@@ -62,13 +64,15 @@
     },
     {
       "name": "structure",
-      "score": 0.42,
+      "score": 0.443,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
         "Poor accessibility: only 1/2 interactive elements have labels",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Some server-rendered content, but limited"
+        "Some server-rendered content, but limited",
+        "No headings found \u2014 agents can't understand page structure",
+        "Good link accessibility: 2/2 links are descriptive"
       ],
       "details": {
         "total_elements": 20,
@@ -80,7 +84,13 @@
         "content_length": 217,
         "script_count": 0,
         "has_noscript": false,
-        "rendering": "partial"
+        "rendering": "partial",
+        "heading_count": 0,
+        "h1_count": 0,
+        "total_links": 2,
+        "descriptive_links": 2,
+        "empty_links": 0,
+        "generic_links": 0
       }
     },
     {
@@ -131,6 +141,55 @@
           "gemini-pro": 0.2972
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.24,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "1/1 images missing alt text \u2014 agents can't understand these images",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 1,
+        "images_with_alt": 0,
+        "images_decorative": 0,
+        "images_missing_alt": 1,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.801,
+      "findings": [
+        "Fast response: 79ms",
+        "Moderate payload: 186KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 1 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 78.5,
+        "payload_size_kb": 185.8,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://reddit.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 1,
+        "iframe_count": 0,
+        "content_encoding": "none"
       }
     }
   ]

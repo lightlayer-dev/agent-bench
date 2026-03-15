@@ -1,6 +1,8 @@
 {
   "url": "https://github.com",
-  "overall_score": 0.5,
+  "timestamp": "2026-03-15T13:33:58.633476+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.594,
   "checks": [
     {
       "name": "api",
@@ -115,13 +117,15 @@
     },
     {
       "name": "structure",
-      "score": 0.61,
+      "score": 0.686,
       "findings": [
         "Heavy div usage: 360 divs with only 29 semantic elements",
         "Poor accessibility: only 132/211 interactive elements have labels",
         "Forms are well-structured: 13/14 inputs have names",
         "Found 21 elements with stable test selectors",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Multiple h1 headings (4) \u2014 ambiguous page title",
+        "Good link accessibility: 150/150 links are descriptive"
       ],
       "details": {
         "total_elements": 1955,
@@ -136,7 +140,13 @@
         "content_length": -123812,
         "script_count": 80,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 30,
+        "h1_count": 4,
+        "total_links": 150,
+        "descriptive_links": 150,
+        "empty_links": 0,
+        "generic_links": 0
       }
     },
     {
@@ -160,7 +170,7 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~141,791 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~141,792 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 23 \u2014 moderately nested",
@@ -183,10 +193,73 @@
         "cost_5_pages_usd": {
           "claude-sonnet": 2.1269,
           "gpt-4o": 1.7724,
-          "claude-opus": 10.6343,
+          "claude-opus": 10.6344,
           "gemini-pro": 0.8862
         },
         "internal_links": 55
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.92,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "All 24 images have alt attributes (7 descriptive, 17 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 6 live region(s) \u2014 agents can detect dynamic content changes",
+        "12 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region"
+        ],
+        "landmark_count": 5,
+        "images_total": 24,
+        "images_with_alt": 7,
+        "images_decorative": 17,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#start-of-content",
+            "text": "Skip to content"
+          }
+        ],
+        "live_regions": 6,
+        "aria_live_values": [
+          "polite",
+          "polite",
+          "polite",
+          "assertive"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 12
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.799,
+      "findings": [
+        "Fast response: 109ms",
+        "Moderate payload: 554KB",
+        "No redirects \u2014 direct access",
+        "Resource heavy: 74 scripts (heavy JS), 32 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 108.7,
+        "payload_size_kb": 554.0,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 74,
+        "stylesheet_count": 32,
+        "image_count": 24,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

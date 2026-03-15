@@ -1,6 +1,8 @@
 {
   "url": "https://api.github.com",
-  "overall_score": 0.595,
+  "timestamp": "2026-03-15T13:36:09.011905+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.604,
   "checks": [
     {
       "name": "api",
@@ -59,19 +61,23 @@
     },
     {
       "name": "structure",
-      "score": 0.6,
+      "score": 0.571,
       "findings": [
         "No HTML elements found",
         "No interactive elements to check",
         "No form inputs found",
         "No elements found",
-        "Good server-side rendering \u2014 content available without JavaScript"
+        "Good server-side rendering \u2014 content available without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
       ],
       "details": {
-        "content_length": 2395,
+        "content_length": 2262,
         "script_count": 0,
         "has_noscript": false,
-        "rendering": "server-side"
+        "rendering": "server-side",
+        "heading_count": 0,
+        "h1_count": 0
       }
     },
     {
@@ -90,7 +96,7 @@
         "rate_limit_headers": {
           "x-ratelimit-limit": "60",
           "x-ratelimit-remaining": "16",
-          "x-ratelimit-reset": "1773518582"
+          "x-ratelimit-reset": "1773585365"
         },
         "delete_main_status": 404
       }
@@ -99,32 +105,77 @@
       "name": "cost",
       "score": 1.0,
       "findings": [
-        "Page is ~599 tokens raw \u2014 efficient",
-        "Signal-to-noise ratio is 97% \u2014 good content density",
+        "Page is ~566 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 100% \u2014 good content density",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 0 \u2014 clean structure",
         "Page read cost: <$0.05 per load \u2014 affordable"
       ],
       "details": {
-        "raw_tokens": 599,
-        "signal_tokens": 582,
-        "signal_ratio": 0.972,
+        "raw_tokens": 565,
+        "signal_tokens": 565,
+        "signal_ratio": 1.0,
         "max_dom_depth": 0,
         "class_token_ratio": 0.0,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.0018,
-          "gpt-4o": 0.0015,
-          "claude-opus": 0.009,
+          "claude-sonnet": 0.0017,
+          "gpt-4o": 0.0014,
+          "claude-opus": 0.0085,
           "gemini-pro": 0.0007
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.009,
-          "gpt-4o": 0.0075,
-          "claude-opus": 0.0449,
-          "gemini-pro": 0.0037
+          "claude-sonnet": 0.0085,
+          "gpt-4o": 0.0071,
+          "claude-opus": 0.0424,
+          "gemini-pro": 0.0035
         },
         "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 60ms",
+        "Compact payload: 2KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 60.4,
+        "payload_size_kb": 2.2,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

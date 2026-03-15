@@ -44,7 +44,12 @@ def load_results(paths: list[Path]) -> list[dict]:
     results = []
     for p in paths:
         with open(p) as f:
-            results.append(json.load(f))
+            data = json.load(f)
+        # Handle both single results and arrays (e.g. summary.json)
+        if isinstance(data, list):
+            results.extend(data)
+        elif isinstance(data, dict):
+            results.append(data)
     results.sort(key=lambda r: r.get("overall_score", 0), reverse=True)
     return results
 

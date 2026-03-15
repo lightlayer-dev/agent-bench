@@ -1,6 +1,8 @@
 {
   "url": "https://notion.so",
-  "overall_score": 0.332,
+  "timestamp": "2026-03-15T13:34:47.492737+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.478,
   "checks": [
     {
       "name": "api",
@@ -67,13 +69,16 @@
     },
     {
       "name": "structure",
-      "score": 0.412,
+      "score": 0.574,
       "findings": [
         "Heavy div usage: 251 divs with only 29 semantic elements",
         "Poor accessibility: only 89/141 interactive elements have labels",
         "Forms are well-structured: 13/13 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Likely a client-side SPA \u2014 minimal server-rendered content"
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "Good heading hierarchy: 27 headings, well-structured",
+        "5 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 103/108 links are descriptive"
       ],
       "details": {
         "total_elements": 1152,
@@ -88,7 +93,13 @@
         "content_length": -18345,
         "script_count": 27,
         "has_noscript": true,
-        "rendering": "client-side"
+        "rendering": "client-side",
+        "heading_count": 27,
+        "h1_count": 1,
+        "total_links": 108,
+        "descriptive_links": 103,
+        "empty_links": 5,
+        "generic_links": 0
       }
     },
     {
@@ -137,6 +148,64 @@
           "gemini-pro": 0.3029
         },
         "internal_links": 99
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.76,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 29 images have alt attributes (14 descriptive, 15 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "Found 2 live region(s) \u2014 agents can detect dynamic content changes",
+        "1 custom elements made focusable via tabindex=0",
+        "14 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 29,
+        "images_with_alt": 14,
+        "images_decorative": 15,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 2,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 1,
+        "tabindex_negative": 14
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.839,
+      "findings": [
+        "Moderate response time: 512ms",
+        "Moderate payload: 189KB",
+        "2 redirect(s) \u2014 acceptable",
+        "Resource heavy: 23 scripts (heavy JS), 14 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 512.0,
+        "payload_size_kb": 189.4,
+        "redirect_count": 2,
+        "redirect_chain": [
+          "https://notion.so",
+          "https://www.notion.so"
+        ],
+        "script_count": 23,
+        "stylesheet_count": 14,
+        "image_count": 29,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
       }
     }
   ]

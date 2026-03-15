@@ -1,6 +1,8 @@
 {
   "url": "https://linear.app",
-  "overall_score": 0.346,
+  "timestamp": "2026-03-15T13:34:13.500884+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.532,
   "checks": [
     {
       "name": "api",
@@ -67,17 +69,20 @@
     },
     {
       "name": "structure",
-      "score": 0.246,
+      "score": 0.443,
       "findings": [
-        "Heavy div usage: 735 divs with only 22 semantic elements",
+        "Heavy div usage: 736 divs with only 22 semantic elements",
         "Poor accessibility: only 101/163 interactive elements have labels",
         "Forms need work: 0/4 inputs have names, 1/2 have types",
         "No stable test selectors found (data-testid, data-cy, etc.)",
-        "Very little content without JavaScript"
+        "Very little content without JavaScript",
+        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
+        "2 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 72/74 links are descriptive"
       ],
       "details": {
-        "total_elements": 3956,
-        "div_count": 735,
+        "total_elements": 3957,
+        "div_count": 736,
         "semantic_count": 22,
         "interactive_elements": 163,
         "labeled_elements": 101,
@@ -85,10 +90,16 @@
         "input_count": 4,
         "named_inputs": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -1371848,
+        "content_length": -1372069,
         "script_count": 113,
         "has_noscript": false,
-        "rendering": "minimal"
+        "rendering": "minimal",
+        "heading_count": 17,
+        "h1_count": 1,
+        "total_links": 74,
+        "descriptive_links": 72,
+        "empty_links": 2,
+        "generic_links": 0
       }
     },
     {
@@ -139,6 +150,67 @@
           "gemini-pro": 3.5129
         },
         "internal_links": 70
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.96,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 31 images have alt attributes (14 descriptive, 17 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 2 live region(s) \u2014 agents can detect dynamic content changes",
+        "3 custom elements made focusable via tabindex=0",
+        "57 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 31,
+        "images_with_alt": 14,
+        "images_decorative": 17,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#skip-nav",
+            "text": "Skip to content \u2192"
+          }
+        ],
+        "live_regions": 2,
+        "aria_live_values": [
+          "polite",
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 3,
+        "tabindex_negative": 57
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.95,
+      "findings": [
+        "Fast response: 226ms",
+        "Moderate payload: 326KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 226.1,
+        "payload_size_kb": 325.8,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
       }
     }
   ]
