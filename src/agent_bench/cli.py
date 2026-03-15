@@ -394,5 +394,33 @@ def trend(url: str | None, store_path: str, show_all: bool, fmt: str, output: st
         raise SystemExit(1)
 
 
+@cli.command()
+@click.argument("kind", type=click.Choice(["analysis", "batch"]), default="analysis")
+@click.option("--output", "-o", type=click.Path(), default=None, help="Write schema to file")
+@click.option("--validate", "validate_file", type=click.Path(exists=True), default=None, help="Validate a result file against the schema")
+def schema(kind: str, output: str | None, validate_file: str | None) -> None:
+    """Export JSON Schema for result formats or validate a result file."""
+    from agent_bench.analysis.schema import export_schema, validate_result, SCHEMA_VERSION
+    import json as json_mod
+
+    if validate_file:
+        data = json_mod.loads(Path(validate_file).read_text())
+        errors = validate_result(data)
+        if errors:
+            for e in errors:
+                console.print(f"[red]✗[/red] {e}")
+            raise SystemExit(1)
+        else:
+            console.print(f"[green]✓[/green] Valid agent-bench result (schema v{SCHEMA_VERSION})")
+        return
+
+    schema_json = export_schema(kind)
+    if output:
+        Path(output).write_text(schema_json)
+        console.print(f"[bold]Schema written to:[/bold] {output}")
+    else:
+        click.echo(schema_json)
+
+
 if __name__ == "__main__":
     cli()
