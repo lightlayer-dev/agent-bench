@@ -47,6 +47,15 @@ def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, thr
     if not quiet:
         console.print(report.render(fmt))
 
+    # Auto-record to trend history
+    try:
+        import json as _json
+        from agent_bench.analysis.trend import TrendStore
+        store = TrendStore()
+        store.add_from_result(_json.loads(report.to_json()))
+    except Exception:
+        pass  # Don't fail analysis over trend recording
+
     if output:
         Path(output).write_text(report.to_json())
         if not quiet:
@@ -340,6 +349,33 @@ def checks() -> None:
         console.print("[dim]Install plugins that use the 'agent_bench.checks' entry point group.[/dim]")
 
     console.print()
+
+
+@cli.command()
+@click.argument("url", required=False)
+@click.option("--store", "store_path", type=click.Path(), default="trend-history.json", help="Path to trend history file")
+@click.option("--all", "show_all", is_flag=True, help="Show trends for all tracked sites")
+def trend(url: str | None, store_path: str, show_all: bool) -> None:
+    """Show score trends over time for a site."""
+    from agent_bench.analysis.trend import TrendStore, render_trend_table
+
+    store = TrendStore(Path(store_path))
+
+    if show_all:
+        urls = store.all_urls()
+        if not urls:
+            console.print("[dim]No trend history found.[/dim]")
+            return
+        for u in urls:
+            t = store.get_trend(u)
+            console.print(render_trend_table(t))
+            console.print()
+    elif url:
+        t = store.get_trend(url)
+        console.print(render_trend_table(t))
+    else:
+        console.print("[red]Provide a URL or use --all to see all trends.[/red]")
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
