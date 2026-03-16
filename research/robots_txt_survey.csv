@@ -1,0 +1,100 @@
+domain,category,robots_txt_status,GPTBot,ChatGPT-User,ClaudeBot,anthropic-ai,Google-Extended,CCBot,PerplexityBot,Bytespider,bots_blocked,bots_allowed
+apnews.com,News & Media,ok,blocked,allowed,blocked,blocked,allowed,blocked,blocked,allowed,5,3
+arstechnica.com,News & Media,ok,allowed,allowed,blocked,blocked,blocked,blocked,blocked,blocked,6,2
+bbc.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+bloomberg.com,News & Media,ok,blocked,blocked,allowed,blocked,blocked,blocked,blocked,blocked,7,1
+buzzfeed.com,News & Media,ok,blocked,allowed,blocked,blocked,blocked,blocked,blocked,blocked,7,1
+cnn.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+forbes.com,News & Media,ok,blocked,allowed,blocked,blocked,allowed,blocked,blocked,blocked,6,2
+huffpost.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+nbcnews.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+newyorker.com,News & Media,ok,allowed,allowed,blocked,allowed,blocked,blocked,blocked,blocked,5,3
+npr.org,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+nytimes.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+reuters.com,News & Media,ok,allowed,allowed,blocked,blocked,blocked,blocked,blocked,blocked,6,2
+techcrunch.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,allowed,blocked,7,1
+theatlantic.com,News & Media,ok,allowed,allowed,blocked,blocked,blocked,blocked,blocked,blocked,6,2
+theguardian.com,News & Media,ok,allowed,allowed,blocked,blocked,allowed,blocked,blocked,blocked,5,3
+theverge.com,News & Media,ok,allowed,blocked,blocked,blocked,blocked,blocked,blocked,blocked,7,1
+time.com,News & Media,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+usatoday.com,News & Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+vox.com,News & Media,ok,allowed,blocked,blocked,blocked,blocked,blocked,blocked,blocked,7,1
+wired.com,News & Media,ok,allowed,allowed,blocked,allowed,blocked,blocked,blocked,blocked,5,3
+wsj.com,News & Media,ok,allowed,allowed,blocked,blocked,blocked,blocked,blocked,blocked,6,2
+discord.com,Social Media,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+facebook.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+instagram.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+linkedin.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+pinterest.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+snapchat.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+tiktok.com,Social Media,ok,blocked,blocked,blocked,blocked,blocked,blocked,blocked,blocked,8,0
+twitch.tv,Social Media,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+twitter.com,Social Media,ok,blocked,blocked,blocked,blocked,allowed,blocked,blocked,blocked,7,1
+youtube.com,Social Media,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+anthropic.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+atlassian.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+aws.amazon.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+cloudflare.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+dev.to,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+digitalocean.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+docker.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+figma.com,Tech / Developer,ok,blocked,blocked,allowed,blocked,blocked,blocked,blocked,allowed,6,2
+github.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+gitlab.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+hashicorp.com,Tech / Developer,http_429,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
+heroku.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+medium.com,Tech / Developer,ok,blocked,allowed,blocked,allowed,allowed,allowed,allowed,blocked,3,5
+netlify.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+openai.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+slack.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+stackoverflow.com,Tech / Developer,http_418,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
+stripe.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+twilio.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+vercel.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+amazon.com,E-commerce,ok,blocked,blocked,blocked,allowed,blocked,blocked,blocked,blocked,7,1
+bestbuy.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+costco.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+ebay.com,E-commerce,ok,allowed,allowed,blocked,blocked,allowed,blocked,blocked,blocked,5,3
+etsy.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+homedepot.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+lowes.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+nike.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+shopify.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+target.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+walmart.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+wayfair.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+americanexpress.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+bankofamerica.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+chase.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+coinbase.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+fidelity.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+paypal.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+robinhood.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+schwab.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+venmo.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+wellsfargo.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+cdc.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+ed.gov,Government,not_found,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+epa.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+fda.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+irs.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+nasa.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+nih.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+state.gov,Government,http_407,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
+usa.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+whitehouse.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+berkeley.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+caltech.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+cam.ac.uk,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+columbia.edu,Education,not_found,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+harvard.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+mit.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+ox.ac.uk,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+princeton.edu,Education,"error: HTTPSConnectionPool(host='www.princeton.edu', port=443): Max retries exceeded wi",unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
+stanford.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+yale.edu,Education,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+clevelandclinic.org,Health,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+healthline.com,Health,ok,blocked,allowed,blocked,blocked,allowed,blocked,allowed,blocked,5,3
+mayoclinic.org,Health,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+medlineplus.gov,Health,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+webmd.com,Health,ok,blocked,blocked,blocked,allowed,allowed,blocked,allowed,allowed,4,4
