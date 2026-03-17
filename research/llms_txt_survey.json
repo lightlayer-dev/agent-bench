@@ -1,0 +1,1986 @@
+{
+  "metadata": {
+    "description": "llms.txt adoption survey across popular websites",
+    "date": "2026-03-17",
+    "total_sites": 239,
+    "sites_with_llms_txt": 63,
+    "adoption_rate_pct": 26.4,
+    "methodology": "Fetched /llms.txt from each domain over HTTPS. Counted as 'found' if 200 status with non-HTML text content of 10+ characters."
+  },
+  "category_summary": {
+    "JS Frameworks": {
+      "total": 20,
+      "found": 10,
+      "adoption_pct": 50.0
+    },
+    "Developer Tools": {
+      "total": 30,
+      "found": 13,
+      "adoption_pct": 43.3
+    },
+    "AI / ML Platforms": {
+      "total": 25,
+      "found": 11,
+      "adoption_pct": 44.0
+    },
+    "Enterprise SaaS": {
+      "total": 40,
+      "found": 17,
+      "adoption_pct": 42.5
+    },
+    "Programming Languages & Runtimes": {
+      "total": 20,
+      "found": 2,
+      "adoption_pct": 10.0
+    },
+    "Databases": {
+      "total": 15,
+      "found": 6,
+      "adoption_pct": 40.0
+    },
+    "News & Media": {
+      "total": 20,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Consumer Web": {
+      "total": 30,
+      "found": 2,
+      "adoption_pct": 6.7
+    },
+    "Documentation Platforms": {
+      "total": 15,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Government & Education": {
+      "total": 10,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Health": {
+      "total": 5,
+      "found": 1,
+      "adoption_pct": 20.0
+    },
+    "Finance": {
+      "total": 9,
+      "found": 1,
+      "adoption_pct": 11.1
+    }
+  },
+  "sites": [
+    {
+      "domain": "alpinejs.dev",
+      "category": "JS Frameworks",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "angular.dev",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 6601
+    },
+    {
+      "domain": "astro.build",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 2570
+    },
+    {
+      "domain": "backbonejs.org",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "emberjs.com",
+      "category": "JS Frameworks",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "htmx.org",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "lit.dev",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mithril.js.org",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nextjs.org",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 6921
+    },
+    {
+      "domain": "nuxt.com",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 130473
+    },
+    {
+      "domain": "preactjs.com",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 221871
+    },
+    {
+      "domain": "qwik.dev",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "react.dev",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 14347
+    },
+    {
+      "domain": "remix.run",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/plain;charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "solidjs.com",
+      "category": "JS Frameworks",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "stimulus.hotwired.dev",
+      "category": "JS Frameworks",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "svelte.dev",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 1673
+    },
+    {
+      "domain": "turbo.build",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length_bytes": 10322
+    },
+    {
+      "domain": "vite.dev",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 3555
+    },
+    {
+      "domain": "vuejs.org",
+      "category": "JS Frameworks",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 7108
+    },
+    {
+      "domain": "ansible.com",
+      "category": "Developer Tools",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "aws.amazon.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "azure.microsoft.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 47035
+    },
+    {
+      "domain": "circleci.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 5924
+    },
+    {
+      "domain": "cloud.google.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cloudflare.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "datadog.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 46346
+    },
+    {
+      "domain": "digitalocean.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "docker.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "fly.io",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "github.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 27488
+    },
+    {
+      "domain": "gitlab.com",
+      "category": "Developer Tools",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "grafana.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "hashicorp.com",
+      "category": "Developer Tools",
+      "status": "http_429",
+      "status_code": 429,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "heroku.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 5760
+    },
+    {
+      "domain": "jenkins.io",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "launchdarkly.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "netlify.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "newrelic.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "pagerduty.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 22403
+    },
+    {
+      "domain": "postman.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 140758
+    },
+    {
+      "domain": "pulumi.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 150060
+    },
+    {
+      "domain": "puppet.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "railway.app",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 867
+    },
+    {
+      "domain": "render.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length_bytes": 31658
+    },
+    {
+      "domain": "sentry.io",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown",
+      "content_length_bytes": 975
+    },
+    {
+      "domain": "supabase.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 546
+    },
+    {
+      "domain": "terraform.io",
+      "category": "Developer Tools",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "travis-ci.com",
+      "category": "Developer Tools",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "vercel.com",
+      "category": "Developer Tools",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 329004
+    },
+    {
+      "domain": "anthropic.com",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "anyscale.com",
+      "category": "AI / ML Platforms",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cohere.com",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 4799
+    },
+    {
+      "domain": "copy.ai",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "deepmind.google",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "huggingface.co",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "jasper.ai",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "midjourney.com",
+      "category": "AI / ML Platforms",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "milvus.io",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 57012
+    },
+    {
+      "domain": "mistral.ai",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 4846
+    },
+    {
+      "domain": "mlflow.org",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 13563
+    },
+    {
+      "domain": "modal.com",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 16945
+    },
+    {
+      "domain": "openai.com",
+      "category": "AI / ML Platforms",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "perplexity.ai",
+      "category": "AI / ML Platforms",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "pinecone.io",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 43634
+    },
+    {
+      "domain": "qdrant.tech",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 11745
+    },
+    {
+      "domain": "ray.io",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "replicate.com",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length_bytes": 3416
+    },
+    {
+      "domain": "runway.ml",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "stability.ai",
+      "category": "AI / ML Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "together.ai",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 39088
+    },
+    {
+      "domain": "wandb.ai",
+      "category": "AI / ML Platforms",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "weaviate.io",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 18554
+    },
+    {
+      "domain": "writer.com",
+      "category": "AI / ML Platforms",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain;charset=utf-8",
+      "content_length_bytes": 4890
+    },
+    {
+      "domain": "you.com",
+      "category": "AI / ML Platforms",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "airtable.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "amplitude.com",
+      "category": "Enterprise SaaS",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "appsmith.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "asana.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 5691
+    },
+    {
+      "domain": "auth0.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 313559
+    },
+    {
+      "domain": "bubble.io",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "clickup.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 1939
+    },
+    {
+      "domain": "confluence.atlassian.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "contentful.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "crowdstrike.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "duo.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "figma.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "fullstory.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 13271
+    },
+    {
+      "domain": "ghost.org",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "heap.io",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "hotjar.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "hubspot.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "intercom.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 5043
+    },
+    {
+      "domain": "jira.atlassian.com",
+      "category": "Enterprise SaaS",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "linear.app",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 8865
+    },
+    {
+      "domain": "mailchimp.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 524780
+    },
+    {
+      "domain": "miro.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mixpanel.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "monday.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 7481
+    },
+    {
+      "domain": "notion.so",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 6914
+    },
+    {
+      "domain": "okta.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 194222
+    },
+    {
+      "domain": "onelogin.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "retool.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "salesforce.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 1021209
+    },
+    {
+      "domain": "segment.com",
+      "category": "Enterprise SaaS",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "sendgrid.com",
+      "category": "Enterprise SaaS",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "shopify.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 860
+    },
+    {
+      "domain": "slack.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain;charset=utf-8",
+      "content_length_bytes": 40604
+    },
+    {
+      "domain": "squarespace.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "stripe.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 63443
+    },
+    {
+      "domain": "twilio.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length_bytes": 2180893
+    },
+    {
+      "domain": "webflow.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 8089
+    },
+    {
+      "domain": "wix.com",
+      "category": "Enterprise SaaS",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "wordpress.com",
+      "category": "Enterprise SaaS",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 7018
+    },
+    {
+      "domain": "zendesk.com",
+      "category": "Enterprise SaaS",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "clojure.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "crystal-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "dart.dev",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "elixir-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "erlang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "gleam.run",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "go.dev",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "haskell.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "kotlinlang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 44362
+    },
+    {
+      "domain": "nim-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nodejs.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "php.net",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "python.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "roc-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 128587
+    },
+    {
+      "domain": "ruby-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "rust-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "scala-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "swift.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "typescriptlang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "ziglang.org",
+      "category": "Programming Languages & Runtimes",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "arangodb.com",
+      "category": "Databases",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cockroachlabs.com",
+      "category": "Databases",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "couchbase.com",
+      "category": "Databases",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "dgraph.io",
+      "category": "Databases",
+      "status": "http_422",
+      "status_code": 422,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "fauna.com",
+      "category": "Databases",
+      "status": "timeout",
+      "status_code": 0,
+      "content_type": "",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mongodb.com",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 1488
+    },
+    {
+      "domain": "mysql.com",
+      "category": "Databases",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "neo4j.com",
+      "category": "Databases",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "neon.tech",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 26004
+    },
+    {
+      "domain": "planetscale.com",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 90980
+    },
+    {
+      "domain": "postgresql.org",
+      "category": "Databases",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "questdb.io",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 226027
+    },
+    {
+      "domain": "redis.io",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 9661
+    },
+    {
+      "domain": "sqlite.org",
+      "category": "Databases",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "timescale.com",
+      "category": "Databases",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 121857
+    },
+    {
+      "domain": "arstechnica.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "bbc.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "bloomberg.com",
+      "category": "News & Media",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "buzzfeed.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cnn.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "economist.com",
+      "category": "News & Media",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "forbes.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "ft.com",
+      "category": "News & Media",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "huffpost.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nytimes.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "reuters.com",
+      "category": "News & Media",
+      "status": "http_401",
+      "status_code": 401,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "techcrunch.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "theguardian.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "theverge.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "time.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "vice.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "vox.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "washingtonpost.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "wired.com",
+      "category": "News & Media",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "wsj.com",
+      "category": "News & Media",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "airbnb.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "amazon.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "apple.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "bestbuy.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "booking.com",
+      "category": "Consumer Web",
+      "status": "http_202",
+      "status_code": 202,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "doordash.com",
+      "category": "Consumer Web",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "ebay.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "etsy.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "expedia.com",
+      "category": "Consumer Web",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 7011
+    },
+    {
+      "domain": "facebook.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=\"utf-8\"",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "google.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "grubhub.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "instagram.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=\"utf-8\"",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "linkedin.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "netflix.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nike.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "pinterest.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "reddit.com",
+      "category": "Consumer Web",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "redfin.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "snapchat.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "spotify.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "target.com",
+      "category": "Consumer Web",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 6205
+    },
+    {
+      "domain": "tiktok.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "tripadvisor.com",
+      "category": "Consumer Web",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "twitter.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "uber.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "walmart.com",
+      "category": "Consumer Web",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "yelp.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "youtube.com",
+      "category": "Consumer Web",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "zillow.com",
+      "category": "Consumer Web",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "devdocs.io",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "developer.mozilla.org",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "docs.oracle.com",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "docs.python.org",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "docs.rs",
+      "category": "Documentation Platforms",
+      "status": "http_400",
+      "status_code": 400,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "docusaurus.io",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "doxygen.nl",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "gitbook.com",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "hexdocs.pm",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "javadoc.io",
+      "category": "Documentation Platforms",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mkdocs.org",
+      "category": "Documentation Platforms",
+      "status": "error: HTTPSConnectionPool(host='mkdocs.org', port=443): Max retries exceeded with url:",
+      "status_code": 0,
+      "content_type": "",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "pkg.go.dev",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "readthedocs.org",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "rubydoc.info",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/plain",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "sphinx-doc.org",
+      "category": "Documentation Platforms",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "berkeley.edu",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cam.ac.uk",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "cdc.gov",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "harvard.edu",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mit.edu",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nasa.gov",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "nih.gov",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "ox.ac.uk",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "stanford.edu",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=iso-8859-1",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "usa.gov",
+      "category": "Government & Education",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "clevelandclinic.org",
+      "category": "Health",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 1925
+    },
+    {
+      "domain": "healthline.com",
+      "category": "Health",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "mayoclinic.org",
+      "category": "Health",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "medlineplus.gov",
+      "category": "Health",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "webmd.com",
+      "category": "Health",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "bankofamerica.com",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "chase.com",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "coinbase.com",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "fidelity.com",
+      "category": "Finance",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "application/xml; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "paypal.com",
+      "category": "Finance",
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain",
+      "content_length_bytes": 40102
+    },
+    {
+      "domain": "robinhood.com",
+      "category": "Finance",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "application/xml",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "schwab.com",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "stripe.dev",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
+    },
+    {
+      "domain": "wellsfargo.com",
+      "category": "Finance",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html;charset=UTF-8",
+      "content_length_bytes": 0
+    }
+  ]
+}
