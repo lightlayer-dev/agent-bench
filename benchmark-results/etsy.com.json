@@ -1,0 +1,187 @@
+{
+  "url": "https://etsy.com",
+  "timestamp": "2026-03-15T17:03:10.498593+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.515,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.5,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "CORS: open access (Access-Control-Allow-Origin: *)",
+        "Server supports content negotiation (responds to Accept headers)"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "*",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "application/json;charset=utf-8",
+          "html_request_ct": "text/html;charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.7,
+      "findings": [
+        "Bot detection systems: DataDome",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [
+          "DataDome"
+        ],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.2,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Could not fetch page for structured data check",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": false,
+        "openapi": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.471,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
+      ],
+      "details": {
+        "total_elements": 8,
+        "div_count": 0,
+        "semantic_count": 0,
+        "elements_with_stable_selectors": 0,
+        "content_length": -358,
+        "script_count": 2,
+        "has_noscript": false,
+        "rendering": "minimal",
+        "heading_count": 0,
+        "h1_count": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=UTF-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.75,
+      "findings": [
+        "Page is ~194 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 7% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 3 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
+      ],
+      "details": {
+        "raw_tokens": 194,
+        "signal_tokens": 13,
+        "signal_ratio": 0.067,
+        "max_dom_depth": 3,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0006,
+          "gpt-4o": 0.0005,
+          "claude-opus": 0.0029,
+          "gemini-pro": 0.0002
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.0029,
+          "gpt-4o": 0.0024,
+          "claude-opus": 0.0145,
+          "gemini-pro": 0.0012
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.82,
+      "findings": [
+        "Fast response: 89ms",
+        "Compact payload: 1KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 1 scripts, 0 styles, 0 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 89.4,
+        "payload_size_kb": 0.8,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://etsy.com"
+        ],
+        "script_count": 1,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "none"
+      }
+    }
+  ]
+}

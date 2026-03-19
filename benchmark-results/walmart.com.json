@@ -1,0 +1,282 @@
+{
+  "url": "https://walmart.com",
+  "timestamp": "2026-03-15T17:02:17.777291+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.6,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.3,
+      "findings": [
+        "Found 9 API endpoints (9 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/api/v1",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/api/v2",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/v1",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/v2",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/rest",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/rest/v1",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/graphql",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          },
+          {
+            "path": "/gql",
+            "status": 412,
+            "content_type": "application/json; charset=UTF-8",
+            "is_json": true
+          }
+        ],
+        "endpoint_count": 9,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.625,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.7,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "sitemap.xml exists but appears empty or malformed",
+        "No OpenAPI/Swagger specification found",
+        "Found 2 JSON-LD blocks: Organization, WebSite",
+        "llms.txt found at /llms.txt (15190 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 0,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 2,
+        "json_ld_types": [
+          "Organization",
+          "WebSite"
+        ],
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 15190
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.776,
+      "findings": [
+        "Moderate semantic HTML: 15 semantic elements vs 66 divs",
+        "Good accessibility: 44/55 interactive elements have labels",
+        "Forms are well-structured: 3/3 inputs have names",
+        "Found 22 elements with stable test selectors",
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "Good heading hierarchy: 1 headings, well-structured",
+        "1 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 43/44 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 323,
+        "div_count": 66,
+        "semantic_count": 15,
+        "interactive_elements": 55,
+        "labeled_elements": 44,
+        "form_count": 1,
+        "input_count": 3,
+        "named_inputs": 3,
+        "elements_with_stable_selectors": 22,
+        "content_length": -179360,
+        "script_count": 70,
+        "has_noscript": true,
+        "rendering": "client-side",
+        "heading_count": 1,
+        "h1_count": 1,
+        "total_links": 44,
+        "descriptive_links": 43,
+        "empty_links": 1,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "Non-existent path returned 412 instead of 404",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 412,
+        "404_content_type": "application/json; charset=UTF-8",
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.4,
+      "findings": [
+        "Page is ~63,580 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 20 \u2014 moderately nested",
+        "Reading this page costs $0.08\u2013$0.95 per load ($0.40\u2013$4.77 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 63580,
+        "signal_tokens": 274,
+        "signal_ratio": 0.004,
+        "max_dom_depth": 20,
+        "class_token_ratio": 0.027,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1907,
+          "gpt-4o": 0.159,
+          "claude-opus": 0.9537,
+          "gemini-pro": 0.0795
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.9537,
+          "gpt-4o": 0.7948,
+          "claude-opus": 4.7685,
+          "gemini-pro": 0.3974
+        },
+        "internal_links": 18
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.92,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region, search",
+        "All 7 images have alt attributes (6 descriptive, 1 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 6 live region(s) \u2014 agents can detect dynamic content changes",
+        "6 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region",
+          "search"
+        ],
+        "landmark_count": 6,
+        "images_total": 7,
+        "images_with_alt": 6,
+        "images_decorative": 1,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#maincontent",
+            "text": "Skip to Main Content"
+          }
+        ],
+        "live_regions": 6,
+        "aria_live_values": [
+          "assertive",
+          "polite",
+          "assertive",
+          "assertive",
+          "assertive",
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 6
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.867,
+      "findings": [
+        "Fast response: 81ms",
+        "Moderate payload: 248KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Resource heavy: 62 scripts (heavy JS)",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 80.8,
+        "payload_size_kb": 248.4,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://walmart.com"
+        ],
+        "script_count": 62,
+        "stylesheet_count": 1,
+        "image_count": 7,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}
