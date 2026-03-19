@@ -242,12 +242,46 @@ agent-bench analyze https://example.com --post http://dashboard.example.com
 agent-bench batch --post http://dashboard.example.com --source ci
 ```
 
-### GitHub Actions
+### GitHub Action
 
-Drop-in workflow examples in [`examples/`](examples/):
+Use the official GitHub Action for zero-config CI integration:
 
-- **[`github-actions-ci.yml`](examples/github-actions-ci.yml)** — PR gate with threshold check, artifact upload, and optional PR comment with score breakdown
-- **[`score-tracking.yml`](examples/score-tracking.yml)** — Weekly score tracking with history branch and automatic before/after comparison
+```yaml
+# .github/workflows/agent-bench.yml
+name: Agent-Readiness Check
+on: [pull_request]
+
+jobs:
+  agent-bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lightlayer-dev/agent-bench@main
+        with:
+          urls: "https://your-api.example.com"
+          threshold: "40"
+```
+
+Features:
+- **PR comments** — automatic score breakdown on every pull request
+- **Step summary** — scores appear in GitHub Actions summary tab
+- **Threshold gating** — fail the build if scores drop below your minimum
+- **Dashboard integration** — push results to LightLayer Dashboard with `post-url` and `api-key`
+- **Artifact upload** — results saved as build artifacts for 30 days
+- **Config file support** — use `agent-bench.yaml` from your repo with `config` input
+
+See [`examples/agent-bench-ci.yml`](examples/agent-bench-ci.yml) for more options.
+
+| Input | Description | Default |
+|-------|-------------|---------|
+| `urls` | Space-separated URLs to analyze | |
+| `config` | Path to `agent-bench.yaml` config file | |
+| `threshold` | Minimum score (0-100), fails if below | |
+| `format` | Output format: json, table, markdown, html | `json` |
+| `post-url` | LightLayer Dashboard URL for result posting | |
+| `api-key` | API key for dashboard | |
+| `comment` | Post PR comment with results | `true` |
+| `version` | Specific agent-bench version to install | latest |
 
 ### Compare Scores Over Time
 
