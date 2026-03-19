@@ -1,0 +1,40 @@
+# Example: Add agent-readiness scoring to your CI pipeline
+# Save as .github/workflows/agent-bench.yml
+
+name: Agent-Readiness Check
+
+on:
+  pull_request:
+    branches: [main]
+  # Optional: run on schedule to track trends
+  schedule:
+    - cron: "0 9 * * 1" # Every Monday at 9 AM UTC
+
+jobs:
+  agent-bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Option 1: Inline URLs
+      - name: Check agent-readiness
+        uses: lightlayer-dev/agent-bench@main
+        with:
+          urls: "https://your-api.example.com https://your-docs.example.com"
+          threshold: "40"
+
+      # Option 2: Use a config file (agent-bench.yaml in your repo)
+      # - name: Check agent-readiness
+      #   uses: lightlayer-dev/agent-bench@main
+      #   with:
+      #     config: "agent-bench.yaml"
+      #     threshold: "50"
+
+      # Option 3: With LightLayer Dashboard integration
+      # - name: Check agent-readiness
+      #   uses: lightlayer-dev/agent-bench@main
+      #   with:
+      #     urls: "https://your-api.example.com"
+      #     threshold: "40"
+      #     post-url: "https://dashboard.lightlayer.dev"
+      #     api-key: ${{ secrets.LIGHTLAYER_API_KEY }}
