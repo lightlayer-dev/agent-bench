@@ -1,0 +1,214 @@
+{
+  "url": "https://tiktok.com",
+  "timestamp": "2026-03-15T17:08:19.898650+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.454,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.217,
+      "findings": [
+        "Found 2 API endpoints (2 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api/v1",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/api/v2",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          }
+        ],
+        "endpoint_count": 2,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.5,
+      "findings": [
+        "Bot detection systems: Akamai",
+        "CAPTCHA detected: captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [
+          "Akamai"
+        ],
+        "captcha_detected": [
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.48,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, anthropic, claude, google-extended, ccbot",
+        "sitemap.xml found with ~5661 URLs",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (62153 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": false,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "anthropic",
+          "claude",
+          "google-extended",
+          "ccbot"
+        ],
+        "sitemap": true,
+        "sitemap_urls": 5661,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 62153
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.457,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
+      ],
+      "details": {
+        "total_elements": 112,
+        "div_count": 1,
+        "semantic_count": 0,
+        "elements_with_stable_selectors": 0,
+        "content_length": -278051,
+        "script_count": 54,
+        "has_noscript": false,
+        "rendering": "client-side",
+        "heading_count": 0,
+        "h1_count": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.167,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html; charset=utf-8",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.45,
+      "findings": [
+        "Page is ~74,750 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 3 \u2014 clean structure",
+        "Reading this page costs $0.09\u2013$1.12 per load ($0.47\u2013$5.61 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 74749,
+        "signal_tokens": 5,
+        "signal_ratio": 0.0,
+        "max_dom_depth": 3,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.2242,
+          "gpt-4o": 0.1869,
+          "claude-opus": 1.1212,
+          "gemini-pro": 0.0934
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 1.1212,
+          "gpt-4o": 0.9344,
+          "claude-opus": 5.6062,
+          "gemini-pro": 0.4672
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.955,
+      "findings": [
+        "Moderate response time: 565ms",
+        "Compact payload: 72KB",
+        "2 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 564.8,
+        "payload_size_kb": 71.6,
+        "redirect_count": 2,
+        "redirect_chain": [
+          "https://tiktok.com",
+          "https://www.tiktok.com/"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    }
+  ]
+}

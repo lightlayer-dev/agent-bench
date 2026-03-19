@@ -1,0 +1,220 @@
+{
+  "url": "https://webmd.com",
+  "timestamp": "2026-03-15T17:10:04.215801+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.44,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.25,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "CORS: open access (Access-Control-Allow-Origin: *)",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "*",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html",
+          "html_request_ct": "text/html"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.575,
+      "findings": [
+        "Cloudflare detected (passive \u2014 no active challenge)",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [
+          "Cloudflare"
+        ],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.08,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, claude, ccbot",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": false,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "claude",
+          "ccbot"
+        ],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.448,
+      "findings": [
+        "Heavy div usage: 328 divs with only 30 semantic elements",
+        "Poor accessibility: only 134/239 interactive elements have labels",
+        "Forms need work: 4/9 inputs have names, 9/9 have types",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "No h1 heading \u2014 page lacks a clear title for agents",
+        "7 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 204/211 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 1118,
+        "div_count": 328,
+        "semantic_count": 30,
+        "interactive_elements": 239,
+        "labeled_elements": 134,
+        "form_count": 2,
+        "input_count": 9,
+        "named_inputs": 4,
+        "elements_with_stable_selectors": 0,
+        "content_length": -94684,
+        "script_count": 24,
+        "has_noscript": true,
+        "rendering": "client-side",
+        "heading_count": 106,
+        "h1_count": 0,
+        "total_links": 211,
+        "descriptive_links": 204,
+        "empty_links": 7,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 404 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 404
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.4,
+      "findings": [
+        "Page is ~95,922 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 19 \u2014 moderately nested",
+        "Reading this page costs $0.12\u2013$1.44 per load ($0.60\u2013$7.19 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 95922,
+        "signal_tokens": 1521,
+        "signal_ratio": 0.016,
+        "max_dom_depth": 19,
+        "class_token_ratio": 0.033,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.2878,
+          "gpt-4o": 0.2398,
+          "claude-opus": 1.4388,
+          "gemini-pro": 0.1199
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 1.4388,
+          "gpt-4o": 1.199,
+          "claude-opus": 7.1942,
+          "gemini-pro": 0.5995
+        },
+        "internal_links": 5
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.788,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "11/42 images missing alt text \u2014 agents can't understand these images",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "Found 1 elements with positive tabindex \u2014 may confuse agent tab navigation",
+        "5 custom elements made focusable via tabindex=0",
+        "16 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region"
+        ],
+        "landmark_count": 5,
+        "images_total": 42,
+        "images_with_alt": 29,
+        "images_decorative": 2,
+        "images_missing_alt": 11,
+        "skip_links": [
+          {
+            "href": "#main-container",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 1,
+        "tabindex_zero": 5,
+        "tabindex_negative": 16
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.879,
+      "findings": [
+        "Fast response: 272ms",
+        "Moderate payload: 375KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Resource heavy: 11 scripts",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 272.2,
+        "payload_size_kb": 374.7,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://webmd.com"
+        ],
+        "script_count": 11,
+        "stylesheet_count": 2,
+        "image_count": 42,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}

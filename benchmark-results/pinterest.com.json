@@ -1,0 +1,211 @@
+{
+  "url": "https://pinterest.com",
+  "timestamp": "2026-03-15T17:08:35.163194+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.453,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.625,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: recaptcha, captcha, arkose",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha",
+          "arkose"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.62,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, anthropic, claude, google-extended, ccbot",
+        "robots.txt references a sitemap",
+        "sitemap.xml exists but appears empty or malformed",
+        "No OpenAPI/Swagger specification found",
+        "Found 1 JSON-LD blocks: WebSite",
+        "llms.txt found at /llms.txt (785584 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "anthropic",
+          "claude",
+          "google-extended",
+          "ccbot"
+        ],
+        "sitemap": true,
+        "sitemap_urls": 0,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 1,
+        "json_ld_types": [
+          "WebSite"
+        ],
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 785584
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.471,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "Good accessibility: 1/1 interactive elements have labels",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "Good link accessibility: 1/1 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 251,
+        "div_count": 6,
+        "semantic_count": 0,
+        "interactive_elements": 1,
+        "labeled_elements": 1,
+        "elements_with_stable_selectors": 0,
+        "content_length": -314769,
+        "script_count": 79,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 0,
+        "h1_count": 0,
+        "total_links": 1,
+        "descriptive_links": 1,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.133,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Server accepts DELETE on main page (no method validation)"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html; charset=utf-8",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 200
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.45,
+      "findings": [
+        "Page is ~193,608 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 3 \u2014 clean structure",
+        "Reading this page costs $0.24\u2013$2.90 per load ($1.21\u2013$14.52 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 193607,
+        "signal_tokens": 2,
+        "signal_ratio": 0.0,
+        "max_dom_depth": 3,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.5808,
+          "gpt-4o": 0.484,
+          "claude-opus": 2.9041,
+          "gemini-pro": 0.242
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 2.9041,
+          "gpt-4o": 2.4201,
+          "claude-opus": 14.5206,
+          "gemini-pro": 1.21
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.96,
+      "findings": [
+        "Fast response: 227ms",
+        "Compact payload: 92KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 227.4,
+        "payload_size_kb": 91.8,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://pinterest.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    }
+  ]
+}

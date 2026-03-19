@@ -1,0 +1,229 @@
+{
+  "url": "https://slack.com",
+  "timestamp": "2026-03-15T17:04:17.837396+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.687,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.392,
+      "findings": [
+        "Found 2 API endpoints (2 returning JSON)",
+        "GraphQL endpoint at /api/graphql (introspection disabled)",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api/v1",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          },
+          {
+            "path": "/api/v2",
+            "status": 200,
+            "content_type": "application/json; charset=utf-8",
+            "is_json": true
+          }
+        ],
+        "endpoint_count": 2,
+        "graphql": true,
+        "graphql_path": "/api/graphql",
+        "graphql_introspection": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.875,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "OAuth discovery found \u2014 grant types: authorization_code",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": true,
+        "oauth_path": "/.well-known/openid-configuration",
+        "oauth_grant_types": [
+          "authorization_code"
+        ],
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.6,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "sitemap.xml found with ~13 URLs",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (40604 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 13,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 40604
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.74,
+      "findings": [
+        "Heavy div usage: 804 divs with only 34 semantic elements",
+        "Poor accessibility: only 250/313 interactive elements have labels",
+        "No form inputs found",
+        "Found 26 elements with stable test selectors",
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 27 headings, well-structured",
+        "1 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 283/284 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 1964,
+        "div_count": 804,
+        "semantic_count": 34,
+        "interactive_elements": 313,
+        "labeled_elements": 250,
+        "elements_with_stable_selectors": 26,
+        "content_length": -3083,
+        "script_count": 28,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 27,
+        "h1_count": 1,
+        "total_links": 284,
+        "descriptive_links": 283,
+        "empty_links": 1,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.2,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Server accepts DELETE on main page (no method validation)"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=utf-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 200
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.75,
+      "findings": [
+        "Page is ~0 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 0 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
+      ],
+      "details": {
+        "raw_tokens": 0,
+        "signal_tokens": 0,
+        "signal_ratio": 0,
+        "max_dom_depth": 0,
+        "class_token_ratio": 0,
+        "inline_bloat_ratio": 0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0,
+          "gpt-4o": 0.0,
+          "claude-opus": 0.0,
+          "gemini-pro": 0.0
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.0,
+          "gpt-4o": 0.0,
+          "claude-opus": 0.0,
+          "gemini-pro": 0.0
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.98,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "All 79 images have alt attributes (54 descriptive, 25 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 1 live region(s) \u2014 agents can detect dynamic content changes",
+        "46 custom elements made focusable via tabindex=0",
+        "20 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "region"
+        ],
+        "landmark_count": 5,
+        "images_total": 79,
+        "images_with_alt": 54,
+        "images_decorative": 25,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#main_focusable",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 1,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 46,
+        "tabindex_negative": 20
+      }
+    },
+    {
+      "name": "performance",
+      "score": 1.0,
+      "findings": [
+        "Fast response: 252ms",
+        "Compact payload: 26KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 251.6,
+        "payload_size_kb": 25.7,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    }
+  ]
+}
