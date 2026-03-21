@@ -282,7 +282,7 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
                     )
                     resp.raise_for_status()
                     if not quiet:
-                        console.print(f"  [green]Posted to dashboard[/green]")
+                        console.print("  [green]Posted to dashboard[/green]")
                 except Exception as e:
                     console.print(f"  [red]Failed to post: {e}[/red]")
 

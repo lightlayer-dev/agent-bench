@@ -2,10 +2,8 @@
 
 from __future__ import annotations
 
-from unittest.mock import MagicMock, patch, PropertyMock
-import time
+from unittest.mock import MagicMock, patch
 
-import pytest
 
 from agent_bench.analysis.checks.performance import PerformanceCheck
 

@@ -69,8 +69,6 @@ class TestBatchOptions:
 
         monkeypatch.setattr("agent_bench.cli.SiteScorer", mock_scorer_cls, raising=False)
         # Need to patch where it's imported
-        import agent_bench.cli as cli_mod
-        original = None
         # Patch inside the function scope by patching the module import
         from unittest.mock import patch
         with patch("agent_bench.analysis.scorer.SiteScorer", mock_scorer_cls):
@@ -114,7 +112,7 @@ class TestBatchConfigSites:
         config.write_text("sites:\n  - url: http://localhost:99999\n")
         out = tmp_path / "results"
         runner = CliRunner()
-        result = runner.invoke(cli, ["batch", "--config", str(config), "-o", str(out)])
+        runner.invoke(cli, ["batch", "--config", str(config), "-o", str(out)])
         # Should run (may error on fetch but shouldn't crash)
         assert out.exists()
 

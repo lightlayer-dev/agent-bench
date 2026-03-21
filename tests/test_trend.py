@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 
 from click.testing import CliRunner
 

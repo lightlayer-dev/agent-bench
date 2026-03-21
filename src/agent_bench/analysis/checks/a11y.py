@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 
 import httpx
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from agent_bench.analysis.checks import BaseCheck
 from agent_bench.analysis.models import CheckResult

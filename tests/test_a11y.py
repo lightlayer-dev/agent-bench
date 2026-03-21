@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock, patch
 
-import pytest
 
 from agent_bench.analysis.checks.a11y import A11yCheck
 

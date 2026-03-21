@@ -1,0 +1,213 @@
+{
+  "url": "https://twilio.com",
+  "timestamp": "2026-03-21T14:04:09.059104+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.49,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html;charset=utf-8",
+          "html_request_ct": "text/html;charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.76,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "sitemap.xml found with ~7 URLs",
+        "No OpenAPI/Swagger specification found",
+        "Found 2 JSON-LD blocks: Organization, WebSite",
+        "llms.txt found at /llms.txt (2185615 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": false,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 7,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 2,
+        "json_ld_types": [
+          "Organization",
+          "WebSite"
+        ],
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 2185615
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.476,
+      "findings": [
+        "Heavy div usage: 782 divs with only 25 semantic elements",
+        "Poor accessibility: only 75/452 interactive elements have labels",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "Heading hierarchy has 2 level skip(s) (e.g., h1 \u2192 h3)",
+        "Good link accessibility: 375/375 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 3749,
+        "div_count": 782,
+        "semantic_count": 25,
+        "interactive_elements": 452,
+        "labeled_elements": 75,
+        "elements_with_stable_selectors": 0,
+        "content_length": -8427,
+        "script_count": 32,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 27,
+        "h1_count": 1,
+        "total_links": 375,
+        "descriptive_links": 375,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=utf-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.3,
+      "findings": [
+        "Page is ~160,058 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 3% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 23 \u2014 moderately nested",
+        "CSS class attributes consume ~21,813 tokens (14% of page)",
+        "Reading this page costs $0.20\u2013$2.40 per load ($1.00\u2013$12.00 for a 5-page session)",
+        "277 internal links \u2014 agents may waste tokens exploring"
+      ],
+      "details": {
+        "raw_tokens": 160058,
+        "signal_tokens": 4005,
+        "signal_ratio": 0.025,
+        "max_dom_depth": 23,
+        "class_token_ratio": 0.136,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.4802,
+          "gpt-4o": 0.4001,
+          "claude-opus": 2.4009,
+          "gemini-pro": 0.2001
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 2.4009,
+          "gpt-4o": 2.0007,
+          "claude-opus": 12.0044,
+          "gemini-pro": 1.0004
+        },
+        "internal_links": 277
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.691,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "11/32 images missing alt text \u2014 agents can't understand these images",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "Found 3 live region(s) \u2014 agents can detect dynamic content changes",
+        "3 custom elements made focusable via tabindex=0",
+        "27 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 32,
+        "images_with_alt": 21,
+        "images_decorative": 0,
+        "images_missing_alt": 11,
+        "skip_links": [],
+        "live_regions": 3,
+        "aria_live_values": [
+          "Polite",
+          "Polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 3,
+        "tabindex_negative": 27
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.823,
+      "findings": [
+        "Fast response: 101ms",
+        "Moderate payload: 625KB",
+        "2 redirect(s) \u2014 acceptable",
+        "Resource heavy: 11 scripts",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 100.8,
+        "payload_size_kb": 625.3,
+        "redirect_count": 2,
+        "redirect_chain": [
+          "https://twilio.com",
+          "https://www.twilio.com/"
+        ],
+        "script_count": 11,
+        "stylesheet_count": 5,
+        "image_count": 32,
+        "iframe_count": 1,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}

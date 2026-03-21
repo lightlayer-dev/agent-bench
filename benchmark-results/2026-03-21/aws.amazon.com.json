@@ -1,0 +1,209 @@
+{
+  "url": "https://aws.amazon.com",
+  "timestamp": "2026-03-21T14:06:13.200503+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.46,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html;charset=utf-8",
+          "html_request_ct": "text/html;charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.2,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.531,
+      "findings": [
+        "Heavy div usage: 557 divs with only 5 semantic elements",
+        "Poor accessibility: only 70/141 interactive elements have labels",
+        "Forms need work: 0/4 inputs have names, 2/4 have types",
+        "Found 23 elements with stable test selectors",
+        "Very little content without JavaScript",
+        "Multiple h1 headings (2) \u2014 ambiguous page title",
+        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
+        "Good link accessibility: 59/59 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 1225,
+        "div_count": 557,
+        "semantic_count": 5,
+        "interactive_elements": 141,
+        "labeled_elements": 70,
+        "form_count": 2,
+        "input_count": 4,
+        "named_inputs": 0,
+        "elements_with_stable_selectors": 23,
+        "content_length": -124165,
+        "script_count": 25,
+        "has_noscript": false,
+        "rendering": "minimal",
+        "heading_count": 19,
+        "h1_count": 2,
+        "total_links": 59,
+        "descriptive_links": 59,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html;charset=UTF-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.3,
+      "findings": [
+        "Page is ~81,496 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 37 \u2014 deeply nested structure",
+        "CSS class attributes consume ~8,721 tokens (11% of page)",
+        "Reading this page costs $0.10\u2013$1.22 per load ($0.51\u2013$6.11 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 81496,
+        "signal_tokens": 881,
+        "signal_ratio": 0.011,
+        "max_dom_depth": 37,
+        "class_token_ratio": 0.107,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.2445,
+          "gpt-4o": 0.2037,
+          "claude-opus": 1.2224,
+          "gemini-pro": 0.1019
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 1.2224,
+          "gpt-4o": 1.0187,
+          "claude-opus": 6.1122,
+          "gemini-pro": 0.5094
+        },
+        "internal_links": 44
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.94,
+      "findings": [
+        "Good landmark coverage: contentinfo, main, navigation",
+        "All 5 images have alt attributes (5 descriptive, 0 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 1 live region(s) \u2014 agents can detect dynamic content changes",
+        "61 custom elements made focusable via tabindex=0",
+        "6 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 3,
+        "images_total": 5,
+        "images_with_alt": 5,
+        "images_decorative": 0,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#aws-page-content-main",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 1,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 61,
+        "tabindex_negative": 6
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.911,
+      "findings": [
+        "Fast response: 80ms",
+        "Moderate payload: 318KB",
+        "No redirects \u2014 direct access",
+        "Resource heavy: 12 scripts, 10 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 80.3,
+        "payload_size_kb": 318.4,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 12,
+        "stylesheet_count": 10,
+        "image_count": 5,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}
