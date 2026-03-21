@@ -45,17 +45,13 @@ def _get_builtin_checks() -> dict[str, type]:
 
 def _get_plugin_checks() -> dict[str, type]:
     """Discover check plugins via entry points (group: agent_bench.checks)."""
-    import sys
+    from importlib.metadata import entry_points
 
     plugins: dict[str, type] = {}
 
-    if sys.version_info >= (3, 12):
-        from importlib.metadata import entry_points
-        eps = entry_points(group="agent_bench.checks")
-    else:
-        from importlib.metadata import entry_points
-        all_eps = entry_points()
-        eps = all_eps.get("agent_bench.checks", [])
+    # entry_points(group=...) works on Python 3.9+ and avoids the
+    # SelectableGroups dict-interface deprecation on 3.12+.
+    eps = entry_points(group="agent_bench.checks")
 
     for ep in eps:
         try:
