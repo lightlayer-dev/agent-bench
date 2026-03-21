@@ -1,8 +1,8 @@
 {
   "url": "https://walmart.com",
-  "timestamp": "2026-03-15T17:02:17.777291+00:00",
+  "timestamp": "2026-03-20T17:02:03.028116+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.6,
+  "overall_score": 0.599,
   "checks": [
     {
       "name": "api",
@@ -130,37 +130,37 @@
     },
     {
       "name": "structure",
-      "score": 0.776,
+      "score": 0.744,
       "findings": [
-        "Moderate semantic HTML: 15 semantic elements vs 66 divs",
-        "Good accessibility: 44/55 interactive elements have labels",
-        "Forms are well-structured: 3/3 inputs have names",
-        "Found 22 elements with stable test selectors",
+        "Heavy div usage: 232 divs with only 27 semantic elements",
+        "Good accessibility: 63/75 interactive elements have labels",
+        "Forms are well-structured: 1/1 inputs have names",
+        "Found 55 elements with stable test selectors",
         "Likely a client-side SPA \u2014 minimal server-rendered content",
-        "Good heading hierarchy: 1 headings, well-structured",
-        "1 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 43/44 links are descriptive"
+        "Good heading hierarchy: 15 headings, well-structured",
+        "4 links with generic text ('click here', 'read more')",
+        "Good link accessibility: 56/60 links are descriptive"
       ],
       "details": {
-        "total_elements": 323,
-        "div_count": 66,
-        "semantic_count": 15,
-        "interactive_elements": 55,
-        "labeled_elements": 44,
+        "total_elements": 636,
+        "div_count": 232,
+        "semantic_count": 27,
+        "interactive_elements": 75,
+        "labeled_elements": 63,
         "form_count": 1,
-        "input_count": 3,
-        "named_inputs": 3,
-        "elements_with_stable_selectors": 22,
-        "content_length": -179360,
-        "script_count": 70,
+        "input_count": 1,
+        "named_inputs": 1,
+        "elements_with_stable_selectors": 55,
+        "content_length": -266782,
+        "script_count": 73,
         "has_noscript": true,
         "rendering": "client-side",
-        "heading_count": 1,
+        "heading_count": 15,
         "h1_count": 1,
-        "total_links": 44,
-        "descriptive_links": 43,
-        "empty_links": 1,
-        "generic_links": 0
+        "total_links": 60,
+        "descriptive_links": 56,
+        "empty_links": 0,
+        "generic_links": 4
       }
     },
     {
@@ -182,43 +182,44 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~63,580 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
-        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Page is ~98,503 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 20 \u2014 moderately nested",
-        "Reading this page costs $0.08\u2013$0.95 per load ($0.40\u2013$4.77 for a 5-page session)"
+        "Max DOM depth is 25 \u2014 moderately nested",
+        "Reading this page costs $0.12\u2013$1.48 per load ($0.62\u2013$7.39 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 63580,
-        "signal_tokens": 274,
-        "signal_ratio": 0.004,
-        "max_dom_depth": 20,
-        "class_token_ratio": 0.027,
+        "raw_tokens": 98503,
+        "signal_tokens": 942,
+        "signal_ratio": 0.01,
+        "max_dom_depth": 25,
+        "class_token_ratio": 0.043,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.1907,
-          "gpt-4o": 0.159,
-          "claude-opus": 0.9537,
-          "gemini-pro": 0.0795
+          "claude-sonnet": 0.2955,
+          "gpt-4o": 0.2463,
+          "claude-opus": 1.4775,
+          "gemini-pro": 0.1231
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.9537,
-          "gpt-4o": 0.7948,
-          "claude-opus": 4.7685,
-          "gemini-pro": 0.3974
+          "claude-sonnet": 1.4775,
+          "gpt-4o": 1.2313,
+          "claude-opus": 7.3877,
+          "gemini-pro": 0.6156
         },
-        "internal_links": 18
+        "internal_links": 26
       }
     },
     {
       "name": "a11y",
-      "score": 0.92,
+      "score": 0.98,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation, region, search",
-        "All 7 images have alt attributes (6 descriptive, 1 decorative)",
+        "All 19 images have alt attributes (18 descriptive, 1 decorative)",
         "Found 1 skip link(s) \u2014 helps agents jump to main content",
         "Found 6 live region(s) \u2014 agents can detect dynamic content changes",
-        "6 elements with tabindex=-1 (programmatic focus)"
+        "4 custom elements made focusable via tabindex=0",
+        "11 elements with tabindex=-1 (programmatic focus)"
       ],
       "details": {
         "landmarks_found": [
@@ -230,8 +231,8 @@
           "search"
         ],
         "landmark_count": 6,
-        "images_total": 7,
-        "images_with_alt": 6,
+        "images_total": 19,
+        "images_with_alt": 18,
         "images_decorative": 1,
         "images_missing_alt": 0,
         "skip_links": [
@@ -250,30 +251,30 @@
           "polite"
         ],
         "tabindex_positive": 0,
-        "tabindex_zero": 0,
-        "tabindex_negative": 6
+        "tabindex_zero": 4,
+        "tabindex_negative": 11
       }
     },
     {
       "name": "performance",
-      "score": 0.867,
+      "score": 0.837,
       "findings": [
-        "Fast response: 81ms",
-        "Moderate payload: 248KB",
+        "Fast response: 110ms",
+        "Moderate payload: 385KB",
         "1 redirect(s) \u2014 acceptable",
-        "Resource heavy: 62 scripts (heavy JS)",
+        "Resource heavy: 64 scripts (heavy JS)",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 80.8,
-        "payload_size_kb": 248.4,
+        "response_time_ms": 110.0,
+        "payload_size_kb": 384.7,
         "redirect_count": 1,
         "redirect_chain": [
           "https://walmart.com"
         ],
-        "script_count": 62,
+        "script_count": 64,
         "stylesheet_count": 1,
-        "image_count": 7,
+        "image_count": 19,
         "iframe_count": 0,
         "content_encoding": "gzip"
       }

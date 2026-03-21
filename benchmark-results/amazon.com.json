@@ -1,8 +1,8 @@
 {
   "url": "https://amazon.com",
-  "timestamp": "2026-03-15T13:33:15.802811+00:00",
+  "timestamp": "2026-03-20T17:00:55.888471+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.426,
+  "overall_score": 0.394,
   "checks": [
     {
       "name": "api",
@@ -27,12 +27,12 @@
     },
     {
       "name": "auth",
-      "score": 0.6,
+      "score": 0.5,
       "findings": [
         "No bot detection systems detected",
         "CAPTCHA detected: captcha",
         "No OAuth/OIDC discovery endpoint found",
-        "Login form at /sign-in \u2014 no password field (possibly SSO/OAuth only)"
+        "Login form at /sign-in \u2014 complex, 13 inputs"
       ],
       "details": {
         "bot_detection": [],
@@ -45,10 +45,20 @@
         "login_input_types": [
           "hidden",
           "hidden",
-          "hidden"
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "email",
+          "password",
+          "hidden",
+          "submit"
         ],
         "login_has_csrf": false,
-        "login_hidden_inputs": 3
+        "login_hidden_inputs": 10
       }
     },
     {
@@ -187,24 +197,24 @@
     },
     {
       "name": "performance",
-      "score": 0.96,
+      "score": 0.76,
       "findings": [
-        "Fast response: 99ms",
-        "Compact payload: 5KB",
+        "Fast response: 166ms",
+        "Large payload: 1354KB \u2014 increases token cost for agents",
         "1 redirect(s) \u2014 acceptable",
-        "Lean resources: 0 scripts, 1 styles, 1 images",
+        "Resource heavy: 6 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 99.4,
-        "payload_size_kb": 5.0,
+        "response_time_ms": 166.2,
+        "payload_size_kb": 1354.0,
         "redirect_count": 1,
         "redirect_chain": [
           "https://amazon.com"
         ],
         "script_count": 0,
-        "stylesheet_count": 1,
-        "image_count": 1,
+        "stylesheet_count": 6,
+        "image_count": 102,
         "iframe_count": 0,
         "content_encoding": "gzip"
       }

@@ -1020,110 +1020,14 @@
       }
     }
   ],
-  "https://nytimes.com": [
-    {
-      "timestamp": "2026-03-15T17:00:45.667292+00:00",
-      "overall_score": 0.492,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.625,
-        "docs": 0.32,
-        "structure": 0.661,
-        "errors": 0.433,
-        "cost": 0.45,
-        "a11y": 0.932,
-        "performance": 0.72
-      }
-    }
-  ],
-  "https://cnn.com": [
-    {
-      "timestamp": "2026-03-15T17:01:13.339614+00:00",
-      "overall_score": 0.466,
-      "check_scores": {
-        "api": 0.25,
-        "auth": 0.575,
-        "docs": 0.32,
-        "structure": 0.503,
-        "errors": 0.433,
-        "cost": 0.3,
-        "a11y": 0.66,
-        "performance": 0.863
-      }
-    }
-  ],
-  "https://bbc.com": [
-    {
-      "timestamp": "2026-03-15T17:01:22.181153+00:00",
-      "overall_score": 0.476,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.8,
-        "docs": 0.52,
-        "structure": 0.551,
-        "errors": 0.333,
-        "cost": 0.3,
-        "a11y": 0.7,
-        "performance": 0.836
-      }
-    }
-  ],
-  "https://reuters.com": [
-    {
-      "timestamp": "2026-03-15T17:02:04.534148+00:00",
-      "overall_score": 0.488,
-      "check_scores": {
-        "api": 0.5,
-        "auth": 0.5,
-        "docs": 0.12,
-        "structure": 0.471,
-        "errors": 0.233,
-        "cost": 0.75,
-        "a11y": 0.44,
-        "performance": 0.82
-      }
-    }
-  ],
-  "https://walmart.com": [
-    {
-      "timestamp": "2026-03-15T17:02:17.777291+00:00",
-      "overall_score": 0.6,
-      "check_scores": {
-        "api": 0.3,
-        "auth": 0.625,
-        "docs": 0.7,
-        "structure": 0.776,
-        "errors": 0.233,
-        "cost": 0.4,
-        "a11y": 0.92,
-        "performance": 0.867
-      }
-    }
-  ],
-  "https://target.com": [
-    {
-      "timestamp": "2026-03-15T17:02:32.964616+00:00",
-      "overall_score": 0.493,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.6,
-        "docs": 0.6,
-        "structure": 0.648,
-        "errors": 0.333,
-        "cost": 0.3,
-        "a11y": 0.84,
-        "performance": 0.766
-      }
-    }
-  ],
   "https://etsy.com": [
     {
-      "timestamp": "2026-03-15T17:03:10.498593+00:00",
-      "overall_score": 0.515,
+      "timestamp": "2026-03-20T17:08:40.259330+00:00",
+      "overall_score": 0.509,
       "check_scores": {
         "api": 0.5,
         "auth": 0.7,
-        "docs": 0.2,
+        "docs": 0.16,
         "structure": 0.471,
         "errors": 0.233,
         "cost": 0.75,
@@ -1132,282 +1036,106 @@
       }
     }
   ],
-  "https://slack.com": [
+  "https://nike.com": [
     {
-      "timestamp": "2026-03-15T17:04:17.837396+00:00",
-      "overall_score": 0.687,
-      "check_scores": {
-        "api": 0.392,
-        "auth": 0.875,
-        "docs": 0.6,
-        "structure": 0.74,
-        "errors": 0.2,
-        "cost": 0.75,
-        "a11y": 0.98,
-        "performance": 1.0
-      }
-    }
-  ],
-  "https://zoom.us": [
-    {
-      "timestamp": "2026-03-15T17:04:25.398711+00:00",
-      "overall_score": 0.488,
-      "check_scores": {
-        "api": 0.25,
-        "auth": 0.525,
-        "docs": 0.6,
-        "structure": 0.57,
-        "errors": 0.333,
-        "cost": 0.35,
-        "a11y": 0.456,
-        "performance": 0.891
-      }
-    }
-  ],
-  "https://dropbox.com": [
-    {
-      "timestamp": "2026-03-15T17:04:51.065808+00:00",
-      "overall_score": 0.493,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.675,
-        "docs": 0.6,
-        "structure": 0.709,
-        "errors": 0.433,
-        "cost": 0.2,
-        "a11y": 0.78,
-        "performance": 0.756
-      }
-    }
-  ],
-  "https://hubspot.com": [
-    {
-      "timestamp": "2026-03-15T17:05:47.171640+00:00",
-      "overall_score": 0.578,
-      "check_scores": {
-        "api": 0.3,
-        "auth": 0.775,
-        "docs": 0.56,
-        "structure": 0.796,
-        "errors": 0.233,
-        "cost": 0.25,
-        "a11y": 0.86,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://usa.gov": [
-    {
-      "timestamp": "2026-03-15T17:05:56.929749+00:00",
-      "overall_score": 0.536,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.825,
-        "docs": 0.6,
-        "structure": 0.588,
-        "errors": 0.2,
-        "cost": 0.45,
-        "a11y": 0.84,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://irs.gov": [
-    {
-      "timestamp": "2026-03-15T17:06:23.609615+00:00",
-      "overall_score": 0.51,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.825,
-        "docs": 0.4,
-        "structure": 0.728,
-        "errors": 0.233,
-        "cost": 0.3,
-        "a11y": 0.84,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://whitehouse.gov": [
-    {
-      "timestamp": "2026-03-15T17:06:36.880156+00:00",
-      "overall_score": 0.511,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.825,
-        "docs": 0.6,
-        "structure": 0.594,
-        "errors": 0.2,
-        "cost": 0.4,
-        "a11y": 0.68,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://chase.com": [
-    {
-      "timestamp": "2026-03-15T17:06:51.562237+00:00",
-      "overall_score": 0.497,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.65,
-        "docs": 0.6,
-        "structure": 0.561,
-        "errors": 0.233,
-        "cost": 0.3,
-        "a11y": 0.88,
-        "performance": 0.895
-      }
-    }
-  ],
-  "https://bankofamerica.com": [
-    {
-      "timestamp": "2026-03-15T17:07:05.829435+00:00",
-      "overall_score": 0.471,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.8,
-        "docs": 0.4,
-        "structure": 0.5,
-        "errors": 0.233,
-        "cost": 0.4,
-        "a11y": 0.726,
-        "performance": 0.915
-      }
-    }
-  ],
-  "https://wellsfargo.com": [
-    {
-      "timestamp": "2026-03-15T17:07:22.357469+00:00",
-      "overall_score": 0.502,
+      "timestamp": "2026-03-20T17:09:18.981252+00:00",
+      "overall_score": 0.48,
       "check_scores": {
         "api": 0.05,
         "auth": 0.7,
-        "docs": 0.5,
-        "structure": 0.67,
-        "errors": 0.2,
-        "cost": 0.3,
-        "a11y": 0.84,
-        "performance": 0.955
-      }
-    }
-  ],
-  "https://linkedin.com": [
-    {
-      "timestamp": "2026-03-15T17:07:37.618398+00:00",
-      "overall_score": 0.448,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.55,
-        "docs": 0.04,
-        "structure": 0.758,
+        "docs": 0.4,
+        "structure": 0.597,
         "errors": 0.233,
-        "cost": 0.25,
-        "a11y": 0.96,
-        "performance": 0.952
+        "cost": 0.35,
+        "a11y": 0.98,
+        "performance": 0.752
       }
     }
   ],
-  "https://instagram.com": [
+  "https://newegg.com": [
     {
-      "timestamp": "2026-03-15T17:08:04.485662+00:00",
-      "overall_score": 0.39,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.625,
-        "docs": 0.34,
-        "structure": 0.471,
-        "errors": 0.133,
-        "cost": 0.45,
-        "a11y": 0.24,
-        "performance": 0.957
-      }
-    }
-  ],
-  "https://tiktok.com": [
-    {
-      "timestamp": "2026-03-15T17:08:19.898650+00:00",
-      "overall_score": 0.454,
-      "check_scores": {
-        "api": 0.217,
-        "auth": 0.5,
-        "docs": 0.48,
-        "structure": 0.457,
-        "errors": 0.167,
-        "cost": 0.45,
-        "a11y": 0.44,
-        "performance": 0.955
-      }
-    }
-  ],
-  "https://pinterest.com": [
-    {
-      "timestamp": "2026-03-15T17:08:35.163194+00:00",
-      "overall_score": 0.453,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.625,
-        "docs": 0.62,
-        "structure": 0.471,
-        "errors": 0.133,
-        "cost": 0.45,
-        "a11y": 0.44,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://youtube.com": [
-    {
-      "timestamp": "2026-03-15T17:08:45.733472+00:00",
-      "overall_score": 0.385,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.5,
-        "docs": 0.2,
-        "structure": 0.452,
-        "errors": 0.333,
-        "cost": 0.45,
-        "a11y": 0.46,
-        "performance": 0.834
-      }
-    }
-  ],
-  "https://airbnb.com": [
-    {
-      "timestamp": "2026-03-15T17:09:10.561543+00:00",
-      "overall_score": 0.425,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.475,
-        "docs": 0.32,
-        "structure": 0.661,
-        "errors": 0.233,
-        "cost": 0.15,
-        "a11y": 0.975,
-        "performance": 0.704
-      }
-    }
-  ],
-  "https://uber.com": [
-    {
-      "timestamp": "2026-03-15T17:09:19.211720+00:00",
-      "overall_score": 0.442,
+      "timestamp": "2026-03-20T17:09:38.135032+00:00",
+      "overall_score": 0.435,
       "check_scores": {
         "api": 0.05,
         "auth": 0.825,
         "docs": 0.0,
-        "structure": 0.471,
+        "structure": 0.505,
         "errors": 0.233,
-        "cost": 0.9,
-        "a11y": 0.44,
-        "performance": 0.86
+        "cost": 0.7,
+        "a11y": 0.62,
+        "performance": 0.82
       }
     }
   ],
-  "https://doordash.com": [
+  "https://wayfair.com": [
     {
-      "timestamp": "2026-03-15T17:09:25.089285+00:00",
-      "overall_score": 0.418,
+      "timestamp": "2026-03-20T17:10:05.478185+00:00",
+      "overall_score": 0.508,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.575,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82
+      }
+    }
+  ],
+  "https://homedepot.com": [
+    {
+      "timestamp": "2026-03-20T17:10:48.973113+00:00",
+      "overall_score": 0.398,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.4,
+        "structure": 0.545,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.48,
+        "performance": 0.76
+      }
+    }
+  ],
+  "https://ikea.com": [
+    {
+      "timestamp": "2026-03-20T17:10:53.992766+00:00",
+      "overall_score": 0.469,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.0,
+        "structure": 0.657,
+        "errors": 0.233,
+        "cost": 0.85,
+        "a11y": 0.44,
+        "performance": 0.96
+      }
+    }
+  ],
+  "https://wish.com": [
+    {
+      "timestamp": "2026-03-20T17:12:44.998626+00:00",
+      "overall_score": 0.505,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.575,
+        "docs": 0.6,
+        "structure": 0.471,
+        "errors": 0.333,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.96
+      }
+    }
+  ],
+  "https://bhphotovideo.com": [
+    {
+      "timestamp": "2026-03-20T17:13:49.047836+00:00",
+      "overall_score": 0.423,
       "check_scores": {
         "api": 0.05,
         "auth": 0.6,
@@ -1416,71 +1144,7 @@
         "errors": 0.233,
         "cost": 0.75,
         "a11y": 0.47,
-        "performance": 0.96
-      }
-    }
-  ],
-  "https://craigslist.org": [
-    {
-      "timestamp": "2026-03-15T17:09:33.529766+00:00",
-      "overall_score": 0.469,
-      "check_scores": {
-        "api": 0.05,
-        "auth": 0.825,
-        "docs": 0.36,
-        "structure": 0.632,
-        "errors": 0.333,
-        "cost": 0.4,
-        "a11y": 0.56,
-        "performance": 0.88
-      }
-    }
-  ],
-  "https://weather.gov": [
-    {
-      "timestamp": "2026-03-15T17:09:49.684698+00:00",
-      "overall_score": 0.421,
-      "check_scores": {
-        "api": 0.25,
-        "auth": 0.825,
-        "docs": 0.0,
-        "structure": 0.578,
-        "errors": 0.233,
-        "cost": 0.4,
-        "a11y": 0.373,
-        "performance": 0.914
-      }
-    }
-  ],
-  "https://webmd.com": [
-    {
-      "timestamp": "2026-03-15T17:10:04.215801+00:00",
-      "overall_score": 0.44,
-      "check_scores": {
-        "api": 0.25,
-        "auth": 0.575,
-        "docs": 0.08,
-        "structure": 0.448,
-        "errors": 0.233,
-        "cost": 0.4,
-        "a11y": 0.788,
-        "performance": 0.879
-      }
-    }
-  ],
-  "https://zillow.com": [
-    {
-      "timestamp": "2026-03-15T17:10:16.100326+00:00",
-      "overall_score": 0.489,
-      "check_scores": {
-        "api": 0.3,
-        "auth": 0.825,
-        "docs": 0.2,
-        "structure": 0.471,
-        "errors": 0.233,
-        "cost": 0.75,
-        "a11y": 0.44,
-        "performance": 0.82
+        "performance": 1.0
       }
     }
   ]

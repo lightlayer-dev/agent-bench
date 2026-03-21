@@ -1,8 +1,8 @@
 {
   "url": "https://target.com",
-  "timestamp": "2026-03-15T17:02:32.964616+00:00",
+  "timestamp": "2026-03-20T17:02:17.582613+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.493,
+  "overall_score": 0.496,
   "checks": [
     {
       "name": "api",
@@ -79,36 +79,35 @@
     },
     {
       "name": "structure",
-      "score": 0.648,
+      "score": 0.659,
       "findings": [
-        "Heavy div usage: 532 divs with only 1 semantic elements",
-        "Poor accessibility: only 37/87 interactive elements have labels",
+        "Heavy div usage: 553 divs with only 1 semantic elements",
+        "Poor accessibility: only 37/91 interactive elements have labels",
         "Forms are well-structured: 5/5 inputs have names",
-        "Found 181 elements with stable test selectors",
+        "Found 186 elements with stable test selectors",
         "Likely a client-side SPA \u2014 minimal server-rendered content",
-        "Good heading hierarchy: 81 headings, well-structured",
-        "6 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 61/67 links are descriptive"
+        "Good heading hierarchy: 84 headings, well-structured",
+        "Good link accessibility: 70/70 links are descriptive"
       ],
       "details": {
-        "total_elements": 1382,
-        "div_count": 532,
+        "total_elements": 1463,
+        "div_count": 553,
         "semantic_count": 1,
-        "interactive_elements": 87,
+        "interactive_elements": 91,
         "labeled_elements": 37,
         "form_count": 3,
         "input_count": 5,
         "named_inputs": 5,
-        "elements_with_stable_selectors": 181,
-        "content_length": -182126,
+        "elements_with_stable_selectors": 186,
+        "content_length": -204612,
         "script_count": 74,
         "has_noscript": true,
         "rendering": "client-side",
-        "heading_count": 81,
+        "heading_count": 84,
         "h1_count": 1,
-        "total_links": 67,
-        "descriptive_links": 61,
-        "empty_links": 6,
+        "total_links": 70,
+        "descriptive_links": 70,
+        "empty_links": 0,
         "generic_links": 0
       }
     },
@@ -133,33 +132,33 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~92,476 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~100,610 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 30 \u2014 deeply nested structure",
-        "CSS class attributes consume ~10,326 tokens (11% of page)",
-        "Reading this page costs $0.12\u2013$1.39 per load ($0.58\u2013$6.94 for a 5-page session)"
+        "CSS class attributes consume ~10,719 tokens (11% of page)",
+        "Reading this page costs $0.13\u2013$1.51 per load ($0.63\u2013$7.55 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 92476,
-        "signal_tokens": 618,
+        "raw_tokens": 100610,
+        "signal_tokens": 734,
         "signal_ratio": 0.007,
         "max_dom_depth": 30,
-        "class_token_ratio": 0.112,
+        "class_token_ratio": 0.107,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.2774,
-          "gpt-4o": 0.2312,
-          "claude-opus": 1.3871,
-          "gemini-pro": 0.1156
+          "claude-sonnet": 0.3018,
+          "gpt-4o": 0.2515,
+          "claude-opus": 1.5092,
+          "gemini-pro": 0.1258
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 1.3871,
-          "gpt-4o": 1.156,
-          "claude-opus": 6.9357,
-          "gemini-pro": 0.578
+          "claude-sonnet": 1.5092,
+          "gpt-4o": 1.2576,
+          "claude-opus": 7.5458,
+          "gemini-pro": 0.6288
         },
-        "internal_links": 65
+        "internal_links": 68
       }
     },
     {
@@ -167,7 +166,7 @@
       "score": 0.84,
       "findings": [
         "Missing essential landmarks: navigation",
-        "All 48 images have alt attributes (5 descriptive, 43 decorative)",
+        "All 51 images have alt attributes (6 descriptive, 45 decorative)",
         "Found 2 skip link(s) \u2014 helps agents jump to main content",
         "Found 4 live region(s) \u2014 agents can detect dynamic content changes",
         "3 custom elements made focusable via tabindex=0",
@@ -179,9 +178,9 @@
           "region"
         ],
         "landmark_count": 2,
-        "images_total": 48,
-        "images_with_alt": 5,
-        "images_decorative": 43,
+        "images_total": 51,
+        "images_with_alt": 6,
+        "images_decorative": 45,
         "images_missing_alt": 0,
         "skip_links": [
           {
@@ -206,24 +205,24 @@
     },
     {
       "name": "performance",
-      "score": 0.766,
+      "score": 0.776,
       "findings": [
-        "Moderate response time: 949ms",
-        "Moderate payload: 362KB",
+        "Moderate response time: 736ms",
+        "Moderate payload: 393KB",
         "1 redirect(s) \u2014 acceptable",
-        "Resource heavy: 63 scripts (heavy JS), 26 stylesheets",
+        "Resource heavy: 63 scripts (heavy JS), 27 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 949.1,
-        "payload_size_kb": 361.8,
+        "response_time_ms": 736.2,
+        "payload_size_kb": 393.1,
         "redirect_count": 1,
         "redirect_chain": [
           "https://target.com"
         ],
         "script_count": 63,
-        "stylesheet_count": 26,
-        "image_count": 48,
+        "stylesheet_count": 27,
+        "image_count": 51,
         "iframe_count": 0,
         "content_encoding": "gzip"
       }
