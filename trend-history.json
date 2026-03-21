@@ -1019,5 +1019,133 @@
         "performance": 0.86
       }
     }
+  ],
+  "https://etsy.com": [
+    {
+      "timestamp": "2026-03-20T17:08:40.259330+00:00",
+      "overall_score": 0.509,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82
+      }
+    }
+  ],
+  "https://nike.com": [
+    {
+      "timestamp": "2026-03-20T17:09:18.981252+00:00",
+      "overall_score": 0.48,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.7,
+        "docs": 0.4,
+        "structure": 0.597,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.98,
+        "performance": 0.752
+      }
+    }
+  ],
+  "https://newegg.com": [
+    {
+      "timestamp": "2026-03-20T17:09:38.135032+00:00",
+      "overall_score": 0.435,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.505,
+        "errors": 0.233,
+        "cost": 0.7,
+        "a11y": 0.62,
+        "performance": 0.82
+      }
+    }
+  ],
+  "https://wayfair.com": [
+    {
+      "timestamp": "2026-03-20T17:10:05.478185+00:00",
+      "overall_score": 0.508,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.575,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82
+      }
+    }
+  ],
+  "https://homedepot.com": [
+    {
+      "timestamp": "2026-03-20T17:10:48.973113+00:00",
+      "overall_score": 0.398,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.4,
+        "structure": 0.545,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.48,
+        "performance": 0.76
+      }
+    }
+  ],
+  "https://ikea.com": [
+    {
+      "timestamp": "2026-03-20T17:10:53.992766+00:00",
+      "overall_score": 0.469,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.0,
+        "structure": 0.657,
+        "errors": 0.233,
+        "cost": 0.85,
+        "a11y": 0.44,
+        "performance": 0.96
+      }
+    }
+  ],
+  "https://wish.com": [
+    {
+      "timestamp": "2026-03-20T17:12:44.998626+00:00",
+      "overall_score": 0.505,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.575,
+        "docs": 0.6,
+        "structure": 0.471,
+        "errors": 0.333,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.96
+      }
+    }
+  ],
+  "https://bhphotovideo.com": [
+    {
+      "timestamp": "2026-03-20T17:13:49.047836+00:00",
+      "overall_score": 0.423,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0
+      }
+    }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "url": "https://shopify.com",
-  "timestamp": "2026-03-15T13:35:07.597360+00:00",
+  "timestamp": "2026-03-20T17:01:12.389514+00:00",
   "schema_version": "1.0.0",
   "overall_score": 0.523,
   "checks": [
@@ -48,7 +48,7 @@
       "score": 0.76,
       "findings": [
         "robots.txt is present and doesn't specifically block AI bots",
-        "sitemap.xml found with ~1059 URLs",
+        "sitemap.xml found with ~1062 URLs",
         "No OpenAPI/Swagger specification found",
         "Found 1 JSON-LD blocks: Corporation",
         "llms.txt found at /llms.txt (861 chars)"
@@ -58,7 +58,7 @@
         "robots_has_sitemap_ref": false,
         "blocked_ai_bots": [],
         "sitemap": true,
-        "sitemap_urls": 1059,
+        "sitemap_urls": 1062,
         "openapi": false,
         "json_ld": true,
         "json_ld_count": 1,
@@ -84,7 +84,7 @@
         "Good link accessibility: 298/305 links are descriptive"
       ],
       "details": {
-        "total_elements": 2270,
+        "total_elements": 2269,
         "div_count": 570,
         "semantic_count": 20,
         "interactive_elements": 311,
@@ -93,8 +93,8 @@
         "input_count": 2,
         "named_inputs": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -319906,
-        "script_count": 6,
+        "content_length": -319935,
+        "script_count": 5,
         "has_noscript": false,
         "rendering": "minimal",
         "heading_count": 34,
@@ -126,16 +126,16 @@
       "name": "cost",
       "score": 0.2,
       "findings": [
-        "Page is ~157,690 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~157,702 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 17 \u2014 moderately nested",
-        "CSS class attributes consume ~29,885 tokens (19% of page) \u2014 utility class bloat",
+        "CSS class attributes consume ~29,884 tokens (19% of page) \u2014 utility class bloat",
         "Reading this page costs $0.20\u2013$2.37 per load ($0.99\u2013$11.83 for a 5-page session)",
         "260 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 157689,
+        "raw_tokens": 157701,
         "signal_tokens": 2193,
         "signal_ratio": 0.014,
         "max_dom_depth": 17,
@@ -143,14 +143,14 @@
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
           "claude-sonnet": 0.4731,
-          "gpt-4o": 0.3942,
-          "claude-opus": 2.3653,
+          "gpt-4o": 0.3943,
+          "claude-opus": 2.3655,
           "gemini-pro": 0.1971
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.3653,
-          "gpt-4o": 1.9711,
-          "claude-opus": 11.8267,
+          "claude-sonnet": 2.3655,
+          "gpt-4o": 1.9713,
+          "claude-opus": 11.8276,
           "gemini-pro": 0.9856
         },
         "internal_links": 260
@@ -196,14 +196,14 @@
       "name": "performance",
       "score": 0.96,
       "findings": [
-        "Fast response: 113ms",
+        "Fast response: 180ms",
         "Compact payload: 98KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 113.0,
+        "response_time_ms": 179.7,
         "payload_size_kb": 98.3,
         "redirect_count": 1,
         "redirect_chain": [
