@@ -1,0 +1,97 @@
+{
+  "url": "openai.com",
+  "timestamp": "2026-03-21T17:02:33.296752+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.046,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.0,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "Could not check CORS headers",
+        "Could not test content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.575,
+      "findings": [
+        "Could not fetch site to check bot detection",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.0,
+      "findings": [
+        "No robots.txt found",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Could not fetch page for structured data check",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": false,
+        "sitemap": false,
+        "openapi": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.0,
+      "findings": [
+        "Failed to fetch page: Request URL is missing an 'http://' or 'https://' protocol."
+      ],
+      "details": {}
+    },
+    {
+      "name": "errors",
+      "score": 0.0,
+      "findings": [
+        "Could not fetch 404 test page",
+        "Could not fetch page to check rate limit headers",
+        "Could not test HTTP method handling"
+      ],
+      "details": {}
+    },
+    {
+      "name": "cost",
+      "score": 0.0,
+      "findings": [
+        "Failed to fetch: Request URL is missing an 'http://' or 'https://' protocol."
+      ],
+      "details": {}
+    },
+    {
+      "name": "a11y",
+      "score": 0.0,
+      "findings": [
+        "Failed to fetch page: Request URL is missing an 'http://' or 'https://' protocol."
+      ],
+      "details": {}
+    },
+    {
+      "name": "performance",
+      "score": 0.0,
+      "findings": [
+        "Failed to fetch page: Request URL is missing an 'http://' or 'https://' protocol."
+      ],
+      "details": {}
+    }
+  ]
+}
