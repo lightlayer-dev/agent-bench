@@ -72,7 +72,6 @@ class A2ACheck(BaseCheck):
         for path in paths:
             resp = self._fetch(f"{base_url}{path}")
             if resp and resp.status_code == 200:
-                ct = resp.headers.get("content-type", "")
                 try:
                     data = resp.json()
                     if isinstance(data, dict) and len(data) > 0:
