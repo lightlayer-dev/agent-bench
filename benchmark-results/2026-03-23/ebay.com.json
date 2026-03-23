@@ -1,0 +1,264 @@
+{
+  "url": "https://ebay.com",
+  "timestamp": "2026-03-23T17:07:40.131548+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.442,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html;charset=UTF-8",
+          "html_request_ct": "text/html;charset=UTF-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.5,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /signin \u2014 complex, 24 inputs"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/signin",
+        "login_input_types": [
+          "text",
+          "password",
+          "hidden",
+          "checkbox",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 21
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.12,
+      "findings": [
+        "robots.txt blocks AI bots: anthropic, claude, ccbot",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [
+          "anthropic",
+          "claude",
+          "ccbot"
+        ],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.717,
+      "findings": [
+        "Heavy div usage: 537 divs with only 49 semantic elements",
+        "Poor accessibility: only 365/481 interactive elements have labels",
+        "Forms are well-structured: 7/7 inputs have names",
+        "Found 74 elements with stable test selectors",
+        "Very little content without JavaScript",
+        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
+        "51 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 356/407 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 2002,
+        "div_count": 537,
+        "semantic_count": 49,
+        "interactive_elements": 481,
+        "labeled_elements": 365,
+        "form_count": 1,
+        "input_count": 7,
+        "named_inputs": 7,
+        "elements_with_stable_selectors": 74,
+        "content_length": -593356,
+        "script_count": 27,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 30,
+        "h1_count": 1,
+        "total_links": 407,
+        "descriptive_links": 356,
+        "empty_links": 51,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 404 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=utf-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 404
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.35,
+      "findings": [
+        "Page is ~209,538 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 20 \u2014 moderately nested",
+        "CSS class attributes consume ~16,556 tokens (8% of page)",
+        "Reading this page costs $0.26\u2013$3.14 per load ($1.31\u2013$15.72 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 209538,
+        "signal_tokens": 2401,
+        "signal_ratio": 0.011,
+        "max_dom_depth": 20,
+        "class_token_ratio": 0.079,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.6286,
+          "gpt-4o": 0.5238,
+          "claude-opus": 3.1431,
+          "gemini-pro": 0.2619
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 3.1431,
+          "gpt-4o": 2.6192,
+          "claude-opus": 15.7154,
+          "gemini-pro": 1.3096
+        },
+        "internal_links": 1
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.94,
+      "findings": [
+        "Good landmark coverage: banner, complementary, contentinfo, main, navigation",
+        "All 88 images have alt attributes (60 descriptive, 28 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 16 live region(s) \u2014 agents can detect dynamic content changes",
+        "Found 8 elements with positive tabindex \u2014 may confuse agent tab navigation",
+        "19 custom elements made focusable via tabindex=0",
+        "29 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "complementary",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 5,
+        "images_total": 88,
+        "images_with_alt": 60,
+        "images_decorative": 28,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#mainContent",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 16,
+        "aria_live_values": [
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite",
+          "polite"
+        ],
+        "tabindex_positive": 8,
+        "tabindex_zero": 19,
+        "tabindex_negative": 29
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.792,
+      "findings": [
+        "Moderate response time: 844ms",
+        "Moderate payload: 819KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 7 scripts, 2 styles, 90 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 844.0,
+        "payload_size_kb": 819.3,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://ebay.com"
+        ],
+        "script_count": 7,
+        "stylesheet_count": 2,
+        "image_count": 90,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}

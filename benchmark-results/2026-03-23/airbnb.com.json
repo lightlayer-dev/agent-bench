@@ -1,0 +1,236 @@
+{
+  "url": "https://airbnb.com",
+  "timestamp": "2026-03-23T17:08:35.985376+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.426,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html;charset=utf-8",
+          "html_request_ct": "text/html;charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.475,
+      "findings": [
+        "Bot detection systems: DataDome",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 no password field (possibly SSO/OAuth only)"
+      ],
+      "details": {
+        "bot_detection": [
+          "DataDome"
+        ],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "text"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 0
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.32,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, anthropic, claude",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Found 1 JSON-LD blocks: WebSite",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "anthropic",
+          "claude"
+        ],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 1,
+        "json_ld_types": [
+          "WebSite"
+        ],
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.661,
+      "findings": [
+        "Heavy div usage: 1460 divs with only 8 semantic elements",
+        "Poor accessibility: only 122/240 interactive elements have labels",
+        "Forms are well-structured: 1/1 inputs have names",
+        "Found 98 elements with stable test selectors",
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 11 headings, well-structured",
+        "40 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 165/205 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 3213,
+        "div_count": 1460,
+        "semantic_count": 8,
+        "interactive_elements": 240,
+        "labeled_elements": 122,
+        "form_count": 1,
+        "input_count": 1,
+        "named_inputs": 1,
+        "elements_with_stable_selectors": 98,
+        "content_length": -378321,
+        "script_count": 48,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 11,
+        "h1_count": 1,
+        "total_links": 205,
+        "descriptive_links": 165,
+        "empty_links": 40,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 404 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html;charset=utf-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 404
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.15,
+      "findings": [
+        "Page is ~304,126 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 35 \u2014 deeply nested structure",
+        "CSS class attributes consume ~99,233 tokens (33% of page) \u2014 utility class bloat",
+        "Reading this page costs $0.38\u2013$4.56 per load ($1.90\u2013$22.81 for a 5-page session)",
+        "193 internal links \u2014 agents may waste tokens exploring"
+      ],
+      "details": {
+        "raw_tokens": 304126,
+        "signal_tokens": 2203,
+        "signal_ratio": 0.007,
+        "max_dom_depth": 35,
+        "class_token_ratio": 0.326,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.9124,
+          "gpt-4o": 0.7603,
+          "claude-opus": 4.5619,
+          "gemini-pro": 0.3802
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 4.5619,
+          "gpt-4o": 3.8016,
+          "claude-opus": 22.8095,
+          "gemini-pro": 1.9008
+        },
+        "internal_links": 193
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.975,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, search",
+        "1/41 images missing alt text \u2014 agents can't understand these images",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 4 live region(s) \u2014 agents can detect dynamic content changes",
+        "5 custom elements made focusable via tabindex=0",
+        "10 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "search"
+        ],
+        "landmark_count": 5,
+        "images_total": 41,
+        "images_with_alt": 0,
+        "images_decorative": 40,
+        "images_missing_alt": 1,
+        "skip_links": [
+          {
+            "href": "#site-content",
+            "text": "Skip to content"
+          }
+        ],
+        "live_regions": 4,
+        "aria_live_values": [
+          "assertive",
+          "polite",
+          "assertive"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 5,
+        "tabindex_negative": 10
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.705,
+      "findings": [
+        "Moderate response time: 690ms",
+        "Large payload: 1192KB \u2014 increases token cost for agents",
+        "1 redirect(s) \u2014 acceptable",
+        "Resource heavy: 36 scripts (heavy JS)",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 690.3,
+        "payload_size_kb": 1191.6,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://airbnb.com"
+        ],
+        "script_count": 36,
+        "stylesheet_count": 1,
+        "image_count": 41,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    }
+  ]
+}
