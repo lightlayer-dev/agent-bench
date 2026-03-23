@@ -8,21 +8,29 @@ from agent_bench.analysis.report import AnalysisReport
 
 
 # Default weights for each check category (sum to 1.0)
+# The "agent protocol" checks (agents_txt, a2a, x402) are weighted lower
+# individually but together represent ~15% — reflecting their emerging but
+# increasingly critical role in agent-readiness.
 DEFAULT_WEIGHTS: dict[str, float] = {
-    "api": 0.18,
-    "auth": 0.08,
-    "docs": 0.14,
-    "structure": 0.14,
-    "errors": 0.08,
-    "cost": 0.14,
-    "a11y": 0.12,
-    "performance": 0.12,
+    "api": 0.15,
+    "auth": 0.07,
+    "docs": 0.12,
+    "structure": 0.12,
+    "errors": 0.07,
+    "cost": 0.12,
+    "a11y": 0.10,
+    "performance": 0.10,
+    "agents_txt": 0.05,
+    "a2a": 0.05,
+    "x402": 0.05,
 }
 
 
 def _get_builtin_checks() -> dict[str, type]:
     """Load built-in check classes."""
     from agent_bench.analysis.checks.a11y import A11yCheck
+    from agent_bench.analysis.checks.a2a import A2ACheck
+    from agent_bench.analysis.checks.agents_txt import AgentsTxtCheck
     from agent_bench.analysis.checks.api import APICheck
     from agent_bench.analysis.checks.auth import AuthCheck
     from agent_bench.analysis.checks.docs import DocsCheck
@@ -30,9 +38,12 @@ def _get_builtin_checks() -> dict[str, type]:
     from agent_bench.analysis.checks.cost import CostCheck
     from agent_bench.analysis.checks.performance import PerformanceCheck
     from agent_bench.analysis.checks.structure import StructureCheck
+    from agent_bench.analysis.checks.x402 import X402Check
 
     return {
         "a11y": A11yCheck,
+        "a2a": A2ACheck,
+        "agents_txt": AgentsTxtCheck,
         "api": APICheck,
         "auth": AuthCheck,
         "docs": DocsCheck,
@@ -40,6 +51,7 @@ def _get_builtin_checks() -> dict[str, type]:
         "errors": ErrorsCheck,
         "cost": CostCheck,
         "performance": PerformanceCheck,
+        "x402": X402Check,
     }
 
 
