@@ -1,8 +1,8 @@
 {
   "url": "https://cnn.com",
-  "timestamp": "2026-03-15T17:01:13.339614+00:00",
+  "timestamp": "2026-03-23T23:11:40.152270+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.466,
+  "overall_score": 0.395,
   "checks": [
     {
       "name": "api",
@@ -86,36 +86,36 @@
     },
     {
       "name": "structure",
-      "score": 0.503,
+      "score": 0.502,
       "findings": [
-        "Heavy div usage: 1616 divs with only 130 semantic elements",
-        "Poor accessibility: only 390/658 interactive elements have labels",
+        "Heavy div usage: 1668 divs with only 136 semantic elements",
+        "Poor accessibility: only 394/675 interactive elements have labels",
         "Forms are well-structured: 20/20 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
         "Very little content without JavaScript",
         "No h1 heading \u2014 page lacks a clear title for agents",
-        "21 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 594/615 links are descriptive"
+        "20 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 612/632 links are descriptive"
       ],
       "details": {
-        "total_elements": 4795,
-        "div_count": 1616,
-        "semantic_count": 130,
-        "interactive_elements": 658,
-        "labeled_elements": 390,
+        "total_elements": 4888,
+        "div_count": 1668,
+        "semantic_count": 136,
+        "interactive_elements": 675,
+        "labeled_elements": 394,
         "form_count": 3,
         "input_count": 20,
         "named_inputs": 20,
         "elements_with_stable_selectors": 0,
-        "content_length": -1853436,
+        "content_length": -1855690,
         "script_count": 14,
         "has_noscript": false,
         "rendering": "minimal",
-        "heading_count": 40,
+        "heading_count": 39,
         "h1_count": 0,
-        "total_links": 615,
-        "descriptive_links": 594,
-        "empty_links": 21,
+        "total_links": 632,
+        "descriptive_links": 612,
+        "empty_links": 20,
         "generic_links": 0
       }
     },
@@ -140,33 +140,33 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~1,185,293 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~1,178,126 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 31 \u2014 deeply nested structure",
-        "Reading this page costs $1.48\u2013$17.78 per load ($7.41\u2013$88.90 for a 5-page session)",
-        "239 internal links \u2014 agents may waste tokens exploring"
+        "Reading this page costs $1.47\u2013$17.67 per load ($7.36\u2013$88.36 for a 5-page session)",
+        "262 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 1185293,
-        "signal_tokens": 4917,
+        "raw_tokens": 1178125,
+        "signal_tokens": 4847,
         "signal_ratio": 0.004,
         "max_dom_depth": 31,
-        "class_token_ratio": 0.042,
+        "class_token_ratio": 0.043,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 3.5559,
-          "gpt-4o": 2.9632,
-          "claude-opus": 17.7794,
-          "gemini-pro": 1.4816
+          "claude-sonnet": 3.5344,
+          "gpt-4o": 2.9453,
+          "claude-opus": 17.6719,
+          "gemini-pro": 1.4727
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 17.7794,
-          "gpt-4o": 14.8162,
-          "claude-opus": 88.897,
-          "gemini-pro": 7.4081
+          "claude-sonnet": 17.6719,
+          "gpt-4o": 14.7266,
+          "claude-opus": 88.3594,
+          "gemini-pro": 7.3633
         },
-        "internal_links": 239
+        "internal_links": 262
       }
     },
     {
@@ -174,7 +174,7 @@
       "score": 0.66,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation, search",
-        "All 107 images have alt attributes (107 descriptive, 0 decorative)",
+        "All 109 images have alt attributes (109 descriptive, 0 decorative)",
         "No skip links found \u2014 agents must traverse entire page to find content",
         "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
         "8 custom elements made focusable via tabindex=0"
@@ -188,8 +188,8 @@
           "search"
         ],
         "landmark_count": 5,
-        "images_total": 107,
-        "images_with_alt": 107,
+        "images_total": 109,
+        "images_with_alt": 109,
         "images_decorative": 0,
         "images_missing_alt": 0,
         "skip_links": [],
@@ -204,15 +204,15 @@
       "name": "performance",
       "score": 0.863,
       "findings": [
-        "Fast response: 77ms",
-        "Moderate payload: 534KB",
+        "Fast response: 66ms",
+        "Moderate payload: 535KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 77.2,
-        "payload_size_kb": 534.4,
+        "response_time_ms": 65.7,
+        "payload_size_kb": 534.9,
         "redirect_count": 1,
         "redirect_chain": [
           "https://cnn.com"
@@ -222,6 +222,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

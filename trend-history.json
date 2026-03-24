@@ -503,6 +503,69 @@
       "check_scores": {
         "api": 0.65
       }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.834545+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.852514+00:00",
+      "overall_score": 0.3,
+      "check_scores": {
+        "api": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.863684+00:00",
+      "overall_score": 0.5,
+      "check_scores": {
+        "api": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.874741+00:00",
+      "overall_score": 0.1,
+      "check_scores": {
+        "api": 0.1
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.883562+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.891058+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.895616+00:00",
+      "overall_score": 0.3,
+      "check_scores": {
+        "api": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.901395+00:00",
+      "overall_score": 0.5,
+      "check_scores": {
+        "api": 0.5
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:02.907375+00:00",
+      "overall_score": 0.65,
+      "check_scores": {
+        "api": 0.65
+      }
     }
   ],
   "https://httpbin.org": [
@@ -1183,6 +1246,244 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:11.036215+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:17.775387+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:25.449177+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:33.548689+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:04:41.898711+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:06:51.986251+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:06:58.675252+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:05.694442+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:14.317606+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.852,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:12:49.399755+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:19:14.877463+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:25:48.228743+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:32:24.455911+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:38:18.027334+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.596,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://etsy.com": [
@@ -1198,6 +1499,91 @@
         "cost": 0.75,
         "a11y": 0.44,
         "performance": 0.82
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:10:05.786770+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:16:39.061446+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:13.384287+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:29:44.615307+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:36:07.114281+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
       }
     }
   ],
@@ -1327,6 +1713,2929 @@
         "a11y": 0.78,
         "performance": 0.818
       }
+    },
+    {
+      "timestamp": "2026-03-23T23:12:12.506373+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.625,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.818,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:18:36.724062+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.625,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.818,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:25:11.542649+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.625,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.818,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:31:50.723094+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.625,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.818,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:42.782079+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.625,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.818,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://github.com": [
+    {
+      "timestamp": "2026-03-23T23:04:49.784893+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:22.143895+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:13:53.612818+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:34.400299+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:02.048202+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:30.298522+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://docs.github.com": [
+    {
+      "timestamp": "2026-03-23T23:04:56.372902+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:26.026627+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:13:57.835646+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:38.168592+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:05.856462+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:33.737683+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://discord.com": [
+    {
+      "timestamp": "2026-03-23T23:05:06.270019+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:33.947583+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:14:06.291776+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:46.727990+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:14.416878+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:41.683245+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://slack.com": [
+    {
+      "timestamp": "2026-03-23T23:05:14.403296+00:00",
+      "overall_score": 0.541,
+      "check_scores": {
+        "api": 0.475,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:41.381687+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:14:13.716888+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:54.512942+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:23.271520+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:49.982010+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://zoom.us": [
+    {
+      "timestamp": "2026-03-23T23:05:23.442217+00:00",
+      "overall_score": 0.403,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.477,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.456,
+        "performance": 0.891,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:07:50.622962+00:00",
+      "overall_score": 0.441,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.721,
+        "performance": 0.891,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:14:22.471280+00:00",
+      "overall_score": 0.442,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.721,
+        "performance": 0.903,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:21:03.936755+00:00",
+      "overall_score": 0.403,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.477,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.456,
+        "performance": 0.891,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:32.298284+00:00",
+      "overall_score": 0.442,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.721,
+        "performance": 0.903,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:58.869820+00:00",
+      "overall_score": 0.405,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.477,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.456,
+        "performance": 0.903,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://youtube.com": [
+    {
+      "timestamp": "2026-03-23T23:05:35.579413+00:00",
+      "overall_score": 0.328,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.834,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:08:02.552036+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.833,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:14:34.658177+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.832,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:21:15.959972+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.833,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:27:44.404243+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.833,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:34:10.560070+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.832,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://linkedin.com": [
+    {
+      "timestamp": "2026-03-23T23:05:51.061753+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:08:17.892285+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:14:49.553525+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:21:30.962791+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:28:00.230358+00:00",
+      "overall_score": 0.381,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.575,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:34:25.854375+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://twitter.com": [
+    {
+      "timestamp": "2026-03-23T23:06:04.309298+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:08:29.729070+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:15:03.497062+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:21:43.553546+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:28:14.178155+00:00",
+      "overall_score": 0.37,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.918,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:34:38.637390+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    }
+  ],
+  "https://figma.com": [
+    {
+      "timestamp": "2026-03-23T23:06:31.054503+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:08:52.614751+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.933,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:15:25.169250+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:22:05.010322+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:28:33.593208+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:34:59.072063+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://reddit.com": [
+    {
+      "timestamp": "2026-03-23T23:06:35.301605+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:08:57.142577+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:15:29.873819+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:22:09.640157+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:28:37.671143+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:35:06.333967+00:00",
+      "overall_score": 0.312,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://amazon.com": [
+    {
+      "timestamp": "2026-03-23T23:06:51.349292+00:00",
+      "overall_score": 0.335,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.76,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:09:14.507106+00:00",
+      "overall_score": 0.339,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:15:51.048351+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.333,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.76,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:22:26.322292+00:00",
+      "overall_score": 0.331,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.475,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:28:59.210220+00:00",
+      "overall_score": 0.339,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:35:22.545781+00:00",
+      "overall_score": 0.339,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://ebay.com": [
+    {
+      "timestamp": "2026-03-23T23:09:54.225330+00:00",
+      "overall_score": 0.381,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.716,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.94,
+        "performance": 0.789,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:16:30.476464+00:00",
+      "overall_score": 0.383,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.717,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.94,
+        "performance": 0.803,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:04.248271+00:00",
+      "overall_score": 0.381,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.717,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.94,
+        "performance": 0.792,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:29:36.161859+00:00",
+      "overall_score": 0.382,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.716,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.94,
+        "performance": 0.795,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:35:58.078091+00:00",
+      "overall_score": 0.382,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.716,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.94,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://shopify.com": [
+    {
+      "timestamp": "2026-03-23T23:10:17.846750+00:00",
+      "overall_score": 0.445,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.522,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:16:46.669629+00:00",
+      "overall_score": 0.445,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.522,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:21.157235+00:00",
+      "overall_score": 0.445,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.522,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:29:52.460035+00:00",
+      "overall_score": 0.445,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.522,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:36:15.388212+00:00",
+      "overall_score": 0.445,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.522,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://walmart.com": [
+    {
+      "timestamp": "2026-03-23T23:10:34.869502+00:00",
+      "overall_score": 0.502,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.744,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.98,
+        "performance": 0.839,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:17:03.758423+00:00",
+      "overall_score": 0.502,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.744,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.839,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:35.242229+00:00",
+      "overall_score": 0.509,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.78,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.866,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:30:11.316820+00:00",
+      "overall_score": 0.509,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.779,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.866,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:36:29.732163+00:00",
+      "overall_score": 0.508,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.744,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.98,
+        "performance": 0.839,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://target.com": [
+    {
+      "timestamp": "2026-03-23T23:10:51.950639+00:00",
+      "overall_score": 0.422,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.659,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.836,
+        "performance": 0.783,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:17:19.715156+00:00",
+      "overall_score": 0.422,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.659,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.836,
+        "performance": 0.78,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:51.435449+00:00",
+      "overall_score": 0.422,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.659,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.836,
+        "performance": 0.784,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:30:30.528615+00:00",
+      "overall_score": 0.421,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.659,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.836,
+        "performance": 0.774,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:36:45.398279+00:00",
+      "overall_score": 0.422,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.659,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.836,
+        "performance": 0.783,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://nytimes.com": [
+    {
+      "timestamp": "2026-03-23T23:11:00.234358+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.704,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.831,
+        "performance": 0.72,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:17:27.477742+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.704,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.831,
+        "performance": 0.72,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:23:58.648070+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.704,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.831,
+        "performance": 0.72,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:30:38.338055+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.704,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.831,
+        "performance": 0.72,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:36:52.506191+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.704,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.831,
+        "performance": 0.72,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://bbc.com": [
+    {
+      "timestamp": "2026-03-23T23:11:08.625571+00:00",
+      "overall_score": 0.409,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.703,
+        "performance": 0.85,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:17:34.653722+00:00",
+      "overall_score": 0.409,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.703,
+        "performance": 0.85,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:24:06.872352+00:00",
+      "overall_score": 0.409,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.703,
+        "performance": 0.85,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:30:45.557725+00:00",
+      "overall_score": 0.409,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.703,
+        "performance": 0.85,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:00.529251+00:00",
+      "overall_score": 0.409,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.703,
+        "performance": 0.85,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://cnn.com": [
+    {
+      "timestamp": "2026-03-23T23:11:40.152270+00:00",
+      "overall_score": 0.395,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.502,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.863,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:18:04.634179+00:00",
+      "overall_score": 0.395,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.502,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.863,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:24:37.983400+00:00",
+      "overall_score": 0.395,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.502,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.863,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:31:17.765847+00:00",
+      "overall_score": 0.395,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.502,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.863,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:10.896959+00:00",
+      "overall_score": 0.395,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.502,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.863,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://medium.com": [
+    {
+      "timestamp": "2026-03-23T23:11:44.969409+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:18:09.927481+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:24:43.022254+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:31:22.541360+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:15.386811+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://wikipedia.org": [
+    {
+      "timestamp": "2026-03-23T23:11:52.435053+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:18:17.368488+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:24:50.219105+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:31:30.075961+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:22.582972+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://stackoverflow.com": [
+    {
+      "timestamp": "2026-03-23T23:11:57.038508+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:18:21.864247+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:24:55.405723+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:31:34.729282+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:37:27.043794+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://hubspot.com": [
+    {
+      "timestamp": "2026-03-23T23:12:41.787484+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.796,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:19:05.880693+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.796,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:25:40.150799+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.796,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:32:17.509058+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.796,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:38:10.709994+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.796,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://usa.gov": [
+    {
+      "timestamp": "2026-03-23T23:13:00.477599+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:19:26.396877+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:25:59.088582+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:32:34.870403+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:38:28.770235+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://weather.gov": [
+    {
+      "timestamp": "2026-03-23T23:13:13.793961+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.574,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.916,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:19:38.299445+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.571,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.915,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:26:16.704354+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.574,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.916,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:32:49.373732+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.574,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.916,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:38:38.089335+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.574,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.916,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://airbnb.com": [
+    {
+      "timestamp": "2026-03-23T23:13:34.340799+00:00",
+      "overall_score": 0.361,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.475,
+        "docs": 0.32,
+        "structure": 0.661,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.707,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:07.289076+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.475,
+        "docs": 0.32,
+        "structure": 0.661,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.67,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:26:40.626595+00:00",
+      "overall_score": 0.361,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.475,
+        "docs": 0.32,
+        "structure": 0.661,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.706,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:09.047876+00:00",
+      "overall_score": 0.36,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.475,
+        "docs": 0.32,
+        "structure": 0.661,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.697,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:38:59.224675+00:00",
+      "overall_score": 0.361,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.475,
+        "docs": 0.32,
+        "structure": 0.661,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.707,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "https://uber.com": [
+    {
+      "timestamp": "2026-03-23T23:13:45.637596+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:20:21.609753+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:26:51.470713+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:20.083256+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:39:11.477981+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "http://localhost:99999": [
+    {
+      "timestamp": "2026-03-23T23:20:26.341595+00:00",
+      "overall_score": 0.04,
+      "check_scores": {
+        "api": 0.0,
+        "auth": 0.575,
+        "docs": 0.0,
+        "structure": 0.0,
+        "errors": 0.0,
+        "cost": 0.0,
+        "a11y": 0.0,
+        "performance": 0.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:26:53.656962+00:00",
+      "overall_score": 0.04,
+      "check_scores": {
+        "api": 0.0,
+        "auth": 0.575,
+        "docs": 0.0,
+        "structure": 0.0,
+        "errors": 0.0,
+        "cost": 0.0,
+        "a11y": 0.0,
+        "performance": 0.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.276525+00:00",
+      "overall_score": 0.04,
+      "check_scores": {
+        "api": 0.0,
+        "auth": 0.575,
+        "docs": 0.0,
+        "structure": 0.0,
+        "errors": 0.0,
+        "cost": 0.0,
+        "a11y": 0.0,
+        "performance": 0.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-23T23:39:13.985523+00:00",
+      "overall_score": 0.04,
+      "check_scores": {
+        "api": 0.0,
+        "auth": 0.575,
+        "docs": 0.0,
+        "structure": 0.0,
+        "errors": 0.0,
+        "cost": 0.0,
+        "a11y": 0.0,
+        "performance": 0.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    }
+  ],
+  "http://example.com": [
+    {
+      "timestamp": "2026-03-23T23:33:22.319703+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.325674+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.331859+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.338236+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.344492+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.354338+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.362623+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.368700+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.374647+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.380587+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.386530+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.392963+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.398904+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.404914+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.410822+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.416911+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.423016+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.429629+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.435718+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.441495+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.447354+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.453518+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.460043+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.466255+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.472794+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.479174+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.485763+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.496543+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.505274+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.512358+00:00",
+      "overall_score": 30,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.538037+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.544273+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.551427+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.557561+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.563580+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.569658+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.575875+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.582181+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.588211+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.594149+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.600011+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.606130+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.611957+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.618000+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.624070+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.630136+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.636080+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.642202+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.648452+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.654767+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.660952+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.666956+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.673010+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.678972+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.684778+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.690644+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.697796+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.703532+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.709314+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:33:22.715400+00:00",
+      "overall_score": 80,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:39:14.016409+00:00",
+      "overall_score": 50,
+      "check_scores": {}
+    }
+  ],
+  "http://x.com": [
+    {
+      "timestamp": "2026-03-23T23:39:14.034062+00:00",
+      "overall_score": 60,
+      "check_scores": {}
+    },
+    {
+      "timestamp": "2026-03-23T23:39:14.042588+00:00",
+      "overall_score": 60,
+      "check_scores": {}
     }
   ]
 }

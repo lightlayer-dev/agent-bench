@@ -1,8 +1,8 @@
 {
   "url": "https://linkedin.com",
-  "timestamp": "2026-03-15T17:07:37.618398+00:00",
+  "timestamp": "2026-03-23T23:08:17.892285+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.448,
+  "overall_score": 0.379,
   "checks": [
     {
       "name": "api",
@@ -103,7 +103,7 @@
         "input_count": 4,
         "named_inputs": 4,
         "elements_with_stable_selectors": 0,
-        "content_length": 4474,
+        "content_length": 4462,
         "script_count": 6,
         "has_noscript": false,
         "rendering": "server-side",
@@ -135,31 +135,31 @@
       "name": "cost",
       "score": 0.25,
       "findings": [
-        "Page is ~35,350 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~35,254 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 4% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 17 \u2014 moderately nested",
-        "CSS class attributes consume ~9,496 tokens (27% of page) \u2014 utility class bloat",
-        "Reading this page costs $0.04\u2013$0.53 per load ($0.22\u2013$2.65 for a 5-page session)"
+        "CSS class attributes consume ~9,444 tokens (27% of page) \u2014 utility class bloat",
+        "Reading this page costs $0.04\u2013$0.53 per load ($0.22\u2013$2.64 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 35349,
+        "raw_tokens": 35254,
         "signal_tokens": 1295,
         "signal_ratio": 0.037,
         "max_dom_depth": 17,
-        "class_token_ratio": 0.269,
+        "class_token_ratio": 0.268,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.106,
-          "gpt-4o": 0.0884,
-          "claude-opus": 0.5302,
-          "gemini-pro": 0.0442
+          "claude-sonnet": 0.1058,
+          "gpt-4o": 0.0881,
+          "claude-opus": 0.5288,
+          "gemini-pro": 0.0441
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.5302,
-          "gpt-4o": 0.4419,
-          "claude-opus": 2.6512,
-          "gemini-pro": 0.2209
+          "claude-sonnet": 0.5288,
+          "gpt-4o": 0.4407,
+          "claude-opus": 2.6441,
+          "gemini-pro": 0.2203
         },
         "internal_links": 8
       }
@@ -169,11 +169,11 @@
       "score": 0.96,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation",
-        "All 8 images have alt attributes (3 descriptive, 5 decorative)",
+        "All 7 images have alt attributes (2 descriptive, 5 decorative)",
         "Found 1 skip link(s) \u2014 helps agents jump to main content",
         "Found 3 live region(s) \u2014 agents can detect dynamic content changes",
         "1 custom elements made focusable via tabindex=0",
-        "3 elements with tabindex=-1 (programmatic focus)"
+        "2 elements with tabindex=-1 (programmatic focus)"
       ],
       "details": {
         "landmarks_found": [
@@ -183,8 +183,8 @@
           "navigation"
         ],
         "landmark_count": 4,
-        "images_total": 8,
-        "images_with_alt": 3,
+        "images_total": 7,
+        "images_with_alt": 2,
         "images_decorative": 5,
         "images_missing_alt": 0,
         "skip_links": [
@@ -199,21 +199,21 @@
         ],
         "tabindex_positive": 0,
         "tabindex_zero": 1,
-        "tabindex_negative": 3
+        "tabindex_negative": 2
       }
     },
     {
       "name": "performance",
       "score": 0.952,
       "findings": [
-        "Fast response: 382ms",
+        "Fast response: 332ms",
         "Moderate payload: 138KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 2 scripts, 1 styles, 7 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 381.9,
+        "response_time_ms": 332.4,
         "payload_size_kb": 138.0,
         "redirect_count": 1,
         "redirect_chain": [
@@ -224,6 +224,39 @@
         "image_count": 7,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

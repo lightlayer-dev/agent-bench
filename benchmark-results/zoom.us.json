@@ -1,8 +1,8 @@
 {
   "url": "https://zoom.us",
-  "timestamp": "2026-03-15T17:04:25.398711+00:00",
+  "timestamp": "2026-03-23T23:07:50.622962+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.488,
+  "overall_score": 0.441,
   "checks": [
     {
       "name": "api",
@@ -105,7 +105,7 @@
         "input_count": 9,
         "named_inputs": 1,
         "elements_with_stable_selectors": 0,
-        "content_length": 13595,
+        "content_length": 13554,
         "script_count": 17,
         "has_noscript": false,
         "rendering": "server-side",
@@ -138,77 +138,82 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~105,258 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~90,808 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 5% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 22 \u2014 moderately nested",
-        "CSS class attributes consume ~12,399 tokens (12% of page)",
-        "Reading this page costs $0.13\u2013$1.58 per load ($0.66\u2013$7.89 for a 5-page session)"
+        "CSS class attributes consume ~13,039 tokens (14% of page)",
+        "Reading this page costs $0.11\u2013$1.36 per load ($0.57\u2013$6.81 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 105257,
-        "signal_tokens": 4979,
-        "signal_ratio": 0.047,
+        "raw_tokens": 90808,
+        "signal_tokens": 4538,
+        "signal_ratio": 0.05,
         "max_dom_depth": 22,
-        "class_token_ratio": 0.118,
+        "class_token_ratio": 0.144,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.3158,
-          "gpt-4o": 0.2631,
-          "claude-opus": 1.5789,
-          "gemini-pro": 0.1316
+          "claude-sonnet": 0.2724,
+          "gpt-4o": 0.227,
+          "claude-opus": 1.3621,
+          "gemini-pro": 0.1135
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 1.5789,
-          "gpt-4o": 1.3157,
-          "claude-opus": 7.8943,
-          "gemini-pro": 0.6579
+          "claude-sonnet": 1.3621,
+          "gpt-4o": 1.1351,
+          "claude-opus": 6.8106,
+          "gemini-pro": 0.5676
         },
-        "internal_links": 50
+        "internal_links": 52
       }
     },
     {
       "name": "a11y",
-      "score": 0.456,
+      "score": 0.721,
       "findings": [
-        "Missing essential landmarks: main",
-        "28/103 images missing alt text \u2014 agents can't understand these images",
+        "Good landmark coverage: banner, contentinfo, main, navigation, region",
+        "8/85 images missing alt text \u2014 agents can't understand these images",
         "No skip links found \u2014 agents must traverse entire page to find content",
-        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "Found 2 live region(s) \u2014 agents can detect dynamic content changes",
         "Found 2 elements with positive tabindex \u2014 may confuse agent tab navigation",
-        "2 custom elements made focusable via tabindex=0"
+        "4 custom elements made focusable via tabindex=0",
+        "8 elements with tabindex=-1 (programmatic focus)"
       ],
       "details": {
         "landmarks_found": [
           "banner",
           "contentinfo",
-          "navigation"
+          "main",
+          "navigation",
+          "region"
         ],
-        "landmark_count": 3,
-        "images_total": 103,
-        "images_with_alt": 47,
-        "images_decorative": 28,
-        "images_missing_alt": 28,
+        "landmark_count": 5,
+        "images_total": 85,
+        "images_with_alt": 67,
+        "images_decorative": 10,
+        "images_missing_alt": 8,
         "skip_links": [],
-        "live_regions": 0,
-        "aria_live_values": [],
+        "live_regions": 2,
+        "aria_live_values": [
+          "polite"
+        ],
         "tabindex_positive": 2,
-        "tabindex_zero": 2,
-        "tabindex_negative": 0
+        "tabindex_zero": 4,
+        "tabindex_negative": 8
       }
     },
     {
       "name": "performance",
       "score": 0.891,
       "findings": [
-        "Fast response: 111ms",
+        "Fast response: 132ms",
         "Moderate payload: 411KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 8 scripts, 3 styles, 103 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 110.9,
+        "response_time_ms": 131.6,
         "payload_size_kb": 411.4,
         "redirect_count": 1,
         "redirect_chain": [
@@ -219,6 +224,39 @@
         "image_count": 103,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

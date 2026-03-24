@@ -1,8 +1,8 @@
 {
   "url": "https://medium.com",
-  "timestamp": "2026-03-15T13:34:17.074426+00:00",
+  "timestamp": "2026-03-23T23:11:44.969409+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.44,
+  "overall_score": 0.374,
   "checks": [
     {
       "name": "api",
@@ -84,7 +84,7 @@
         "div_count": 3,
         "semantic_count": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -5116,
+        "content_length": -5137,
         "script_count": 1,
         "has_noscript": true,
         "rendering": "minimal",
@@ -168,14 +168,14 @@
       "name": "performance",
       "score": 1.0,
       "findings": [
-        "Fast response: 49ms",
+        "Fast response: 87ms",
         "Compact payload: 7KB",
         "No redirects \u2014 direct access",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 49.2,
+        "response_time_ms": 87.3,
         "payload_size_kb": 6.8,
         "redirect_count": 0,
         "redirect_chain": [],
@@ -184,6 +184,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

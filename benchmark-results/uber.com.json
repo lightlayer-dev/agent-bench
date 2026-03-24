@@ -1,8 +1,8 @@
 {
   "url": "https://uber.com",
-  "timestamp": "2026-03-15T17:09:19.211720+00:00",
+  "timestamp": "2026-03-23T23:13:45.637596+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.442,
+  "overall_score": 0.376,
   "checks": [
     {
       "name": "api",
@@ -157,14 +157,14 @@
       "name": "performance",
       "score": 0.86,
       "findings": [
-        "Fast response: 159ms",
+        "Fast response: 181ms",
         "Compact payload: 0KB",
         "No redirects \u2014 direct access",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "No compression \u2014 larger transfers for agents"
       ],
       "details": {
-        "response_time_ms": 159.2,
+        "response_time_ms": 180.5,
         "payload_size_kb": 0.1,
         "redirect_count": 0,
         "redirect_chain": [],
@@ -173,6 +173,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

@@ -223,8 +223,11 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
     If both are provided, they are combined.
     """
     from agent_bench.analysis.scorer import SiteScorer
+    from agent_bench.analysis.trend import TrendStore
     from agent_bench.config import BenchConfig
     import json as json_mod
+
+    trend_store = TrendStore()
 
     # Merge CLI URLs with config sites
     config = BenchConfig.load(Path(config_path) if config_path else None)
@@ -265,6 +268,12 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
                 console.print(f"  Score: {score}\n")
             else:
                 console.print(f"{url} {score}")
+
+            # Record to trend history
+            try:
+                trend_store.add_from_result(data)
+            except Exception:
+                pass  # Don't fail batch over trend recording
 
             # Check threshold
             if threshold is not None and score < threshold:

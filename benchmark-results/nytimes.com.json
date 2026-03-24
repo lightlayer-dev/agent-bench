@@ -1,8 +1,8 @@
 {
   "url": "https://nytimes.com",
-  "timestamp": "2026-03-15T17:00:45.667292+00:00",
+  "timestamp": "2026-03-23T23:11:00.234358+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.492,
+  "overall_score": 0.402,
   "checks": [
     {
       "name": "api",
@@ -79,33 +79,33 @@
     },
     {
       "name": "structure",
-      "score": 0.661,
+      "score": 0.704,
       "findings": [
-        "Heavy div usage: 2708 divs with only 208 semantic elements",
-        "Poor accessibility: only 98/171 interactive elements have labels",
+        "Heavy div usage: 2255 divs with only 169 semantic elements",
+        "Poor accessibility: only 104/175 interactive elements have labels",
         "No form inputs found",
-        "Found 106 elements with stable test selectors",
+        "Found 124 elements with stable test selectors",
         "Likely a client-side SPA \u2014 minimal server-rendered content",
-        "Multiple h1 headings (2) \u2014 ambiguous page title",
-        "6 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 112/118 links are descriptive"
+        "Good heading hierarchy: 16 headings, well-structured",
+        "2 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 115/117 links are descriptive"
       ],
       "details": {
-        "total_elements": 3986,
-        "div_count": 2708,
-        "semantic_count": 208,
-        "interactive_elements": 171,
-        "labeled_elements": 98,
-        "elements_with_stable_selectors": 106,
-        "content_length": -1134731,
-        "script_count": 61,
+        "total_elements": 3530,
+        "div_count": 2255,
+        "semantic_count": 169,
+        "interactive_elements": 175,
+        "labeled_elements": 104,
+        "elements_with_stable_selectors": 124,
+        "content_length": -1155734,
+        "script_count": 67,
         "has_noscript": true,
         "rendering": "client-side",
-        "heading_count": 15,
-        "h1_count": 2,
-        "total_links": 118,
-        "descriptive_links": 112,
-        "empty_links": 6,
+        "heading_count": 16,
+        "h1_count": 1,
+        "total_links": 117,
+        "descriptive_links": 115,
+        "empty_links": 2,
         "generic_links": 0
       }
     },
@@ -128,46 +128,46 @@
     },
     {
       "name": "cost",
-      "score": 0.45,
+      "score": 0.35,
       "findings": [
-        "Page is ~363,120 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
-        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Page is ~379,506 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 3 \u2014 clean structure",
-        "Reading this page costs $0.45\u2013$5.45 per load ($2.27\u2013$27.23 for a 5-page session)"
+        "Max DOM depth is 38 \u2014 deeply nested structure",
+        "Reading this page costs $0.47\u2013$5.69 per load ($2.37\u2013$28.46 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 363120,
-        "signal_tokens": 16,
-        "signal_ratio": 0.0,
-        "max_dom_depth": 3,
-        "class_token_ratio": 0.0,
+        "raw_tokens": 379506,
+        "signal_tokens": 2179,
+        "signal_ratio": 0.006,
+        "max_dom_depth": 38,
+        "class_token_ratio": 0.025,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 1.0894,
-          "gpt-4o": 0.9078,
-          "claude-opus": 5.4468,
-          "gemini-pro": 0.4539
+          "claude-sonnet": 1.1385,
+          "gpt-4o": 0.9488,
+          "claude-opus": 5.6926,
+          "gemini-pro": 0.4744
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 5.4468,
-          "gpt-4o": 4.539,
-          "claude-opus": 27.234,
-          "gemini-pro": 2.2695
+          "claude-sonnet": 5.6926,
+          "gpt-4o": 4.7438,
+          "claude-opus": 28.463,
+          "gemini-pro": 2.3719
         },
-        "internal_links": 0
+        "internal_links": 11
       }
     },
     {
       "name": "a11y",
-      "score": 0.932,
+      "score": 0.831,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation",
-        "6/43 images missing alt text \u2014 agents can't understand these images",
+        "7/49 images missing alt text \u2014 agents can't understand these images",
         "Found 3 skip link(s) \u2014 helps agents jump to main content",
-        "Found 2 live region(s) \u2014 agents can detect dynamic content changes",
-        "3 custom elements made focusable via tabindex=0",
-        "14 elements with tabindex=-1 (programmatic focus)"
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "1 custom elements made focusable via tabindex=0",
+        "18 elements with tabindex=-1 (programmatic focus)"
       ],
       "details": {
         "landmarks_found": [
@@ -177,10 +177,10 @@
           "navigation"
         ],
         "landmark_count": 4,
-        "images_total": 43,
-        "images_with_alt": 21,
-        "images_decorative": 16,
-        "images_missing_alt": 6,
+        "images_total": 49,
+        "images_with_alt": 16,
+        "images_decorative": 26,
+        "images_missing_alt": 7,
         "skip_links": [
           {
             "href": "#site-content",
@@ -195,37 +195,68 @@
             "text": "SKIP ADVERTISEMENT"
           }
         ],
-        "live_regions": 2,
-        "aria_live_values": [
-          "off"
-        ],
+        "live_regions": 0,
+        "aria_live_values": [],
         "tabindex_positive": 0,
-        "tabindex_zero": 3,
-        "tabindex_negative": 14
+        "tabindex_zero": 1,
+        "tabindex_negative": 18
       }
     },
     {
       "name": "performance",
       "score": 0.72,
       "findings": [
-        "Fast response: 197ms",
-        "Large payload: 1452KB \u2014 increases token cost for agents",
+        "Fast response: 215ms",
+        "Large payload: 1484KB \u2014 increases token cost for agents",
         "1 redirect(s) \u2014 acceptable",
-        "Resource heavy: 14 scripts, 45 stylesheets",
+        "Resource heavy: 14 scripts, 51 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 196.7,
-        "payload_size_kb": 1452.1,
+        "response_time_ms": 214.6,
+        "payload_size_kb": 1483.8,
         "redirect_count": 1,
         "redirect_chain": [
           "https://nytimes.com"
         ],
         "script_count": 14,
-        "stylesheet_count": 45,
-        "image_count": 43,
+        "stylesheet_count": 51,
+        "image_count": 49,
         "iframe_count": 1,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

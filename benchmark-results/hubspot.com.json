@@ -1,8 +1,8 @@
 {
   "url": "https://hubspot.com",
-  "timestamp": "2026-03-15T17:05:47.171640+00:00",
+  "timestamp": "2026-03-23T23:12:41.787484+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.578,
+  "overall_score": 0.49,
   "checks": [
     {
       "name": "api",
@@ -103,7 +103,7 @@
       "score": 0.56,
       "findings": [
         "robots.txt is present and doesn't specifically block AI bots",
-        "sitemap.xml found with ~3341 URLs",
+        "sitemap.xml found with ~3337 URLs",
         "No OpenAPI/Swagger specification found",
         "Found 1 JSON-LD blocks: unknown",
         "No llms.txt found (emerging standard for LLM-friendly docs)"
@@ -113,7 +113,7 @@
         "robots_has_sitemap_ref": false,
         "blocked_ai_bots": [],
         "sitemap": true,
-        "sitemap_urls": 3341,
+        "sitemap_urls": 3337,
         "openapi": false,
         "json_ld": true,
         "json_ld_count": 1,
@@ -178,32 +178,32 @@
       "name": "cost",
       "score": 0.25,
       "findings": [
-        "Page is ~168,621 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~168,710 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 26 \u2014 deeply nested structure",
-        "CSS class attributes consume ~14,895 tokens (9% of page)",
+        "CSS class attributes consume ~14,902 tokens (9% of page)",
         "Reading this page costs $0.21\u2013$2.53 per load ($1.05\u2013$12.65 for a 5-page session)",
         "141 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 168621,
+        "raw_tokens": 168710,
         "signal_tokens": 3455,
         "signal_ratio": 0.02,
         "max_dom_depth": 26,
         "class_token_ratio": 0.088,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.5059,
-          "gpt-4o": 0.4216,
-          "claude-opus": 2.5293,
-          "gemini-pro": 0.2108
+          "claude-sonnet": 0.5061,
+          "gpt-4o": 0.4218,
+          "claude-opus": 2.5307,
+          "gemini-pro": 0.2109
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.5293,
-          "gpt-4o": 2.1078,
-          "claude-opus": 12.6466,
-          "gemini-pro": 1.0539
+          "claude-sonnet": 2.5307,
+          "gpt-4o": 2.1089,
+          "claude-opus": 12.6533,
+          "gemini-pro": 1.0544
         },
         "internal_links": 141
       }
@@ -248,15 +248,15 @@
       "name": "performance",
       "score": 0.96,
       "findings": [
-        "Fast response: 288ms",
+        "Fast response: 269ms",
         "Compact payload: 98KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 287.6,
-        "payload_size_kb": 98.2,
+        "response_time_ms": 268.9,
+        "payload_size_kb": 98.3,
         "redirect_count": 1,
         "redirect_chain": [
           "https://hubspot.com"
@@ -266,6 +266,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

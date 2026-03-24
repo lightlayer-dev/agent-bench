@@ -1,8 +1,8 @@
 {
   "url": "https://target.com",
-  "timestamp": "2026-03-20T17:02:17.582613+00:00",
+  "timestamp": "2026-03-23T23:10:51.950639+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.496,
+  "overall_score": 0.422,
   "checks": [
     {
       "name": "api",
@@ -81,32 +81,32 @@
       "name": "structure",
       "score": 0.659,
       "findings": [
-        "Heavy div usage: 553 divs with only 1 semantic elements",
-        "Poor accessibility: only 37/91 interactive elements have labels",
+        "Heavy div usage: 541 divs with only 1 semantic elements",
+        "Poor accessibility: only 40/97 interactive elements have labels",
         "Forms are well-structured: 5/5 inputs have names",
-        "Found 186 elements with stable test selectors",
+        "Found 178 elements with stable test selectors",
         "Likely a client-side SPA \u2014 minimal server-rendered content",
-        "Good heading hierarchy: 84 headings, well-structured",
-        "Good link accessibility: 70/70 links are descriptive"
+        "Good heading hierarchy: 76 headings, well-structured",
+        "Good link accessibility: 73/73 links are descriptive"
       ],
       "details": {
-        "total_elements": 1463,
-        "div_count": 553,
+        "total_elements": 1518,
+        "div_count": 541,
         "semantic_count": 1,
-        "interactive_elements": 91,
-        "labeled_elements": 37,
+        "interactive_elements": 97,
+        "labeled_elements": 40,
         "form_count": 3,
         "input_count": 5,
         "named_inputs": 5,
-        "elements_with_stable_selectors": 186,
-        "content_length": -204612,
+        "elements_with_stable_selectors": 178,
+        "content_length": -205082,
         "script_count": 74,
         "has_noscript": true,
         "rendering": "client-side",
-        "heading_count": 84,
+        "heading_count": 76,
         "h1_count": 1,
-        "total_links": 70,
-        "descriptive_links": 70,
+        "total_links": 73,
+        "descriptive_links": 73,
         "empty_links": 0,
         "generic_links": 0
       }
@@ -132,41 +132,41 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~100,610 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~103,994 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 30 \u2014 deeply nested structure",
-        "CSS class attributes consume ~10,719 tokens (11% of page)",
-        "Reading this page costs $0.13\u2013$1.51 per load ($0.63\u2013$7.55 for a 5-page session)"
+        "CSS class attributes consume ~10,510 tokens (10% of page)",
+        "Reading this page costs $0.13\u2013$1.56 per load ($0.65\u2013$7.80 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 100610,
-        "signal_tokens": 734,
-        "signal_ratio": 0.007,
+        "raw_tokens": 103994,
+        "signal_tokens": 802,
+        "signal_ratio": 0.008,
         "max_dom_depth": 30,
-        "class_token_ratio": 0.107,
+        "class_token_ratio": 0.101,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.3018,
-          "gpt-4o": 0.2515,
-          "claude-opus": 1.5092,
-          "gemini-pro": 0.1258
+          "claude-sonnet": 0.312,
+          "gpt-4o": 0.26,
+          "claude-opus": 1.5599,
+          "gemini-pro": 0.13
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 1.5092,
-          "gpt-4o": 1.2576,
-          "claude-opus": 7.5458,
-          "gemini-pro": 0.6288
+          "claude-sonnet": 1.5599,
+          "gpt-4o": 1.2999,
+          "claude-opus": 7.7996,
+          "gemini-pro": 0.65
         },
-        "internal_links": 68
+        "internal_links": 71
       }
     },
     {
       "name": "a11y",
-      "score": 0.84,
+      "score": 0.836,
       "findings": [
         "Missing essential landmarks: navigation",
-        "All 51 images have alt attributes (6 descriptive, 45 decorative)",
+        "1/54 images missing alt text \u2014 agents can't understand these images",
         "Found 2 skip link(s) \u2014 helps agents jump to main content",
         "Found 4 live region(s) \u2014 agents can detect dynamic content changes",
         "3 custom elements made focusable via tabindex=0",
@@ -178,10 +178,10 @@
           "region"
         ],
         "landmark_count": 2,
-        "images_total": 51,
-        "images_with_alt": 6,
-        "images_decorative": 45,
-        "images_missing_alt": 0,
+        "images_total": 54,
+        "images_with_alt": 4,
+        "images_decorative": 49,
+        "images_missing_alt": 1,
         "skip_links": [
           {
             "href": "#content",
@@ -205,26 +205,59 @@
     },
     {
       "name": "performance",
-      "score": 0.776,
+      "score": 0.783,
       "findings": [
-        "Moderate response time: 736ms",
-        "Moderate payload: 393KB",
+        "Moderate response time: 609ms",
+        "Moderate payload: 406KB",
         "1 redirect(s) \u2014 acceptable",
         "Resource heavy: 63 scripts (heavy JS), 27 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 736.2,
-        "payload_size_kb": 393.1,
+        "response_time_ms": 608.8,
+        "payload_size_kb": 406.3,
         "redirect_count": 1,
         "redirect_chain": [
           "https://target.com"
         ],
         "script_count": 63,
         "stylesheet_count": 27,
-        "image_count": 51,
+        "image_count": 54,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

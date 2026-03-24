@@ -1,8 +1,8 @@
 {
   "url": "https://bbc.com",
-  "timestamp": "2026-03-15T17:01:22.181153+00:00",
+  "timestamp": "2026-03-23T23:11:08.625571+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.476,
+  "overall_score": 0.409,
   "checks": [
     {
       "name": "api",
@@ -82,36 +82,35 @@
     },
     {
       "name": "structure",
-      "score": 0.551,
+      "score": 0.57,
       "findings": [
-        "Heavy div usage: 1351 divs with only 35 semantic elements",
-        "Poor accessibility: only 265/370 interactive elements have labels",
+        "Heavy div usage: 1186 divs with only 32 semantic elements",
+        "Poor accessibility: only 259/347 interactive elements have labels",
         "Forms need work: 0/1 inputs have names, 1/1 have types",
-        "Found 1455 elements with stable test selectors",
+        "Found 1298 elements with stable test selectors",
         "Likely a client-side SPA \u2014 minimal server-rendered content",
         "No h1 heading \u2014 page lacks a clear title for agents",
-        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
         "4 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 323/327 links are descriptive"
+        "Good link accessibility: 298/302 links are descriptive"
       ],
       "details": {
-        "total_elements": 2818,
-        "div_count": 1351,
-        "semantic_count": 35,
-        "interactive_elements": 370,
-        "labeled_elements": 265,
+        "total_elements": 2547,
+        "div_count": 1186,
+        "semantic_count": 32,
+        "interactive_elements": 347,
+        "labeled_elements": 259,
         "form_count": 0,
         "input_count": 1,
         "named_inputs": 0,
-        "elements_with_stable_selectors": 1455,
-        "content_length": -143307,
+        "elements_with_stable_selectors": 1298,
+        "content_length": -129984,
         "script_count": 26,
         "has_noscript": true,
         "rendering": "client-side",
-        "heading_count": 166,
+        "heading_count": 140,
         "h1_count": 0,
-        "total_links": 327,
-        "descriptive_links": 323,
+        "total_links": 302,
+        "descriptive_links": 298,
         "empty_links": 4,
         "generic_links": 0
       }
@@ -137,42 +136,42 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~145,007 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~129,106 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 3% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 21 \u2014 moderately nested",
-        "CSS class attributes consume ~10,150 tokens (7% of page)",
-        "Reading this page costs $0.18\u2013$2.18 per load ($0.91\u2013$10.88 for a 5-page session)",
-        "150 internal links \u2014 agents may waste tokens exploring"
+        "CSS class attributes consume ~8,838 tokens (7% of page)",
+        "Reading this page costs $0.16\u2013$1.94 per load ($0.81\u2013$9.68 for a 5-page session)",
+        "132 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 145007,
-        "signal_tokens": 3931,
+        "raw_tokens": 129105,
+        "signal_tokens": 3433,
         "signal_ratio": 0.027,
         "max_dom_depth": 21,
-        "class_token_ratio": 0.07,
+        "class_token_ratio": 0.068,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.435,
-          "gpt-4o": 0.3625,
-          "claude-opus": 2.1751,
-          "gemini-pro": 0.1813
+          "claude-sonnet": 0.3873,
+          "gpt-4o": 0.3228,
+          "claude-opus": 1.9366,
+          "gemini-pro": 0.1614
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.1751,
-          "gpt-4o": 1.8126,
-          "claude-opus": 10.8755,
-          "gemini-pro": 0.9063
+          "claude-sonnet": 1.9366,
+          "gpt-4o": 1.6138,
+          "claude-opus": 9.6829,
+          "gemini-pro": 0.8069
         },
-        "internal_links": 150
+        "internal_links": 132
       }
     },
     {
       "name": "a11y",
-      "score": 0.7,
+      "score": 0.703,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation",
-        "78/156 images missing alt text \u2014 agents can't understand these images",
+        "56/115 images missing alt text \u2014 agents can't understand these images",
         "Found 1 skip link(s) \u2014 helps agents jump to main content",
         "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
         "3 elements with tabindex=-1 (programmatic focus)"
@@ -185,10 +184,10 @@
           "navigation"
         ],
         "landmark_count": 4,
-        "images_total": 156,
-        "images_with_alt": 78,
+        "images_total": 115,
+        "images_with_alt": 59,
         "images_decorative": 0,
-        "images_missing_alt": 78,
+        "images_missing_alt": 56,
         "skip_links": [
           {
             "href": "#main-content",
@@ -204,26 +203,59 @@
     },
     {
       "name": "performance",
-      "score": 0.836,
+      "score": 0.85,
       "findings": [
-        "Fast response: 75ms",
-        "Moderate payload: 567KB",
+        "Fast response: 70ms",
+        "Moderate payload: 505KB",
         "1 redirect(s) \u2014 acceptable",
         "Resource heavy: 18 scripts",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 74.8,
-        "payload_size_kb": 567.2,
+        "response_time_ms": 70.3,
+        "payload_size_kb": 505.1,
         "redirect_count": 1,
         "redirect_chain": [
           "https://bbc.com"
         ],
         "script_count": 18,
         "stylesheet_count": 1,
-        "image_count": 156,
+        "image_count": 115,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "url": "https://discord.com",
-  "timestamp": "2026-03-15T13:33:21.819240+00:00",
+  "timestamp": "2026-03-23T23:07:33.947583+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.439,
+  "overall_score": 0.373,
   "checks": [
     {
       "name": "api",
@@ -76,7 +76,7 @@
       "name": "structure",
       "score": 0.575,
       "findings": [
-        "Heavy div usage: 413 divs with only 18 semantic elements",
+        "Heavy div usage: 414 divs with only 18 semantic elements",
         "Poor accessibility: only 102/130 interactive elements have labels",
         "No form inputs found",
         "No stable test selectors found (data-testid, data-cy, etc.)",
@@ -86,13 +86,13 @@
         "Good link accessibility: 110/129 links are descriptive"
       ],
       "details": {
-        "total_elements": 956,
-        "div_count": 413,
+        "total_elements": 957,
+        "div_count": 414,
         "semantic_count": 18,
         "interactive_elements": 130,
         "labeled_elements": 102,
         "elements_with_stable_selectors": 0,
-        "content_length": -11774,
+        "content_length": -11782,
         "script_count": 29,
         "has_noscript": false,
         "rendering": "minimal",
@@ -124,20 +124,20 @@
       "name": "cost",
       "score": 0.3,
       "findings": [
-        "Page is ~40,364 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~40,365 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 20 \u2014 moderately nested",
-        "CSS class attributes consume ~4,096 tokens (10% of page)",
+        "CSS class attributes consume ~4,099 tokens (10% of page)",
         "Reading this page costs $0.05\u2013$0.61 per load ($0.25\u2013$3.03 for a 5-page session)",
         "105 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 40364,
+        "raw_tokens": 40365,
         "signal_tokens": 911,
         "signal_ratio": 0.023,
         "max_dom_depth": 20,
-        "class_token_ratio": 0.101,
+        "class_token_ratio": 0.102,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
           "claude-sonnet": 0.1211,
@@ -148,7 +148,7 @@
         "cost_5_pages_usd": {
           "claude-sonnet": 0.6055,
           "gpt-4o": 0.5046,
-          "claude-opus": 3.0273,
+          "claude-opus": 3.0274,
           "gemini-pro": 0.2523
         },
         "internal_links": 105
@@ -188,14 +188,14 @@
       "name": "performance",
       "score": 1.0,
       "findings": [
-        "Fast response: 70ms",
+        "Fast response: 85ms",
         "Compact payload: 22KB",
         "No redirects \u2014 direct access",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 69.9,
+        "response_time_ms": 84.7,
         "payload_size_kb": 22.1,
         "redirect_count": 0,
         "redirect_chain": [],
@@ -204,6 +204,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

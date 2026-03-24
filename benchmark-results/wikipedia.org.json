@@ -1,8 +1,8 @@
 {
   "url": "https://wikipedia.org",
-  "timestamp": "2026-03-15T13:36:05.439216+00:00",
+  "timestamp": "2026-03-23T23:11:52.435053+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.466,
+  "overall_score": 0.397,
   "checks": [
     {
       "name": "api",
@@ -153,14 +153,14 @@
       "name": "performance",
       "score": 0.86,
       "findings": [
-        "Fast response: 118ms",
+        "Fast response: 131ms",
         "Compact payload: 0KB",
         "No redirects \u2014 direct access",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "No compression \u2014 larger transfers for agents"
       ],
       "details": {
-        "response_time_ms": 118.3,
+        "response_time_ms": 131.0,
         "payload_size_kb": 0.1,
         "redirect_count": 0,
         "redirect_chain": [],
@@ -169,6 +169,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "url": "https://usa.gov",
-  "timestamp": "2026-03-15T17:05:56.929749+00:00",
+  "timestamp": "2026-03-23T23:13:00.477599+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.536,
+  "overall_score": 0.456,
   "checks": [
     {
       "name": "api",
@@ -47,7 +47,7 @@
       "findings": [
         "robots.txt is present and doesn't specifically block AI bots",
         "robots.txt references a sitemap",
-        "sitemap.xml found with ~1536 URLs",
+        "sitemap.xml found with ~1535 URLs",
         "No OpenAPI/Swagger specification found",
         "Found 2 JSON-LD blocks: WebSite, Organization",
         "No llms.txt found (emerging standard for LLM-friendly docs)"
@@ -57,7 +57,7 @@
         "robots_has_sitemap_ref": true,
         "blocked_ai_bots": [],
         "sitemap": true,
-        "sitemap_urls": 1536,
+        "sitemap_urls": 1535,
         "openapi": false,
         "json_ld": true,
         "json_ld_count": 2,
@@ -70,35 +70,35 @@
     },
     {
       "name": "structure",
-      "score": 0.588,
+      "score": 0.587,
       "findings": [
         "Heavy div usage: 132 divs with only 14 semantic elements",
-        "Poor accessibility: only 55/89 interactive elements have labels",
+        "Poor accessibility: only 53/87 interactive elements have labels",
         "Forms are well-structured: 4/4 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
         "Very little content without JavaScript",
         "Good heading hierarchy: 29 headings, well-structured",
         "1 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 78/79 links are descriptive"
+        "Good link accessibility: 76/77 links are descriptive"
       ],
       "details": {
-        "total_elements": 477,
+        "total_elements": 473,
         "div_count": 132,
         "semantic_count": 14,
-        "interactive_elements": 89,
-        "labeled_elements": 55,
+        "interactive_elements": 87,
+        "labeled_elements": 53,
         "form_count": 2,
         "input_count": 4,
         "named_inputs": 4,
         "elements_with_stable_selectors": 0,
-        "content_length": -811,
+        "content_length": -854,
         "script_count": 14,
         "has_noscript": true,
         "rendering": "minimal",
         "heading_count": 29,
         "h1_count": 1,
-        "total_links": 79,
-        "descriptive_links": 78,
+        "total_links": 77,
+        "descriptive_links": 76,
         "empty_links": 1,
         "generic_links": 0
       }
@@ -123,33 +123,33 @@
       "name": "cost",
       "score": 0.45,
       "findings": [
-        "Page is ~11,894 tokens raw \u2014 moderate cost",
+        "Page is ~11,807 tokens raw \u2014 moderate cost",
         "Signal-to-noise ratio is 10% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 14 \u2014 clean structure",
-        "CSS class attributes consume ~2,017 tokens (17% of page) \u2014 utility class bloat",
-        "Page read cost: $0.015\u2013$0.178 per load"
+        "CSS class attributes consume ~2,004 tokens (17% of page) \u2014 utility class bloat",
+        "Page read cost: $0.015\u2013$0.177 per load"
       ],
       "details": {
-        "raw_tokens": 11894,
-        "signal_tokens": 1154,
+        "raw_tokens": 11806,
+        "signal_tokens": 1143,
         "signal_ratio": 0.097,
         "max_dom_depth": 14,
         "class_token_ratio": 0.17,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.0357,
-          "gpt-4o": 0.0297,
-          "claude-opus": 0.1784,
-          "gemini-pro": 0.0149
+          "claude-sonnet": 0.0354,
+          "gpt-4o": 0.0295,
+          "claude-opus": 0.1771,
+          "gemini-pro": 0.0148
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.1784,
-          "gpt-4o": 0.1487,
-          "claude-opus": 0.8921,
-          "gemini-pro": 0.0743
+          "claude-sonnet": 0.1771,
+          "gpt-4o": 0.1476,
+          "claude-opus": 0.8855,
+          "gemini-pro": 0.0738
         },
-        "internal_links": 74
+        "internal_links": 75
       }
     },
     {
@@ -192,24 +192,57 @@
       "name": "performance",
       "score": 0.96,
       "findings": [
-        "Fast response: 70ms",
-        "Compact payload: 46KB",
+        "Fast response: 77ms",
+        "Compact payload: 9KB",
         "1 redirect(s) \u2014 acceptable",
-        "Lean resources: 5 scripts, 2 styles, 9 images",
-        "Compression enabled: gzip"
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 69.9,
-        "payload_size_kb": 46.5,
+        "response_time_ms": 77.4,
+        "payload_size_kb": 9.4,
         "redirect_count": 1,
         "redirect_chain": [
           "https://usa.gov"
         ],
-        "script_count": 5,
-        "stylesheet_count": 2,
-        "image_count": 9,
-        "iframe_count": 1,
-        "content_encoding": "gzip"
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

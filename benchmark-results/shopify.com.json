@@ -1,8 +1,8 @@
 {
   "url": "https://shopify.com",
-  "timestamp": "2026-03-20T17:01:12.389514+00:00",
+  "timestamp": "2026-03-23T23:10:17.846750+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.523,
+  "overall_score": 0.445,
   "checks": [
     {
       "name": "api",
@@ -48,7 +48,7 @@
       "score": 0.76,
       "findings": [
         "robots.txt is present and doesn't specifically block AI bots",
-        "sitemap.xml found with ~1062 URLs",
+        "sitemap.xml found with ~1081 URLs",
         "No OpenAPI/Swagger specification found",
         "Found 1 JSON-LD blocks: Corporation",
         "llms.txt found at /llms.txt (861 chars)"
@@ -58,7 +58,7 @@
         "robots_has_sitemap_ref": false,
         "blocked_ai_bots": [],
         "sitemap": true,
-        "sitemap_urls": 1062,
+        "sitemap_urls": 1081,
         "openapi": false,
         "json_ld": true,
         "json_ld_count": 1,
@@ -93,7 +93,7 @@
         "input_count": 2,
         "named_inputs": 0,
         "elements_with_stable_selectors": 0,
-        "content_length": -319935,
+        "content_length": -321373,
         "script_count": 5,
         "has_noscript": false,
         "rendering": "minimal",
@@ -126,32 +126,32 @@
       "name": "cost",
       "score": 0.2,
       "findings": [
-        "Page is ~157,702 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~158,064 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 17 \u2014 moderately nested",
         "CSS class attributes consume ~29,884 tokens (19% of page) \u2014 utility class bloat",
-        "Reading this page costs $0.20\u2013$2.37 per load ($0.99\u2013$11.83 for a 5-page session)",
+        "Reading this page costs $0.20\u2013$2.37 per load ($0.99\u2013$11.85 for a 5-page session)",
         "260 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 157701,
+        "raw_tokens": 158063,
         "signal_tokens": 2193,
         "signal_ratio": 0.014,
         "max_dom_depth": 17,
-        "class_token_ratio": 0.19,
+        "class_token_ratio": 0.189,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.4731,
-          "gpt-4o": 0.3943,
-          "claude-opus": 2.3655,
-          "gemini-pro": 0.1971
+          "claude-sonnet": 0.4742,
+          "gpt-4o": 0.3952,
+          "claude-opus": 2.371,
+          "gemini-pro": 0.1976
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.3655,
-          "gpt-4o": 1.9713,
-          "claude-opus": 11.8276,
-          "gemini-pro": 0.9856
+          "claude-sonnet": 2.371,
+          "gpt-4o": 1.9758,
+          "claude-opus": 11.8548,
+          "gemini-pro": 0.9879
         },
         "internal_links": 260
       }
@@ -196,15 +196,15 @@
       "name": "performance",
       "score": 0.96,
       "findings": [
-        "Fast response: 180ms",
-        "Compact payload: 98KB",
+        "Fast response: 203ms",
+        "Compact payload: 99KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 179.7,
-        "payload_size_kb": 98.3,
+        "response_time_ms": 202.6,
+        "payload_size_kb": 98.6,
         "redirect_count": 1,
         "redirect_chain": [
           "https://shopify.com"
@@ -214,6 +214,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]
