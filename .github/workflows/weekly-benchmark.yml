@@ -69,6 +69,8 @@ jobs:
           fi
 
       - name: Commit and push results
+        env:
+          BENCH_DATE: ${{ steps.outdir.outputs.date }}
         run: |
           git config user.name "Isaac Chang"
           git config user.email "chang.isaac97@gmail.com"
@@ -76,9 +78,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "data: weekly benchmark results for ${{ steps.outdir.outputs.date }}
-
-Co-authored-by: Sylphie <sylphie@lightlayer.dev>"
+            git commit -m "data: weekly benchmark results for ${BENCH_DATE}" \
+              -m "Co-authored-by: Sylphie <sylphie@lightlayer.dev>"
             git push origin main
           fi
 
