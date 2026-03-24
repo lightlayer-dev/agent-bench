@@ -1902,6 +1902,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-24T15:35:28.443227+00:00",
+      "overall_score": 0.504,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.685,
+        "errors": 0.467,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.799,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://docs.github.com": [
@@ -1992,6 +2009,23 @@
     },
     {
       "timestamp": "2026-03-23T23:33:33.737683+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.746,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:35:35.780504+00:00",
       "overall_score": 0.467,
       "check_scores": {
         "api": 0.25,
@@ -2110,6 +2144,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-24T15:35:44.539017+00:00",
+      "overall_score": 0.373,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.36,
+        "structure": 0.575,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.58,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://slack.com": [
@@ -2200,6 +2251,23 @@
     },
     {
       "timestamp": "2026-03-23T23:33:49.982010+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.74,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:35:52.473791+00:00",
       "overall_score": 0.529,
       "check_scores": {
         "api": 0.392,
@@ -2318,6 +2386,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-24T15:36:02.126212+00:00",
+      "overall_score": 0.415,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.57,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.456,
+        "performance": 0.891,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://youtube.com": [
@@ -2408,6 +2493,23 @@
     },
     {
       "timestamp": "2026-03-23T23:34:10.560070+00:00",
+      "overall_score": 0.327,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.832,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:36:14.694328+00:00",
       "overall_score": 0.327,
       "check_scores": {
         "api": 0.05,
@@ -2526,6 +2628,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-24T15:36:31.342670+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.04,
+        "structure": 0.758,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.952,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://twitter.com": [
@@ -2616,6 +2735,23 @@
     },
     {
       "timestamp": "2026-03-23T23:34:38.637390+00:00",
+      "overall_score": 0.371,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.929,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:36:44.172064+00:00",
       "overall_score": 0.371,
       "check_scores": {
         "api": 0.05,
@@ -2734,6 +2870,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-03-24T15:37:34.180509+00:00",
+      "overall_score": 0.439,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.6,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.92,
+        "performance": 0.937,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://reddit.com": [
@@ -2828,6 +2981,23 @@
       "check_scores": {
         "api": 0.05,
         "auth": 0.825,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:37:38.589705+00:00",
+      "overall_score": 0.298,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
         "docs": 0.04,
         "structure": 0.443,
         "errors": 0.433,
@@ -2938,6 +3108,23 @@
         "cost": 0.7,
         "a11y": 0.44,
         "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-24T15:37:53.981001+00:00",
+      "overall_score": 0.346,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.799,
         "agents_txt": 0.0,
         "a2a": 0.0,
         "x402": 0.0
