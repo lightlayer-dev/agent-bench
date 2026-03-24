@@ -1,0 +1,305 @@
+{
+  "url": "https://hubspot.com",
+  "timestamp": "2026-03-24T20:08:38.187663+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.49,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.3,
+      "findings": [
+        "Found 9 API endpoints (0 returning JSON)",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [
+          {
+            "path": "/api",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/api/v1",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/api/v2",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/v1",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/v2",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/rest",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/rest/v1",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/graphql",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          },
+          {
+            "path": "/gql",
+            "status": 406,
+            "content_type": "",
+            "is_json": false
+          }
+        ],
+        "endpoint_count": 9,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=UTF-8",
+          "html_request_ct": "text/html; charset=UTF-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.775,
+      "findings": [
+        "Cloudflare detected (passive \u2014 no active challenge)",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [
+          "Cloudflare"
+        ],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.56,
+      "findings": [
+        "robots.txt is present and doesn't specifically block AI bots",
+        "sitemap.xml found with ~3305 URLs",
+        "No OpenAPI/Swagger specification found",
+        "Found 1 JSON-LD blocks: unknown",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": false,
+        "blocked_ai_bots": [],
+        "sitemap": true,
+        "sitemap_urls": 3305,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 1,
+        "json_ld_types": [
+          "unknown"
+        ],
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.796,
+      "findings": [
+        "Heavy div usage: 409 divs with only 26 semantic elements",
+        "Poor accessibility: only 136/275 interactive elements have labels",
+        "Forms are well-structured: 2/2 inputs have names",
+        "Found 119 elements with stable test selectors",
+        "Good server-side rendering \u2014 content available without JavaScript",
+        "Good heading hierarchy: 107 headings, well-structured",
+        "3 links with no text or aria-label \u2014 invisible to agents",
+        "8 links with generic text ('click here', 'read more')",
+        "Good link accessibility: 224/235 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 2683,
+        "div_count": 409,
+        "semantic_count": 26,
+        "interactive_elements": 275,
+        "labeled_elements": 136,
+        "form_count": 2,
+        "input_count": 2,
+        "named_inputs": 2,
+        "elements_with_stable_selectors": 119,
+        "content_length": 7470,
+        "script_count": 48,
+        "has_noscript": true,
+        "rendering": "server-side",
+        "heading_count": 107,
+        "h1_count": 1,
+        "total_links": 235,
+        "descriptive_links": 224,
+        "empty_links": 3,
+        "generic_links": 8
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "Non-existent path returned 406 instead of 404",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 406,
+        "404_content_type": "",
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.25,
+      "findings": [
+        "Page is ~168,710 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 26 \u2014 deeply nested structure",
+        "CSS class attributes consume ~14,902 tokens (9% of page)",
+        "Reading this page costs $0.21\u2013$2.53 per load ($1.05\u2013$12.65 for a 5-page session)",
+        "141 internal links \u2014 agents may waste tokens exploring"
+      ],
+      "details": {
+        "raw_tokens": 168710,
+        "signal_tokens": 3455,
+        "signal_ratio": 0.02,
+        "max_dom_depth": 26,
+        "class_token_ratio": 0.088,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.5061,
+          "gpt-4o": 0.4218,
+          "claude-opus": 2.5307,
+          "gemini-pro": 0.2109
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 2.5307,
+          "gpt-4o": 2.1089,
+          "claude-opus": 12.6533,
+          "gemini-pro": 1.0544
+        },
+        "internal_links": 141
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.86,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 84 images have alt attributes (68 descriptive, 16 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "3 custom elements made focusable via tabindex=0",
+        "6 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 84,
+        "images_with_alt": 68,
+        "images_decorative": 16,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#global-nav-main-content",
+            "text": "Skip to content"
+          }
+        ],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 3,
+        "tabindex_negative": 6
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.96,
+      "findings": [
+        "Fast response: 315ms",
+        "Compact payload: 98KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 315.4,
+        "payload_size_kb": 98.0,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://hubspot.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}

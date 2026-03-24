@@ -1,0 +1,226 @@
+{
+  "url": "https://reddit.com",
+  "timestamp": "2026-03-24T20:04:53.440945+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.312,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html",
+          "html_request_ct": "text/html"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.04,
+      "findings": [
+        "robots.txt blocks all bots (Disallow: /)",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Could not fetch page for structured data check",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_blocks_all": true,
+        "sitemap": false,
+        "openapi": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.443,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "Poor accessibility: only 1/2 interactive elements have labels",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Some server-rendered content, but limited",
+        "No headings found \u2014 agents can't understand page structure",
+        "Good link accessibility: 2/2 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 20,
+        "div_count": 9,
+        "semantic_count": 0,
+        "interactive_elements": 2,
+        "labeled_elements": 1,
+        "elements_with_stable_selectors": 0,
+        "content_length": 217,
+        "script_count": 0,
+        "has_noscript": false,
+        "rendering": "partial",
+        "heading_count": 0,
+        "h1_count": 0,
+        "total_links": 2,
+        "descriptive_links": 2,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.433,
+      "findings": [
+        "Non-existent path returned 403 instead of 404",
+        "Retry-After header present \u2014 agents can back off appropriately",
+        "Partial rate limit headers: retry-after",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 403,
+        "404_content_type": "text/html",
+        "rate_limit_headers": {
+          "retry-after": "0"
+        },
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.45,
+      "findings": [
+        "Page is ~47,560 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 11 \u2014 clean structure",
+        "Reading this page costs $0.06\u2013$0.71 per load ($0.30\u2013$3.57 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 47559,
+        "signal_tokens": 55,
+        "signal_ratio": 0.001,
+        "max_dom_depth": 11,
+        "class_token_ratio": 0.003,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1427,
+          "gpt-4o": 0.1189,
+          "claude-opus": 0.7134,
+          "gemini-pro": 0.0594
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.7134,
+          "gpt-4o": 0.5945,
+          "claude-opus": 3.567,
+          "gemini-pro": 0.2972
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.24,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "1/1 images missing alt text \u2014 agents can't understand these images",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 1,
+        "images_with_alt": 0,
+        "images_decorative": 0,
+        "images_missing_alt": 1,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.801,
+      "findings": [
+        "Fast response: 116ms",
+        "Moderate payload: 186KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 1 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 115.7,
+        "payload_size_kb": 185.8,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://reddit.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 1,
+        "iframe_count": 0,
+        "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}
