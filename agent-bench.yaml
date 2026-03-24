@@ -1,0 +1,74 @@
+# agent-bench.yaml — Sites tracked for longitudinal benchmarking
+# These sites are scanned weekly to build trend data over time.
+# Mix of categories: big tech, e-commerce, media, dev tools, government, APIs.
+
+sites:
+  # Big Tech / Platforms
+  - url: https://github.com
+    label: GitHub
+  - url: https://docs.github.com
+    label: GitHub Docs
+  - url: https://discord.com
+    label: Discord
+  - url: https://slack.com
+    label: Slack
+  - url: https://zoom.us
+    label: Zoom
+  - url: https://youtube.com
+    label: YouTube
+  - url: https://linkedin.com
+    label: LinkedIn
+  - url: https://twitter.com
+    label: Twitter/X
+  - url: https://figma.com
+    label: Figma
+  - url: https://reddit.com
+    label: Reddit
+
+  # E-commerce
+  - url: https://amazon.com
+    label: Amazon
+  - url: https://ebay.com
+    label: eBay
+  - url: https://etsy.com
+    label: Etsy
+  - url: https://shopify.com
+    label: Shopify
+  - url: https://walmart.com
+    label: Walmart
+  - url: https://target.com
+    label: Target
+
+  # Media / Content
+  - url: https://nytimes.com
+    label: NYT
+  - url: https://bbc.com
+    label: BBC
+  - url: https://cnn.com
+    label: CNN
+  - url: https://medium.com
+    label: Medium
+  - url: https://wikipedia.org
+    label: Wikipedia
+  - url: https://stackoverflow.com
+    label: Stack Overflow
+
+  # Developer / API
+  - url: https://stripe.com
+    label: Stripe
+  - url: https://hubspot.com
+    label: HubSpot
+  - url: https://httpbin.org
+    label: httpbin
+
+  # Government
+  - url: https://usa.gov
+    label: USA.gov
+  - url: https://weather.gov
+    label: Weather.gov
+
+  # Other
+  - url: https://airbnb.com
+    label: Airbnb
+  - url: https://uber.com
+    label: Uber

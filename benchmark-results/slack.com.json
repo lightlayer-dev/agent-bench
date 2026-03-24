@@ -1,8 +1,8 @@
 {
   "url": "https://slack.com",
-  "timestamp": "2026-03-15T17:04:17.837396+00:00",
+  "timestamp": "2026-03-23T23:07:41.381687+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.687,
+  "overall_score": 0.529,
   "checks": [
     {
       "name": "api",
@@ -104,7 +104,7 @@
         "interactive_elements": 313,
         "labeled_elements": 250,
         "elements_with_stable_selectors": 26,
-        "content_length": -3083,
+        "content_length": -3255,
         "script_count": 28,
         "has_noscript": true,
         "rendering": "minimal",
@@ -134,34 +134,36 @@
     },
     {
       "name": "cost",
-      "score": 0.75,
+      "score": 0.3,
       "findings": [
-        "Page is ~0 tokens raw \u2014 efficient",
-        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Page is ~56,376 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 5% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 0 \u2014 clean structure",
-        "Page read cost: <$0.05 per load \u2014 affordable"
+        "Max DOM depth is 19 \u2014 moderately nested",
+        "CSS class attributes consume ~8,074 tokens (14% of page)",
+        "Reading this page costs $0.07\u2013$0.85 per load ($0.35\u2013$4.23 for a 5-page session)",
+        "251 internal links \u2014 agents may waste tokens exploring"
       ],
       "details": {
-        "raw_tokens": 0,
-        "signal_tokens": 0,
-        "signal_ratio": 0,
-        "max_dom_depth": 0,
-        "class_token_ratio": 0,
-        "inline_bloat_ratio": 0,
+        "raw_tokens": 56375,
+        "signal_tokens": 2961,
+        "signal_ratio": 0.053,
+        "max_dom_depth": 19,
+        "class_token_ratio": 0.143,
+        "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.0,
-          "gpt-4o": 0.0,
-          "claude-opus": 0.0,
-          "gemini-pro": 0.0
+          "claude-sonnet": 0.1691,
+          "gpt-4o": 0.1409,
+          "claude-opus": 0.8456,
+          "gemini-pro": 0.0705
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.0,
-          "gpt-4o": 0.0,
-          "claude-opus": 0.0,
-          "gemini-pro": 0.0
+          "claude-sonnet": 0.8456,
+          "gpt-4o": 0.7047,
+          "claude-opus": 4.2282,
+          "gemini-pro": 0.3523
         },
-        "internal_links": 0
+        "internal_links": 251
       }
     },
     {
@@ -207,15 +209,15 @@
       "name": "performance",
       "score": 1.0,
       "findings": [
-        "Fast response: 252ms",
+        "Fast response: 193ms",
         "Compact payload: 26KB",
         "No redirects \u2014 direct access",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 251.6,
-        "payload_size_kb": 25.7,
+        "response_time_ms": 193.2,
+        "payload_size_kb": 25.8,
         "redirect_count": 0,
         "redirect_chain": [],
         "script_count": 0,
@@ -223,6 +225,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

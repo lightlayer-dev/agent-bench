@@ -22,7 +22,8 @@ class TestModelsCommand:
 
 
 class TestBatchCommand:
-    def test_batch_requires_urls(self):
+    def test_batch_requires_urls(self, tmp_path, monkeypatch):
+        monkeypatch.chdir(tmp_path)  # avoid auto-discovering repo's agent-bench.yaml
         runner = CliRunner()
         result = runner.invoke(cli, ["batch"])
         assert result.exit_code != 0
@@ -100,7 +101,8 @@ class TestBatchOptions:
 class TestBatchConfigSites:
     """Tests for batch reading sites from config."""
 
-    def test_batch_no_urls_no_config_fails(self, tmp_path):
+    def test_batch_no_urls_no_config_fails(self, tmp_path, monkeypatch):
+        monkeypatch.chdir(tmp_path)  # avoid auto-discovering repo's agent-bench.yaml
         runner = CliRunner()
         out = tmp_path / "results"
         result = runner.invoke(cli, ["batch", "-o", str(out)])

@@ -1,8 +1,8 @@
 {
   "url": "https://walmart.com",
-  "timestamp": "2026-03-20T17:02:03.028116+00:00",
+  "timestamp": "2026-03-23T23:10:34.869502+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.599,
+  "overall_score": 0.502,
   "checks": [
     {
       "name": "api",
@@ -132,7 +132,7 @@
       "name": "structure",
       "score": 0.744,
       "findings": [
-        "Heavy div usage: 232 divs with only 27 semantic elements",
+        "Heavy div usage: 230 divs with only 27 semantic elements",
         "Good accessibility: 63/75 interactive elements have labels",
         "Forms are well-structured: 1/1 inputs have names",
         "Found 55 elements with stable test selectors",
@@ -142,8 +142,8 @@
         "Good link accessibility: 56/60 links are descriptive"
       ],
       "details": {
-        "total_elements": 636,
-        "div_count": 232,
+        "total_elements": 635,
+        "div_count": 230,
         "semantic_count": 27,
         "interactive_elements": 75,
         "labeled_elements": 63,
@@ -151,7 +151,7 @@
         "input_count": 1,
         "named_inputs": 1,
         "elements_with_stable_selectors": 55,
-        "content_length": -266782,
+        "content_length": -260103,
         "script_count": 73,
         "has_noscript": true,
         "rendering": "client-side",
@@ -180,32 +180,32 @@
     },
     {
       "name": "cost",
-      "score": 0.4,
+      "score": 0.35,
       "findings": [
-        "Page is ~98,503 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~96,428 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
-        "Max DOM depth is 25 \u2014 moderately nested",
-        "Reading this page costs $0.12\u2013$1.48 per load ($0.62\u2013$7.39 for a 5-page session)"
+        "Max DOM depth is 26 \u2014 deeply nested structure",
+        "Reading this page costs $0.12\u2013$1.45 per load ($0.60\u2013$7.23 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 98503,
-        "signal_tokens": 942,
-        "signal_ratio": 0.01,
-        "max_dom_depth": 25,
-        "class_token_ratio": 0.043,
+        "raw_tokens": 96427,
+        "signal_tokens": 831,
+        "signal_ratio": 0.009,
+        "max_dom_depth": 26,
+        "class_token_ratio": 0.044,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.2955,
-          "gpt-4o": 0.2463,
-          "claude-opus": 1.4775,
-          "gemini-pro": 0.1231
+          "claude-sonnet": 0.2893,
+          "gpt-4o": 0.2411,
+          "claude-opus": 1.4464,
+          "gemini-pro": 0.1205
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 1.4775,
-          "gpt-4o": 1.2313,
-          "claude-opus": 7.3877,
-          "gemini-pro": 0.6156
+          "claude-sonnet": 1.4464,
+          "gpt-4o": 1.2053,
+          "claude-opus": 7.2321,
+          "gemini-pro": 0.6027
         },
         "internal_links": 26
       }
@@ -215,7 +215,7 @@
       "score": 0.98,
       "findings": [
         "Good landmark coverage: banner, contentinfo, main, navigation, region, search",
-        "All 19 images have alt attributes (18 descriptive, 1 decorative)",
+        "All 19 images have alt attributes (19 descriptive, 0 decorative)",
         "Found 1 skip link(s) \u2014 helps agents jump to main content",
         "Found 6 live region(s) \u2014 agents can detect dynamic content changes",
         "4 custom elements made focusable via tabindex=0",
@@ -232,8 +232,8 @@
         ],
         "landmark_count": 6,
         "images_total": 19,
-        "images_with_alt": 18,
-        "images_decorative": 1,
+        "images_with_alt": 19,
+        "images_decorative": 0,
         "images_missing_alt": 0,
         "skip_links": [
           {
@@ -257,17 +257,17 @@
     },
     {
       "name": "performance",
-      "score": 0.837,
+      "score": 0.839,
       "findings": [
-        "Fast response: 110ms",
-        "Moderate payload: 385KB",
+        "Fast response: 107ms",
+        "Moderate payload: 377KB",
         "1 redirect(s) \u2014 acceptable",
         "Resource heavy: 64 scripts (heavy JS)",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 110.0,
-        "payload_size_kb": 384.7,
+        "response_time_ms": 106.9,
+        "payload_size_kb": 376.7,
         "redirect_count": 1,
         "redirect_chain": [
           "https://walmart.com"
@@ -277,6 +277,39 @@
         "image_count": 19,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

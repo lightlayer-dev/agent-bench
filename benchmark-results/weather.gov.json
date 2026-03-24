@@ -1,8 +1,8 @@
 {
   "url": "https://weather.gov",
-  "timestamp": "2026-03-15T17:09:49.684698+00:00",
+  "timestamp": "2026-03-23T23:13:13.793961+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.421,
+  "overall_score": 0.357,
   "checks": [
     {
       "name": "api",
@@ -61,35 +61,35 @@
     },
     {
       "name": "structure",
-      "score": 0.578,
+      "score": 0.574,
       "findings": [
         "No semantic HTML elements found (nav, main, article, etc.)",
-        "Good accessibility: 127/138 interactive elements have labels",
+        "Good accessibility: 104/115 interactive elements have labels",
         "Forms are well-structured: 8/11 inputs have names",
         "No stable test selectors found (data-testid, data-cy, etc.)",
         "Very little content without JavaScript",
         "Good heading hierarchy: 1 headings, well-structured",
         "5 links with no text or aria-label \u2014 invisible to agents",
-        "Good link accessibility: 122/127 links are descriptive"
+        "Good link accessibility: 99/104 links are descriptive"
       ],
       "details": {
-        "total_elements": 737,
-        "div_count": 143,
+        "total_elements": 668,
+        "div_count": 120,
         "semantic_count": 0,
-        "interactive_elements": 138,
-        "labeled_elements": 127,
+        "interactive_elements": 115,
+        "labeled_elements": 104,
         "form_count": 3,
         "input_count": 11,
         "named_inputs": 8,
         "elements_with_stable_selectors": 0,
-        "content_length": -187,
+        "content_length": -698,
         "script_count": 16,
         "has_noscript": false,
         "rendering": "minimal",
         "heading_count": 1,
         "h1_count": 1,
-        "total_links": 127,
-        "descriptive_links": 122,
+        "total_links": 104,
+        "descriptive_links": 99,
         "empty_links": 5,
         "generic_links": 0
       }
@@ -114,30 +114,30 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~32,584 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~30,354 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 25 \u2014 moderately nested",
-        "Page read cost: $0.041\u2013$0.489 per load"
+        "Page read cost: $0.038\u2013$0.455 per load"
       ],
       "details": {
-        "raw_tokens": 32584,
-        "signal_tokens": 738,
-        "signal_ratio": 0.023,
+        "raw_tokens": 30354,
+        "signal_tokens": 604,
+        "signal_ratio": 0.02,
         "max_dom_depth": 25,
         "class_token_ratio": 0.011,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.0978,
-          "gpt-4o": 0.0815,
-          "claude-opus": 0.4888,
-          "gemini-pro": 0.0407
+          "claude-sonnet": 0.0911,
+          "gpt-4o": 0.0759,
+          "claude-opus": 0.4553,
+          "gemini-pro": 0.0379
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.4888,
-          "gpt-4o": 0.4073,
-          "claude-opus": 2.4438,
-          "gemini-pro": 0.2036
+          "claude-sonnet": 0.4553,
+          "gpt-4o": 0.3794,
+          "claude-opus": 2.2766,
+          "gemini-pro": 0.1897
         },
         "internal_links": 14
       }
@@ -169,17 +169,17 @@
     },
     {
       "name": "performance",
-      "score": 0.914,
+      "score": 0.916,
       "findings": [
         "Fast response: 96ms",
-        "Moderate payload: 127KB",
+        "Moderate payload: 119KB",
         "1 redirect(s) \u2014 acceptable",
         "Resource heavy: 12 scripts, 7 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 95.8,
-        "payload_size_kb": 127.3,
+        "response_time_ms": 95.6,
+        "payload_size_kb": 118.6,
         "redirect_count": 1,
         "redirect_chain": [
           "https://weather.gov"
@@ -189,6 +189,39 @@
         "image_count": 12,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

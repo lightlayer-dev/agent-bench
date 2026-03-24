@@ -1,8 +1,8 @@
 {
   "url": "https://twitter.com",
-  "timestamp": "2026-03-15T13:35:46.538158+00:00",
+  "timestamp": "2026-03-23T23:08:29.729070+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.427,
+  "overall_score": 0.371,
   "checks": [
     {
       "name": "api",
@@ -59,7 +59,7 @@
         "sitemap.xml exists but appears empty or malformed",
         "No OpenAPI/Swagger specification found",
         "No JSON-LD structured data found",
-        "llms.txt found at /llms.txt (238848 chars)"
+        "llms.txt found at /llms.txt (245971 chars)"
       ],
       "details": {
         "robots_txt": true,
@@ -70,7 +70,7 @@
         "json_ld": false,
         "llms_txt": true,
         "llms_txt_path": "/llms.txt",
-        "llms_txt_length": 238848
+        "llms_txt_length": 245971
       }
     },
     {
@@ -95,7 +95,7 @@
         "input_count": 1,
         "named_inputs": 1,
         "elements_with_stable_selectors": 0,
-        "content_length": -212908,
+        "content_length": -220013,
         "script_count": 10,
         "has_noscript": true,
         "rendering": "minimal",
@@ -128,30 +128,30 @@
       "name": "cost",
       "score": 0.45,
       "findings": [
-        "Page is ~59,712 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~61,493 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 11 \u2014 clean structure",
-        "Reading this page costs $0.07\u2013$0.90 per load ($0.37\u2013$4.48 for a 5-page session)"
+        "Reading this page costs $0.08\u2013$0.92 per load ($0.38\u2013$4.61 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 59712,
+        "raw_tokens": 61492,
         "signal_tokens": 42,
         "signal_ratio": 0.001,
         "max_dom_depth": 11,
         "class_token_ratio": 0.003,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.1791,
-          "gpt-4o": 0.1493,
-          "claude-opus": 0.8957,
-          "gemini-pro": 0.0746
+          "claude-sonnet": 0.1845,
+          "gpt-4o": 0.1537,
+          "claude-opus": 0.9224,
+          "gemini-pro": 0.0769
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.8957,
-          "gpt-4o": 0.7464,
-          "claude-opus": 4.4784,
-          "gemini-pro": 0.3732
+          "claude-sonnet": 0.9224,
+          "gpt-4o": 0.7687,
+          "claude-opus": 4.612,
+          "gemini-pro": 0.3843
         },
         "internal_links": 0
       }
@@ -183,17 +183,17 @@
     },
     {
       "name": "performance",
-      "score": 0.93,
+      "score": 0.929,
       "findings": [
-        "Fast response: 211ms",
-        "Moderate payload: 233KB",
+        "Fast response: 317ms",
+        "Moderate payload: 240KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 3 scripts, 0 styles, 1 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 211.1,
-        "payload_size_kb": 233.3,
+        "response_time_ms": 317.5,
+        "payload_size_kb": 240.2,
         "redirect_count": 1,
         "redirect_chain": [
           "https://twitter.com"
@@ -203,6 +203,40 @@
         "image_count": 1,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.167,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "Payment/x402 references found in agents.txt"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false,
+        "x402_in_agents_txt": true
       }
     }
   ]

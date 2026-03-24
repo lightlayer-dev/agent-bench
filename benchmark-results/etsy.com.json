@@ -1,8 +1,8 @@
 {
   "url": "https://etsy.com",
-  "timestamp": "2026-03-15T17:03:10.498593+00:00",
+  "timestamp": "2026-03-23T23:10:05.786770+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.515,
+  "overall_score": 0.432,
   "checks": [
     {
       "name": "api",
@@ -45,10 +45,9 @@
     },
     {
       "name": "docs",
-      "score": 0.2,
+      "score": 0.16,
       "findings": [
         "robots.txt is present and doesn't specifically block AI bots",
-        "robots.txt references a sitemap",
         "No sitemap.xml found",
         "No OpenAPI/Swagger specification found",
         "Could not fetch page for structured data check",
@@ -56,7 +55,7 @@
       ],
       "details": {
         "robots_txt": true,
-        "robots_has_sitemap_ref": true,
+        "robots_has_sitemap_ref": false,
         "blocked_ai_bots": [],
         "sitemap": false,
         "openapi": false,
@@ -163,14 +162,14 @@
       "name": "performance",
       "score": 0.82,
       "findings": [
-        "Fast response: 89ms",
+        "Fast response: 267ms",
         "Compact payload: 1KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 1 scripts, 0 styles, 0 images",
         "No compression \u2014 larger transfers for agents"
       ],
       "details": {
-        "response_time_ms": 89.4,
+        "response_time_ms": 267.4,
         "payload_size_kb": 0.8,
         "redirect_count": 1,
         "redirect_chain": [
@@ -181,6 +180,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

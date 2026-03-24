@@ -1,8 +1,8 @@
 {
   "url": "https://amazon.com",
-  "timestamp": "2026-03-20T17:00:55.888471+00:00",
+  "timestamp": "2026-03-23T23:09:14.507106+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.394,
+  "overall_score": 0.339,
   "checks": [
     {
       "name": "api",
@@ -20,8 +20,8 @@
         "cors_origin": "",
         "cors_methods": "",
         "content_negotiation": {
-          "json_request_ct": "text/html",
-          "html_request_ct": "text/html"
+          "json_request_ct": "text/html;charset=UTF-8",
+          "html_request_ct": "text/html;charset=UTF-8"
         }
       }
     },
@@ -197,26 +197,59 @@
     },
     {
       "name": "performance",
-      "score": 0.76,
+      "score": 0.8,
       "findings": [
-        "Fast response: 166ms",
-        "Large payload: 1354KB \u2014 increases token cost for agents",
+        "Fast response: 444ms",
+        "Moderate payload: 791KB",
         "1 redirect(s) \u2014 acceptable",
         "Resource heavy: 6 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 166.2,
-        "payload_size_kb": 1354.0,
+        "response_time_ms": 443.7,
+        "payload_size_kb": 791.4,
         "redirect_count": 1,
         "redirect_chain": [
           "https://amazon.com"
         ],
         "script_count": 0,
         "stylesheet_count": 6,
-        "image_count": 102,
+        "image_count": 93,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

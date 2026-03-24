@@ -1,0 +1,103 @@
+name: Weekly Benchmark Survey
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC (1:00 AM EST / 2:00 AM EDT)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      output_suffix:
+        description: "Optional suffix for output directory (e.g. 'rerun')"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install agent-bench
+        run: pip install -e ".[dev]"
+
+      - name: Determine output directory
+        id: outdir
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          SUFFIX="${{ github.event.inputs.output_suffix }}"
+          if [ -n "$SUFFIX" ]; then
+            DIR="benchmark-results/${DATE}-${SUFFIX}"
+          else
+            DIR="benchmark-results/${DATE}"
+          fi
+          echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Run batch benchmark
+        run: |
+          agent-bench batch \
+            --output-dir "${{ steps.outdir.outputs.dir }}" \
+            --format json \
+            --quiet
+        timeout-minutes: 20
+
+      - name: Update trend history
+        run: |
+          # Trend history is updated automatically by the batch command
+          # but let's also generate a standalone trend summary
+          if [ -f trend-history.json ]; then
+            echo "Trend history updated with $(date -u +%Y-%m-%d) data"
+            python3 -c "
+          import json
+          data = json.load(open('trend-history.json'))
+          dates = sorted(set(e.get('date','') for e in data if e.get('date')))
+          print(f'Total entries: {len(data)}')
+          print(f'Date range: {dates[0] if dates else \"?\"} → {dates[-1] if dates else \"?\"}')
+          print(f'Unique dates: {len(dates)}')
+          " 2>/dev/null || true
+          fi
+
+      - name: Commit and push results
+        run: |
+          git config user.name "Isaac Chang"
+          git config user.email "chang.isaac97@gmail.com"
+          git add benchmark-results/ trend-history.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "data: weekly benchmark results for ${{ steps.outdir.outputs.date }}
+
+Co-authored-by: Sylphie <sylphie@lightlayer.dev>"
+            git push origin main
+          fi
+
+      - name: Generate summary
+        if: always()
+        run: |
+          DIR="${{ steps.outdir.outputs.dir }}"
+          if [ -f "$DIR/summary.json" ]; then
+            echo "## Benchmark Results — ${{ steps.outdir.outputs.date }}" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            python3 -c "
+          import json
+          data = json.load(open('$DIR/summary.json'))
+          ranked = sorted(data, key=lambda x: -x.get('overall_score', 0))
+          print('| Rank | Site | Score |')
+          print('|------|------|-------|')
+          for i, d in enumerate(ranked, 1):
+              url = d.get('url', '?')
+              score = d.get('overall_score', 0)
+              print(f'| {i} | {url} | {score:.3f} |')
+          " >> "$GITHUB_STEP_SUMMARY"
+          fi

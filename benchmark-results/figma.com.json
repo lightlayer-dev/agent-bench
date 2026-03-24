@@ -1,8 +1,8 @@
 {
   "url": "https://figma.com",
-  "timestamp": "2026-03-15T13:33:52.337770+00:00",
+  "timestamp": "2026-03-23T23:08:52.614751+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.517,
+  "overall_score": 0.439,
   "checks": [
     {
       "name": "api",
@@ -103,7 +103,7 @@
         "interactive_elements": 208,
         "labeled_elements": 130,
         "elements_with_stable_selectors": 0,
-        "content_length": -1062171,
+        "content_length": -1071521,
         "script_count": 109,
         "has_noscript": false,
         "rendering": "client-side",
@@ -135,30 +135,30 @@
       "name": "cost",
       "score": 0.4,
       "findings": [
-        "Page is ~366,765 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~369,102 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 24 \u2014 moderately nested",
-        "Reading this page costs $0.46\u2013$5.50 per load ($2.29\u2013$27.51 for a 5-page session)"
+        "Reading this page costs $0.46\u2013$5.54 per load ($2.31\u2013$27.68 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 366764,
+        "raw_tokens": 369102,
         "signal_tokens": 1339,
         "signal_ratio": 0.004,
         "max_dom_depth": 24,
         "class_token_ratio": 0.007,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 1.1003,
-          "gpt-4o": 0.9169,
-          "claude-opus": 5.5015,
-          "gemini-pro": 0.4585
+          "claude-sonnet": 1.1073,
+          "gpt-4o": 0.9228,
+          "claude-opus": 5.5365,
+          "gemini-pro": 0.4614
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 5.5015,
-          "gpt-4o": 4.5846,
-          "claude-opus": 27.5074,
-          "gemini-pro": 2.2923
+          "claude-sonnet": 5.5365,
+          "gpt-4o": 4.6138,
+          "claude-opus": 27.6827,
+          "gemini-pro": 2.3069
         },
         "internal_links": 1
       }
@@ -205,17 +205,17 @@
     },
     {
       "name": "performance",
-      "score": 0.937,
+      "score": 0.933,
       "findings": [
-        "Fast response: 360ms",
-        "Moderate payload: 203KB",
+        "Moderate response time: 553ms",
+        "Moderate payload: 204KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 360.2,
-        "payload_size_kb": 203.3,
+        "response_time_ms": 553.4,
+        "payload_size_kb": 203.6,
         "redirect_count": 1,
         "redirect_chain": [
           "https://figma.com"
@@ -225,6 +225,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

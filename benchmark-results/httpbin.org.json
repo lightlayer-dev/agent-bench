@@ -1,8 +1,8 @@
 {
   "url": "https://httpbin.org",
-  "timestamp": "2026-03-15T13:34:05.087420+00:00",
+  "timestamp": "2026-03-23T23:12:49.399755+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.513,
+  "overall_score": 0.436,
   "checks": [
     {
       "name": "api",
@@ -98,7 +98,7 @@
       "findings": [
         "404 returns HTML error page (not machine-readable)",
         "No rate limit headers found",
-        "Proper 405 with Allow header: GET, OPTIONS, HEAD"
+        "Proper 405 with Allow header: OPTIONS, HEAD, GET"
       ],
       "details": {
         "404_status": 404,
@@ -106,7 +106,7 @@
         "404_is_json": false,
         "rate_limit_headers": {},
         "delete_main_status": 405,
-        "allow_header": "GET, OPTIONS, HEAD"
+        "allow_header": "OPTIONS, HEAD, GET"
       }
     },
     {
@@ -168,14 +168,14 @@
       "name": "performance",
       "score": 0.86,
       "findings": [
-        "Fast response: 87ms",
+        "Fast response: 259ms",
         "Compact payload: 9KB",
         "No redirects \u2014 direct access",
         "Lean resources: 3 scripts, 2 styles, 0 images",
         "No compression \u2014 larger transfers for agents"
       ],
       "details": {
-        "response_time_ms": 87.4,
+        "response_time_ms": 258.9,
         "payload_size_kb": 9.4,
         "redirect_count": 0,
         "redirect_chain": [],
@@ -184,6 +184,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

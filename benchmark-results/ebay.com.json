@@ -1,8 +1,8 @@
 {
   "url": "https://ebay.com",
-  "timestamp": "2026-03-20T17:01:50.047782+00:00",
+  "timestamp": "2026-03-23T23:09:54.225330+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.449,
+  "overall_score": 0.381,
   "checks": [
     {
       "name": "api",
@@ -86,38 +86,37 @@
     },
     {
       "name": "structure",
-      "score": 0.717,
+      "score": 0.716,
       "findings": [
-        "Heavy div usage: 538 divs with only 49 semantic elements",
-        "Poor accessibility: only 365/478 interactive elements have labels",
+        "Heavy div usage: 539 divs with only 49 semantic elements",
+        "Poor accessibility: only 365/481 interactive elements have labels",
         "Forms are well-structured: 7/7 inputs have names",
         "Found 75 elements with stable test selectors",
         "Very little content without JavaScript",
         "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
         "51 links with no text or aria-label \u2014 invisible to agents",
-        "1 links with generic text ('click here', 'read more')",
-        "Good link accessibility: 352/404 links are descriptive"
+        "Good link accessibility: 356/407 links are descriptive"
       ],
       "details": {
-        "total_elements": 1998,
-        "div_count": 538,
+        "total_elements": 2005,
+        "div_count": 539,
         "semantic_count": 49,
-        "interactive_elements": 478,
+        "interactive_elements": 481,
         "labeled_elements": 365,
         "form_count": 1,
         "input_count": 7,
         "named_inputs": 7,
         "elements_with_stable_selectors": 75,
-        "content_length": -592968,
+        "content_length": -593522,
         "script_count": 27,
         "has_noscript": true,
         "rendering": "minimal",
         "heading_count": 30,
         "h1_count": 1,
-        "total_links": 404,
-        "descriptive_links": 352,
+        "total_links": 407,
+        "descriptive_links": 356,
         "empty_links": 51,
-        "generic_links": 1
+        "generic_links": 0
       }
     },
     {
@@ -140,31 +139,31 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~208,960 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~209,546 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 20 \u2014 moderately nested",
-        "CSS class attributes consume ~16,293 tokens (8% of page)",
-        "Reading this page costs $0.26\u2013$3.13 per load ($1.31\u2013$15.67 for a 5-page session)"
+        "CSS class attributes consume ~16,641 tokens (8% of page)",
+        "Reading this page costs $0.26\u2013$3.14 per load ($1.31\u2013$15.72 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 208960,
-        "signal_tokens": 2404,
-        "signal_ratio": 0.012,
+        "raw_tokens": 209546,
+        "signal_tokens": 2393,
+        "signal_ratio": 0.011,
         "max_dom_depth": 20,
-        "class_token_ratio": 0.078,
+        "class_token_ratio": 0.079,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.6269,
-          "gpt-4o": 0.5224,
-          "claude-opus": 3.1344,
-          "gemini-pro": 0.2612
+          "claude-sonnet": 0.6286,
+          "gpt-4o": 0.5239,
+          "claude-opus": 3.1432,
+          "gemini-pro": 0.2619
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 3.1344,
-          "gpt-4o": 2.612,
-          "claude-opus": 15.672,
-          "gemini-pro": 1.306
+          "claude-sonnet": 3.1432,
+          "gpt-4o": 2.6193,
+          "claude-opus": 15.716,
+          "gemini-pro": 1.3097
         },
         "internal_links": 1
       }
@@ -174,7 +173,7 @@
       "score": 0.94,
       "findings": [
         "Good landmark coverage: banner, complementary, contentinfo, main, navigation",
-        "All 89 images have alt attributes (60 descriptive, 29 decorative)",
+        "All 84 images have alt attributes (60 descriptive, 24 decorative)",
         "Found 1 skip link(s) \u2014 helps agents jump to main content",
         "Found 16 live region(s) \u2014 agents can detect dynamic content changes",
         "Found 8 elements with positive tabindex \u2014 may confuse agent tab navigation",
@@ -190,9 +189,9 @@
           "navigation"
         ],
         "landmark_count": 5,
-        "images_total": 89,
+        "images_total": 84,
         "images_with_alt": 60,
-        "images_decorative": 29,
+        "images_decorative": 24,
         "images_missing_alt": 0,
         "skip_links": [
           {
@@ -226,26 +225,59 @@
     },
     {
       "name": "performance",
-      "score": 0.785,
+      "score": 0.789,
       "findings": [
-        "Moderate response time: 937ms",
+        "Moderate response time: 884ms",
         "Moderate payload: 817KB",
         "1 redirect(s) \u2014 acceptable",
-        "Lean resources: 7 scripts, 2 styles, 89 images",
+        "Lean resources: 7 scripts, 2 styles, 90 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 936.6,
-        "payload_size_kb": 816.6,
+        "response_time_ms": 883.5,
+        "payload_size_kb": 817.2,
         "redirect_count": 1,
         "redirect_chain": [
           "https://ebay.com"
         ],
         "script_count": 7,
         "stylesheet_count": 2,
-        "image_count": 89,
+        "image_count": 90,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

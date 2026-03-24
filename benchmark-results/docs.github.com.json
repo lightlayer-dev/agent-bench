@@ -1,8 +1,8 @@
 {
   "url": "https://docs.github.com",
-  "timestamp": "2026-03-15T13:33:27.198703+00:00",
+  "timestamp": "2026-03-23T23:07:26.026627+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.55,
+  "overall_score": 0.467,
   "checks": [
     {
       "name": "api",
@@ -85,7 +85,7 @@
         "input_count": 3,
         "named_inputs": 3,
         "elements_with_stable_selectors": 37,
-        "content_length": -19374,
+        "content_length": -19342,
         "script_count": 15,
         "has_noscript": true,
         "rendering": "client-side",
@@ -117,7 +117,7 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~19,594 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~19,586 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 4% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 20 \u2014 moderately nested",
@@ -125,7 +125,7 @@
         "Page read cost: $0.024\u2013$0.294 per load"
       ],
       "details": {
-        "raw_tokens": 19594,
+        "raw_tokens": 19586,
         "signal_tokens": 689,
         "signal_ratio": 0.035,
         "max_dom_depth": 20,
@@ -134,14 +134,14 @@
         "cost_per_page_usd": {
           "claude-sonnet": 0.0588,
           "gpt-4o": 0.049,
-          "claude-opus": 0.2939,
+          "claude-opus": 0.2938,
           "gemini-pro": 0.0245
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 0.2939,
-          "gpt-4o": 0.2449,
-          "claude-opus": 1.4695,
-          "gemini-pro": 0.1225
+          "claude-sonnet": 0.2938,
+          "gpt-4o": 0.2448,
+          "claude-opus": 1.4689,
+          "gemini-pro": 0.1224
         },
         "internal_links": 61
       }
@@ -185,14 +185,14 @@
       "name": "performance",
       "score": 0.96,
       "findings": [
-        "Fast response: 44ms",
+        "Fast response: 76ms",
         "Compact payload: 17KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 0 scripts, 0 styles, 0 images",
         "Compression enabled: br"
       ],
       "details": {
-        "response_time_ms": 43.6,
+        "response_time_ms": 75.8,
         "payload_size_kb": 16.5,
         "redirect_count": 1,
         "redirect_chain": [
@@ -203,6 +203,39 @@
         "image_count": 0,
         "iframe_count": 0,
         "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

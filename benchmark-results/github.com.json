@@ -1,8 +1,8 @@
 {
   "url": "https://github.com",
-  "timestamp": "2026-03-15T13:33:58.633476+00:00",
+  "timestamp": "2026-03-23T23:07:22.143895+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.594,
+  "overall_score": 0.504,
   "checks": [
     {
       "name": "api",
@@ -101,7 +101,7 @@
         "No sitemap.xml found",
         "No OpenAPI/Swagger specification found",
         "No JSON-LD structured data found",
-        "llms.txt found at /llms.txt (27482 chars)"
+        "llms.txt found at /llms.txt (27100 chars)"
       ],
       "details": {
         "robots_txt": true,
@@ -112,39 +112,39 @@
         "json_ld": false,
         "llms_txt": true,
         "llms_txt_path": "/llms.txt",
-        "llms_txt_length": 27482
+        "llms_txt_length": 27100
       }
     },
     {
       "name": "structure",
-      "score": 0.686,
+      "score": 0.685,
       "findings": [
         "Heavy div usage: 360 divs with only 29 semantic elements",
-        "Poor accessibility: only 132/211 interactive elements have labels",
+        "Poor accessibility: only 132/212 interactive elements have labels",
         "Forms are well-structured: 13/14 inputs have names",
         "Found 21 elements with stable test selectors",
         "Very little content without JavaScript",
         "Multiple h1 headings (4) \u2014 ambiguous page title",
-        "Good link accessibility: 150/150 links are descriptive"
+        "Good link accessibility: 151/151 links are descriptive"
       ],
       "details": {
-        "total_elements": 1955,
+        "total_elements": 1963,
         "div_count": 360,
         "semantic_count": 29,
-        "interactive_elements": 211,
+        "interactive_elements": 212,
         "labeled_elements": 132,
         "form_count": 5,
         "input_count": 14,
         "named_inputs": 13,
         "elements_with_stable_selectors": 21,
-        "content_length": -123812,
-        "script_count": 80,
+        "content_length": -123920,
+        "script_count": 83,
         "has_noscript": false,
         "rendering": "minimal",
         "heading_count": 30,
         "h1_count": 4,
-        "total_links": 150,
-        "descriptive_links": 150,
+        "total_links": 151,
+        "descriptive_links": 151,
         "empty_links": 0,
         "generic_links": 0
       }
@@ -170,31 +170,31 @@
       "name": "cost",
       "score": 0.35,
       "findings": [
-        "Page is ~141,792 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~142,216 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 1% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 23 \u2014 moderately nested",
         "CSS class attributes consume ~15,921 tokens (11% of page)",
-        "Reading this page costs $0.18\u2013$2.13 per load ($0.89\u2013$10.63 for a 5-page session)"
+        "Reading this page costs $0.18\u2013$2.13 per load ($0.89\u2013$10.67 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 141791,
+        "raw_tokens": 142215,
         "signal_tokens": 1384,
         "signal_ratio": 0.01,
         "max_dom_depth": 23,
         "class_token_ratio": 0.112,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.4254,
-          "gpt-4o": 0.3545,
-          "claude-opus": 2.1269,
-          "gemini-pro": 0.1772
+          "claude-sonnet": 0.4266,
+          "gpt-4o": 0.3555,
+          "claude-opus": 2.1332,
+          "gemini-pro": 0.1778
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.1269,
-          "gpt-4o": 1.7724,
-          "claude-opus": 10.6344,
-          "gemini-pro": 0.8862
+          "claude-sonnet": 2.1332,
+          "gpt-4o": 1.7777,
+          "claude-opus": 10.6662,
+          "gemini-pro": 0.8888
         },
         "internal_links": 55
       }
@@ -244,22 +244,55 @@
       "name": "performance",
       "score": 0.799,
       "findings": [
-        "Fast response: 109ms",
-        "Moderate payload: 554KB",
+        "Fast response: 89ms",
+        "Moderate payload: 556KB",
         "No redirects \u2014 direct access",
-        "Resource heavy: 74 scripts (heavy JS), 32 stylesheets",
+        "Resource heavy: 77 scripts (heavy JS), 32 stylesheets",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 108.7,
-        "payload_size_kb": 554.0,
+        "response_time_ms": 89.4,
+        "payload_size_kb": 555.6,
         "redirect_count": 0,
         "redirect_chain": [],
-        "script_count": 74,
+        "script_count": 77,
         "stylesheet_count": 32,
         "image_count": 24,
         "iframe_count": 0,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "url": "https://youtube.com",
-  "timestamp": "2026-03-15T17:08:45.733472+00:00",
+  "timestamp": "2026-03-23T23:08:02.552036+00:00",
   "schema_version": "1.0.0",
-  "overall_score": 0.385,
+  "overall_score": 0.327,
   "checks": [
     {
       "name": "api",
@@ -101,7 +101,7 @@
         "input_count": 1,
         "named_inputs": 1,
         "elements_with_stable_selectors": 0,
-        "content_length": -656075,
+        "content_length": -654687,
         "script_count": 43,
         "has_noscript": false,
         "rendering": "minimal",
@@ -134,30 +134,30 @@
       "name": "cost",
       "score": 0.45,
       "findings": [
-        "Page is ~170,599 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Page is ~172,194 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
         "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
         "Inline scripts/styles are 0% of page \u2014 reasonable",
         "Max DOM depth is 10 \u2014 clean structure",
-        "Reading this page costs $0.21\u2013$2.56 per load ($1.07\u2013$12.79 for a 5-page session)"
+        "Reading this page costs $0.22\u2013$2.58 per load ($1.08\u2013$12.91 for a 5-page session)"
       ],
       "details": {
-        "raw_tokens": 170598,
+        "raw_tokens": 172194,
         "signal_tokens": 43,
         "signal_ratio": 0.0,
         "max_dom_depth": 10,
-        "class_token_ratio": 0.011,
+        "class_token_ratio": 0.01,
         "inline_bloat_ratio": 0.0,
         "cost_per_page_usd": {
-          "claude-sonnet": 0.5118,
-          "gpt-4o": 0.4265,
-          "claude-opus": 2.559,
-          "gemini-pro": 0.2132
+          "claude-sonnet": 0.5166,
+          "gpt-4o": 0.4305,
+          "claude-opus": 2.5829,
+          "gemini-pro": 0.2152
         },
         "cost_5_pages_usd": {
-          "claude-sonnet": 2.559,
-          "gpt-4o": 2.1325,
-          "claude-opus": 12.7949,
-          "gemini-pro": 1.0662
+          "claude-sonnet": 2.5829,
+          "gpt-4o": 2.1524,
+          "claude-opus": 12.9146,
+          "gemini-pro": 1.0762
         },
         "internal_links": 6
       }
@@ -187,17 +187,17 @@
     },
     {
       "name": "performance",
-      "score": 0.834,
+      "score": 0.833,
       "findings": [
-        "Fast response: 282ms",
-        "Moderate payload: 669KB",
+        "Fast response: 289ms",
+        "Moderate payload: 671KB",
         "1 redirect(s) \u2014 acceptable",
         "Lean resources: 9 scripts, 5 styles, 0 images",
         "Compression enabled: gzip"
       ],
       "details": {
-        "response_time_ms": 282.2,
-        "payload_size_kb": 668.6,
+        "response_time_ms": 289.2,
+        "payload_size_kb": 671.5,
         "redirect_count": 1,
         "redirect_chain": [
           "https://youtube.com"
@@ -207,6 +207,39 @@
         "image_count": 0,
         "iframe_count": 1,
         "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
       }
     }
   ]
