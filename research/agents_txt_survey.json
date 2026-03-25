@@ -1,0 +1,2466 @@
+{
+  "metadata": {
+    "description": "agents.txt adoption survey across popular websites",
+    "date": "2026-03-24",
+    "total_sites": 239,
+    "sites_with_agents_txt": 0,
+    "adoption_rate_pct": 0.0,
+    "methodology": "Fetched /agents.txt from each domain over HTTPS with 10s timeout. Counted as 'found' if HTTP 200 with non-HTML text content of 5+ characters. Parsed for robots.txt-like directives and known AI agent names."
+  },
+  "category_summary": {
+    "JS Frameworks": {
+      "total": 20,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Developer Tools": {
+      "total": 30,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "AI / ML Platforms": {
+      "total": 25,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Enterprise SaaS": {
+      "total": 40,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Programming Languages & Runtimes": {
+      "total": 20,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Databases": {
+      "total": 15,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "News & Media": {
+      "total": 20,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Consumer Web": {
+      "total": 30,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Documentation Platforms": {
+      "total": 15,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Government & Education": {
+      "total": 10,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Health": {
+      "total": 5,
+      "found": 0,
+      "adoption_pct": 0.0
+    },
+    "Finance": {
+      "total": 9,
+      "found": 0,
+      "adoption_pct": 0.0
+    }
+  },
+  "directive_frequency": {},
+  "agent_mention_frequency": {},
+  "sites": [
+    {
+      "domain": "alpinejs.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "angular.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "astro.build",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "backbonejs.org",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "emberjs.com",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "htmx.org",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "lit.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "mithril.js.org",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "nextjs.org",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "nuxt.com",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "preactjs.com",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "qwik.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "react.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "remix.run",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "solidjs.com",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "stimulus.hotwired.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "svelte.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "turbo.build",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "vite.dev",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "vuejs.org",
+      "category": "JS Frameworks",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:08Z"
+    },
+    {
+      "domain": "ansible.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "aws.amazon.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "azure.microsoft.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "circleci.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "cloud.google.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "cloudflare.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "datadog.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "digitalocean.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "docker.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "fly.io",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "github.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 406,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "gitlab.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "grafana.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "hashicorp.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 429,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "heroku.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "jenkins.io",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "launchdarkly.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "netlify.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "newrelic.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "pagerduty.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "postman.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "pulumi.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "puppet.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "railway.app",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "render.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "sentry.io",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:10Z"
+    },
+    {
+      "domain": "supabase.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "terraform.io",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "travis-ci.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "vercel.com",
+      "category": "Developer Tools",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:09Z"
+    },
+    {
+      "domain": "anthropic.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "anyscale.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "cohere.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "copy.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "deepmind.google",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "huggingface.co",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "jasper.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "midjourney.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "milvus.io",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "mistral.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "mlflow.org",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "modal.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "openai.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "perplexity.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "pinecone.io",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "qdrant.tech",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "ray.io",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "replicate.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "runway.ml",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "stability.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "together.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:11Z"
+    },
+    {
+      "domain": "wandb.ai",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "weaviate.io",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:12Z"
+    },
+    {
+      "domain": "writer.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "you.com",
+      "category": "AI / ML Platforms",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "airtable.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "amplitude.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "appsmith.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "asana.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "auth0.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "bubble.io",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "clickup.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "confluence.atlassian.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "contentful.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "crowdstrike.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "duo.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "figma.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "fullstory.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "ghost.org",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "heap.io",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "hotjar.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "hubspot.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "intercom.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "jira.atlassian.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "linear.app",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "mailchimp.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "miro.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "mixpanel.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "monday.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "notion.so",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "okta.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "onelogin.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "retool.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:15Z"
+    },
+    {
+      "domain": "salesforce.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "segment.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "sendgrid.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "shopify.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "slack.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "squarespace.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "stripe.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:13Z"
+    },
+    {
+      "domain": "twilio.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "webflow.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "wix.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "wordpress.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "zendesk.com",
+      "category": "Enterprise SaaS",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:14Z"
+    },
+    {
+      "domain": "clojure.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "crystal-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "dart.dev",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "elixir-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "erlang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "gleam.run",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "go.dev",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "haskell.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "kotlinlang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "nim-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "nodejs.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "php.net",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "python.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "roc-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "ruby-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "rust-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "scala-lang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "swift.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "typescriptlang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:16Z"
+    },
+    {
+      "domain": "ziglang.org",
+      "category": "Programming Languages & Runtimes",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "arangodb.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "cockroachlabs.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "couchbase.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "dgraph.io",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "fauna.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 0,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "mongodb.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "mysql.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 0,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "neo4j.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "neon.tech",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "planetscale.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "postgresql.org",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "questdb.io",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "redis.io",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:17Z"
+    },
+    {
+      "domain": "sqlite.org",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "timescale.com",
+      "category": "Databases",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "arstechnica.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "bbc.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "bloomberg.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "buzzfeed.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "cnn.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "economist.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "forbes.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "ft.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "huffpost.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "nytimes.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "reuters.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 401,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:18Z"
+    },
+    {
+      "domain": "techcrunch.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "theguardian.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "theverge.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "time.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "vice.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "vox.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "washingtonpost.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "wired.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:19Z"
+    },
+    {
+      "domain": "wsj.com",
+      "category": "News & Media",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "airbnb.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "amazon.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "apple.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "bestbuy.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "booking.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 202,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "doordash.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "ebay.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "etsy.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "expedia.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "facebook.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "google.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "grubhub.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "instagram.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "linkedin.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "netflix.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "nike.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "pinterest.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "reddit.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "redfin.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "snapchat.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "spotify.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "target.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "tiktok.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "tripadvisor.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "twitter.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "uber.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "walmart.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:21Z"
+    },
+    {
+      "domain": "yelp.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:22Z"
+    },
+    {
+      "domain": "youtube.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:20Z"
+    },
+    {
+      "domain": "zillow.com",
+      "category": "Consumer Web",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "devdocs.io",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "developer.mozilla.org",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "docs.oracle.com",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "docs.python.org",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "docs.rs",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 400,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "docusaurus.io",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "doxygen.nl",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "gitbook.com",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "hexdocs.pm",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "javadoc.io",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "mkdocs.org",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": -1,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "pkg.go.dev",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "readthedocs.org",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:23Z"
+    },
+    {
+      "domain": "rubydoc.info",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "sphinx-doc.org",
+      "category": "Documentation Platforms",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "berkeley.edu",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "cam.ac.uk",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "cdc.gov",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "harvard.edu",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "mit.edu",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "nasa.gov",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "nih.gov",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "ox.ac.uk",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "stanford.edu",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "usa.gov",
+      "category": "Government & Education",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "clevelandclinic.org",
+      "category": "Health",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:25Z"
+    },
+    {
+      "domain": "healthline.com",
+      "category": "Health",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:25Z"
+    },
+    {
+      "domain": "mayoclinic.org",
+      "category": "Health",
+      "has_agents_txt": false,
+      "status_code": 200,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:25Z"
+    },
+    {
+      "domain": "medlineplus.gov",
+      "category": "Health",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:25Z"
+    },
+    {
+      "domain": "webmd.com",
+      "category": "Health",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:24Z"
+    },
+    {
+      "domain": "bankofamerica.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "chase.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:25Z"
+    },
+    {
+      "domain": "coinbase.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "fidelity.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "paypal.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "robinhood.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 403,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "schwab.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "stripe.dev",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    },
+    {
+      "domain": "wellsfargo.com",
+      "category": "Finance",
+      "has_agents_txt": false,
+      "status_code": 404,
+      "content_length": 0,
+      "directives_found": [],
+      "agent_names_mentioned": [],
+      "timestamp": "2026-03-24T23:10:26Z"
+    }
+  ]
+}
