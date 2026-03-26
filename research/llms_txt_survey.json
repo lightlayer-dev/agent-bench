@@ -1,10 +1,10 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-17",
+    "date": "2026-03-26",
     "total_sites": 239,
-    "sites_with_llms_txt": 63,
-    "adoption_rate_pct": 26.4,
+    "sites_with_llms_txt": 65,
+    "adoption_rate_pct": 27.2,
     "methodology": "Fetched /llms.txt from each domain over HTTPS. Counted as 'found' if 200 status with non-HTML text content of 10+ characters."
   },
   "category_summary": {
@@ -15,13 +15,13 @@
     },
     "Developer Tools": {
       "total": 30,
-      "found": 13,
-      "adoption_pct": 43.3
+      "found": 14,
+      "adoption_pct": 46.7
     },
     "AI / ML Platforms": {
       "total": 25,
-      "found": 11,
-      "adoption_pct": 44.0
+      "found": 12,
+      "adoption_pct": 48.0
     },
     "Enterprise SaaS": {
       "total": 40,
@@ -140,7 +140,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 6921
+      "content_length_bytes": 7897
     },
     {
       "domain": "nuxt.com",
@@ -212,7 +212,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 10322
+      "content_length_bytes": 10346
     },
     {
       "domain": "vite.dev",
@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46346
+      "content_length_bytes": 46110
     },
     {
       "domain": "digitalocean.com",
@@ -316,7 +316,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 27488
+      "content_length_bytes": 27108
     },
     {
       "domain": "gitlab.com",
@@ -348,7 +348,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 5760
+      "content_length_bytes": 5662
     },
     {
       "domain": "jenkins.io",
@@ -369,10 +369,10 @@
     {
       "domain": "netlify.com",
       "category": "Developer Tools",
-      "status": "not_found",
-      "status_code": 404,
-      "content_type": "text/html; charset=UTF-8",
-      "content_length_bytes": 0
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "content_length_bytes": 18795
     },
     {
       "domain": "newrelic.com",
@@ -396,7 +396,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 140758
+      "content_length_bytes": 139734
     },
     {
       "domain": "pulumi.com",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 150060
+      "content_length_bytes": 151976
     },
     {
       "domain": "puppet.com",
@@ -419,7 +419,7 @@
       "category": "Developer Tools",
       "status": "found",
       "status_code": 200,
-      "content_type": "text/plain; charset=UTF-8",
+      "content_type": "text/plain; charset=utf-8",
       "content_length_bytes": 867
     },
     {
@@ -428,7 +428,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 31658
+      "content_length_bytes": 31841
     },
     {
       "domain": "sentry.io",
@@ -468,7 +468,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 329004
+      "content_length_bytes": 331615
     },
     {
       "domain": "anthropic.com",
@@ -521,10 +521,10 @@
     {
       "domain": "jasper.ai",
       "category": "AI / ML Platforms",
-      "status": "not_found",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "content_length_bytes": 0
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 9542
     },
     {
       "domain": "midjourney.com",
@@ -540,7 +540,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 57012
+      "content_length_bytes": 32555
     },
     {
       "domain": "mistral.ai",
@@ -564,7 +564,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 16945
+      "content_length_bytes": 17025
     },
     {
       "domain": "openai.com",
@@ -588,7 +588,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 43634
+      "content_length_bytes": 32427
     },
     {
       "domain": "qdrant.tech",
@@ -652,7 +652,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 18554
+      "content_length_bytes": 20234
     },
     {
       "domain": "writer.com",
@@ -660,7 +660,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain;charset=utf-8",
-      "content_length_bytes": 4890
+      "content_length_bytes": 4976
     },
     {
       "domain": "you.com",
@@ -708,7 +708,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 313559
+      "content_length_bytes": 403007
     },
     {
       "domain": "bubble.io",
@@ -828,7 +828,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 8865
+      "content_length_bytes": 9026
     },
     {
       "domain": "mailchimp.com",
@@ -876,13 +876,13 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 194222
+      "content_length_bytes": 195822
     },
     {
       "domain": "onelogin.com",
       "category": "Enterprise SaaS",
-      "status": "not_found",
-      "status_code": 404,
+      "status": "http_400",
+      "status_code": 400,
       "content_type": "text/html; charset=utf-8",
       "content_length_bytes": 0
     },
@@ -948,7 +948,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 63443
+      "content_length_bytes": 63916
     },
     {
       "domain": "twilio.com",
@@ -956,7 +956,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 2180893
+      "content_length_bytes": 2186657
     },
     {
       "domain": "webflow.com",
@@ -1060,7 +1060,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 44362
+      "content_length_bytes": 44561
     },
     {
       "domain": "nim-lang.org",
@@ -1177,9 +1177,9 @@
     {
       "domain": "dgraph.io",
       "category": "Databases",
-      "status": "http_422",
-      "status_code": 422,
-      "content_type": "text/plain; charset=utf-8",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "",
       "content_length_bytes": 0
     },
     {
@@ -1220,7 +1220,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 26004
+      "content_length_bytes": 25648
     },
     {
       "domain": "planetscale.com",
@@ -1228,7 +1228,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 90980
+      "content_length_bytes": 95117
     },
     {
       "domain": "postgresql.org",
@@ -1244,7 +1244,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 226027
+      "content_length_bytes": 195298
     },
     {
       "domain": "redis.io",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 121857
+      "content_length_bytes": 122653
     },
     {
       "domain": "arstechnica.com",
@@ -1329,9 +1329,9 @@
     {
       "domain": "ft.com",
       "category": "News & Media",
-      "status": "html_page",
-      "status_code": 200,
-      "content_type": "text/html; charset=utf-8",
+      "status": "http_403",
+      "status_code": 403,
+      "content_type": "text/html; charset=UTF-8",
       "content_length_bytes": 0
     },
     {
