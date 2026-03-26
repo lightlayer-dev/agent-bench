@@ -324,13 +324,13 @@ def main():
         print(f"  {cat}: {stats['found']}/{stats['total']} ({stats['adoption_pct']}%)")
 
     if found:
-        print(f"\nSites with agents.txt:")
+        print("\nSites with agents.txt:")
         for r in found:
             directives_str = ", ".join(r.directives_found) if r.directives_found else "none parsed"
             print(f"  {r.domain} ({r.category}, {r.content_length}B, directives: {directives_str})")
 
     if all_agents:
-        print(f"\nAgent names mentioned across all agents.txt files:")
+        print("\nAgent names mentioned across all agents.txt files:")
         for agent, count in sorted(all_agents.items(), key=lambda x: -x[1]):
             print(f"  {agent}: {count} site(s)")
 

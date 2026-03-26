@@ -235,7 +235,7 @@ def main():
     print(f"{'='*60}")
     for cat, stats in cat_summary.items():
         print(f"  {cat}: {stats['found']}/{stats['total']} ({stats['adoption_pct']}%)")
-    print(f"\nSites with llms.txt:")
+    print("\nSites with llms.txt:")
     for r in found:
         print(f"  {r.domain} ({r.category}, {r.content_length}B)")
 
