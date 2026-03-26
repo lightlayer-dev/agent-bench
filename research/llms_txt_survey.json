@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46110
+      "content_length_bytes": 46102
     },
     {
       "domain": "digitalocean.com",
@@ -348,7 +348,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 5662
+      "content_length_bytes": 6074
     },
     {
       "domain": "jenkins.io",
@@ -708,7 +708,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 403007
+      "content_length_bytes": 403047
     },
     {
       "domain": "bubble.io",
@@ -1169,9 +1169,9 @@
     {
       "domain": "couchbase.com",
       "category": "Databases",
-      "status": "not_found",
-      "status_code": 404,
-      "content_type": "text/html; charset=UTF-8",
+      "status": "timeout",
+      "status_code": 0,
+      "content_type": "",
       "content_length_bytes": 0
     },
     {
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 122653
+      "content_length_bytes": 122941
     },
     {
       "domain": "arstechnica.com",
@@ -1529,8 +1529,8 @@
     {
       "domain": "instagram.com",
       "category": "Consumer Web",
-      "status": "html_page",
-      "status_code": 200,
+      "status": "http_429",
+      "status_code": 429,
       "content_type": "text/html; charset=\"utf-8\"",
       "content_length_bytes": 0
     },
