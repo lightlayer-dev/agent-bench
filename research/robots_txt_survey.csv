@@ -54,7 +54,7 @@ vercel.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,a
 amazon.com,E-commerce,ok,blocked,blocked,blocked,allowed,blocked,blocked,blocked,blocked,7,1
 bestbuy.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 costco.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
-ebay.com,E-commerce,ok,allowed,allowed,blocked,blocked,allowed,blocked,blocked,blocked,5,3
+ebay.com,E-commerce,ok,blocked,allowed,blocked,blocked,allowed,blocked,blocked,blocked,6,2
 etsy.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 homedepot.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 lowes.com,E-commerce,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8

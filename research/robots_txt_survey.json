@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "AI bot blocking survey of popular websites via robots.txt",
-    "date": "2026-03-16",
+    "date": "2026-03-26",
     "total_sites": 99,
     "ai_bots_checked": [
       "GPTBot",
@@ -17,9 +17,9 @@
   },
   "summary": {
     "GPTBot": {
-      "blocked": 24,
-      "allowed": 69,
-      "blocked_pct": 25.8
+      "blocked": 25,
+      "allowed": 68,
+      "blocked_pct": 26.9
     },
     "ChatGPT-User": {
       "blocked": 21,
@@ -888,7 +888,7 @@
       "category": "E-commerce",
       "robots_txt_status": "ok",
       "bots": {
-        "GPTBot": "allowed",
+        "GPTBot": "blocked",
         "ChatGPT-User": "allowed",
         "ClaudeBot": "blocked",
         "anthropic-ai": "blocked",
