@@ -1,10 +1,10 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-26",
+    "date": "2026-03-27",
     "total_sites": 239,
-    "sites_with_llms_txt": 65,
-    "adoption_rate_pct": 27.2,
+    "sites_with_llms_txt": 66,
+    "adoption_rate_pct": 27.6,
     "methodology": "Fetched /llms.txt from each domain over HTTPS. Counted as 'found' if 200 status with non-HTML text content of 10+ characters."
   },
   "category_summary": {
@@ -50,8 +50,8 @@
     },
     "Documentation Platforms": {
       "total": 15,
-      "found": 0,
-      "adoption_pct": 0.0
+      "found": 1,
+      "adoption_pct": 6.7
     },
     "Government & Education": {
       "total": 10,
@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46102
+      "content_length_bytes": 46091
     },
     {
       "domain": "digitalocean.com",
@@ -468,7 +468,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 331615
+      "content_length_bytes": 342946
     },
     {
       "domain": "anthropic.com",
@@ -564,7 +564,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 17025
+      "content_length_bytes": 17114
     },
     {
       "domain": "openai.com",
@@ -660,7 +660,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain;charset=utf-8",
-      "content_length_bytes": 4976
+      "content_length_bytes": 5568
     },
     {
       "domain": "you.com",
@@ -708,7 +708,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 403047
+      "content_length_bytes": 403089
     },
     {
       "domain": "bubble.io",
@@ -876,7 +876,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 195822
+      "content_length_bytes": 195657
     },
     {
       "domain": "onelogin.com",
@@ -956,7 +956,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 2186657
+      "content_length_bytes": 2187671
     },
     {
       "domain": "webflow.com",
@@ -1169,9 +1169,9 @@
     {
       "domain": "couchbase.com",
       "category": "Databases",
-      "status": "timeout",
-      "status_code": 0,
-      "content_type": "",
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=UTF-8",
       "content_length_bytes": 0
     },
     {
@@ -1228,7 +1228,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 95117
+      "content_length_bytes": 95470
     },
     {
       "domain": "postgresql.org",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 122941
+      "content_length_bytes": 122922
     },
     {
       "domain": "arstechnica.com",
@@ -1529,8 +1529,8 @@
     {
       "domain": "instagram.com",
       "category": "Consumer Web",
-      "status": "http_429",
-      "status_code": 429,
+      "status": "html_page",
+      "status_code": 200,
       "content_type": "text/html; charset=\"utf-8\"",
       "content_length_bytes": 0
     },
@@ -1785,10 +1785,10 @@
     {
       "domain": "sphinx-doc.org",
       "category": "Documentation Platforms",
-      "status": "not_found",
-      "status_code": 404,
-      "content_type": "text/html; charset=utf-8",
-      "content_length_bytes": 0
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length_bytes": 297
     },
     {
       "domain": "berkeley.edu",

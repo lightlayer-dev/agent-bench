@@ -32,7 +32,7 @@ svelte.dev,JS Frameworks,found,200,text/plain; charset=utf-8,1673,"# Svelte Docu
 > Svelte is a UI framework that uses a compiler to let you write breathtakingly concise components that do minimal work in the browser, using languages you already know — HTML, CSS and JavaScript."
 turbo.build,JS Frameworks,found,200,text/markdown; charset=utf-8,10346,"# Turborepo documentation
 
-Generated at: Thu, 26 Mar 2026 21:35:44 GMT"
+Generated at: Fri, 27 Mar 2026 18:38:48 GMT"
 vite.dev,JS Frameworks,found,200,text/plain; charset=UTF-8,3555,"# Vite
 
 > The Build Tool for the Web"
@@ -49,7 +49,7 @@ circleci.com,Developer Tools,found,200,text/plain; charset=UTF-8,5924,"﻿# Circ
 > CircleCI is a cloud-native continuous integration and delivery (CI/CD) platform that enables software teams to automate build, test, and deployment workflows. The platform supports Docker, Linux, macOS, Windows, GPU, and Android environments for flexible, scalable execution across diverse application types.  "
 cloud.google.com,Developer Tools,not_found,404,text/html; charset=utf-8,0,
 cloudflare.com,Developer Tools,not_found,404,text/plain; charset=UTF-8,0,
-datadog.com,Developer Tools,found,200,text/plain; charset=utf-8,46102,"# Datadog
+datadog.com,Developer Tools,found,200,text/plain; charset=utf-8,46091,"# Datadog
 
 > AI-Powered Observability and Security. See inside any stack, any app, at any scale, anywhere."
 digitalocean.com,Developer Tools,not_found,404,text/html; charset=utf-8,0,
@@ -94,7 +94,7 @@ supabase.com,Developer Tools,found,200,text/plain; charset=utf-8,546,"# Supabase
 - [Supabase Guides](https://supabase.com/llms/guides.txt)"
 terraform.io,Developer Tools,html_page,200,text/html; charset=utf-8,0,
 travis-ci.com,Developer Tools,not_found,404,text/html; charset=UTF-8,0,
-vercel.com,Developer Tools,found,200,text/plain; charset=utf-8,331615,"# Documentation
+vercel.com,Developer Tools,found,200,text/plain; charset=utf-8,342946,"# Documentation
 
 # Vercel Documentation"
 anthropic.com,AI / ML Platforms,not_found,404,text/html; charset=utf-8,0,
@@ -118,7 +118,7 @@ mistral.ai,AI / ML Platforms,found,200,text/plain; charset=UTF-8,4846,"# Mistral
 mlflow.org,AI / ML Platforms,found,200,text/plain,13563,"# MLflow
 
 > MLflow is the largest open source AI engineering platform for agents, LLMs, and models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize their AI applications while controlling costs and managing access to models and data. With over 30 million monthly downloads, thousands of organizations rely on MLflow each day to ship AI to production with confidence."
-modal.com,AI / ML Platforms,found,200,text/plain,17025,"# Modal llms.txt
+modal.com,AI / ML Platforms,found,200,text/plain,17114,"# Modal llms.txt
 
 > Modal is a platform for running Python code in the cloud with minimal"
 openai.com,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
@@ -142,9 +142,9 @@ wandb.ai,AI / ML Platforms,html_page,200,text/html; charset=utf-8,0,
 weaviate.io,AI / ML Platforms,found,200,text/plain; charset=UTF-8,20234,"## TL;DR
 
 Weaviate is an open-source vector database (Go) that stores objects, vectors, and inverted indexes in one system — use it as a **primary database** for AI-native apps, not just a secondary vector store. Start with **Weaviate Cloud** (zero-ops, auto-scaling, free trial) and use **hybrid search** (`col.query.hybrid(...)`) for best result quality. Built-in embeddings (`weaviate-embeddings`) mean no third-party API keys are needed. First-class **multi-tenancy** makes it ideal for SaaS. Beyond the core DB, the stack includes the **Query Agent** (turnkey RAG) and **Engram** (agent memory, preview)."
-writer.com,AI / ML Platforms,found,200,text/plain;charset=utf-8,4976,"﻿# WRITER: The enterprise AI platform for agentic work
+writer.com,AI / ML Platforms,found,200,text/plain;charset=utf-8,5568,"﻿# WRITER: The enterprise AI platform for agentic work
 
-> Global 2000 enterprises trust WRITER to transform what basic automation tools never could – from campaigns and RFPs to personalized comms\."
+> WRITER is the enterprise AI agent platform trusted by Fortune 500 companies, built to help teams execute and scale on\-brand, compliant work\."
 you.com,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
 airtable.com,Enterprise SaaS,not_found,404,text/html; charset=utf-8,0,
 amplitude.com,Enterprise SaaS,html_page,200,text/html; charset=utf-8,0,
@@ -152,7 +152,7 @@ appsmith.com,Enterprise SaaS,not_found,404,text/html; charset=utf-8,0,
 asana.com,Enterprise SaaS,found,200,text/plain; charset=UTF-8,5691,"# Asana
 
 > Asana is a work management platform built for scale. With Asana, you can set company-wide goals, manage strategic plans, projects, tasks, and get work done on a single platform. You can also use AI teammates that can give insights, take action, and level up goals across your entire Asana experience. Work anytime, anywhere, and keep your entire organization focused on their objectives."
-auth0.com,Enterprise SaaS,found,200,text/plain,403047,"# Auth0 blog
+auth0.com,Enterprise SaaS,found,200,text/plain,403089,"# Auth0 blog
 Everything you need to know about Identity Infrastructure, Access Management, SSO and JWT Authentication. Company updates & Technology Trends.
 "
 bubble.io,Enterprise SaaS,not_found,404,text/html,0,
@@ -189,7 +189,7 @@ monday.com,Enterprise SaaS,found,200,text/plain; charset=UTF-8,7481,"# monday.co
 notion.so,Enterprise SaaS,found,200,text/plain; charset=utf-8,6914,"> Notion is the connected workspace where better, faster work happens. From notes and docs to projects and wikis, Notion's highly customizable building blocks make it the all-in-one workspace for modern teams. More than 50 million people and teams around the world use Notion to organize their work and get more done.
 
 Key terms: Workspace, Knowledge Management, Project Management, Wiki, Documents, Database, Collaboration, Team Productivity, AI Writing Assistant, API, Templates, Blocks, Wikis, Notes, Tasks, Knowledge Base"
-okta.com,Enterprise SaaS,found,200,text/plain; charset=UTF-8,195822,"# Okta and Auth0 Platforms
+okta.com,Enterprise SaaS,found,200,text/plain; charset=UTF-8,195657,"# Okta and Auth0 Platforms
 
 > The Okta and Auth0 Platforms enable secure access, authentication, and automation — putting identity at the heart of business security and growth."
 onelogin.com,Enterprise SaaS,http_400,400,text/html; charset=utf-8,0,
@@ -209,7 +209,7 @@ squarespace.com,Enterprise SaaS,not_found,404,text/html;charset=utf-8,0,
 stripe.com,Enterprise SaaS,found,200,text/plain; charset=utf-8,63916,"# Stripe
 
 > Stripe is a technology company that provides financial infrastructure for businesses. Businesses of every size—from new startups to established public companies—use Stripe to accept payments online and in person, embed financial services, and create custom revenue models. For complete documentation in a single file, see [Full Documentation](https://stripe.com/llms-full.txt)."
-twilio.com,Enterprise SaaS,found,200,text/markdown; charset=utf-8,2186657,"## [Communications APIs with AI and data for SMS, Voice, Email | Twilio]
+twilio.com,Enterprise SaaS,found,200,text/markdown; charset=utf-8,2187671,"## [Communications APIs with AI and data for SMS, Voice, Email | Twilio]
 
 * [Communications APIs with AI and data for SMS, Voice, Email | Twilio](https://www.twilio.com/en-us.md): Create amazing customer experiences with our Customer Engagement Platform (CEP) that combines communication APIs with AI. Build solutions for SMS, WhatsApp, voice, and email."
 webflow.com,Enterprise SaaS,found,200,text/plain; charset=utf-8,8089,"# Webflow: The Visual Website Experience Platform
@@ -246,7 +246,7 @@ typescriptlang.org,Programming Languages & Runtimes,not_found,404,text/html; cha
 ziglang.org,Programming Languages & Runtimes,not_found,404,text/html,0,
 arangodb.com,Databases,html_page,200,text/html; charset=UTF-8,0,
 cockroachlabs.com,Databases,not_found,404,text/html; charset=utf-8,0,
-couchbase.com,Databases,timeout,0,,0,
+couchbase.com,Databases,not_found,404,text/html; charset=UTF-8,0,
 dgraph.io,Databases,not_found,404,,0,
 fauna.com,Databases,timeout,0,,0,
 mongodb.com,Databases,found,200,text/plain; charset=UTF-8,1488,"# MongoDB
@@ -257,7 +257,7 @@ neo4j.com,Databases,http_403,403,text/html,0,
 neon.tech,Databases,found,200,text/plain; charset=utf-8,25648,"# Neon Postgres
 
 > Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully compatible with Postgres and works with any language, framework, or ORM that supports Postgres."
-planetscale.com,Databases,found,200,text/plain; charset=utf-8,95117,"# PlanetScale
+planetscale.com,Databases,found,200,text/plain; charset=utf-8,95470,"# PlanetScale
 
 ## Docs"
 postgresql.org,Databases,not_found,404,text/html; charset=utf-8,0,
@@ -268,7 +268,7 @@ redis.io,Databases,found,200,text/plain; charset=utf-8,9661,"# llms.txt for Redi
 # Description: List of Redis documentation markdown files for LLMs and AI assistants to ingest and cite.
 "
 sqlite.org,Databases,not_found,404,text/html; charset=utf-8,0,
-timescale.com,Databases,found,200,text/plain; charset=utf-8,122941,"# Tiger Data | Creators of TimescaleDB
+timescale.com,Databases,found,200,text/plain; charset=utf-8,122922,"# Tiger Data | Creators of TimescaleDB
 
 > Postgres for live data"
 arstechnica.com,News & Media,not_found,404,text/html,0,
@@ -305,7 +305,7 @@ expedia.com,Consumer Web,found,200,text/plain,7011,"# Expedia.com
 facebook.com,Consumer Web,html_page,200,"text/html; charset=""utf-8""",0,
 google.com,Consumer Web,not_found,404,text/html; charset=UTF-8,0,
 grubhub.com,Consumer Web,html_page,200,text/html,0,
-instagram.com,Consumer Web,http_429,429,"text/html; charset=""utf-8""",0,
+instagram.com,Consumer Web,html_page,200,"text/html; charset=""utf-8""",0,
 linkedin.com,Consumer Web,not_found,404,text/html,0,
 netflix.com,Consumer Web,html_page,200,text/html; charset=utf-8,0,
 nike.com,Consumer Web,not_found,404,text/html; charset=UTF-8,0,
@@ -339,7 +339,9 @@ mkdocs.org,Documentation Platforms,"error: HTTPSConnectionPool(host='mkdocs.org'
 pkg.go.dev,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
 readthedocs.org,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
 rubydoc.info,Documentation Platforms,not_found,404,text/plain,0,
-sphinx-doc.org,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
+sphinx-doc.org,Documentation Platforms,found,200,text/markdown; charset=utf-8,297,"404 Page not found
+
+[www.sphinx-doc.org](https://www.sphinx-doc.org/) "
 berkeley.edu,Government & Education,not_found,404,text/html,0,
 cam.ac.uk,Government & Education,not_found,404,text/html; charset=utf-8,0,
 cdc.gov,Government & Education,not_found,404,text/html,0,
