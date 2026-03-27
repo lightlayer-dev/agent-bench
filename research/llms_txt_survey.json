@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46091
+      "content_length_bytes": 46104
     },
     {
       "domain": "digitalocean.com",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 151976
+      "content_length_bytes": 152218
     },
     {
       "domain": "puppet.com",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 122922
+      "content_length_bytes": 123010
     },
     {
       "domain": "arstechnica.com",

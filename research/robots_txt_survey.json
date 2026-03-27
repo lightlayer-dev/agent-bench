@@ -1186,16 +1186,16 @@
     {
       "domain": "ed.gov",
       "category": "Government",
-      "robots_txt_status": "not_found",
+      "robots_txt_status": "timeout",
       "bots": {
-        "GPTBot": "allowed",
-        "ChatGPT-User": "allowed",
-        "ClaudeBot": "allowed",
-        "anthropic-ai": "allowed",
-        "Google-Extended": "allowed",
-        "CCBot": "allowed",
-        "PerplexityBot": "allowed",
-        "Bytespider": "allowed"
+        "GPTBot": "unknown",
+        "ChatGPT-User": "unknown",
+        "ClaudeBot": "unknown",
+        "anthropic-ai": "unknown",
+        "Google-Extended": "unknown",
+        "CCBot": "unknown",
+        "PerplexityBot": "unknown",
+        "Bytespider": "unknown"
       }
     },
     {
