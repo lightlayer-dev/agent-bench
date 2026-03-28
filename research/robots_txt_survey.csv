@@ -74,7 +74,7 @@ schwab.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,al
 venmo.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 wellsfargo.com,Finance,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 cdc.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
-ed.gov,Government,timeout,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
+ed.gov,Government,not_found,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 epa.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 fda.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 irs.gov,Government,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8

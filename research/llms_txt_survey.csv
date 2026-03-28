@@ -32,7 +32,7 @@ svelte.dev,JS Frameworks,found,200,text/plain; charset=utf-8,1673,"# Svelte Docu
 > Svelte is a UI framework that uses a compiler to let you write breathtakingly concise components that do minimal work in the browser, using languages you already know — HTML, CSS and JavaScript."
 turbo.build,JS Frameworks,found,200,text/markdown; charset=utf-8,10346,"# Turborepo documentation
 
-Generated at: Fri, 27 Mar 2026 21:34:31 GMT"
+Generated at: Sat, 28 Mar 2026 15:36:49 GMT"
 vite.dev,JS Frameworks,found,200,text/plain; charset=UTF-8,3555,"# Vite
 
 > The Build Tool for the Web"
@@ -73,12 +73,12 @@ newrelic.com,Developer Tools,not_found,404,text/html,0,
 pagerduty.com,Developer Tools,found,200,text/plain,22403,"PagerDuty - AI and Machine Learning Capabilities Guide
 ==================================================
 "
-postman.com,Developer Tools,found,200,text/plain,139734,"# llms.txt
+postman.com,Developer Tools,found,200,text/plain,138985,"# llms.txt
 
 ## Site: https://www.postman.com/"
-pulumi.com,Developer Tools,found,200,text/plain,152218,"# Pulumi
+pulumi.com,Developer Tools,found,200,text/plain; charset=utf-8,8037,"# Pulumi
 
-> Infrastructure as code using real programming languages. Build, deploy, and manage cloud infrastructure on AWS, Azure, GCP, Kubernetes, and 150+ providers with TypeScript, Python, Go, C#, Java, or YAML."
+> Infrastructure as code in real programming languages. Define, deploy, and manage cloud infrastructure on AWS, Azure, Google Cloud, Kubernetes, and 150+ providers using TypeScript, Python, Go, C#, Java, or YAML."
 puppet.com,Developer Tools,not_found,404,text/html; charset=UTF-8,0,
 railway.app,Developer Tools,found,200,text/plain; charset=utf-8,867,"# Railway
 
@@ -123,7 +123,7 @@ modal.com,AI / ML Platforms,found,200,text/plain,17114,"# Modal llms.txt
 > Modal is a platform for running Python code in the cloud with minimal"
 openai.com,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
 perplexity.ai,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
-pinecone.io,AI / ML Platforms,found,200,text/plain; charset=utf-8,32427,"# Pinecone
+pinecone.io,AI / ML Platforms,found,200,text/plain; charset=utf-8,32577,"# Pinecone
 > Search through billions of items for similar matches to any object, in milliseconds. It’s the next generation of search, an API call away.
 "
 qdrant.tech,AI / ML Platforms,found,200,text/plain; charset=UTF-8,11745,"# https://qdrant.tech/ llms.txt
@@ -257,7 +257,7 @@ neo4j.com,Databases,http_403,403,text/html,0,
 neon.tech,Databases,found,200,text/plain; charset=utf-8,25648,"# Neon Postgres
 
 > Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully compatible with Postgres and works with any language, framework, or ORM that supports Postgres."
-planetscale.com,Databases,found,200,text/plain; charset=utf-8,95470,"# PlanetScale
+planetscale.com,Databases,found,200,text/plain; charset=utf-8,96287,"# PlanetScale
 
 ## Docs"
 postgresql.org,Databases,not_found,404,text/html; charset=utf-8,0,

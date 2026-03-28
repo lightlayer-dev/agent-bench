@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-27",
+    "date": "2026-03-28",
     "total_sites": 239,
     "sites_with_llms_txt": 66,
     "adoption_rate_pct": 27.6,
@@ -396,15 +396,15 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 139734
+      "content_length_bytes": 138985
     },
     {
       "domain": "pulumi.com",
       "category": "Developer Tools",
       "status": "found",
       "status_code": 200,
-      "content_type": "text/plain",
-      "content_length_bytes": 152218
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 8037
     },
     {
       "domain": "puppet.com",
@@ -588,7 +588,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 32427
+      "content_length_bytes": 32577
     },
     {
       "domain": "qdrant.tech",
@@ -1228,7 +1228,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 95470
+      "content_length_bytes": 96287
     },
     {
       "domain": "postgresql.org",
