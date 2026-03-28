@@ -18,43 +18,43 @@
   "summary": {
     "GPTBot": {
       "blocked": 25,
-      "allowed": 68,
-      "blocked_pct": 26.9
+      "allowed": 67,
+      "blocked_pct": 27.2
     },
     "ChatGPT-User": {
       "blocked": 21,
-      "allowed": 72,
-      "blocked_pct": 22.6
+      "allowed": 71,
+      "blocked_pct": 22.8
     },
     "ClaudeBot": {
       "blocked": 32,
-      "allowed": 61,
-      "blocked_pct": 34.4
+      "allowed": 60,
+      "blocked_pct": 34.8
     },
     "anthropic-ai": {
       "blocked": 29,
-      "allowed": 64,
-      "blocked_pct": 31.2
+      "allowed": 63,
+      "blocked_pct": 31.5
     },
     "Google-Extended": {
       "blocked": 26,
-      "allowed": 67,
-      "blocked_pct": 28.0
+      "allowed": 66,
+      "blocked_pct": 28.3
     },
     "CCBot": {
       "blocked": 33,
-      "allowed": 60,
-      "blocked_pct": 35.5
+      "allowed": 59,
+      "blocked_pct": 35.9
     },
     "PerplexityBot": {
       "blocked": 30,
-      "allowed": 63,
-      "blocked_pct": 32.3
+      "allowed": 62,
+      "blocked_pct": 32.6
     },
     "Bytespider": {
       "blocked": 31,
-      "allowed": 62,
-      "blocked_pct": 33.3
+      "allowed": 61,
+      "blocked_pct": 33.7
     }
   },
   "sites": [
@@ -976,7 +976,7 @@
     {
       "domain": "target.com",
       "category": "E-commerce",
-      "robots_txt_status": "ok",
+      "robots_txt_status": "not_found",
       "bots": {
         "GPTBot": "allowed",
         "ChatGPT-User": "allowed",
@@ -1561,9 +1561,9 @@
       "blocking_pct": 11.1
     },
     "E-commerce": {
-      "total": 12,
+      "total": 11,
       "blocking_any": 2,
-      "blocking_pct": 16.7
+      "blocking_pct": 18.2
     },
     "Finance": {
       "total": 10,
