@@ -22,11 +22,11 @@ class TestFullAnalysis:
 
         assert isinstance(report, AnalysisReport)
         assert 0.0 <= report.overall_score <= 1.0
-        assert len(report.check_results) == 8
+        assert len(report.check_results) == 11
 
         # Every check should have findings
         for result in report.check_results:
-            assert result.name in ("a11y", "api", "auth", "docs", "structure", "errors", "cost", "performance")
+            assert result.name in ("a11y", "api", "auth", "docs", "structure", "errors", "cost", "performance", "agents_txt", "a2a", "x402")
             assert 0.0 <= result.score <= 1.0
             assert len(result.findings) > 0
 
@@ -37,7 +37,7 @@ class TestFullAnalysis:
 
         assert isinstance(report, AnalysisReport)
         assert 0.0 <= report.overall_score <= 1.0
-        assert len(report.check_results) == 8
+        assert len(report.check_results) == 11
 
     def test_analyze_single_check(self):
         """Run only the docs check."""
@@ -63,7 +63,7 @@ class TestFullAnalysis:
         import json
         data = json.loads(json_str)
         assert "overall_score" in data
-        assert len(data["checks"]) == 8
+        assert len(data["checks"]) == 11
 
     def test_cli_analyze(self):
         """Test the CLI analyze command."""
