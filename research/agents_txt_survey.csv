@@ -1,240 +1,240 @@
 domain,category,has_agents_txt,status_code,content_length,directives_found,agent_names_mentioned,timestamp
-alpinejs.dev,JS Frameworks,False,200,0,,,2026-03-28T18:35:08Z
-angular.dev,JS Frameworks,False,200,0,,,2026-03-28T18:35:08Z
-astro.build,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-backbonejs.org,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-emberjs.com,JS Frameworks,False,200,0,,,2026-03-28T18:35:08Z
-htmx.org,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-lit.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-mithril.js.org,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-nextjs.org,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-nuxt.com,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-preactjs.com,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-qwik.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-react.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-remix.run,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-solidjs.com,JS Frameworks,False,200,0,,,2026-03-28T18:35:08Z
-stimulus.hotwired.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-svelte.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-turbo.build,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-vite.dev,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-vuejs.org,JS Frameworks,False,404,0,,,2026-03-28T18:35:08Z
-ansible.com,Developer Tools,False,200,0,,,2026-03-28T18:35:09Z
-aws.amazon.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-azure.microsoft.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-circleci.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-cloud.google.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-cloudflare.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-datadog.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-digitalocean.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-docker.com,Developer Tools,False,404,0,,,2026-03-28T18:35:08Z
-fly.io,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-github.com,Developer Tools,False,406,0,,,2026-03-28T18:35:08Z
-gitlab.com,Developer Tools,False,403,0,,,2026-03-28T18:35:08Z
-grafana.com,Developer Tools,False,0,0,,,2026-03-28T18:35:09Z
-hashicorp.com,Developer Tools,False,429,0,,,2026-03-28T18:35:09Z
-heroku.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-jenkins.io,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-launchdarkly.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-netlify.com,Developer Tools,False,404,0,,,2026-03-28T18:35:08Z
-newrelic.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-pagerduty.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-postman.com,Developer Tools,False,200,0,,,2026-03-28T18:35:09Z
-pulumi.com,Developer Tools,False,404,0,,,2026-03-28T18:35:10Z
-puppet.com,Developer Tools,False,404,0,,,2026-03-28T18:35:10Z
-railway.app,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-render.com,Developer Tools,False,404,0,,,2026-03-28T18:35:08Z
-sentry.io,Developer Tools,False,200,0,,,2026-03-28T18:35:09Z
-supabase.com,Developer Tools,False,404,0,,,2026-03-28T18:35:08Z
-terraform.io,Developer Tools,False,200,0,,,2026-03-28T18:35:10Z
-travis-ci.com,Developer Tools,False,404,0,,,2026-03-28T18:35:09Z
-vercel.com,Developer Tools,False,200,0,,,2026-03-28T18:35:08Z
-anthropic.com,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-anyscale.com,AI / ML Platforms,False,200,0,,,2026-03-28T18:35:10Z
-cohere.com,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-copy.ai,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:11Z
-deepmind.google,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-huggingface.co,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-jasper.ai,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-midjourney.com,AI / ML Platforms,False,403,0,,,2026-03-28T18:35:10Z
-milvus.io,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-mistral.ai,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-mlflow.org,AI / ML Platforms,False,403,0,,,2026-03-28T18:35:10Z
-modal.com,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-openai.com,AI / ML Platforms,False,403,0,,,2026-03-28T18:35:10Z
-perplexity.ai,AI / ML Platforms,False,403,0,,,2026-03-28T18:35:11Z
-pinecone.io,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-qdrant.tech,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-ray.io,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-replicate.com,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-runway.ml,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-stability.ai,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-together.ai,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-wandb.ai,AI / ML Platforms,False,200,0,,,2026-03-28T18:35:10Z
-weaviate.io,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:10Z
-writer.com,AI / ML Platforms,False,404,0,,,2026-03-28T18:35:11Z
-you.com,AI / ML Platforms,False,403,0,,,2026-03-28T18:35:11Z
-airtable.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-amplitude.com,Enterprise SaaS,False,200,0,,,2026-03-28T18:35:12Z
-appsmith.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-asana.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-auth0.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-bubble.io,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-clickup.com,Enterprise SaaS,False,403,0,,,2026-03-28T18:35:11Z
-confluence.atlassian.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-contentful.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-crowdstrike.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-duo.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-figma.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-fullstory.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-ghost.org,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-heap.io,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-hotjar.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-hubspot.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-intercom.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-jira.atlassian.com,Enterprise SaaS,False,200,0,,,2026-03-28T18:35:11Z
-linear.app,Enterprise SaaS,False,200,0,,,2026-03-28T18:35:11Z
-mailchimp.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-miro.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-mixpanel.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-monday.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-notion.so,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-okta.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-onelogin.com,Enterprise SaaS,False,400,0,,,2026-03-28T18:35:12Z
-retool.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-salesforce.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-segment.com,Enterprise SaaS,False,200,0,,,2026-03-28T18:35:12Z
-sendgrid.com,Enterprise SaaS,False,200,0,,,2026-03-28T18:35:11Z
-shopify.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-slack.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-squarespace.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-stripe.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-twilio.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:11Z
-webflow.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-wix.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-wordpress.com,Enterprise SaaS,False,404,0,,,2026-03-28T18:35:12Z
-zendesk.com,Enterprise SaaS,False,403,0,,,2026-03-28T18:35:11Z
-clojure.org,Programming Languages & Runtimes,False,403,0,,,2026-03-28T18:35:13Z
-crystal-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-dart.dev,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-elixir-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-erlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-gleam.run,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-go.dev,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-haskell.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-kotlinlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-nim-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-nodejs.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:12Z
-php.net,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-python.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:12Z
-roc-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-ruby-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-rust-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:12Z
-scala-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-swift.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-typescriptlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-ziglang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T18:35:13Z
-arangodb.com,Databases,False,200,0,,,2026-03-28T18:35:14Z
-cockroachlabs.com,Databases,False,404,0,,,2026-03-28T18:35:13Z
-couchbase.com,Databases,False,404,0,,,2026-03-28T18:35:13Z
-dgraph.io,Databases,False,404,0,,,2026-03-28T18:35:14Z
-fauna.com,Databases,False,0,0,,,2026-03-28T18:35:13Z
-mongodb.com,Databases,False,404,0,,,2026-03-28T18:35:13Z
-mysql.com,Databases,False,404,0,,,2026-03-28T18:35:13Z
-neo4j.com,Databases,False,403,0,,,2026-03-28T18:35:14Z
-neon.tech,Databases,False,404,0,,,2026-03-28T18:35:13Z
-planetscale.com,Databases,False,404,0,,,2026-03-28T18:35:13Z
-postgresql.org,Databases,False,404,0,,,2026-03-28T18:35:13Z
-questdb.io,Databases,False,404,0,,,2026-03-28T18:35:14Z
-redis.io,Databases,False,404,0,,,2026-03-28T18:35:13Z
-sqlite.org,Databases,False,404,0,,,2026-03-28T18:35:13Z
-timescale.com,Databases,False,404,0,,,2026-03-28T18:35:14Z
-arstechnica.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-bbc.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-bloomberg.com,News & Media,False,403,0,,,2026-03-28T18:35:14Z
-buzzfeed.com,News & Media,False,404,0,,,2026-03-28T18:35:15Z
-cnn.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-economist.com,News & Media,False,403,0,,,2026-03-28T18:35:15Z
-forbes.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-ft.com,News & Media,False,403,0,,,2026-03-28T18:35:15Z
-huffpost.com,News & Media,False,404,0,,,2026-03-28T18:35:15Z
-nytimes.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-reuters.com,News & Media,False,401,0,,,2026-03-28T18:35:14Z
-techcrunch.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-theguardian.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-theverge.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-time.com,News & Media,False,404,0,,,2026-03-28T18:35:15Z
-vice.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-vox.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-washingtonpost.com,News & Media,False,404,0,,,2026-03-28T18:35:15Z
-wired.com,News & Media,False,404,0,,,2026-03-28T18:35:14Z
-wsj.com,News & Media,False,403,0,,,2026-03-28T18:35:15Z
-airbnb.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-amazon.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-apple.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-bestbuy.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-booking.com,Consumer Web,False,202,0,,,2026-03-28T18:35:16Z
-doordash.com,Consumer Web,False,403,0,,,2026-03-28T18:35:16Z
-ebay.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-etsy.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-expedia.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-facebook.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-google.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-grubhub.com,Consumer Web,False,200,0,,,2026-03-28T18:35:16Z
-instagram.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-linkedin.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-netflix.com,Consumer Web,False,200,0,,,2026-03-28T18:35:16Z
-nike.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-pinterest.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-reddit.com,Consumer Web,False,403,0,,,2026-03-28T18:35:15Z
-redfin.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-snapchat.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-spotify.com,Consumer Web,False,200,0,,,2026-03-28T18:35:16Z
-target.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-tiktok.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-tripadvisor.com,Consumer Web,False,403,0,,,2026-03-28T18:35:16Z
-twitter.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-uber.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-walmart.com,Consumer Web,False,200,0,,,2026-03-28T18:35:15Z
-yelp.com,Consumer Web,False,404,0,,,2026-03-28T18:35:16Z
-youtube.com,Consumer Web,False,404,0,,,2026-03-28T18:35:15Z
-zillow.com,Consumer Web,False,403,0,,,2026-03-28T18:35:16Z
-devdocs.io,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-developer.mozilla.org,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-docs.oracle.com,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-docs.python.org,Documentation Platforms,False,404,0,,,2026-03-28T18:35:16Z
-docs.rs,Documentation Platforms,False,400,0,,,2026-03-28T18:35:17Z
-docusaurus.io,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-doxygen.nl,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-gitbook.com,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-hexdocs.pm,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-javadoc.io,Documentation Platforms,False,200,0,,,2026-03-28T18:35:17Z
-mkdocs.org,Documentation Platforms,False,-1,0,,,2026-03-28T18:35:17Z
-pkg.go.dev,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-readthedocs.org,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-rubydoc.info,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-sphinx-doc.org,Documentation Platforms,False,404,0,,,2026-03-28T18:35:17Z
-berkeley.edu,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-cam.ac.uk,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-cdc.gov,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-harvard.edu,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-mit.edu,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-nasa.gov,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-nih.gov,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-ox.ac.uk,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-stanford.edu,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-usa.gov,Government & Education,False,404,0,,,2026-03-28T18:35:17Z
-clevelandclinic.org,Health,False,404,0,,,2026-03-28T18:35:18Z
-healthline.com,Health,False,404,0,,,2026-03-28T18:35:18Z
-mayoclinic.org,Health,False,200,0,,,2026-03-28T18:35:18Z
-medlineplus.gov,Health,False,404,0,,,2026-03-28T18:35:18Z
-webmd.com,Health,False,404,0,,,2026-03-28T18:35:17Z
-bankofamerica.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
-chase.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
-coinbase.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
-fidelity.com,Finance,False,403,0,,,2026-03-28T18:35:18Z
-paypal.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
-robinhood.com,Finance,False,403,0,,,2026-03-28T18:35:18Z
-schwab.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
-stripe.dev,Finance,False,404,0,,,2026-03-28T18:35:19Z
-wellsfargo.com,Finance,False,404,0,,,2026-03-28T18:35:18Z
+alpinejs.dev,JS Frameworks,False,200,0,,,2026-03-28T20:09:23Z
+angular.dev,JS Frameworks,False,200,0,,,2026-03-28T20:09:23Z
+astro.build,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+backbonejs.org,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+emberjs.com,JS Frameworks,False,200,0,,,2026-03-28T20:09:23Z
+htmx.org,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+lit.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+mithril.js.org,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+nextjs.org,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+nuxt.com,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+preactjs.com,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+qwik.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+react.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+remix.run,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+solidjs.com,JS Frameworks,False,200,0,,,2026-03-28T20:09:23Z
+stimulus.hotwired.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+svelte.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+turbo.build,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+vite.dev,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+vuejs.org,JS Frameworks,False,404,0,,,2026-03-28T20:09:23Z
+ansible.com,Developer Tools,False,200,0,,,2026-03-28T20:09:24Z
+aws.amazon.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+azure.microsoft.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+circleci.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+cloud.google.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+cloudflare.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+datadog.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+digitalocean.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+docker.com,Developer Tools,False,404,0,,,2026-03-28T20:09:23Z
+fly.io,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+github.com,Developer Tools,False,406,0,,,2026-03-28T20:09:23Z
+gitlab.com,Developer Tools,False,403,0,,,2026-03-28T20:09:23Z
+grafana.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+hashicorp.com,Developer Tools,False,429,0,,,2026-03-28T20:09:24Z
+heroku.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+jenkins.io,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+launchdarkly.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+netlify.com,Developer Tools,False,404,0,,,2026-03-28T20:09:23Z
+newrelic.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+pagerduty.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+postman.com,Developer Tools,False,200,0,,,2026-03-28T20:09:24Z
+pulumi.com,Developer Tools,False,404,0,,,2026-03-28T20:09:25Z
+puppet.com,Developer Tools,False,404,0,,,2026-03-28T20:09:25Z
+railway.app,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+render.com,Developer Tools,False,404,0,,,2026-03-28T20:09:23Z
+sentry.io,Developer Tools,False,200,0,,,2026-03-28T20:09:24Z
+supabase.com,Developer Tools,False,404,0,,,2026-03-28T20:09:23Z
+terraform.io,Developer Tools,False,200,0,,,2026-03-28T20:09:25Z
+travis-ci.com,Developer Tools,False,404,0,,,2026-03-28T20:09:24Z
+vercel.com,Developer Tools,False,200,0,,,2026-03-28T20:09:23Z
+anthropic.com,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+anyscale.com,AI / ML Platforms,False,200,0,,,2026-03-28T20:09:25Z
+cohere.com,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+copy.ai,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:26Z
+deepmind.google,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+huggingface.co,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+jasper.ai,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:26Z
+midjourney.com,AI / ML Platforms,False,403,0,,,2026-03-28T20:09:25Z
+milvus.io,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+mistral.ai,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+mlflow.org,AI / ML Platforms,False,403,0,,,2026-03-28T20:09:25Z
+modal.com,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+openai.com,AI / ML Platforms,False,403,0,,,2026-03-28T20:09:25Z
+perplexity.ai,AI / ML Platforms,False,403,0,,,2026-03-28T20:09:26Z
+pinecone.io,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+qdrant.tech,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+ray.io,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+replicate.com,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+runway.ml,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:26Z
+stability.ai,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+together.ai,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+wandb.ai,AI / ML Platforms,False,200,0,,,2026-03-28T20:09:25Z
+weaviate.io,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:25Z
+writer.com,AI / ML Platforms,False,404,0,,,2026-03-28T20:09:26Z
+you.com,AI / ML Platforms,False,403,0,,,2026-03-28T20:09:26Z
+airtable.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+amplitude.com,Enterprise SaaS,False,200,0,,,2026-03-28T20:09:27Z
+appsmith.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+asana.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+auth0.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+bubble.io,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+clickup.com,Enterprise SaaS,False,403,0,,,2026-03-28T20:09:26Z
+confluence.atlassian.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+contentful.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:28Z
+crowdstrike.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+duo.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+figma.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+fullstory.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+ghost.org,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:28Z
+heap.io,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+hotjar.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+hubspot.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+intercom.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+jira.atlassian.com,Enterprise SaaS,False,200,0,,,2026-03-28T20:09:26Z
+linear.app,Enterprise SaaS,False,200,0,,,2026-03-28T20:09:26Z
+mailchimp.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+miro.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+mixpanel.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+monday.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+notion.so,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+okta.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+onelogin.com,Enterprise SaaS,False,400,0,,,2026-03-28T20:09:27Z
+retool.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+salesforce.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+segment.com,Enterprise SaaS,False,200,0,,,2026-03-28T20:09:27Z
+sendgrid.com,Enterprise SaaS,False,200,0,,,2026-03-28T20:09:27Z
+shopify.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+slack.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+squarespace.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+stripe.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+twilio.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:26Z
+webflow.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+wix.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:27Z
+wordpress.com,Enterprise SaaS,False,404,0,,,2026-03-28T20:09:28Z
+zendesk.com,Enterprise SaaS,False,403,0,,,2026-03-28T20:09:26Z
+clojure.org,Programming Languages & Runtimes,False,403,0,,,2026-03-28T20:09:28Z
+crystal-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+dart.dev,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+elixir-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+erlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+gleam.run,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+go.dev,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+haskell.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+kotlinlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+nim-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+nodejs.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+php.net,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+python.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+roc-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+ruby-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+rust-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+scala-lang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+swift.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+typescriptlang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+ziglang.org,Programming Languages & Runtimes,False,404,0,,,2026-03-28T20:09:28Z
+arangodb.com,Databases,False,200,0,,,2026-03-28T20:09:29Z
+cockroachlabs.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+couchbase.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+dgraph.io,Databases,False,404,0,,,2026-03-28T20:09:29Z
+fauna.com,Databases,False,0,0,,,2026-03-28T20:09:29Z
+mongodb.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+mysql.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+neo4j.com,Databases,False,403,0,,,2026-03-28T20:09:29Z
+neon.tech,Databases,False,404,0,,,2026-03-28T20:09:29Z
+planetscale.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+postgresql.org,Databases,False,404,0,,,2026-03-28T20:09:29Z
+questdb.io,Databases,False,404,0,,,2026-03-28T20:09:29Z
+redis.io,Databases,False,404,0,,,2026-03-28T20:09:29Z
+sqlite.org,Databases,False,404,0,,,2026-03-28T20:09:29Z
+timescale.com,Databases,False,404,0,,,2026-03-28T20:09:29Z
+arstechnica.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+bbc.com,News & Media,False,404,0,,,2026-03-28T20:09:29Z
+bloomberg.com,News & Media,False,403,0,,,2026-03-28T20:09:30Z
+buzzfeed.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+cnn.com,News & Media,False,404,0,,,2026-03-28T20:09:29Z
+economist.com,News & Media,False,403,0,,,2026-03-28T20:09:30Z
+forbes.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+ft.com,News & Media,False,403,0,,,2026-03-28T20:09:30Z
+huffpost.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+nytimes.com,News & Media,False,404,0,,,2026-03-28T20:09:29Z
+reuters.com,News & Media,False,401,0,,,2026-03-28T20:09:29Z
+techcrunch.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+theguardian.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+theverge.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+time.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+vice.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+vox.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+washingtonpost.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+wired.com,News & Media,False,404,0,,,2026-03-28T20:09:30Z
+wsj.com,News & Media,False,403,0,,,2026-03-28T20:09:30Z
+airbnb.com,Consumer Web,False,404,0,,,2026-03-28T20:09:32Z
+amazon.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+apple.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+bestbuy.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+booking.com,Consumer Web,False,202,0,,,2026-03-28T20:09:32Z
+doordash.com,Consumer Web,False,403,0,,,2026-03-28T20:09:32Z
+ebay.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+etsy.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+expedia.com,Consumer Web,False,404,0,,,2026-03-28T20:09:32Z
+facebook.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+google.com,Consumer Web,False,404,0,,,2026-03-28T20:09:30Z
+grubhub.com,Consumer Web,False,200,0,,,2026-03-28T20:09:32Z
+instagram.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+linkedin.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+netflix.com,Consumer Web,False,200,0,,,2026-03-28T20:09:32Z
+nike.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+pinterest.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+reddit.com,Consumer Web,False,403,0,,,2026-03-28T20:09:31Z
+redfin.com,Consumer Web,False,404,0,,,2026-03-28T20:09:32Z
+snapchat.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+spotify.com,Consumer Web,False,200,0,,,2026-03-28T20:09:32Z
+target.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+tiktok.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+tripadvisor.com,Consumer Web,False,403,0,,,2026-03-28T20:09:32Z
+twitter.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+uber.com,Consumer Web,False,404,0,,,2026-03-28T20:09:32Z
+walmart.com,Consumer Web,False,200,0,,,2026-03-28T20:09:31Z
+yelp.com,Consumer Web,False,404,0,,,2026-03-28T20:09:32Z
+youtube.com,Consumer Web,False,404,0,,,2026-03-28T20:09:31Z
+zillow.com,Consumer Web,False,403,0,,,2026-03-28T20:09:32Z
+devdocs.io,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+developer.mozilla.org,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+docs.oracle.com,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+docs.python.org,Documentation Platforms,False,404,0,,,2026-03-28T20:09:32Z
+docs.rs,Documentation Platforms,False,400,0,,,2026-03-28T20:09:32Z
+docusaurus.io,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+doxygen.nl,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+gitbook.com,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+hexdocs.pm,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+javadoc.io,Documentation Platforms,False,200,0,,,2026-03-28T20:09:33Z
+mkdocs.org,Documentation Platforms,False,-1,0,,,2026-03-28T20:09:33Z
+pkg.go.dev,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+readthedocs.org,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+rubydoc.info,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+sphinx-doc.org,Documentation Platforms,False,404,0,,,2026-03-28T20:09:33Z
+berkeley.edu,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+cam.ac.uk,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+cdc.gov,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+harvard.edu,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+mit.edu,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+nasa.gov,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+nih.gov,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+ox.ac.uk,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+stanford.edu,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+usa.gov,Government & Education,False,404,0,,,2026-03-28T20:09:33Z
+clevelandclinic.org,Health,False,404,0,,,2026-03-28T20:09:34Z
+healthline.com,Health,False,404,0,,,2026-03-28T20:09:33Z
+mayoclinic.org,Health,False,200,0,,,2026-03-28T20:09:33Z
+medlineplus.gov,Health,False,404,0,,,2026-03-28T20:09:34Z
+webmd.com,Health,False,404,0,,,2026-03-28T20:09:33Z
+bankofamerica.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
+chase.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
+coinbase.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
+fidelity.com,Finance,False,403,0,,,2026-03-28T20:09:34Z
+paypal.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
+robinhood.com,Finance,False,403,0,,,2026-03-28T20:09:34Z
+schwab.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
+stripe.dev,Finance,False,404,0,,,2026-03-28T20:09:34Z
+wellsfargo.com,Finance,False,404,0,,,2026-03-28T20:09:34Z
