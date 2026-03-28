@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "AI bot blocking survey of popular websites via robots.txt",
-    "date": "2026-03-27",
+    "date": "2026-03-28",
     "total_sites": 99,
     "ai_bots_checked": [
       "GPTBot",
@@ -1186,16 +1186,16 @@
     {
       "domain": "ed.gov",
       "category": "Government",
-      "robots_txt_status": "timeout",
+      "robots_txt_status": "not_found",
       "bots": {
-        "GPTBot": "unknown",
-        "ChatGPT-User": "unknown",
-        "ClaudeBot": "unknown",
-        "anthropic-ai": "unknown",
-        "Google-Extended": "unknown",
-        "CCBot": "unknown",
-        "PerplexityBot": "unknown",
-        "Bytespider": "unknown"
+        "GPTBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "ClaudeBot": "allowed",
+        "anthropic-ai": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "PerplexityBot": "allowed",
+        "Bytespider": "allowed"
       }
     },
     {
