@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "AI bot blocking survey of popular websites via robots.txt",
-    "date": "2026-03-28",
+    "date": "2026-03-29",
     "total_sites": 99,
     "ai_bots_checked": [
       "GPTBot",
@@ -18,43 +18,43 @@
   "summary": {
     "GPTBot": {
       "blocked": 25,
-      "allowed": 67,
-      "blocked_pct": 27.2
+      "allowed": 68,
+      "blocked_pct": 26.9
     },
     "ChatGPT-User": {
       "blocked": 21,
-      "allowed": 71,
-      "blocked_pct": 22.8
+      "allowed": 72,
+      "blocked_pct": 22.6
     },
     "ClaudeBot": {
       "blocked": 32,
-      "allowed": 60,
-      "blocked_pct": 34.8
+      "allowed": 61,
+      "blocked_pct": 34.4
     },
     "anthropic-ai": {
       "blocked": 29,
-      "allowed": 63,
-      "blocked_pct": 31.5
+      "allowed": 64,
+      "blocked_pct": 31.2
     },
     "Google-Extended": {
       "blocked": 26,
-      "allowed": 66,
-      "blocked_pct": 28.3
+      "allowed": 67,
+      "blocked_pct": 28.0
     },
     "CCBot": {
       "blocked": 33,
-      "allowed": 59,
-      "blocked_pct": 35.9
+      "allowed": 60,
+      "blocked_pct": 35.5
     },
     "PerplexityBot": {
       "blocked": 30,
-      "allowed": 62,
-      "blocked_pct": 32.6
+      "allowed": 63,
+      "blocked_pct": 32.3
     },
     "Bytespider": {
       "blocked": 31,
-      "allowed": 61,
-      "blocked_pct": 33.7
+      "allowed": 62,
+      "blocked_pct": 33.3
     }
   },
   "sites": [
@@ -976,7 +976,7 @@
     {
       "domain": "target.com",
       "category": "E-commerce",
-      "robots_txt_status": "not_found",
+      "robots_txt_status": "ok",
       "bots": {
         "GPTBot": "allowed",
         "ChatGPT-User": "allowed",
@@ -1561,9 +1561,9 @@
       "blocking_pct": 11.1
     },
     "E-commerce": {
-      "total": 11,
+      "total": 12,
       "blocking_any": 2,
-      "blocking_pct": 18.2
+      "blocking_pct": 16.7
     },
     "Finance": {
       "total": 10,
