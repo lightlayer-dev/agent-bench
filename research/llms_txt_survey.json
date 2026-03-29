@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-28",
+    "date": "2026-03-29",
     "total_sites": 239,
     "sites_with_llms_txt": 66,
     "adoption_rate_pct": 27.6,
@@ -708,7 +708,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 403089
+      "content_length_bytes": 403289
     },
     {
       "domain": "bubble.io",
@@ -956,7 +956,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 2187789
+      "content_length_bytes": 2189583
     },
     {
       "domain": "webflow.com",
@@ -1529,8 +1529,8 @@
     {
       "domain": "instagram.com",
       "category": "Consumer Web",
-      "status": "html_page",
-      "status_code": 200,
+      "status": "http_429",
+      "status_code": 429,
       "content_type": "text/html; charset=\"utf-8\"",
       "content_length_bytes": 0
     },
