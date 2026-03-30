@@ -30,6 +30,7 @@ class TestAdapterRegistry:
 
     def test_get_unknown_adapter(self):
         import pytest
+
         with pytest.raises(ValueError, match="Unknown adapter"):
             get_adapter("nonexistent", _model_config())
 
@@ -48,7 +49,9 @@ class TestBrowserUseAdapter:
                 TaskStep(action="find_pricing", description="Navigate to pricing"),
             ],
             success_criteria=[
-                SuccessCriterion(type="text_contains", value="price", description="Should see prices"),
+                SuccessCriterion(
+                    type="text_contains", value="price", description="Should see prices"
+                ),
             ],
         )
         prompt = adapter._build_prompt(task)
@@ -73,7 +76,9 @@ class TestCustomAdapter:
 
         adapter = CustomAdapter(_model_config(), cmd="")
         task = Task(name="test", site="https://example.com", description="test")
-        metrics = RunMetrics(task_name="test", model_name="test", adapter_name="custom", run_index=0)
+        metrics = RunMetrics(
+            task_name="test", model_name="test", adapter_name="custom", run_index=0
+        )
 
         with pytest.raises(ValueError, match="No custom agent command"):
             adapter.run_task(task, metrics)
@@ -91,7 +96,9 @@ print(json.dumps({'done': True, 'success': True, 'summary': 'done'}))
 "'''
         adapter = CustomAdapter(_model_config(), cmd=cmd)
         task = Task(name="test", site="https://example.com", description="test task")
-        metrics = RunMetrics(task_name="test", model_name="test", adapter_name="custom", run_index=0)
+        metrics = RunMetrics(
+            task_name="test", model_name="test", adapter_name="custom", run_index=0
+        )
 
         result = adapter.run_task(task, metrics)
         assert result is True
@@ -109,7 +116,9 @@ print(json.dumps({'done': True, 'success': False, 'summary': 'failed'}))
 "'''
         adapter = CustomAdapter(_model_config(), cmd=cmd)
         task = Task(name="test", site="https://example.com", description="test")
-        metrics = RunMetrics(task_name="test", model_name="test", adapter_name="custom", run_index=0)
+        metrics = RunMetrics(
+            task_name="test", model_name="test", adapter_name="custom", run_index=0
+        )
 
         result = adapter.run_task(task, metrics)
         assert result is False
@@ -121,7 +130,9 @@ print(json.dumps({'done': True, 'success': False, 'summary': 'failed'}))
         cmd = "python3 -c 'import sys; sys.exit(1)'"
         adapter = CustomAdapter(_model_config(), cmd=cmd)
         task = Task(name="test", site="https://example.com", description="test")
-        metrics = RunMetrics(task_name="test", model_name="test", adapter_name="custom", run_index=0)
+        metrics = RunMetrics(
+            task_name="test", model_name="test", adapter_name="custom", run_index=0
+        )
 
         result = adapter.run_task(task, metrics)
         assert result is False
@@ -138,7 +149,11 @@ class TestPlaywrightAdapter:
             site="https://example.com",
             description="Search for headphones",
             steps=[
-                TaskStep(action="search", params={"query": "headphones"}, description="Use search bar"),
+                TaskStep(
+                    action="search",
+                    params={"query": "headphones"},
+                    description="Use search bar",
+                ),
             ],
         )
         prompt = adapter._build_task_prompt(task)

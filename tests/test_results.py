@@ -58,23 +58,29 @@ class TestComparison:
     def _make_result_file(self, tmp_path, name, task, model, adapter, success_rate):
         data = {
             "timestamp": "20260314_120000",
-            "results": [{
-                "task": task,
-                "model": model,
-                "adapter": adapter,
-                "success_rate": success_rate,
-                "avg_steps": 5.0,
-                "avg_time": 10.0,
-                "avg_cost": 0.05,
-            }],
+            "results": [
+                {
+                    "task": task,
+                    "model": model,
+                    "adapter": adapter,
+                    "success_rate": success_rate,
+                    "avg_steps": 5.0,
+                    "avg_time": 10.0,
+                    "avg_cost": 0.05,
+                }
+            ],
         }
         filepath = tmp_path / name
         filepath.write_text(json.dumps(data))
         return filepath
 
     def test_compare_runs(self, tmp_path):
-        f1 = self._make_result_file(tmp_path, "a.json", "search", "claude", "browser-use", 0.8)
-        f2 = self._make_result_file(tmp_path, "b.json", "search", "gpt-4o", "browser-use", 0.6)
+        f1 = self._make_result_file(
+            tmp_path, "a.json", "search", "claude", "browser-use", 0.8
+        )
+        f2 = self._make_result_file(
+            tmp_path, "b.json", "search", "gpt-4o", "browser-use", 0.6
+        )
 
         comparison = compare_runs([f1, f2])
         assert len(comparison.rows) == 2
@@ -82,20 +88,26 @@ class TestComparison:
         assert comparison.rows[0].success_rate == 0.8
 
     def test_render_table(self, tmp_path):
-        f1 = self._make_result_file(tmp_path, "a.json", "search", "claude", "browser-use", 0.8)
+        f1 = self._make_result_file(
+            tmp_path, "a.json", "search", "claude", "browser-use", 0.8
+        )
         comparison = compare_runs([f1])
         table = comparison.render("table")
         assert "search" in table
         assert "claude" in table
 
     def test_render_markdown(self, tmp_path):
-        f1 = self._make_result_file(tmp_path, "a.json", "search", "claude", "browser-use", 0.8)
+        f1 = self._make_result_file(
+            tmp_path, "a.json", "search", "claude", "browser-use", 0.8
+        )
         comparison = compare_runs([f1])
         md = comparison.render("markdown")
         assert "| search |" in md
 
     def test_render_json(self, tmp_path):
-        f1 = self._make_result_file(tmp_path, "a.json", "search", "claude", "browser-use", 0.8)
+        f1 = self._make_result_file(
+            tmp_path, "a.json", "search", "claude", "browser-use", 0.8
+        )
         comparison = compare_runs([f1])
         data = json.loads(comparison.render("json"))
         assert len(data) == 1

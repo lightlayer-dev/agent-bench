@@ -52,7 +52,9 @@ class A2ACheck(BaseCheck):
             sub_scores.append(0.0)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str) -> httpx.Response | None:
         try:
@@ -155,6 +157,8 @@ class A2ACheck(BaseCheck):
             quality_summary.append("skills")
         if auth:
             quality_summary.append("auth")
-        findings.append(f"Agent Card includes: {', '.join(quality_summary) or 'minimal fields'}")
+        findings.append(
+            f"Agent Card includes: {', '.join(quality_summary) or 'minimal fields'}"
+        )
 
         return min(score, 1.0), findings

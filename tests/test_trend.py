@@ -5,7 +5,12 @@ from __future__ import annotations
 
 from click.testing import CliRunner
 
-from agent_bench.analysis.trend import ScoreSnapshot, SiteTrend, TrendStore, render_trend_table
+from agent_bench.analysis.trend import (
+    ScoreSnapshot,
+    SiteTrend,
+    TrendStore,
+    render_trend_table,
+)
 from agent_bench.cli import cli
 
 
@@ -19,7 +24,11 @@ class TestScoreSnapshot:
 class TestSiteTrend:
     def _make_trend(self, scores):
         snaps = [
-            ScoreSnapshot(timestamp=f"2026-03-{10+i:02d}T00:00:00+00:00", overall_score=s, check_scores={"api": s})
+            ScoreSnapshot(
+                timestamp=f"2026-03-{10 + i:02d}T00:00:00+00:00",
+                overall_score=s,
+                check_scores={"api": s},
+            )
             for i, s in enumerate(scores)
         ]
         return SiteTrend(url="https://example.com", snapshots=snaps)
@@ -62,8 +71,18 @@ class TestSiteTrend:
 class TestTrendStore:
     def test_add_and_retrieve(self, tmp_path):
         store = TrendStore(tmp_path / "history.json")
-        store.add("https://example.com", 0.5, {"api": 0.6}, timestamp="2026-03-15T00:00:00+00:00")
-        store.add("https://example.com", 0.7, {"api": 0.8}, timestamp="2026-03-16T00:00:00+00:00")
+        store.add(
+            "https://example.com",
+            0.5,
+            {"api": 0.6},
+            timestamp="2026-03-15T00:00:00+00:00",
+        )
+        store.add(
+            "https://example.com",
+            0.7,
+            {"api": 0.8},
+            timestamp="2026-03-16T00:00:00+00:00",
+        )
 
         trend = store.get_trend("https://example.com")
         assert len(trend.snapshots) == 2
@@ -128,13 +147,17 @@ class TestTrendCLI:
 
     def test_trend_unknown_url(self, tmp_path):
         runner = CliRunner()
-        result = runner.invoke(cli, ["trend", "https://nope.com", "--store", str(tmp_path / "h.json")])
+        result = runner.invoke(
+            cli, ["trend", "https://nope.com", "--store", str(tmp_path / "h.json")]
+        )
         assert result.exit_code == 0
         assert "No history" in result.output
 
     def test_trend_all_empty(self, tmp_path):
         runner = CliRunner()
-        result = runner.invoke(cli, ["trend", "--all", "--store", str(tmp_path / "h.json")])
+        result = runner.invoke(
+            cli, ["trend", "--all", "--store", str(tmp_path / "h.json")]
+        )
         assert result.exit_code == 0
         assert "No trend history" in result.output
 

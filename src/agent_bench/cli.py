@@ -18,14 +18,52 @@ def cli() -> None:
 
 @cli.command()
 @click.argument("url")
-@click.option("--checks", "-c", multiple=True, help="Specific checks to run (default: all)")
+@click.option(
+    "--checks", "-c", multiple=True, help="Specific checks to run (default: all)"
+)
 @click.option("--output", "-o", type=click.Path(), help="Output file for results")
-@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="table")
-@click.option("--threshold", "-t", type=float, default=None, help="Minimum score (0.0-1.0). Exit code 1 if below. For CI pipelines.")
-@click.option("--quiet", "-q", is_flag=True, help="Suppress human-readable output (useful with --output in CI)")
-@click.option("--post", "post_url", type=str, default=None, help="POST results to a LightLayer Dashboard URL (e.g. http://localhost:8000)")
-@click.option("--source", type=str, default="cli", help="Source label for dashboard (cli, ci, api)")
-def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str) -> None:
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["json", "table", "markdown", "html"]),
+    default="table",
+)
+@click.option(
+    "--threshold",
+    "-t",
+    type=float,
+    default=None,
+    help="Minimum score (0.0-1.0). Exit code 1 if below. For CI pipelines.",
+)
+@click.option(
+    "--quiet",
+    "-q",
+    is_flag=True,
+    help="Suppress human-readable output (useful with --output in CI)",
+)
+@click.option(
+    "--post",
+    "post_url",
+    type=str,
+    default=None,
+    help="POST results to a LightLayer Dashboard URL (e.g. http://localhost:8000)",
+)
+@click.option(
+    "--source",
+    type=str,
+    default="cli",
+    help="Source label for dashboard (cli, ci, api)",
+)
+def analyze(
+    url: str,
+    checks: tuple[str, ...],
+    output: str | None,
+    fmt: str,
+    threshold: float | None,
+    quiet: bool,
+    post_url: str | None,
+    source: str,
+) -> None:
     """Run static analysis on a website and produce an agent-readiness score.
 
     Use --threshold in CI to fail builds when agent-readiness drops:
@@ -51,6 +89,7 @@ def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, thr
     try:
         import json as _json
         from agent_bench.analysis.trend import TrendStore
+
         store = TrendStore()
         store.add_from_result(_json.loads(report.to_json()))
     except Exception:
@@ -78,7 +117,9 @@ def analyze(url: str, checks: tuple[str, ...], output: str | None, fmt: str, thr
             with urllib.request.urlopen(req) as resp:
                 result = json.loads(resp.read())
                 if not quiet:
-                    console.print(f"\n[dim]Posted to dashboard → scan #{result.get('id', '?')}[/dim]")
+                    console.print(
+                        f"\n[dim]Posted to dashboard → scan #{result.get('id', '?')}[/dim]"
+                    )
         except urllib.error.URLError as e:
             console.print(f"\n[red]Failed to post to dashboard: {e}[/red]")
 
@@ -107,12 +148,28 @@ def _load_config_models() -> None:
 
 @cli.command()
 @click.argument("task_file", type=click.Path(exists=True))
-@click.option("--model", "-m", required=True, help="Model name from registry or config file")
+@click.option(
+    "--model", "-m", required=True, help="Model name from registry or config file"
+)
 @click.option("--adapter", "-a", default="browser-use", help="Agent adapter to use")
 @click.option("--runs", "-n", default=3, help="Number of runs per task")
 @click.option("--output-dir", "-o", type=click.Path(), default="results")
-@click.option("--config", "-c", "config_path", type=click.Path(exists=True), default=None, help="Config file path")
-def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str, config_path: str | None) -> None:
+@click.option(
+    "--config",
+    "-c",
+    "config_path",
+    type=click.Path(exists=True),
+    default=None,
+    help="Config file path",
+)
+def run(
+    task_file: str,
+    model: str,
+    adapter: str,
+    runs: int,
+    output_dir: str,
+    config_path: str | None,
+) -> None:
     """Run live agent benchmarks against a website.
 
     Loads models from agent-bench.yaml (auto-discovered) or --config.
@@ -127,7 +184,9 @@ def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str, co
     for model_cfg in config.models:
         ModelRegistry.register(model_cfg)
 
-    console.print(f"[bold]Running[/bold] {task_file} × {model} × {adapter} ({runs} runs)\n")
+    console.print(
+        f"[bold]Running[/bold] {task_file} × {model} × {adapter} ({runs} runs)\n"
+    )
     executor = BenchExecutor(
         task_file=Path(task_file),
         model_name=model,
@@ -141,7 +200,9 @@ def run(task_file: str, model: str, adapter: str, runs: int, output_dir: str, co
 
 @cli.command()
 @click.argument("url")
-@click.option("--format", "fmt", type=click.Choice(["json", "table", "yaml"]), default="table")
+@click.option(
+    "--format", "fmt", type=click.Choice(["json", "table", "yaml"]), default="table"
+)
 def classify(url: str, fmt: str) -> None:
     """Classify a website and generate benchmark tasks for it."""
     from agent_bench.runner.classifier import SiteClassifier
@@ -150,9 +211,13 @@ def classify(url: str, fmt: str) -> None:
     classifier = SiteClassifier()
     profile = classifier.classify(url)
 
-    console.print(f"[bold]Category:[/bold] {profile.category.value} ({profile.confidence:.0%} confidence)")
+    console.print(
+        f"[bold]Category:[/bold] {profile.category.value} ({profile.confidence:.0%} confidence)"
+    )
     console.print(f"[bold]Signals:[/bold] {', '.join(profile.signals[:5]) or 'none'}")
-    console.print(f"[bold]Features:[/bold] {', '.join(k for k, v in profile.features.items() if v) or 'none'}")
+    console.print(
+        f"[bold]Features:[/bold] {', '.join(k for k, v in profile.features.items() if v) or 'none'}"
+    )
 
     tasks = generate_tasks(profile)
     console.print(f"\n[bold]{len(tasks)} tasks generated:[/bold]\n")
@@ -161,11 +226,28 @@ def classify(url: str, fmt: str) -> None:
 
 
 @cli.command()
-@click.option("--runs", "-r", multiple=True, type=click.Path(exists=True), help="Result files to compare (live runs)")
-@click.option("--before", "-b", type=click.Path(exists=True), help="Before analysis result (static)")
-@click.option("--after", "-a", type=click.Path(exists=True), help="After analysis result (static)")
-@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table")
-def compare(runs: tuple[str, ...], before: str | None, after: str | None, fmt: str) -> None:
+@click.option(
+    "--runs",
+    "-r",
+    multiple=True,
+    type=click.Path(exists=True),
+    help="Result files to compare (live runs)",
+)
+@click.option(
+    "--before",
+    "-b",
+    type=click.Path(exists=True),
+    help="Before analysis result (static)",
+)
+@click.option(
+    "--after", "-a", type=click.Path(exists=True), help="After analysis result (static)"
+)
+@click.option(
+    "--format", "fmt", type=click.Choice(["json", "table", "markdown"]), default="table"
+)
+def compare(
+    runs: tuple[str, ...], before: str | None, after: str | None, fmt: str
+) -> None:
     """Compare results across different runs or analysis snapshots.
 
     For live run comparison: --runs file1.json --runs file2.json
@@ -185,7 +267,9 @@ def compare(runs: tuple[str, ...], before: str | None, after: str | None, fmt: s
         comparison = compare_runs([Path(r) for r in runs])
         console.print(comparison.render(fmt))
     else:
-        console.print("[red]Use --before/--after for analysis diffs, or --runs for live run comparison.[/red]")
+        console.print(
+            "[red]Use --before/--after for analysis diffs, or --runs for live run comparison.[/red]"
+        )
 
 
 @cli.command()
@@ -209,14 +293,54 @@ def models() -> None:
 
 @cli.command()
 @click.argument("urls", nargs=-1, required=False)
-@click.option("--output-dir", "-o", type=click.Path(), default="benchmark-results", help="Directory for results")
-@click.option("--format", "fmt", type=click.Choice(["json", "table", "markdown", "html"]), default="json")
-@click.option("--threshold", "-t", type=float, default=None, help="Minimum overall score (0-100). Exit 1 if ANY site falls below.")
+@click.option(
+    "--output-dir",
+    "-o",
+    type=click.Path(),
+    default="benchmark-results",
+    help="Directory for results",
+)
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["json", "table", "markdown", "html"]),
+    default="json",
+)
+@click.option(
+    "--threshold",
+    "-t",
+    type=float,
+    default=None,
+    help="Minimum overall score (0-100). Exit 1 if ANY site falls below.",
+)
 @click.option("--quiet", "-q", is_flag=True, help="Minimal output for CI pipelines")
-@click.option("--post", "post_url", type=str, default=None, help="POST results to a LightLayer Dashboard URL")
-@click.option("--source", type=str, default="cli", help="Source tag for dashboard submissions")
-@click.option("--config", "config_path", type=click.Path(exists=True), default=None, help="Config file with sites list")
-def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | None, quiet: bool, post_url: str | None, source: str, config_path: str | None) -> None:
+@click.option(
+    "--post",
+    "post_url",
+    type=str,
+    default=None,
+    help="POST results to a LightLayer Dashboard URL",
+)
+@click.option(
+    "--source", type=str, default="cli", help="Source tag for dashboard submissions"
+)
+@click.option(
+    "--config",
+    "config_path",
+    type=click.Path(exists=True),
+    default=None,
+    help="Config file with sites list",
+)
+def batch(
+    urls: tuple[str, ...],
+    output_dir: str,
+    fmt: str,
+    threshold: float | None,
+    quiet: bool,
+    post_url: str | None,
+    source: str,
+    config_path: str | None,
+) -> None:
     """Run static analysis on multiple websites.
 
     URLs can be passed as arguments or defined in agent-bench.yaml under 'sites'.
@@ -238,11 +362,13 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
         site_entries.append((str(site.url), site.checks))
 
     # Add CLI URLs (no per-site check overrides)
-    for url in (urls or ()):
+    for url in urls or ():
         site_entries.append((url, None))
 
     if not site_entries:
-        console.print("[red]No URLs provided. Pass URLs as arguments or define 'sites' in agent-bench.yaml[/red]")
+        console.print(
+            "[red]No URLs provided. Pass URLs as arguments or define 'sites' in agent-bench.yaml[/red]"
+        )
         raise SystemExit(1)
 
     out = Path(output_dir)
@@ -260,7 +386,12 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
             results.append(data)
 
             # Save individual result
-            slug = url.replace("https://", "").replace("http://", "").replace("/", "_").rstrip("_")
+            slug = (
+                url.replace("https://", "")
+                .replace("http://", "")
+                .replace("/", "_")
+                .rstrip("_")
+            )
             (out / f"{slug}.json").write_text(json_mod.dumps(data, indent=2))
 
             score = data.get("overall_score", 0)
@@ -296,7 +427,9 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
                     console.print(f"  [red]Failed to post: {e}[/red]")
 
         except Exception as e:
-            console.print(f"  [red]Error: {e}[/red]\n" if not quiet else f"{url} ERROR: {e}")
+            console.print(
+                f"  [red]Error: {e}[/red]\n" if not quiet else f"{url} ERROR: {e}"
+            )
 
     # Save summary
     (out / "summary.json").write_text(json_mod.dumps(results, indent=2))
@@ -312,7 +445,9 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
             console.print(f"\n[bold]Leaderboard:[/bold] {html_path}")
 
     if not quiet:
-        console.print(f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]")
+        console.print(
+            f"\n[dim]Results saved to {output_dir}/ ({len(results)} sites)[/dim]"
+        )
 
     if failures:
         for url, score in failures:
@@ -322,7 +457,13 @@ def batch(urls: tuple[str, ...], output_dir: str, fmt: str, threshold: float | N
 
 @cli.command()
 @click.argument("result_files", nargs=-1, required=True, type=click.Path(exists=True))
-@click.option("--output", "-o", type=click.Path(), default="leaderboard.html", help="Output HTML file")
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(),
+    default="leaderboard.html",
+    help="Output HTML file",
+)
 def leaderboard(result_files: tuple[str, ...], output: str) -> None:
     """Generate an HTML leaderboard from analysis result files."""
     from agent_bench.analysis.leaderboard import load_results, render_leaderboard
@@ -330,13 +471,19 @@ def leaderboard(result_files: tuple[str, ...], output: str) -> None:
     results = load_results([Path(f) for f in result_files])
     html = render_leaderboard(results)
     Path(output).write_text(html)
-    console.print(f"[bold]Leaderboard generated:[/bold] {output} ({len(results)} sites)")
+    console.print(
+        f"[bold]Leaderboard generated:[/bold] {output} ({len(results)} sites)"
+    )
 
 
 @cli.command()
 def checks() -> None:
     """List all available analysis checks (built-in + plugins)."""
-    from agent_bench.analysis.scorer import _get_builtin_checks, _get_plugin_checks, DEFAULT_WEIGHTS
+    from agent_bench.analysis.scorer import (
+        _get_builtin_checks,
+        _get_plugin_checks,
+        DEFAULT_WEIGHTS,
+    )
 
     builtins = _get_builtin_checks()
     plugins = _get_plugin_checks()
@@ -355,25 +502,52 @@ def checks() -> None:
             console.print(f"  {name:<12} ({source})  {doc}")
     else:
         console.print("\n[dim]No plugin checks installed.[/dim]")
-        console.print("[dim]Install plugins that use the 'agent_bench.checks' entry point group.[/dim]")
+        console.print(
+            "[dim]Install plugins that use the 'agent_bench.checks' entry point group.[/dim]"
+        )
 
     console.print()
 
 
 @cli.command()
 @click.argument("url", required=False)
-@click.option("--store", "store_path", type=click.Path(), default="trend-history.json", help="Path to trend history file")
-@click.option("--all", "show_all", is_flag=True, help="Show trends for all tracked sites")
-@click.option("--format", "fmt", type=click.Choice(["table", "html"]), default="table", help="Output format")
-@click.option("--output", "-o", type=click.Path(), default=None, help="Output file (for HTML format)")
-def trend(url: str | None, store_path: str, show_all: bool, fmt: str, output: str | None) -> None:
+@click.option(
+    "--store",
+    "store_path",
+    type=click.Path(),
+    default="trend-history.json",
+    help="Path to trend history file",
+)
+@click.option(
+    "--all", "show_all", is_flag=True, help="Show trends for all tracked sites"
+)
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["table", "html"]),
+    default="table",
+    help="Output format",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(),
+    default=None,
+    help="Output file (for HTML format)",
+)
+def trend(
+    url: str | None, store_path: str, show_all: bool, fmt: str, output: str | None
+) -> None:
     """Show score trends over time for a site."""
     from agent_bench.analysis.trend import TrendStore, render_trend_table
 
     store = TrendStore(Path(store_path))
 
     if fmt == "html":
-        from agent_bench.analysis.trend_chart import render_trend_html, render_multi_trend_html
+        from agent_bench.analysis.trend_chart import (
+            render_trend_html,
+            render_multi_trend_html,
+        )
 
         if show_all or not url:
             html = render_multi_trend_html(store)
@@ -405,11 +579,23 @@ def trend(url: str | None, store_path: str, show_all: bool, fmt: str, output: st
 
 @cli.command()
 @click.argument("kind", type=click.Choice(["analysis", "batch"]), default="analysis")
-@click.option("--output", "-o", type=click.Path(), default=None, help="Write schema to file")
-@click.option("--validate", "validate_file", type=click.Path(exists=True), default=None, help="Validate a result file against the schema")
+@click.option(
+    "--output", "-o", type=click.Path(), default=None, help="Write schema to file"
+)
+@click.option(
+    "--validate",
+    "validate_file",
+    type=click.Path(exists=True),
+    default=None,
+    help="Validate a result file against the schema",
+)
 def schema(kind: str, output: str | None, validate_file: str | None) -> None:
     """Export JSON Schema for result formats or validate a result file."""
-    from agent_bench.analysis.schema import export_schema, validate_result, SCHEMA_VERSION
+    from agent_bench.analysis.schema import (
+        export_schema,
+        validate_result,
+        SCHEMA_VERSION,
+    )
     import json as json_mod
 
     if validate_file:
@@ -420,7 +606,9 @@ def schema(kind: str, output: str | None, validate_file: str | None) -> None:
                 console.print(f"[red]✗[/red] {e}")
             raise SystemExit(1)
         else:
-            console.print(f"[green]✓[/green] Valid agent-bench result (schema v{SCHEMA_VERSION})")
+            console.print(
+                f"[green]✓[/green] Valid agent-bench result (schema v{SCHEMA_VERSION})"
+            )
         return
 
     schema_json = export_schema(kind)

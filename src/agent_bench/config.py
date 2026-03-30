@@ -111,6 +111,7 @@ class BenchConfig(BaseModel):
             data = tomllib.loads(text)
         else:
             import yaml
+
             data = yaml.safe_load(text) or {}
         return cls.model_validate(data)
 
@@ -120,6 +121,4 @@ class BenchConfig(BaseModel):
             if m.name == name:
                 return m
         available = [m.name for m in self.models]
-        raise ValueError(
-            f"Model '{name}' not found in config. Available: {available}"
-        )
+        raise ValueError(f"Model '{name}' not found in config. Available: {available}")

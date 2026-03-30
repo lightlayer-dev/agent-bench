@@ -104,7 +104,9 @@ class SiteScorer:
             results.append(result)
 
         overall = self._compute_overall(results)
-        return AnalysisReport(url=self.url, overall_score=overall, check_results=results)
+        return AnalysisReport(
+            url=self.url, overall_score=overall, check_results=results
+        )
 
     def _compute_overall(self, results: list[CheckResult]) -> float:
         """Weighted average of all check scores."""

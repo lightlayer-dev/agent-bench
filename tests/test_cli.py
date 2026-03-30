@@ -11,6 +11,7 @@ from agent_bench.cli import cli
 
 class _MockDashboardHandler(BaseHTTPRequestHandler):
     """Mock dashboard that accepts scan POSTs."""
+
     received = []
 
     def do_POST(self):
@@ -35,12 +36,18 @@ class TestAnalyzeDashboardPost:
         thread.start()
 
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "analyze", "https://httpbin.org",
-            "--post", f"http://127.0.0.1:{port}",
-            "--source", "ci",
-            "--quiet",
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "analyze",
+                "https://httpbin.org",
+                "--post",
+                f"http://127.0.0.1:{port}",
+                "--source",
+                "ci",
+                "--quiet",
+            ],
+        )
 
         thread.join(timeout=5)
         server.server_close()
@@ -55,11 +62,16 @@ class TestAnalyzeDashboardPost:
 
     def test_post_flag_failure_doesnt_crash(self):
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "analyze", "https://httpbin.org",
-            "--post", "http://127.0.0.1:1",  # Nothing listening
-            "--quiet",
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "analyze",
+                "https://httpbin.org",
+                "--post",
+                "http://127.0.0.1:1",  # Nothing listening
+                "--quiet",
+            ],
+        )
         # Should still exit 0 (post failure is non-fatal)
         assert result.exit_code == 0
 
@@ -67,13 +79,17 @@ class TestAnalyzeDashboardPost:
 class TestAnalyzeThreshold:
     def test_threshold_pass(self):
         runner = CliRunner()
-        result = runner.invoke(cli, ["analyze", "https://httpbin.org", "--threshold", "0.0"])
+        result = runner.invoke(
+            cli, ["analyze", "https://httpbin.org", "--threshold", "0.0"]
+        )
         assert result.exit_code == 0
         assert "PASS" in result.output
 
     def test_threshold_fail(self):
         runner = CliRunner()
-        result = runner.invoke(cli, ["analyze", "https://httpbin.org", "--threshold", "1.0"])
+        result = runner.invoke(
+            cli, ["analyze", "https://httpbin.org", "--threshold", "1.0"]
+        )
         assert result.exit_code == 1
         assert "FAIL" in result.output
 

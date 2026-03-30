@@ -81,7 +81,7 @@ def render_leaderboard(results: list[dict]) -> str:
         check_scores = _extract_check_scores(r)
 
         cells = [
-            f"<td style='color:rgba(255,255,255,0.5)'>{i+1}</td>",
+            f"<td style='color:rgba(255,255,255,0.5)'>{i + 1}</td>",
             f"<td><a href='{url}' style='color:#fff;text-decoration:none'>{display}</a></td>",
             f"<td>{_bar(overall)}<span style='color:{_score_color(overall)}'>{overall:.0%}</span></td>",
         ]
@@ -90,7 +90,9 @@ def render_leaderboard(results: list[dict]) -> str:
             cells.append(f"<td style='color:{_score_color(s)}'>{s:.0%}</td>")
 
         row_id = f"detail-{i}"
-        rows.append(f"<tr class='clickable' onclick=\"toggleDetail('{row_id}')\">{''.join(cells)}</tr>")
+        rows.append(
+            f"<tr class='clickable' onclick=\"toggleDetail('{row_id}')\">{''.join(cells)}</tr>"
+        )
 
         # Build detail row with findings
         findings_html = _build_findings_html(r)
@@ -101,14 +103,20 @@ def render_leaderboard(results: list[dict]) -> str:
         )
 
     # Header
-    check_headers = "".join(
-        f"<th>{name.title()}</th>" for name in all_checks
-    )
+    check_headers = "".join(f"<th>{name.title()}</th>" for name in all_checks)
 
     count = len(results)
     avg = sum(r.get("overall_score", 0) for r in results) / count if count else 0
-    top = results[0].get("url", "").replace("https://", "").rstrip("/") if results else "—"
-    bottom = results[-1].get("url", "").replace("https://", "").rstrip("/") if results else "—"
+    top = (
+        results[0].get("url", "").replace("https://", "").rstrip("/")
+        if results
+        else "—"
+    )
+    bottom = (
+        results[-1].get("url", "").replace("https://", "").rstrip("/")
+        if results
+        else "—"
+    )
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -229,7 +237,7 @@ tr.clickable:hover td {{ background: rgba(255,255,255,0.06); }}
             </tr>
         </thead>
         <tbody>
-            {''.join(rows)}
+            {"".join(rows)}
         </tbody>
     </table>
 

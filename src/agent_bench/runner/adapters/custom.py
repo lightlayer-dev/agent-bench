@@ -136,7 +136,11 @@ class CustomAdapter(BaseAdapter):
                 metrics.record_step(
                     action=str(data.get("action", "unknown")),
                     result=str(data.get("result", "")),
-                    **{k: v for k, v in data.items() if k not in ("action", "result", "step")},
+                    **{
+                        k: v
+                        for k, v in data.items()
+                        if k not in ("action", "result", "step")
+                    },
                 )
 
                 # Track tokens if reported
@@ -151,7 +155,9 @@ class CustomAdapter(BaseAdapter):
 
             if proc.returncode != 0:
                 stderr = proc.stderr.read() if proc.stderr else ""
-                metrics.error = f"Process exited with code {proc.returncode}: {stderr[:500]}"
+                metrics.error = (
+                    f"Process exited with code {proc.returncode}: {stderr[:500]}"
+                )
                 return False
 
             return success

@@ -43,12 +43,34 @@ class TestAnalysisComparison:
         }
 
     def test_compare_analyses(self, tmp_path):
-        before = self._make_result("https://example.com", 0.38, {
-            "a11y": 0.4, "api": 0.3, "docs": 0.4, "structure": 0.5, "auth": 0.2, "errors": 0.4, "cost": 0.5, "performance": 0.6,
-        })
-        after = self._make_result("https://example.com", 0.65, {
-            "a11y": 0.7, "api": 0.6, "docs": 0.7, "structure": 0.6, "auth": 0.5, "errors": 0.7, "cost": 0.8, "performance": 0.9,
-        })
+        before = self._make_result(
+            "https://example.com",
+            0.38,
+            {
+                "a11y": 0.4,
+                "api": 0.3,
+                "docs": 0.4,
+                "structure": 0.5,
+                "auth": 0.2,
+                "errors": 0.4,
+                "cost": 0.5,
+                "performance": 0.6,
+            },
+        )
+        after = self._make_result(
+            "https://example.com",
+            0.65,
+            {
+                "a11y": 0.7,
+                "api": 0.6,
+                "docs": 0.7,
+                "structure": 0.6,
+                "auth": 0.5,
+                "errors": 0.7,
+                "cost": 0.8,
+                "performance": 0.9,
+            },
+        )
         bf = tmp_path / "before.json"
         af = tmp_path / "after.json"
         bf.write_text(json.dumps(before))
@@ -133,14 +155,28 @@ class TestCompareRuns:
     def test_compare_two_runs(self, tmp_path):
         run1 = {
             "results": [
-                {"task": "login", "model": "gpt-4o", "adapter": "browser-use",
-                 "success_rate": 0.6, "avg_steps": 5, "avg_time": 10.0, "avg_cost": 0.05}
+                {
+                    "task": "login",
+                    "model": "gpt-4o",
+                    "adapter": "browser-use",
+                    "success_rate": 0.6,
+                    "avg_steps": 5,
+                    "avg_time": 10.0,
+                    "avg_cost": 0.05,
+                }
             ]
         }
         run2 = {
             "results": [
-                {"task": "login", "model": "claude-opus", "adapter": "browser-use",
-                 "success_rate": 0.8, "avg_steps": 3, "avg_time": 8.0, "avg_cost": 0.08}
+                {
+                    "task": "login",
+                    "model": "claude-opus",
+                    "adapter": "browser-use",
+                    "success_rate": 0.8,
+                    "avg_steps": 3,
+                    "avg_time": 8.0,
+                    "avg_cost": 0.08,
+                }
             ]
         }
         f1 = tmp_path / "r1.json"
@@ -154,9 +190,11 @@ class TestCompareRuns:
         assert comp.rows[0].success_rate == 0.8
 
     def test_render_formats(self):
-        comp = Comparison(rows=[
-            ComparisonRow("login", "gpt-4o", "browser-use", 0.8, 3.0, 8.0, 0.05),
-        ])
+        comp = Comparison(
+            rows=[
+                ComparisonRow("login", "gpt-4o", "browser-use", 0.8, 3.0, 8.0, 0.05),
+            ]
+        )
         assert "login" in comp.render("table")
         assert "| login |" in comp.render("markdown")
         data = json.loads(comp.render("json"))
@@ -168,15 +206,25 @@ class TestCompareCLI:
         from click.testing import CliRunner
         from agent_bench.cli import cli
 
-        before = {"url": "https://x.com", "overall_score": 0.3, "checks": [{"name": "api", "score": 0.3}]}
-        after = {"url": "https://x.com", "overall_score": 0.6, "checks": [{"name": "api", "score": 0.6}]}
+        before = {
+            "url": "https://x.com",
+            "overall_score": 0.3,
+            "checks": [{"name": "api", "score": 0.3}],
+        }
+        after = {
+            "url": "https://x.com",
+            "overall_score": 0.6,
+            "checks": [{"name": "api", "score": 0.6}],
+        }
         bf = tmp_path / "b.json"
         af = tmp_path / "a.json"
         bf.write_text(json.dumps(before))
         af.write_text(json.dumps(after))
 
         runner = CliRunner()
-        result = runner.invoke(cli, ["compare", "--before", str(bf), "--after", str(af)])
+        result = runner.invoke(
+            cli, ["compare", "--before", str(bf), "--after", str(af)]
+        )
         assert result.exit_code == 0
         assert "Score Comparison" in result.output
 

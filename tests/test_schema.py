@@ -59,12 +59,20 @@ class TestValidation:
         assert any("0-1" in e for e in errors)
 
     def test_check_missing_name(self):
-        data = {"url": "https://x.com", "overall_score": 0.5, "checks": [{"score": 0.5}]}
+        data = {
+            "url": "https://x.com",
+            "overall_score": 0.5,
+            "checks": [{"score": 0.5}],
+        }
         errors = validate_result(data)
         assert any("name" in e for e in errors)
 
     def test_check_missing_score(self):
-        data = {"url": "https://x.com", "overall_score": 0.5, "checks": [{"name": "api"}]}
+        data = {
+            "url": "https://x.com",
+            "overall_score": 0.5,
+            "checks": [{"name": "api"}],
+        }
         errors = validate_result(data)
         assert any("score" in e for e in errors)
 
@@ -97,7 +105,9 @@ class TestSchemaCli:
 
     def test_validate_valid_file(self, tmp_path):
         f = tmp_path / "result.json"
-        f.write_text(json.dumps({"url": "https://x.com", "overall_score": 0.5, "checks": []}))
+        f.write_text(
+            json.dumps({"url": "https://x.com", "overall_score": 0.5, "checks": []})
+        )
         runner = CliRunner()
         result = runner.invoke(cli, ["schema", "--validate", str(f)])
         assert result.exit_code == 0

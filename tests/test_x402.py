@@ -29,13 +29,15 @@ def _mock_response(
     return resp
 
 
-X402_DISCOVERY = json.dumps({
-    "scheme": "exact",
-    "network": "base-sepolia",
-    "asset": "USDC",
-    "facilitator": "https://x402.org/facilitator",
-    "version": 1,
-})
+X402_DISCOVERY = json.dumps(
+    {
+        "scheme": "exact",
+        "network": "base-sepolia",
+        "asset": "USDC",
+        "facilitator": "https://x402.org/facilitator",
+        "version": 1,
+    }
+)
 
 
 class TestDiscovery:

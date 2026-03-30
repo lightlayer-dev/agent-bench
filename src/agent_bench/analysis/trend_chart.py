@@ -5,7 +5,9 @@ from __future__ import annotations
 from agent_bench.analysis.trend import SiteTrend, TrendStore
 
 
-def _svg_sparkline(values: list[float], width: int = 400, height: int = 80, color: str = "#4fc3f7") -> str:
+def _svg_sparkline(
+    values: list[float], width: int = 400, height: int = 80, color: str = "#4fc3f7"
+) -> str:
     """Generate an SVG sparkline from a list of values (0-1 range)."""
     if not values:
         return ""
@@ -45,13 +47,17 @@ def render_trend_html(trend: SiteTrend) -> str:
     check_rows = ""
     for check in check_names:
         check_values = [s.check_scores.get(check, 0) for s in trend.snapshots]
-        check_spark = _svg_sparkline(check_values, width=300, height=50, color="#81d4fa")
+        check_spark = _svg_sparkline(
+            check_values, width=300, height=50, color="#81d4fa"
+        )
         latest = check_values[-1] if check_values else 0
         delta = trend.check_delta(check)
         delta_str = ""
         if delta is not None:
             sign = "+" if delta > 0 else ""
-            color = "#4caf50" if delta > 0.01 else "#f44336" if delta < -0.01 else "#9e9e9e"
+            color = (
+                "#4caf50" if delta > 0.01 else "#f44336" if delta < -0.01 else "#9e9e9e"
+            )
             delta_str = f'<span style="color:{color}">{sign}{delta:.0%}</span>'
         check_rows += f"""
         <tr>
@@ -155,7 +161,9 @@ def render_multi_trend_html(store: TrendStore) -> str:
         delta_str = ""
         if delta is not None:
             sign = "+" if delta > 0 else ""
-            color = "#4caf50" if delta > 0.01 else "#f44336" if delta < -0.01 else "#9e9e9e"
+            color = (
+                "#4caf50" if delta > 0.01 else "#f44336" if delta < -0.01 else "#9e9e9e"
+            )
             delta_str = f'<span style="color:{color}">{sign}{delta:.0%}</span>'
 
         rows += f"""

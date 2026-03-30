@@ -77,7 +77,9 @@ class TestSSR:
 class TestStableSelectors:
     def test_with_testids(self):
         check = _make_check()
-        html = '<button data-testid="submit">Go</button><div data-cy="header">H</div>' * 6
+        html = (
+            '<button data-testid="submit">Go</button><div data-cy="header">H</div>' * 6
+        )
         soup = BeautifulSoup(html, "html.parser")
         details: dict = {}
         score, findings = check._check_stable_selectors(soup, details)
@@ -150,7 +152,9 @@ class TestLinkAccessibility:
 
     def test_generic_links(self):
         check = _make_check()
-        html = '<a href="/x">click here</a><a href="/y">read more</a><a href="/z">Docs</a>'
+        html = (
+            '<a href="/x">click here</a><a href="/y">read more</a><a href="/z">Docs</a>'
+        )
         soup = BeautifulSoup(html, "html.parser")
         details: dict = {}
         score, findings = check._check_link_accessibility(soup, details)

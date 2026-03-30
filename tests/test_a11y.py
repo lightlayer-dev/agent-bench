@@ -16,21 +16,27 @@ def _mock_response(html: str) -> MagicMock:
 
 
 def _run_check(html: str) -> dict:
-    with patch("agent_bench.analysis.checks.a11y.httpx.get", return_value=_mock_response(html)):
+    with patch(
+        "agent_bench.analysis.checks.a11y.httpx.get", return_value=_mock_response(html)
+    ):
         check = A11yCheck(url="http://example.com")
         result = check.execute()
-        return {"score": result.score, "findings": result.findings, "details": result.details}
+        return {
+            "score": result.score,
+            "findings": result.findings,
+            "details": result.details,
+        }
 
 
 class TestLandmarks:
     def test_full_landmarks(self):
-        html = '<html><body><header>H</header><nav>N</nav><main>M</main><footer>F</footer></body></html>'
+        html = "<html><body><header>H</header><nav>N</nav><main>M</main><footer>F</footer></body></html>"
         r = _run_check(html)
         assert r["details"]["landmark_count"] >= 4
         assert r["score"] > 0
 
     def test_no_landmarks(self):
-        html = '<html><body><div>Hello</div></body></html>'
+        html = "<html><body><div>Hello</div></body></html>"
         r = _run_check(html)
         assert r["details"]["landmark_count"] == 0
         assert any("No landmark" in f for f in r["findings"])
@@ -62,7 +68,7 @@ class TestAltText:
         assert any("missing alt" in f for f in r["findings"])
 
     def test_no_images(self):
-        html = '<html><body><p>No images here</p></body></html>'
+        html = "<html><body><p>No images here</p></body></html>"
         r = _run_check(html)
         assert r["details"]["images_total"] == 0
 
@@ -74,7 +80,9 @@ class TestSkipLinks:
         assert len(r["details"]["skip_links"]) == 1
 
     def test_no_skip_links(self):
-        html = '<html><body><a href="/about">About</a><main>Content</main></body></html>'
+        html = (
+            '<html><body><a href="/about">About</a><main>Content</main></body></html>'
+        )
         r = _run_check(html)
         assert len(r["details"]["skip_links"]) == 0
 
@@ -91,7 +99,7 @@ class TestLiveRegions:
         assert r["details"]["live_regions"] >= 1
 
     def test_no_live_regions(self):
-        html = '<html><body><div>Static</div></body></html>'
+        html = "<html><body><div>Static</div></body></html>"
         r = _run_check(html)
         assert r["details"]["live_regions"] == 0
 
@@ -108,7 +116,7 @@ class TestFocusManagement:
         assert r["details"]["tabindex_zero"] == 1
 
     def test_no_tabindex(self):
-        html = '<html><body><button>Click</button></body></html>'
+        html = "<html><body><button>Click</button></body></html>"
         r = _run_check(html)
         assert r["details"]["tabindex_positive"] == 0
         assert r["details"]["tabindex_zero"] == 0
@@ -116,7 +124,7 @@ class TestFocusManagement:
 
 class TestOverallScore:
     def test_well_accessible_page(self):
-        html = '''<html><body>
+        html = """<html><body>
             <a href="#main">Skip to content</a>
             <header><nav>Nav</nav></header>
             <main id="main">
@@ -125,7 +133,7 @@ class TestOverallScore:
                 <div tabindex="0">Custom widget</div>
             </main>
             <footer>Footer</footer>
-        </body></html>'''
+        </body></html>"""
         r = _run_check(html)
         assert r["score"] >= 0.7
 

@@ -57,7 +57,9 @@ class DocsCheck(BaseCheck):
         findings.extend(f)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str) -> httpx.Response | None:
         """Fetch a URL, returning None on failure."""
@@ -87,7 +89,10 @@ class DocsCheck(BaseCheck):
             for i, line in enumerate(lines):
                 if "user-agent: *" in line:
                     for j in range(i + 1, min(i + 5, len(lines))):
-                        if "disallow: /" == lines[j].strip() or "disallow: / " in lines[j]:
+                        if (
+                            "disallow: /" == lines[j].strip()
+                            or "disallow: / " in lines[j]
+                        ):
                             blanket_block = True
                             break
 
@@ -101,7 +106,14 @@ class DocsCheck(BaseCheck):
         details["robots_has_sitemap_ref"] = has_sitemap_ref
 
         # Check for specific AI bot rules
-        ai_bots = ["gptbot", "chatgpt", "anthropic", "claude", "google-extended", "ccbot"]
+        ai_bots = [
+            "gptbot",
+            "chatgpt",
+            "anthropic",
+            "claude",
+            "google-extended",
+            "ccbot",
+        ]
         blocked_bots = [bot for bot in ai_bots if bot in text]
         details["blocked_ai_bots"] = blocked_bots
 
@@ -109,7 +121,9 @@ class DocsCheck(BaseCheck):
             findings.append(f"robots.txt blocks AI bots: {', '.join(blocked_bots)}")
             score = 0.4
         else:
-            findings.append("robots.txt is present and doesn't specifically block AI bots")
+            findings.append(
+                "robots.txt is present and doesn't specifically block AI bots"
+            )
             score = 0.8
 
         if has_sitemap_ref:
@@ -146,25 +160,37 @@ class DocsCheck(BaseCheck):
         """Check for OpenAPI/Swagger specifications."""
         findings = []
         spec_paths = [
-            "/openapi.json", "/openapi.yaml",
-            "/swagger.json", "/swagger.yaml",
-            "/api-docs", "/api/docs",
-            "/docs/api", "/.well-known/openapi.json",
+            "/openapi.json",
+            "/openapi.yaml",
+            "/swagger.json",
+            "/swagger.yaml",
+            "/api-docs",
+            "/api/docs",
+            "/docs/api",
+            "/.well-known/openapi.json",
         ]
 
         for path in spec_paths:
             resp = self._fetch(f"{base_url}{path}")
             if resp and resp.status_code == 200:
                 content_type = resp.headers.get("content-type", "")
-                if "json" in content_type or "yaml" in content_type or "text" in content_type:
+                if (
+                    "json" in content_type
+                    or "yaml" in content_type
+                    or "text" in content_type
+                ):
                     try:
                         data = resp.json() if "json" in content_type else {}
                         if "openapi" in data or "swagger" in data or "paths" in data:
                             details["openapi_path"] = path
-                            details["openapi_version"] = data.get("openapi", data.get("swagger", "unknown"))
+                            details["openapi_version"] = data.get(
+                                "openapi", data.get("swagger", "unknown")
+                            )
                             path_count = len(data.get("paths", {}))
                             details["openapi_endpoints"] = path_count
-                            findings.append(f"OpenAPI spec found at {path} with {path_count} endpoints")
+                            findings.append(
+                                f"OpenAPI spec found at {path} with {path_count} endpoints"
+                            )
                             return 1.0, findings
                     except (json.JSONDecodeError, ValueError):
                         pass
@@ -173,7 +199,9 @@ class DocsCheck(BaseCheck):
         findings.append("No OpenAPI/Swagger specification found")
         return 0.0, findings
 
-    def _check_structured_data(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_structured_data(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check for JSON-LD structured data in the page."""
         findings = []
         resp = self._fetch(base_url)
@@ -208,7 +236,9 @@ class DocsCheck(BaseCheck):
                 pass
 
         details["json_ld_types"] = types
-        findings.append(f"Found {len(ld_scripts)} JSON-LD blocks: {', '.join(types[:5])}")
+        findings.append(
+            f"Found {len(ld_scripts)} JSON-LD blocks: {', '.join(types[:5])}"
+        )
 
         return 1.0, findings
 

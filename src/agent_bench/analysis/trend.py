@@ -75,7 +75,13 @@ class TrendStore:
         if self.path.exists():
             self._data = json.loads(self.path.read_text())
 
-    def add(self, url: str, overall_score: float, check_scores: dict[str, float], timestamp: str | None = None) -> None:
+    def add(
+        self,
+        url: str,
+        overall_score: float,
+        check_scores: dict[str, float],
+        timestamp: str | None = None,
+    ) -> None:
         """Record a new snapshot for a site."""
         from datetime import datetime, timezone
 
@@ -128,11 +134,15 @@ def render_trend_table(trend: SiteTrend) -> str:
     if not trend.snapshots:
         return f"No history for {trend.url}"
 
-    lines = [f"Trend: {trend.url}  ({len(trend.snapshots)} snapshots, {trend.direction})\n"]
+    lines = [
+        f"Trend: {trend.url}  ({len(trend.snapshots)} snapshots, {trend.direction})\n"
+    ]
 
     for snap in trend.snapshots:
         dt_str = snap.dt.strftime("%Y-%m-%d %H:%M")
-        bar = "█" * int(snap.overall_score * 10) + "░" * (10 - int(snap.overall_score * 10))
+        bar = "█" * int(snap.overall_score * 10) + "░" * (
+            10 - int(snap.overall_score * 10)
+        )
         lines.append(f"  {dt_str}  {bar}  {snap.overall_score:.0%}")
 
     if trend.delta is not None:

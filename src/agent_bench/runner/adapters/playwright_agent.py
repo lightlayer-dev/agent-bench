@@ -55,6 +55,7 @@ class PlaywrightAdapter(BaseAdapter):
     def run_task(self, task: Task, metrics: RunMetrics) -> bool:
         """Run a task using Playwright + LLM."""
         import asyncio
+
         return asyncio.run(self._run_async(task, metrics))
 
     async def _run_async(self, task: Task, metrics: RunMetrics) -> bool:
@@ -98,40 +99,55 @@ class PlaywrightAdapter(BaseAdapter):
                     except json.JSONDecodeError:
                         # Try to extract JSON from the response
                         import re
-                        match = re.search(r'\{[^}]+\}', response)
+
+                        match = re.search(r"\{[^}]+\}", response)
                         if match:
                             action = json.loads(match.group())
                         else:
-                            metrics.record_step(action="parse_error", result=response[:200])
+                            metrics.record_step(
+                                action="parse_error", result=response[:200]
+                            )
                             continue
 
                     action_type = action.get("action", "unknown")
-                    metrics.record_step(action=action_type, result=json.dumps(action)[:200])
+                    metrics.record_step(
+                        action=action_type, result=json.dumps(action)[:200]
+                    )
 
                     if action_type == "done":
                         return action.get("success", False)
                     elif action_type == "click":
                         ref = action.get("ref", "")
                         try:
-                            await page.locator(f"[data-ref='{ref}']").first.click(timeout=5000)
+                            await page.locator(f"[data-ref='{ref}']").first.click(
+                                timeout=5000
+                            )
                         except Exception:
                             try:
                                 await page.click(f"text={ref}", timeout=5000)
                             except Exception as e:
-                                messages.append({"role": "user", "content": f"Click failed: {e}"})
+                                messages.append(
+                                    {"role": "user", "content": f"Click failed: {e}"}
+                                )
                     elif action_type == "type":
                         ref = action.get("ref", "")
                         text = action.get("text", "")
                         try:
-                            await page.locator(f"[data-ref='{ref}']").first.fill(text, timeout=5000)
+                            await page.locator(f"[data-ref='{ref}']").first.fill(
+                                text, timeout=5000
+                            )
                         except Exception:
                             try:
                                 await page.fill(f"[name='{ref}']", text, timeout=5000)
                             except Exception as e:
-                                messages.append({"role": "user", "content": f"Type failed: {e}"})
+                                messages.append(
+                                    {"role": "user", "content": f"Type failed: {e}"}
+                                )
                     elif action_type == "navigate":
                         url = action.get("url", "")
-                        await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+                        await page.goto(
+                            url, wait_until="domcontentloaded", timeout=15000
+                        )
                     elif action_type == "scroll":
                         direction = action.get("direction", "down")
                         delta = -500 if direction == "up" else 500
@@ -172,7 +188,9 @@ class PlaywrightAdapter(BaseAdapter):
         if self.model_config.provider == ModelProvider.ANTHROPIC:
             import httpx
 
-            api_key = os.environ.get(self.model_config.api_key_env or "ANTHROPIC_API_KEY")
+            api_key = os.environ.get(
+                self.model_config.api_key_env or "ANTHROPIC_API_KEY"
+            )
             if not api_key:
                 raise ValueError(
                     f"API key not found. Set {self.model_config.api_key_env or 'ANTHROPIC_API_KEY'} environment variable."

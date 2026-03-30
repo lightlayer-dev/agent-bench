@@ -11,7 +11,12 @@ def _make_check(url: str = "https://example.com") -> AuthCheck:
     return AuthCheck(url=url)
 
 
-def _mock_response(status: int = 200, text: str = "", content_type: str = "text/html", headers: dict | None = None) -> httpx.Response:
+def _mock_response(
+    status: int = 200,
+    text: str = "",
+    content_type: str = "text/html",
+    headers: dict | None = None,
+) -> httpx.Response:
     resp = MagicMock(spec=httpx.Response)
     resp.status_code = status
     resp.text = text
@@ -63,7 +68,9 @@ class TestCaptcha:
         details: dict = {}
 
         def mock_fetch(url, **kwargs):
-            return _mock_response(text="<html><body><form><input type='text'></form></body></html>")
+            return _mock_response(
+                text="<html><body><form><input type='text'></form></body></html>"
+            )
 
         with patch.object(check, "_fetch", side_effect=mock_fetch):
             score, findings = check._check_captcha("https://example.com", details)
@@ -75,7 +82,9 @@ class TestCaptcha:
 
         def mock_fetch(url, **kwargs):
             if "/login" in url:
-                return _mock_response(text='<html><div class="g-recaptcha" data-sitekey="abc"></div></html>')
+                return _mock_response(
+                    text='<html><div class="g-recaptcha" data-sitekey="abc"></div></html>'
+                )
             return _mock_response(text="<html><body>Main page</body></html>")
 
         with patch.object(check, "_fetch", side_effect=mock_fetch):
@@ -96,7 +105,9 @@ class TestOAuthDiscovery:
             return _mock_response(status=404)
 
         with patch.object(check, "_fetch", side_effect=mock_fetch):
-            score, findings = check._check_oauth_discovery("https://example.com", details)
+            score, findings = check._check_oauth_discovery(
+                "https://example.com", details
+            )
         assert score == 1.0
         assert "client_credentials" in str(findings)
 
@@ -104,7 +115,9 @@ class TestOAuthDiscovery:
         check = _make_check()
         details: dict = {}
         with patch.object(check, "_fetch", return_value=_mock_response(status=404)):
-            score, findings = check._check_oauth_discovery("https://example.com", details)
+            score, findings = check._check_oauth_discovery(
+                "https://example.com", details
+            )
         assert score == 0.5  # Neutral — might use API keys
 
 
