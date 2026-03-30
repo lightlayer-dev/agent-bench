@@ -23,19 +23,21 @@ def _mock_response(
     return resp
 
 
-FULL_AGENT_CARD = json.dumps({
-    "name": "Example Agent",
-    "description": "A helpful agent that does things",
-    "url": "https://example.com/agent",
-    "version": "1.0.0",
-    "provider": {"organization": "Example Inc"},
-    "skills": [
-        {"id": "search", "name": "Search", "description": "Search the web"},
-        {"id": "calc", "name": "Calculate", "description": "Do math"},
-    ],
-    "authentication": {"schemes": ["bearer"]},
-    "defaultInputModes": ["text/plain", "application/json"],
-})
+FULL_AGENT_CARD = json.dumps(
+    {
+        "name": "Example Agent",
+        "description": "A helpful agent that does things",
+        "url": "https://example.com/agent",
+        "version": "1.0.0",
+        "provider": {"organization": "Example Inc"},
+        "skills": [
+            {"id": "search", "name": "Search", "description": "Search the web"},
+            {"id": "calc", "name": "Calculate", "description": "Do math"},
+        ],
+        "authentication": {"schemes": ["bearer"]},
+        "defaultInputModes": ["text/plain", "application/json"],
+    }
+)
 
 MINIMAL_AGENT_CARD = json.dumps({"name": "Mini Agent"})
 

@@ -23,93 +23,313 @@ import requests
 # Same sites as fetch_llms_txt.py — 249 sites across categories
 SITES = {
     "JS Frameworks": [
-        "react.dev", "nextjs.org", "vuejs.org", "svelte.dev", "astro.build",
-        "angular.dev", "vite.dev", "turbo.build", "nuxt.com", "remix.run",
-        "solidjs.com", "preactjs.com", "qwik.dev", "lit.dev", "alpinejs.dev",
-        "htmx.org", "emberjs.com", "backbonejs.org", "mithril.js.org", "stimulus.hotwired.dev",
+        "react.dev",
+        "nextjs.org",
+        "vuejs.org",
+        "svelte.dev",
+        "astro.build",
+        "angular.dev",
+        "vite.dev",
+        "turbo.build",
+        "nuxt.com",
+        "remix.run",
+        "solidjs.com",
+        "preactjs.com",
+        "qwik.dev",
+        "lit.dev",
+        "alpinejs.dev",
+        "htmx.org",
+        "emberjs.com",
+        "backbonejs.org",
+        "mithril.js.org",
+        "stimulus.hotwired.dev",
     ],
     "Developer Tools": [
-        "github.com", "gitlab.com", "vercel.com", "netlify.com", "supabase.com",
-        "render.com", "docker.com", "postman.com", "railway.app", "fly.io",
-        "cloudflare.com", "digitalocean.com", "heroku.com", "aws.amazon.com", "azure.microsoft.com",
-        "cloud.google.com", "hashicorp.com", "datadog.com", "sentry.io", "grafana.com",
-        "newrelic.com", "pagerduty.com", "launchdarkly.com", "circleci.com", "travis-ci.com",
-        "jenkins.io", "ansible.com", "puppet.com", "terraform.io", "pulumi.com",
+        "github.com",
+        "gitlab.com",
+        "vercel.com",
+        "netlify.com",
+        "supabase.com",
+        "render.com",
+        "docker.com",
+        "postman.com",
+        "railway.app",
+        "fly.io",
+        "cloudflare.com",
+        "digitalocean.com",
+        "heroku.com",
+        "aws.amazon.com",
+        "azure.microsoft.com",
+        "cloud.google.com",
+        "hashicorp.com",
+        "datadog.com",
+        "sentry.io",
+        "grafana.com",
+        "newrelic.com",
+        "pagerduty.com",
+        "launchdarkly.com",
+        "circleci.com",
+        "travis-ci.com",
+        "jenkins.io",
+        "ansible.com",
+        "puppet.com",
+        "terraform.io",
+        "pulumi.com",
     ],
     "AI / ML Platforms": [
-        "openai.com", "anthropic.com", "cohere.com", "mistral.ai", "replicate.com",
-        "together.ai", "pinecone.io", "qdrant.tech", "weaviate.io", "milvus.io",
-        "huggingface.co", "wandb.ai", "mlflow.org", "ray.io", "modal.com",
-        "anyscale.com", "deepmind.google", "stability.ai", "midjourney.com", "runway.ml",
-        "jasper.ai", "writer.com", "copy.ai", "perplexity.ai", "you.com",
+        "openai.com",
+        "anthropic.com",
+        "cohere.com",
+        "mistral.ai",
+        "replicate.com",
+        "together.ai",
+        "pinecone.io",
+        "qdrant.tech",
+        "weaviate.io",
+        "milvus.io",
+        "huggingface.co",
+        "wandb.ai",
+        "mlflow.org",
+        "ray.io",
+        "modal.com",
+        "anyscale.com",
+        "deepmind.google",
+        "stability.ai",
+        "midjourney.com",
+        "runway.ml",
+        "jasper.ai",
+        "writer.com",
+        "copy.ai",
+        "perplexity.ai",
+        "you.com",
     ],
     "Enterprise SaaS": [
-        "stripe.com", "slack.com", "notion.so", "shopify.com", "linear.app",
-        "figma.com", "miro.com", "asana.com", "monday.com", "clickup.com",
-        "jira.atlassian.com", "confluence.atlassian.com", "salesforce.com", "hubspot.com", "zendesk.com",
-        "intercom.com", "twilio.com", "sendgrid.com", "mailchimp.com", "segment.com",
-        "amplitude.com", "mixpanel.com", "heap.io", "fullstory.com", "hotjar.com",
-        "auth0.com", "okta.com", "onelogin.com", "duo.com", "crowdstrike.com",
-        "airtable.com", "retool.com", "appsmith.com", "bubble.io", "webflow.com",
-        "squarespace.com", "wix.com", "ghost.org", "wordpress.com", "contentful.com",
+        "stripe.com",
+        "slack.com",
+        "notion.so",
+        "shopify.com",
+        "linear.app",
+        "figma.com",
+        "miro.com",
+        "asana.com",
+        "monday.com",
+        "clickup.com",
+        "jira.atlassian.com",
+        "confluence.atlassian.com",
+        "salesforce.com",
+        "hubspot.com",
+        "zendesk.com",
+        "intercom.com",
+        "twilio.com",
+        "sendgrid.com",
+        "mailchimp.com",
+        "segment.com",
+        "amplitude.com",
+        "mixpanel.com",
+        "heap.io",
+        "fullstory.com",
+        "hotjar.com",
+        "auth0.com",
+        "okta.com",
+        "onelogin.com",
+        "duo.com",
+        "crowdstrike.com",
+        "airtable.com",
+        "retool.com",
+        "appsmith.com",
+        "bubble.io",
+        "webflow.com",
+        "squarespace.com",
+        "wix.com",
+        "ghost.org",
+        "wordpress.com",
+        "contentful.com",
     ],
     "Programming Languages & Runtimes": [
-        "python.org", "nodejs.org", "rust-lang.org", "go.dev", "typescriptlang.org",
-        "ruby-lang.org", "php.net", "swift.org", "kotlinlang.org", "dart.dev",
-        "elixir-lang.org", "haskell.org", "scala-lang.org", "clojure.org", "erlang.org",
-        "ziglang.org", "nim-lang.org", "crystal-lang.org", "gleam.run", "roc-lang.org",
+        "python.org",
+        "nodejs.org",
+        "rust-lang.org",
+        "go.dev",
+        "typescriptlang.org",
+        "ruby-lang.org",
+        "php.net",
+        "swift.org",
+        "kotlinlang.org",
+        "dart.dev",
+        "elixir-lang.org",
+        "haskell.org",
+        "scala-lang.org",
+        "clojure.org",
+        "erlang.org",
+        "ziglang.org",
+        "nim-lang.org",
+        "crystal-lang.org",
+        "gleam.run",
+        "roc-lang.org",
     ],
     "Databases": [
-        "postgresql.org", "mysql.com", "mongodb.com", "redis.io", "sqlite.org",
-        "cockroachlabs.com", "planetscale.com", "neon.tech", "fauna.com", "couchbase.com",
-        "neo4j.com", "dgraph.io", "arangodb.com", "timescale.com", "questdb.io",
+        "postgresql.org",
+        "mysql.com",
+        "mongodb.com",
+        "redis.io",
+        "sqlite.org",
+        "cockroachlabs.com",
+        "planetscale.com",
+        "neon.tech",
+        "fauna.com",
+        "couchbase.com",
+        "neo4j.com",
+        "dgraph.io",
+        "arangodb.com",
+        "timescale.com",
+        "questdb.io",
     ],
     "News & Media": [
-        "nytimes.com", "bbc.com", "cnn.com", "reuters.com", "theguardian.com",
-        "forbes.com", "bloomberg.com", "techcrunch.com", "theverge.com", "wired.com",
-        "arstechnica.com", "vice.com", "vox.com", "buzzfeed.com", "huffpost.com",
-        "washingtonpost.com", "wsj.com", "ft.com", "economist.com", "time.com",
+        "nytimes.com",
+        "bbc.com",
+        "cnn.com",
+        "reuters.com",
+        "theguardian.com",
+        "forbes.com",
+        "bloomberg.com",
+        "techcrunch.com",
+        "theverge.com",
+        "wired.com",
+        "arstechnica.com",
+        "vice.com",
+        "vox.com",
+        "buzzfeed.com",
+        "huffpost.com",
+        "washingtonpost.com",
+        "wsj.com",
+        "ft.com",
+        "economist.com",
+        "time.com",
     ],
     "Consumer Web": [
-        "google.com", "facebook.com", "twitter.com", "instagram.com", "tiktok.com",
-        "youtube.com", "reddit.com", "pinterest.com", "linkedin.com", "snapchat.com",
-        "amazon.com", "ebay.com", "walmart.com", "target.com", "bestbuy.com",
-        "etsy.com", "nike.com", "apple.com", "spotify.com", "netflix.com",
-        "airbnb.com", "uber.com", "doordash.com", "grubhub.com", "yelp.com",
-        "tripadvisor.com", "booking.com", "expedia.com", "zillow.com", "redfin.com",
+        "google.com",
+        "facebook.com",
+        "twitter.com",
+        "instagram.com",
+        "tiktok.com",
+        "youtube.com",
+        "reddit.com",
+        "pinterest.com",
+        "linkedin.com",
+        "snapchat.com",
+        "amazon.com",
+        "ebay.com",
+        "walmart.com",
+        "target.com",
+        "bestbuy.com",
+        "etsy.com",
+        "nike.com",
+        "apple.com",
+        "spotify.com",
+        "netflix.com",
+        "airbnb.com",
+        "uber.com",
+        "doordash.com",
+        "grubhub.com",
+        "yelp.com",
+        "tripadvisor.com",
+        "booking.com",
+        "expedia.com",
+        "zillow.com",
+        "redfin.com",
     ],
     "Documentation Platforms": [
-        "docs.python.org", "docs.rs", "pkg.go.dev", "docs.oracle.com", "developer.mozilla.org",
-        "devdocs.io", "readthedocs.org", "gitbook.com", "docusaurus.io", "mkdocs.org",
-        "sphinx-doc.org", "doxygen.nl", "javadoc.io", "rubydoc.info", "hexdocs.pm",
+        "docs.python.org",
+        "docs.rs",
+        "pkg.go.dev",
+        "docs.oracle.com",
+        "developer.mozilla.org",
+        "devdocs.io",
+        "readthedocs.org",
+        "gitbook.com",
+        "docusaurus.io",
+        "mkdocs.org",
+        "sphinx-doc.org",
+        "doxygen.nl",
+        "javadoc.io",
+        "rubydoc.info",
+        "hexdocs.pm",
     ],
     "Government & Education": [
-        "usa.gov", "nasa.gov", "cdc.gov", "nih.gov", "mit.edu",
-        "stanford.edu", "harvard.edu", "berkeley.edu", "ox.ac.uk", "cam.ac.uk",
+        "usa.gov",
+        "nasa.gov",
+        "cdc.gov",
+        "nih.gov",
+        "mit.edu",
+        "stanford.edu",
+        "harvard.edu",
+        "berkeley.edu",
+        "ox.ac.uk",
+        "cam.ac.uk",
     ],
     "Health": [
-        "webmd.com", "healthline.com", "mayoclinic.org", "clevelandclinic.org", "medlineplus.gov",
+        "webmd.com",
+        "healthline.com",
+        "mayoclinic.org",
+        "clevelandclinic.org",
+        "medlineplus.gov",
     ],
     "Finance": [
-        "chase.com", "bankofamerica.com", "wellsfargo.com", "paypal.com", "coinbase.com",
-        "robinhood.com", "fidelity.com", "schwab.com", "stripe.dev",
+        "chase.com",
+        "bankofamerica.com",
+        "wellsfargo.com",
+        "paypal.com",
+        "coinbase.com",
+        "robinhood.com",
+        "fidelity.com",
+        "schwab.com",
+        "stripe.dev",
     ],
 }
 
 # Known agent names that may appear in agents.txt directives
 KNOWN_AGENTS = [
-    "ChatGPT", "GPTBot", "Claude", "ClaudeBot", "Anthropic",
-    "Bard", "Google-Extended", "Gemini", "Perplexity", "PerplexityBot",
-    "Copilot", "GitHub-Copilot", "Devin", "Cursor", "Windsurf",
-    "Codex", "OpenAI", "Cohere", "CohereBot", "Meta-ExternalAgent",
-    "CCBot", "Amazonbot", "AppleBot", "FacebookBot", "Bytespider",
+    "ChatGPT",
+    "GPTBot",
+    "Claude",
+    "ClaudeBot",
+    "Anthropic",
+    "Bard",
+    "Google-Extended",
+    "Gemini",
+    "Perplexity",
+    "PerplexityBot",
+    "Copilot",
+    "GitHub-Copilot",
+    "Devin",
+    "Cursor",
+    "Windsurf",
+    "Codex",
+    "OpenAI",
+    "Cohere",
+    "CohereBot",
+    "Meta-ExternalAgent",
+    "CCBot",
+    "Amazonbot",
+    "AppleBot",
+    "FacebookBot",
+    "Bytespider",
 ]
 
 # Directives commonly found in agents.txt (robots.txt-like format)
 KNOWN_DIRECTIVES = [
-    "User-agent", "Allow", "Disallow", "Crawl-delay",
-    "Agent", "Permission", "Rate-limit", "Contact",
-    "Scope", "Action", "Description", "Sitemap",
+    "User-agent",
+    "Allow",
+    "Disallow",
+    "Crawl-delay",
+    "Agent",
+    "Permission",
+    "Rate-limit",
+    "Contact",
+    "Scope",
+    "Action",
+    "Description",
+    "Sitemap",
 ]
 
 
@@ -169,26 +389,40 @@ def check_site(domain: str, category: str) -> AgentsTxtResult:
     url = f"https://{domain}/agents.txt"
 
     try:
-        resp = requests.get(url, timeout=10, headers={
-            "User-Agent": "agent-bench-research/1.0",
-            "Accept": "text/plain, */*",
-        }, allow_redirects=True)
+        resp = requests.get(
+            url,
+            timeout=10,
+            headers={
+                "User-Agent": "agent-bench-research/1.0",
+                "Accept": "text/plain, */*",
+            },
+            allow_redirects=True,
+        )
         result.status_code = resp.status_code
 
         if resp.status_code == 200:
             content = resp.text.strip()
             # Filter out HTML error pages masquerading as 200
-            if (content.startswith("<!") or content.startswith("<html")
-                    or content.startswith("<HTML") or content.startswith("<head")):
+            if (
+                content.startswith("<!")
+                or content.startswith("<html")
+                or content.startswith("<HTML")
+                or content.startswith("<head")
+            ):
                 result.has_agents_txt = False
-            elif "domain is for sale" in content.lower() or "buy this domain" in content.lower():
+            elif (
+                "domain is for sale" in content.lower()
+                or "buy this domain" in content.lower()
+            ):
                 result.has_agents_txt = False
             elif len(content) < 5:
                 result.has_agents_txt = False
             else:
                 result.has_agents_txt = True
                 result.content_length = len(content)
-                result.directives_found, result.agent_names_mentioned = parse_agents_txt(content)
+                result.directives_found, result.agent_names_mentioned = (
+                    parse_agents_txt(content)
+                )
         # Any other status code means no agents.txt
 
     except requests.Timeout:
@@ -221,13 +455,20 @@ def main():
                 extra = ""
                 if result.has_agents_txt:
                     extra = f" ({result.content_length}B, {len(result.directives_found)} directives)"
-                print(f"  [{i}/{len(tasks)}] {icon} {domain}: {result.status_code}{extra}")
+                print(
+                    f"  [{i}/{len(tasks)}] {icon} {domain}: {result.status_code}{extra}"
+                )
             except Exception as e:
                 print(f"  [{i}/{len(tasks)}] {domain}: FAILED - {e}", file=sys.stderr)
 
     # Sort by category order, then domain
     cat_order = list(SITES.keys())
-    all_results.sort(key=lambda r: (cat_order.index(r.category) if r.category in cat_order else 99, r.domain))
+    all_results.sort(
+        key=lambda r: (
+            cat_order.index(r.category) if r.category in cat_order else 99,
+            r.domain,
+        )
+    )
 
     # Deduplicate (stripe.com appears in both SaaS and Finance categories)
     seen: set[str] = set()
@@ -242,18 +483,31 @@ def main():
     csv_path = out_dir / "agents_txt_survey.csv"
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow([
-            "domain", "category", "has_agents_txt", "status_code",
-            "content_length", "directives_found", "agent_names_mentioned", "timestamp",
-        ])
+        writer.writerow(
+            [
+                "domain",
+                "category",
+                "has_agents_txt",
+                "status_code",
+                "content_length",
+                "directives_found",
+                "agent_names_mentioned",
+                "timestamp",
+            ]
+        )
         for r in all_results:
-            writer.writerow([
-                r.domain, r.category, r.has_agents_txt, r.status_code,
-                r.content_length,
-                ";".join(r.directives_found),
-                ";".join(r.agent_names_mentioned),
-                r.timestamp,
-            ])
+            writer.writerow(
+                [
+                    r.domain,
+                    r.category,
+                    r.has_agents_txt,
+                    r.status_code,
+                    r.content_length,
+                    ";".join(r.directives_found),
+                    ";".join(r.agent_names_mentioned),
+                    r.timestamp,
+                ]
+            )
     print(f"\nWrote {csv_path}")
 
     # JSON
@@ -268,7 +522,9 @@ def main():
         cat_summary[cat] = {
             "total": len(cat_results),
             "found": len(cat_found),
-            "adoption_pct": round(len(cat_found) / len(cat_results) * 100, 1) if cat_results else 0,
+            "adoption_pct": round(len(cat_found) / len(cat_results) * 100, 1)
+            if cat_results
+            else 0,
         }
 
     # Aggregate directive and agent stats
@@ -286,7 +542,9 @@ def main():
             "date": time.strftime("%Y-%m-%d"),
             "total_sites": total_checked,
             "sites_with_agents_txt": len(found),
-            "adoption_rate_pct": round(len(found) / total_checked * 100, 1) if total_checked else 0,
+            "adoption_rate_pct": round(len(found) / total_checked * 100, 1)
+            if total_checked
+            else 0,
             "methodology": (
                 "Fetched /agents.txt from each domain over HTTPS with 10s timeout. "
                 "Counted as 'found' if HTTP 200 with non-HTML text content of 5+ characters. "
@@ -294,8 +552,12 @@ def main():
             ),
         },
         "category_summary": cat_summary,
-        "directive_frequency": dict(sorted(all_directives.items(), key=lambda x: -x[1])),
-        "agent_mention_frequency": dict(sorted(all_agents.items(), key=lambda x: -x[1])),
+        "directive_frequency": dict(
+            sorted(all_directives.items(), key=lambda x: -x[1])
+        ),
+        "agent_mention_frequency": dict(
+            sorted(all_agents.items(), key=lambda x: -x[1])
+        ),
         "sites": [
             {
                 "domain": r.domain,
@@ -316,18 +578,24 @@ def main():
     print(f"Wrote {json_path}")
 
     # Summary
-    print(f"\n{'='*60}")
-    print(f"SUMMARY: {total_checked} sites checked, {len(found)} have agents.txt "
-          f"({round(len(found)/total_checked*100,1) if total_checked else 0}%)")
-    print(f"{'='*60}")
+    print(f"\n{'=' * 60}")
+    print(
+        f"SUMMARY: {total_checked} sites checked, {len(found)} have agents.txt "
+        f"({round(len(found) / total_checked * 100, 1) if total_checked else 0}%)"
+    )
+    print(f"{'=' * 60}")
     for cat, stats in cat_summary.items():
         print(f"  {cat}: {stats['found']}/{stats['total']} ({stats['adoption_pct']}%)")
 
     if found:
         print("\nSites with agents.txt:")
         for r in found:
-            directives_str = ", ".join(r.directives_found) if r.directives_found else "none parsed"
-            print(f"  {r.domain} ({r.category}, {r.content_length}B, directives: {directives_str})")
+            directives_str = (
+                ", ".join(r.directives_found) if r.directives_found else "none parsed"
+            )
+            print(
+                f"  {r.domain} ({r.category}, {r.content_length}B, directives: {directives_str})"
+            )
 
     if all_agents:
         print("\nAgent names mentioned across all agents.txt files:")

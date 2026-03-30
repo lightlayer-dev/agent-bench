@@ -25,8 +25,17 @@ class TestBuiltinChecks:
     def test_has_all_builtins(self):
         builtins = _get_builtin_checks()
         assert set(builtins.keys()) == {
-            "a11y", "a2a", "agents_txt", "api", "auth", "cost",
-            "docs", "errors", "performance", "structure", "x402",
+            "a11y",
+            "a2a",
+            "agents_txt",
+            "api",
+            "auth",
+            "cost",
+            "docs",
+            "errors",
+            "performance",
+            "structure",
+            "x402",
         }
 
     def test_registry_includes_builtins(self):
@@ -47,10 +56,12 @@ class TestPluginDiscovery:
 
     def _mock_entry_points(self, eps_list):
         """Mock entry_points for Python 3.12+ (keyword group= returns list)."""
+
         def fake_entry_points(*, group=None):
             if group == "agent_bench.checks":
                 return eps_list
             return []
+
         return fake_entry_points
 
     def test_plugin_added_to_registry(self):

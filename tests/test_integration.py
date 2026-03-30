@@ -26,7 +26,19 @@ class TestFullAnalysis:
 
         # Every check should have findings
         for result in report.check_results:
-            assert result.name in ("a11y", "api", "auth", "docs", "structure", "errors", "cost", "performance", "agents_txt", "a2a", "x402")
+            assert result.name in (
+                "a11y",
+                "api",
+                "auth",
+                "docs",
+                "structure",
+                "errors",
+                "cost",
+                "performance",
+                "agents_txt",
+                "a2a",
+                "x402",
+            )
             assert 0.0 <= result.score <= 1.0
             assert len(result.findings) > 0
 
@@ -61,6 +73,7 @@ class TestFullAnalysis:
 
         json_str = report.render("json")
         import json
+
         data = json.loads(json_str)
         assert "overall_score" in data
         assert len(data["checks"]) == 11

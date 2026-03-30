@@ -11,7 +11,9 @@ def _make_check(url: str = "https://example.com") -> DocsCheck:
     return DocsCheck(url=url)
 
 
-def _mock_response(status: int = 200, text: str = "", content_type: str = "text/plain") -> httpx.Response:
+def _mock_response(
+    status: int = 200, text: str = "", content_type: str = "text/plain"
+) -> httpx.Response:
     resp = MagicMock(spec=httpx.Response)
     resp.status_code = status
     resp.text = text
@@ -53,7 +55,11 @@ class TestSitemap:
         check = _make_check()
         details: dict = {}
         sitemap = '<?xml version="1.0"?><urlset><url><loc>https://example.com/</loc></url><url><loc>https://example.com/about</loc></url></urlset>'
-        with patch.object(check, "_fetch", return_value=_mock_response(text=sitemap, content_type="application/xml")):
+        with patch.object(
+            check,
+            "_fetch",
+            return_value=_mock_response(text=sitemap, content_type="application/xml"),
+        ):
             score, findings = check._check_sitemap("https://example.com", details)
         assert score == 1.0
         assert details["sitemap_urls"] == 2
@@ -71,8 +77,14 @@ class TestStructuredData:
         check = _make_check()
         details: dict = {}
         html = '<html><head><script type="application/ld+json">{"@type": "Organization", "name": "Test"}</script></head><body></body></html>'
-        with patch.object(check, "_fetch", return_value=_mock_response(text=html, content_type="text/html")):
-            score, findings = check._check_structured_data("https://example.com", details)
+        with patch.object(
+            check,
+            "_fetch",
+            return_value=_mock_response(text=html, content_type="text/html"),
+        ):
+            score, findings = check._check_structured_data(
+                "https://example.com", details
+            )
         assert score == 1.0
         assert "Organization" in details["json_ld_types"]
 

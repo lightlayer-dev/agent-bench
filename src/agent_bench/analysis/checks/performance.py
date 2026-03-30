@@ -55,7 +55,8 @@ class PerformanceCheck(BaseCheck):
             elapsed_ms = (time.monotonic() - start) * 1000
         except httpx.HTTPError as e:
             return CheckResult(
-                name=self.name, score=0.0,
+                name=self.name,
+                score=0.0,
                 findings=[f"Failed to fetch page: {e}"],
             )
 
@@ -96,7 +97,9 @@ class PerformanceCheck(BaseCheck):
             details=details,
         )
 
-    def _check_response_time(self, elapsed_ms: float, details: dict) -> tuple[float, list[str]]:
+    def _check_response_time(
+        self, elapsed_ms: float, details: dict
+    ) -> tuple[float, list[str]]:
         """Score based on time-to-first-byte."""
         findings: list[str] = []
         details["response_time_ms"] = round(elapsed_ms, 1)
@@ -106,14 +109,20 @@ class PerformanceCheck(BaseCheck):
             return 1.0, findings
         elif elapsed_ms <= SLOW_RESPONSE_MS:
             # Linear interpolation between fast and slow
-            score = 1.0 - (elapsed_ms - FAST_RESPONSE_MS) / (SLOW_RESPONSE_MS - FAST_RESPONSE_MS)
+            score = 1.0 - (elapsed_ms - FAST_RESPONSE_MS) / (
+                SLOW_RESPONSE_MS - FAST_RESPONSE_MS
+            )
             findings.append(f"Moderate response time: {elapsed_ms:.0f}ms")
             return round(max(0.3, score), 3), findings
         else:
-            findings.append(f"Slow response: {elapsed_ms:.0f}ms — agents will timeout or retry")
+            findings.append(
+                f"Slow response: {elapsed_ms:.0f}ms — agents will timeout or retry"
+            )
             return 0.1, findings
 
-    def _check_payload_size(self, response: httpx.Response, details: dict) -> tuple[float, list[str]]:
+    def _check_payload_size(
+        self, response: httpx.Response, details: dict
+    ) -> tuple[float, list[str]]:
         """Score based on HTML payload size."""
         findings: list[str] = []
 
@@ -125,14 +134,20 @@ class PerformanceCheck(BaseCheck):
             findings.append(f"Compact payload: {size_kb:.0f}KB")
             return 1.0, findings
         elif size_kb <= LARGE_PAYLOAD_KB:
-            score = 1.0 - (size_kb - SMALL_PAYLOAD_KB) / (LARGE_PAYLOAD_KB - SMALL_PAYLOAD_KB)
+            score = 1.0 - (size_kb - SMALL_PAYLOAD_KB) / (
+                LARGE_PAYLOAD_KB - SMALL_PAYLOAD_KB
+            )
             findings.append(f"Moderate payload: {size_kb:.0f}KB")
             return round(max(0.3, score), 3), findings
         else:
-            findings.append(f"Large payload: {size_kb:.0f}KB — increases token cost for agents")
+            findings.append(
+                f"Large payload: {size_kb:.0f}KB — increases token cost for agents"
+            )
             return 0.1, findings
 
-    def _check_redirects(self, response: httpx.Response, details: dict) -> tuple[float, list[str]]:
+    def _check_redirects(
+        self, response: httpx.Response, details: dict
+    ) -> tuple[float, list[str]]:
         """Score based on redirect chain length."""
         findings: list[str] = []
 
@@ -147,10 +162,14 @@ class PerformanceCheck(BaseCheck):
             findings.append(f"{redirect_count} redirect(s) — acceptable")
             return 0.8, findings
         else:
-            findings.append(f"{redirect_count} redirects — long chain slows agents and may cause loops")
+            findings.append(
+                f"{redirect_count} redirects — long chain slows agents and may cause loops"
+            )
             return max(0.1, 1.0 - redirect_count * 0.2), findings
 
-    def _check_resources(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_resources(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Score based on number of linked resources (scripts, styles, images)."""
         findings: list[str] = []
 
@@ -188,11 +207,15 @@ class PerformanceCheck(BaseCheck):
         if parts:
             findings.append(f"Resource heavy: {', '.join(parts)}")
         else:
-            findings.append(f"Lean resources: {len(scripts)} scripts, {len(stylesheets)} styles, {len(images)} images")
+            findings.append(
+                f"Lean resources: {len(scripts)} scripts, {len(stylesheets)} styles, {len(images)} images"
+            )
 
         return round(max(0.1, score), 3), findings
 
-    def _check_compression(self, response: httpx.Response, details: dict) -> tuple[float, list[str]]:
+    def _check_compression(
+        self, response: httpx.Response, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if the response uses compression."""
         findings: list[str] = []
 

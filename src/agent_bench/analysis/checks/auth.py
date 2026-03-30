@@ -53,7 +53,9 @@ class AuthCheck(BaseCheck):
         findings.extend(f)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str, **kwargs) -> httpx.Response | None:
         try:
@@ -61,7 +63,9 @@ class AuthCheck(BaseCheck):
         except httpx.HTTPError:
             return None
 
-    def _check_bot_detection(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_bot_detection(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Detect WAF / bot detection systems."""
         findings = []
         resp = self._fetch(base_url)
@@ -81,7 +85,9 @@ class AuthCheck(BaseCheck):
                 detected.append("Cloudflare Challenge (active blocking)")
 
         # Akamai
-        if "x-akamai" in " ".join(headers.keys()) or "akamai" in headers.get("server", ""):
+        if "x-akamai" in " ".join(headers.keys()) or "akamai" in headers.get(
+            "server", ""
+        ):
             detected.append("Akamai")
 
         # AWS WAF
@@ -118,8 +124,13 @@ class AuthCheck(BaseCheck):
         """Detect CAPTCHA presence on the main page and login."""
         findings = []
         captcha_indicators = [
-            "recaptcha", "hcaptcha", "captcha", "g-recaptcha",
-            "h-captcha", "cf-turnstile", "arkose",
+            "recaptcha",
+            "hcaptcha",
+            "captcha",
+            "g-recaptcha",
+            "h-captcha",
+            "cf-turnstile",
+            "arkose",
         ]
 
         pages_to_check = [base_url]
@@ -149,7 +160,9 @@ class AuthCheck(BaseCheck):
         # CAPTCHAs are a significant barrier for agents
         return 0.2, findings
 
-    def _check_oauth_discovery(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_oauth_discovery(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check for OAuth/OIDC well-known endpoints."""
         findings = []
         discovery_paths = [
@@ -169,10 +182,14 @@ class AuthCheck(BaseCheck):
 
                     # client_credentials is the best for agents (machine-to-machine)
                     if "client_credentials" in grant_types:
-                        findings.append("OAuth discovery found — supports client_credentials (machine-to-machine)")
+                        findings.append(
+                            "OAuth discovery found — supports client_credentials (machine-to-machine)"
+                        )
                         return 1.0, findings
                     else:
-                        findings.append(f"OAuth discovery found — grant types: {', '.join(grant_types)}")
+                        findings.append(
+                            f"OAuth discovery found — grant types: {', '.join(grant_types)}"
+                        )
                         return 0.7, findings
                 except (ValueError, KeyError):
                     pass
@@ -182,7 +199,9 @@ class AuthCheck(BaseCheck):
         findings.append("No OAuth/OIDC discovery endpoint found")
         return 0.5, findings
 
-    def _check_login_form(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_login_form(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Analyze login form complexity."""
         findings = []
         login_paths = ["/login", "/signin", "/sign-in", "/auth/login", "/account/login"]
@@ -208,8 +227,18 @@ class AuthCheck(BaseCheck):
             details["login_input_types"] = input_types
 
             # Check complexity indicators
-            has_csrf = any(inp.get("name", "").lower() in ("csrf", "_token", "csrf_token", "csrfmiddlewaretoken", "authenticity_token") for inp in inputs)
-            has_hidden = input_types.count("hidden") 
+            has_csrf = any(
+                inp.get("name", "").lower()
+                in (
+                    "csrf",
+                    "_token",
+                    "csrf_token",
+                    "csrfmiddlewaretoken",
+                    "authenticity_token",
+                )
+                for inp in inputs
+            )
+            has_hidden = input_types.count("hidden")
             password_fields = input_types.count("password")
 
             details["login_has_csrf"] = has_csrf
@@ -217,7 +246,9 @@ class AuthCheck(BaseCheck):
 
             if password_fields == 0:
                 # Might be SSO-only
-                findings.append(f"Login form at {path} — no password field (possibly SSO/OAuth only)")
+                findings.append(
+                    f"Login form at {path} — no password field (possibly SSO/OAuth only)"
+                )
                 return 0.7, findings
 
             complexity = "simple"
@@ -230,7 +261,9 @@ class AuthCheck(BaseCheck):
                 complexity = "moderate (CSRF protected)"
                 score = 0.5
 
-            findings.append(f"Login form at {path} — {complexity}, {len(inputs)} inputs")
+            findings.append(
+                f"Login form at {path} — {complexity}, {len(inputs)} inputs"
+            )
             return score, findings
 
         details["login_form_found"] = False

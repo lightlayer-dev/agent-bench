@@ -2,7 +2,11 @@
 
 from agent_bench.analysis.models import CheckResult
 from agent_bench.analysis.report import AnalysisReport
-from agent_bench.analysis.html_report import render_html_report, _score_color, _score_label
+from agent_bench.analysis.html_report import (
+    render_html_report,
+    _score_color,
+    _score_label,
+)
 
 
 class TestScoreHelpers:
@@ -29,7 +33,9 @@ class TestHTMLReport:
             check_results=[
                 CheckResult(name="api", score=0.8, findings=["Found 3 API endpoints"]),
                 CheckResult(name="docs", score=0.4, findings=["No sitemap"]),
-                CheckResult(name="structure", score=0.7, findings=["Good semantic HTML"]),
+                CheckResult(
+                    name="structure", score=0.7, findings=["Good semantic HTML"]
+                ),
                 CheckResult(name="auth", score=0.9, findings=["No CAPTCHA"]),
                 CheckResult(name="errors", score=0.3, findings=["HTML 404 page"]),
             ],
@@ -66,13 +72,17 @@ class TestHTMLReport:
         assert "test.com" in html
 
     def test_zero_score(self):
-        report = AnalysisReport(url="https://bad.com", overall_score=0.0, check_results=[])
+        report = AnalysisReport(
+            url="https://bad.com", overall_score=0.0, check_results=[]
+        )
         html = render_html_report(report)
         assert "0%" in html
         assert "Poor" in html
 
     def test_perfect_score(self):
-        report = AnalysisReport(url="https://good.com", overall_score=1.0, check_results=[])
+        report = AnalysisReport(
+            url="https://good.com", overall_score=1.0, check_results=[]
+        )
         html = render_html_report(report)
         assert "100%" in html
         assert "Good" in html

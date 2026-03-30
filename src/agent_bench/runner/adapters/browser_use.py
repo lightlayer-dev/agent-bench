@@ -32,6 +32,7 @@ def _get_llm(model_config: ModelConfig):
             )
         try:
             from browser_use import ChatAnthropic
+
             return ChatAnthropic(
                 model=model_config.model_id,
                 api_key=api_key,
@@ -40,6 +41,7 @@ def _get_llm(model_config: ModelConfig):
             )
         except ImportError:
             from langchain_anthropic import ChatAnthropic
+
             return ChatAnthropic(
                 model=model_config.model_id,
                 api_key=api_key,
@@ -55,6 +57,7 @@ def _get_llm(model_config: ModelConfig):
             )
         try:
             from browser_use import ChatOpenAI
+
             return ChatOpenAI(
                 model=model_config.model_id,
                 api_key=api_key,
@@ -62,6 +65,7 @@ def _get_llm(model_config: ModelConfig):
             )
         except ImportError:
             from langchain_openai import ChatOpenAI
+
             return ChatOpenAI(
                 model=model_config.model_id,
                 api_key=api_key,
@@ -77,6 +81,7 @@ def _get_llm(model_config: ModelConfig):
             )
         try:
             from browser_use import ChatGoogle
+
             return ChatGoogle(
                 model=model_config.model_id,
                 api_key=api_key,
@@ -84,6 +89,7 @@ def _get_llm(model_config: ModelConfig):
             )
         except ImportError:
             from langchain_google_genai import ChatGoogleGenerativeAI
+
             return ChatGoogleGenerativeAI(
                 model=model_config.model_id,
                 google_api_key=api_key,
@@ -92,7 +98,9 @@ def _get_llm(model_config: ModelConfig):
             )
 
     else:
-        raise ValueError(f"Unsupported provider for browser-use: {model_config.provider}")
+        raise ValueError(
+            f"Unsupported provider for browser-use: {model_config.provider}"
+        )
 
 
 @register_adapter
@@ -112,6 +120,7 @@ class BrowserUseAdapter(BaseAdapter):
     def run_task(self, task: Task, metrics: RunMetrics) -> bool:
         """Run a task using browser-use."""
         import asyncio
+
         return asyncio.run(self._run_async(task, metrics))
 
     async def _run_async(self, task: Task, metrics: RunMetrics) -> bool:
@@ -136,19 +145,19 @@ class BrowserUseAdapter(BaseAdapter):
             result = await agent.run(max_steps=50)
 
             # Extract metrics from the agent's history
-            if hasattr(result, 'history') and result.history:
+            if hasattr(result, "history") and result.history:
                 for i, step in enumerate(result.history):
                     action_desc = str(step)[:200]
                     metrics.record_step(action=action_desc, result="")
 
             # Try to extract token usage from result
-            if hasattr(result, 'total_input_tokens'):
+            if hasattr(result, "total_input_tokens"):
                 metrics.input_tokens = result.total_input_tokens or 0
-            if hasattr(result, 'total_output_tokens'):
+            if hasattr(result, "total_output_tokens"):
                 metrics.output_tokens = result.total_output_tokens or 0
 
             # Determine success
-            is_done = bool(result.is_done()) if hasattr(result, 'is_done') else True
+            is_done = bool(result.is_done()) if hasattr(result, "is_done") else True
             return is_done
 
         except Exception as e:

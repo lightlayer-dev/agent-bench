@@ -104,7 +104,9 @@ description: Test task
         runner = CliRunner()
         # This will fail at the adapter level (no real browser), but it should
         # get past config/model resolution
-        result = runner.invoke(cli, ["run", "task.yaml", "-m", "test-model", "-a", "custom", "-n", "1"])
+        result = runner.invoke(
+            cli, ["run", "task.yaml", "-m", "test-model", "-a", "custom", "-n", "1"]
+        )
         # Should not fail with "Unknown model"
         assert "Unknown model" not in (result.output or "")
 
@@ -116,5 +118,9 @@ site: https://example.com
 description: Test
 """)
         runner = CliRunner()
-        result = runner.invoke(cli, ["run", "task.yaml", "-m", "nonexistent-model", "-n", "1"])
-        assert result.exit_code != 0 or "Unknown model" in (result.output or str(result.exception))
+        result = runner.invoke(
+            cli, ["run", "task.yaml", "-m", "nonexistent-model", "-n", "1"]
+        )
+        assert result.exit_code != 0 or "Unknown model" in (
+            result.output or str(result.exception)
+        )

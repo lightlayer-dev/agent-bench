@@ -6,7 +6,9 @@ from agent_bench.analysis.checks.cost import CostCheck
 
 
 def _mock_response(html: str):
-    return httpx.Response(200, text=html, request=httpx.Request("GET", "https://example.com"))
+    return httpx.Response(
+        200, text=html, request=httpx.Request("GET", "https://example.com")
+    )
 
 
 class TestPageTokenCount:
@@ -48,12 +50,18 @@ class TestInlineBloat:
         assert any("reasonable" in f for f in result.findings)
 
     def test_heavy_inline_styles(self, monkeypatch):
-        style = "<style>" + ".cls { color: red; margin: 0; padding: 0; }\n" * 200 + "</style>"
+        style = (
+            "<style>"
+            + ".cls { color: red; margin: 0; padding: 0; }\n" * 200
+            + "</style>"
+        )
         html = f"<html><head>{style}</head><body><p>x</p></body></html>"
         monkeypatch.setattr(httpx, "get", lambda *a, **kw: _mock_response(html))
         result = CostCheck("https://example.com").execute()
         # Should detect bloat
-        assert any("bloat" in f.lower() or "scripts/styles" in f for f in result.findings)
+        assert any(
+            "bloat" in f.lower() or "scripts/styles" in f for f in result.findings
+        )
 
 
 class TestDOMDepth:
@@ -76,7 +84,7 @@ class TestDOMDepth:
 class TestClassBloat:
     def test_utility_class_heavy(self, monkeypatch):
         # Simulate Tailwind-style classes
-        divs = ''.join(
+        divs = "".join(
             f'<div class="flex items-center justify-between px-4 py-2 bg-gray-100 text-sm font-medium rounded-lg shadow-md hover:bg-gray-200 transition-colors duration-200">item {i}</div>'
             for i in range(100)
         )
@@ -157,6 +165,7 @@ class TestFetchFailure:
     def test_network_error(self, monkeypatch):
         def fail(*a, **kw):
             raise httpx.ConnectError("Connection refused")
+
         monkeypatch.setattr(httpx, "get", fail)
         result = CostCheck("https://example.com").execute()
         assert result.score == 0.0

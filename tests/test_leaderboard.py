@@ -1,7 +1,11 @@
 """Tests for leaderboard HTML generation."""
 
 import json
-from agent_bench.analysis.leaderboard import load_results, render_leaderboard, _score_color
+from agent_bench.analysis.leaderboard import (
+    load_results,
+    render_leaderboard,
+    _score_color,
+)
 
 
 class TestScoreColor:
@@ -25,7 +29,8 @@ def _make_result(url: str, score: float, checks: list[dict] | None = None) -> di
     return {
         "url": url,
         "overall_score": score,
-        "checks": checks or [
+        "checks": checks
+        or [
             {"name": "api", "score": score, "findings": []},
             {"name": "docs", "score": score, "findings": []},
         ],
@@ -73,10 +78,14 @@ class TestRenderLeaderboard:
 
     def test_check_columns(self):
         results = [
-            _make_result("https://x.com", 0.5, [
-                {"name": "api", "score": 0.8, "findings": []},
-                {"name": "structure", "score": 0.3, "findings": []},
-            ]),
+            _make_result(
+                "https://x.com",
+                0.5,
+                [
+                    {"name": "api", "score": 0.8, "findings": []},
+                    {"name": "structure", "score": 0.3, "findings": []},
+                ],
+            ),
         ]
         html = render_leaderboard(results)
         assert "Api" in html
@@ -98,9 +107,13 @@ class TestRenderLeaderboard:
 
     def test_findings_in_detail(self):
         results = [
-            _make_result("https://x.com", 0.5, [
-                {"name": "api", "score": 0.8, "findings": ["Found 5 endpoints"]},
-            ]),
+            _make_result(
+                "https://x.com",
+                0.5,
+                [
+                    {"name": "api", "score": 0.8, "findings": ["Found 5 endpoints"]},
+                ],
+            ),
         ]
         html = render_leaderboard(results)
         assert "Found 5 endpoints" in html
@@ -113,7 +126,7 @@ class TestRenderLeaderboard:
         ]
         html = render_leaderboard(results)
         # Find positions in the table body (after <tbody>)
-        tbody = html[html.index("<tbody>"):]
+        tbody = html[html.index("<tbody>") :]
         alpha_pos = tbody.index("alpha.com")
         beta_pos = tbody.index("beta.com")
         gamma_pos = tbody.index("gamma.com")

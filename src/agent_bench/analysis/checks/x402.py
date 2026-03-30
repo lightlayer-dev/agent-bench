@@ -53,7 +53,9 @@ class X402Check(BaseCheck):
         findings.extend(f)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str, **kwargs) -> httpx.Response | None:
         try:
@@ -75,8 +77,17 @@ class X402Check(BaseCheck):
                         details["x402_discovery"] = True
                         details["x402_discovery_path"] = path
                         details["x402_config"] = {
-                            k: v for k, v in data.items()
-                            if k in ("scheme", "network", "asset", "facilitator", "payTo", "version")
+                            k: v
+                            for k, v in data.items()
+                            if k
+                            in (
+                                "scheme",
+                                "network",
+                                "asset",
+                                "facilitator",
+                                "payTo",
+                                "version",
+                            )
                         }
                         findings.append(f"x402 discovery endpoint found at {path}")
                         return 1.0, findings
@@ -88,7 +99,9 @@ class X402Check(BaseCheck):
         if resp and resp.status_code == 200:
             try:
                 data = resp.json()
-                if isinstance(data, dict) and ("x402" in str(data).lower() or "payment" in str(data).lower()):
+                if isinstance(data, dict) and (
+                    "x402" in str(data).lower() or "payment" in str(data).lower()
+                ):
                     details["x402_in_ai_discovery"] = True
                     findings.append("Payment/x402 references found in /.well-known/ai")
                     return 0.5, findings
@@ -99,7 +112,9 @@ class X402Check(BaseCheck):
         findings.append("No x402 discovery endpoint found")
         return 0.0, findings
 
-    def _check_402_responses(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_402_responses(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if any endpoints return HTTP 402 with payment requirements."""
         findings = []
         test_paths = ["/api", "/api/v1", "/api/premium", "/premium", "/paid"]
@@ -137,7 +152,9 @@ class X402Check(BaseCheck):
         findings.append("No HTTP 402 responses detected on common paths")
         return 0.0, findings
 
-    def _check_payment_signals(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_payment_signals(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check for payment signals in other discovery files."""
         findings = []
 
@@ -146,7 +163,11 @@ class X402Check(BaseCheck):
             resp = self._fetch(f"{base_url}{path}")
             if resp and resp.status_code == 200:
                 text_lower = resp.text.lower()
-                if "payment:" in text_lower or "x402" in text_lower or "monetiz" in text_lower:
+                if (
+                    "payment:" in text_lower
+                    or "x402" in text_lower
+                    or "monetiz" in text_lower
+                ):
                     details["x402_in_agents_txt"] = True
                     findings.append("Payment/x402 references found in agents.txt")
                     return 0.5, findings

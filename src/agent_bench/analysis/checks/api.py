@@ -11,19 +11,30 @@ from agent_bench.analysis.models import CheckResult
 
 # Common API path patterns to probe
 API_PATHS = [
-    "/api", "/api/v1", "/api/v2",
-    "/v1", "/v2",
-    "/rest", "/rest/v1",
-    "/graphql", "/gql",
+    "/api",
+    "/api/v1",
+    "/api/v2",
+    "/v1",
+    "/v2",
+    "/rest",
+    "/rest/v1",
+    "/graphql",
+    "/gql",
 ]
 
 # Paths that commonly expose API documentation or specs
 SPEC_PATHS = [
-    "/openapi.json", "/openapi.yaml",
-    "/swagger.json", "/swagger.yaml", "/swagger/v1/swagger.json",
-    "/api-docs", "/api/docs", "/docs/api",
+    "/openapi.json",
+    "/openapi.yaml",
+    "/swagger.json",
+    "/swagger.yaml",
+    "/swagger/v1/swagger.json",
+    "/api-docs",
+    "/api/docs",
+    "/docs/api",
     "/.well-known/openapi.json",
-    "/redoc", "/api/schema",
+    "/redoc",
+    "/api/schema",
 ]
 
 
@@ -69,7 +80,9 @@ class APICheck(BaseCheck):
         findings.extend(f)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str, **kwargs) -> httpx.Response | None:
         """Fetch a URL, returning None on failure."""
@@ -78,7 +91,9 @@ class APICheck(BaseCheck):
         except httpx.HTTPError:
             return None
 
-    def _check_api_endpoints(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_api_endpoints(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Probe common API paths and evaluate response quality."""
         findings = []
         discovered: list[dict[str, object]] = []
@@ -121,8 +136,18 @@ class APICheck(BaseCheck):
                 try:
                     data = resp.json()
                     if isinstance(data, dict):
-                        pagination_keys = {"next", "previous", "page", "total", "count",
-                                          "per_page", "page_size", "cursor", "offset", "limit"}
+                        pagination_keys = {
+                            "next",
+                            "previous",
+                            "page",
+                            "total",
+                            "count",
+                            "per_page",
+                            "page_size",
+                            "cursor",
+                            "offset",
+                            "limit",
+                        }
                         found_pagination = pagination_keys & set(data.keys())
                         if found_pagination:
                             endpoint_info["pagination"] = list(found_pagination)
@@ -149,9 +174,15 @@ class APICheck(BaseCheck):
 
         # Score based on quantity and quality
         json_endpoints = sum(1 for e in discovered if e.get("is_json"))
-        paginated = sum(1 for e in discovered if e.get("pagination") or e.get("link_header_pagination"))
+        paginated = sum(
+            1
+            for e in discovered
+            if e.get("pagination") or e.get("link_header_pagination")
+        )
 
-        findings.append(f"Found {len(discovered)} API endpoints ({json_endpoints} returning JSON)")
+        findings.append(
+            f"Found {len(discovered)} API endpoints ({json_endpoints} returning JSON)"
+        )
         if paginated:
             findings.append(f"{paginated} endpoints show pagination support")
 
@@ -188,7 +219,9 @@ class APICheck(BaseCheck):
                             details["graphql"] = True
                             details["graphql_path"] = path
                             details["graphql_types"] = type_count
-                            findings.append(f"GraphQL endpoint at {path} with {type_count} types (introspection enabled)")
+                            findings.append(
+                                f"GraphQL endpoint at {path} with {type_count} types (introspection enabled)"
+                            )
                             return 1.0, findings
                     except (json.JSONDecodeError, ValueError):
                         pass
@@ -200,7 +233,9 @@ class APICheck(BaseCheck):
                         details["graphql"] = True
                         details["graphql_path"] = path
                         details["graphql_introspection"] = False
-                        findings.append(f"GraphQL endpoint at {path} (introspection disabled)")
+                        findings.append(
+                            f"GraphQL endpoint at {path} (introspection disabled)"
+                        )
                         return 0.7, findings
 
             except httpx.HTTPError:
@@ -233,10 +268,14 @@ class APICheck(BaseCheck):
             findings.append(f"CORS: restricted to {cors_header}")
             return 0.7, findings
         else:
-            findings.append("No CORS headers — API may not be accessible from browser-based agents")
+            findings.append(
+                "No CORS headers — API may not be accessible from browser-based agents"
+            )
             return 0.2, findings
 
-    def _check_content_negotiation(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_content_negotiation(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if the server handles Accept headers properly."""
         findings = []
 
@@ -257,14 +296,20 @@ class APICheck(BaseCheck):
 
         # If requesting JSON returns JSON, good content negotiation
         if "json" in json_ct and "html" in html_ct:
-            findings.append("Server supports content negotiation (responds to Accept headers)")
+            findings.append(
+                "Server supports content negotiation (responds to Accept headers)"
+            )
             return 1.0, findings
         elif "json" in json_ct:
             findings.append("Server returns JSON by default")
             return 0.8, findings
         elif "html" in json_ct and "html" in html_ct:
-            findings.append("Server always returns HTML regardless of Accept header — no API content negotiation")
+            findings.append(
+                "Server always returns HTML regardless of Accept header — no API content negotiation"
+            )
             return 0.0, findings
         else:
-            findings.append("Server ignores Accept header — always returns same content type")
+            findings.append(
+                "Server ignores Accept header — always returns same content type"
+            )
             return 0.1, findings

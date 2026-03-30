@@ -20,9 +20,7 @@ class RunResult:
         """Human-readable summary of results."""
         lines = ["Benchmark Results", "=" * 60]
         for agg in self.aggregates:
-            lines.append(
-                f"\n{agg.task_name} | {agg.model_name} | {agg.adapter_name}"
-            )
+            lines.append(f"\n{agg.task_name} | {agg.model_name} | {agg.adapter_name}")
             lines.append(f"  Success rate: {agg.success_rate:.0%}")
             lines.append(f"  Avg steps:    {agg.avg_steps:.1f}")
             lines.append(f"  Avg time:     {agg.avg_time:.1f}s")
@@ -41,7 +39,11 @@ class BenchExecutor:
         num_runs: int = 3,
         output_dir: Path = Path("results"),
     ) -> None:
-        self.tasks = Task.from_yaml_multi(task_file) if task_file.suffix in (".yaml", ".yml") else [Task.from_yaml(task_file)]
+        self.tasks = (
+            Task.from_yaml_multi(task_file)
+            if task_file.suffix in (".yaml", ".yml")
+            else [Task.from_yaml(task_file)]
+        )
         self.model_config = ModelRegistry.get(model_name)
         self.adapter_name = adapter_name
         self.num_runs = num_runs

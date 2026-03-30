@@ -47,7 +47,9 @@ class AgentsTxtCheck(BaseCheck):
             sub_scores.append(0.0)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str) -> httpx.Response | None:
         try:
@@ -64,7 +66,10 @@ class AgentsTxtCheck(BaseCheck):
             if resp and resp.status_code == 200 and len(resp.text.strip()) > 10:
                 ct = resp.headers.get("content-type", "")
                 # Should be text, not HTML
-                if "html" in ct.lower() and "user-agent:" not in resp.text.lower()[:500]:
+                if (
+                    "html" in ct.lower()
+                    and "user-agent:" not in resp.text.lower()[:500]
+                ):
                     continue
 
                 details["agents_txt_found"] = True
@@ -75,7 +80,9 @@ class AgentsTxtCheck(BaseCheck):
                 return 1.0, findings
 
         details["agents_txt_found"] = False
-        findings.append("No agents.txt found — agents have no machine-readable permission manifest")
+        findings.append(
+            "No agents.txt found — agents have no machine-readable permission manifest"
+        )
         return 0.0, findings
 
     def _check_quality(self, details: dict) -> tuple[float, list[str]]:
@@ -86,10 +93,7 @@ class AgentsTxtCheck(BaseCheck):
         score = 0.0
 
         # Check for agent blocks (User-agent or Agent directives)
-        has_agent_blocks = (
-            "user-agent:" in text_lower
-            or "agent:" in text_lower
-        )
+        has_agent_blocks = "user-agent:" in text_lower or "agent:" in text_lower
         if has_agent_blocks:
             score += 0.3
             findings.append("agents.txt contains agent permission blocks")
@@ -118,7 +122,9 @@ class AgentsTxtCheck(BaseCheck):
             score += 0.15
             findings.append("agents.txt includes contact information")
 
-        has_payment = "payment:" in text_lower or "x402:" in text_lower or "monetiz" in text_lower
+        has_payment = (
+            "payment:" in text_lower or "x402:" in text_lower or "monetiz" in text_lower
+        )
         if has_payment:
             score += 0.15
             findings.append("agents.txt includes payment/monetisation info")

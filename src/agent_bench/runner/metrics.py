@@ -38,7 +38,9 @@ class RunMetrics:
     def record_step(self, action: str, result: str, **kwargs: object) -> None:
         """Record an agent action step."""
         self.steps_taken += 1
-        self.trace.append({"step": self.steps_taken, "action": action, "result": result, **kwargs})
+        self.trace.append(
+            {"step": self.steps_taken, "action": action, "result": result, **kwargs}
+        )
 
     def to_dict(self) -> dict[str, object]:
         """Serialize to a dictionary."""
@@ -89,4 +91,8 @@ class AggregateMetrics:
 
     @property
     def avg_cost(self) -> float:
-        return sum(r.estimated_cost_usd for r in self.runs) / len(self.runs) if self.runs else 0.0
+        return (
+            sum(r.estimated_cost_usd for r in self.runs) / len(self.runs)
+            if self.runs
+            else 0.0
+        )

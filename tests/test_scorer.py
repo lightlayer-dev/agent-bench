@@ -23,9 +23,9 @@ def test_compute_overall_weighted():
     overall = scorer._compute_overall(results)
 
     # Manually compute expected
-    expected = sum(
-        r.score * DEFAULT_WEIGHTS[r.name] for r in results
-    ) / sum(DEFAULT_WEIGHTS[r.name] for r in results)
+    expected = sum(r.score * DEFAULT_WEIGHTS[r.name] for r in results) / sum(
+        DEFAULT_WEIGHTS[r.name] for r in results
+    )
 
     assert abs(overall - expected) < 0.001
 

@@ -34,14 +34,25 @@ MODEL_PRICING = {
 
 # Elements that are pure noise for agents
 NOISE_TAGS = {
-    "script", "style", "noscript", "svg", "iframe", "canvas",
-    "template", "link", "meta",
+    "script",
+    "style",
+    "noscript",
+    "svg",
+    "iframe",
+    "canvas",
+    "template",
+    "link",
+    "meta",
 }
 
 # Attributes that add tokens but no value for agents
 NOISE_ATTRS = {
-    "data-reactid", "data-reactroot", "data-styled",
-    "data-emotion", "data-testid", "data-cy",
+    "data-reactid",
+    "data-reactroot",
+    "data-styled",
+    "data-emotion",
+    "data-testid",
+    "data-cy",
     "class",  # Often very long utility class strings
 }
 
@@ -84,9 +95,7 @@ class CostCheck(BaseCheck):
             )
         elif raw_tokens > MAX_EFFICIENT_PAGE_TOKENS:
             deductions += 0.15
-            findings.append(
-                f"Page is ~{raw_tokens:,.0f} tokens raw — moderate cost"
-            )
+            findings.append(f"Page is ~{raw_tokens:,.0f} tokens raw — moderate cost")
         else:
             findings.append(f"Page is ~{raw_tokens:,.0f} tokens raw — efficient")
 
@@ -127,7 +136,9 @@ class CostCheck(BaseCheck):
                 f"Inline scripts/styles are {bloat_ratio:.0%} of page — significant bloat"
             )
         else:
-            findings.append(f"Inline scripts/styles are {bloat_ratio:.0%} of page — reasonable")
+            findings.append(
+                f"Inline scripts/styles are {bloat_ratio:.0%} of page — reasonable"
+            )
 
         # 4. DOM depth (deep nesting = more tokens for structure)
         max_depth = self._max_dom_depth(soup)
@@ -162,9 +173,7 @@ class CostCheck(BaseCheck):
             for model, price in MODEL_PRICING.items()
         }
         # Estimate for a 5-page agent session
-        session_cost = {
-            model: cost * 5 for model, cost in cost_per_page.items()
-        }
+        session_cost = {model: cost * 5 for model, cost in cost_per_page.items()}
         cheapest = min(cost_per_page.values())
         most_expensive = max(cost_per_page.values())
         if most_expensive > 0.50:
@@ -200,9 +209,13 @@ class CostCheck(BaseCheck):
         }
 
         score = max(0.0, min(1.0, 1.0 - deductions))
-        return CheckResult(name=self.name, score=score, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=score, findings=findings, details=details
+        )
 
-    def _compute_signal_noise(self, soup: BeautifulSoup, raw_html: str) -> tuple[str, int]:
+    def _compute_signal_noise(
+        self, soup: BeautifulSoup, raw_html: str
+    ) -> tuple[str, int]:
         """Extract meaningful text content vs noise.
 
         Returns (signal_text, noise_byte_count).
@@ -235,6 +248,7 @@ class CostCheck(BaseCheck):
 
     def _max_dom_depth(self, soup: BeautifulSoup) -> int:
         """Find the maximum nesting depth in the DOM."""
+
         def _depth(element: object, current: int = 0) -> int:
             max_d = current
             children = getattr(element, "children", None)

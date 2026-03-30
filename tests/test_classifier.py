@@ -97,7 +97,14 @@ class TestTaskGenerator:
             url="https://store.example.com",
             category=SiteCategory.ECOMMERCE,
             confidence=0.8,
-            features={"search": True, "cart": True, "auth": True, "forms": True, "navigation": True, "pagination": False},
+            features={
+                "search": True,
+                "cart": True,
+                "auth": True,
+                "forms": True,
+                "navigation": True,
+                "pagination": False,
+            },
         )
         tasks = generate_tasks(profile)
 
@@ -115,7 +122,14 @@ class TestTaskGenerator:
             url="https://example.com",
             category=SiteCategory.GENERIC,
             confidence=0.0,
-            features={"search": False, "cart": False, "auth": False, "forms": False, "navigation": False, "pagination": False},
+            features={
+                "search": False,
+                "cart": False,
+                "auth": False,
+                "forms": False,
+                "navigation": False,
+                "pagination": False,
+            },
         )
         tasks = generate_tasks(profile)
 
@@ -130,7 +144,14 @@ class TestTaskGenerator:
             url="https://app.example.com",
             category=SiteCategory.SAAS,
             confidence=0.7,
-            features={"search": False, "cart": False, "auth": True, "forms": True, "navigation": True, "pagination": False},
+            features={
+                "search": False,
+                "cart": False,
+                "auth": True,
+                "forms": True,
+                "navigation": True,
+                "pagination": False,
+            },
         )
         tasks = generate_tasks(profile)
         names = [t.name for t in tasks]
@@ -144,11 +165,20 @@ class TestTaskGenerator:
                 url="https://example.com",
                 category=category,
                 confidence=0.5,
-                features={"search": True, "cart": True, "auth": True, "forms": True, "navigation": True, "pagination": True},
+                features={
+                    "search": True,
+                    "cart": True,
+                    "auth": True,
+                    "forms": True,
+                    "navigation": True,
+                    "pagination": True,
+                },
             )
             tasks = generate_tasks(profile)
             for task in tasks:
                 assert task.name, f"Task missing name for {category}"
                 assert task.site, f"Task missing site for {category}"
                 assert task.description, f"Task missing description for {category}"
-                assert len(task.steps) > 0, f"Task {task.name} has no steps for {category}"
+                assert len(task.steps) > 0, (
+                    f"Task {task.name} has no steps for {category}"
+                )

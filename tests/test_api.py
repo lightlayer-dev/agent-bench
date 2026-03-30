@@ -43,9 +43,13 @@ class TestAPIEndpoints:
 
         def mock_fetch(url, **kwargs):
             if url == "https://example.com":
-                return _mock_response(text="<html>main</html>", content_type="text/html")
+                return _mock_response(
+                    text="<html>main</html>", content_type="text/html"
+                )
             if "/api" in url and "/api/" not in url:
-                return _mock_response(text='{"users": []}', content_type="application/json")
+                return _mock_response(
+                    text='{"users": []}', content_type="application/json"
+                )
             return _mock_response(status=404)
 
         with patch.object(check, "_fetch", side_effect=mock_fetch):
@@ -74,7 +78,9 @@ class TestAPIEndpoints:
 
         def mock_fetch(url, **kwargs):
             if url == "https://example.com":
-                return _mock_response(text="<html>main</html>", content_type="text/html")
+                return _mock_response(
+                    text="<html>main</html>", content_type="text/html"
+                )
             if "/api" in url:
                 return _mock_response(
                     text='{"results": [], "next": "/api?page=2", "count": 100}',
@@ -138,7 +144,9 @@ class TestCORS:
     def test_restricted_cors(self):
         check = _make_check()
         details: dict = {}
-        resp = _mock_response(headers={"access-control-allow-origin": "https://app.example.com"})
+        resp = _mock_response(
+            headers={"access-control-allow-origin": "https://app.example.com"}
+        )
         with patch.object(check, "_fetch", return_value=resp):
             score, findings = check._check_cors("https://example.com", details)
         assert score == 0.7
@@ -160,13 +168,19 @@ class TestContentNegotiation:
             return _mock_response(content_type="text/html")
 
         with patch.object(check, "_fetch", side_effect=mock_fetch):
-            score, findings = check._check_content_negotiation("https://example.com", details)
+            score, findings = check._check_content_negotiation(
+                "https://example.com", details
+            )
         assert score == 1.0
 
     def test_no_negotiation(self):
         check = _make_check()
         details: dict = {}
-        with patch.object(check, "_fetch", return_value=_mock_response(content_type="text/html")):
-            score, findings = check._check_content_negotiation("https://example.com", details)
+        with patch.object(
+            check, "_fetch", return_value=_mock_response(content_type="text/html")
+        ):
+            score, findings = check._check_content_negotiation(
+                "https://example.com", details
+            )
         assert score == 0.0
         assert "always returns HTML" in findings[0]

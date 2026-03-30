@@ -36,9 +36,9 @@ def _bar_html(score: float, width: int = 200) -> str:
         f'<div style="display:flex;align-items:center;gap:12px;">'
         f'<div style="width:{width}px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;">'
         f'<div style="width:{filled}px;height:100%;background:{color};border-radius:4px;"></div>'
-        f'</div>'
+        f"</div>"
         f'<span style="color:{color};font-weight:600;font-size:0.95rem;">{score:.0%}</span>'
-        f'</div>'
+        f"</div>"
     )
 
 

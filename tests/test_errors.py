@@ -11,7 +11,12 @@ def _make_check(url: str = "https://example.com") -> ErrorsCheck:
     return ErrorsCheck(url=url)
 
 
-def _mock_response(status: int = 200, text: str = "", content_type: str = "text/html", headers: dict | None = None) -> httpx.Response:
+def _mock_response(
+    status: int = 200,
+    text: str = "",
+    content_type: str = "text/html",
+    headers: dict | None = None,
+) -> httpx.Response:
     resp = MagicMock(spec=httpx.Response)
     resp.status_code = status
     resp.text = text
@@ -40,7 +45,9 @@ class TestNotFoundQuality:
     def test_html_404(self):
         check = _make_check()
         details: dict = {}
-        resp = _mock_response(status=404, text="<html><body><h1>Not Found</h1></body></html>")
+        resp = _mock_response(
+            status=404, text="<html><body><h1>Not Found</h1></body></html>"
+        )
         with patch.object(check, "_fetch", return_value=resp):
             score, findings = check._check_404_quality("https://example.com", details)
         assert score == 0.3
@@ -48,7 +55,9 @@ class TestNotFoundQuality:
     def test_soft_404(self):
         check = _make_check()
         details: dict = {}
-        resp = _mock_response(status=200, text="<html><body>Page not found</body></html>")
+        resp = _mock_response(
+            status=200, text="<html><body>Page not found</body></html>"
+        )
         with patch.object(check, "_fetch", return_value=resp):
             score, findings = check._check_404_quality("https://example.com", details)
         assert score == 0.1
@@ -59,13 +68,17 @@ class TestRateLimitHeaders:
     def test_full_rate_limit(self):
         check = _make_check()
         details: dict = {}
-        resp = _mock_response(headers={
-            "x-ratelimit-limit": "100",
-            "x-ratelimit-remaining": "99",
-            "x-ratelimit-reset": "1609459200",
-        })
+        resp = _mock_response(
+            headers={
+                "x-ratelimit-limit": "100",
+                "x-ratelimit-remaining": "99",
+                "x-ratelimit-reset": "1609459200",
+            }
+        )
         with patch.object(check, "_fetch", return_value=resp):
-            score, findings = check._check_rate_limit_headers("https://example.com", details)
+            score, findings = check._check_rate_limit_headers(
+                "https://example.com", details
+            )
         assert score == 1.0
 
     def test_no_rate_limit(self):
@@ -73,7 +86,9 @@ class TestRateLimitHeaders:
         details: dict = {}
         resp = _mock_response()
         with patch.object(check, "_fetch", return_value=resp):
-            score, findings = check._check_rate_limit_headers("https://example.com", details)
+            score, findings = check._check_rate_limit_headers(
+                "https://example.com", details
+            )
         assert score == 0.0
 
     def test_retry_after_only(self):
@@ -81,7 +96,9 @@ class TestRateLimitHeaders:
         details: dict = {}
         resp = _mock_response(headers={"retry-after": "60"})
         with patch.object(check, "_fetch", return_value=resp):
-            score, findings = check._check_rate_limit_headers("https://example.com", details)
+            score, findings = check._check_rate_limit_headers(
+                "https://example.com", details
+            )
         assert score == 0.6
 
 
@@ -91,7 +108,9 @@ class TestMethodHandling:
         details: dict = {}
         resp = _mock_response(status=405, headers={"allow": "GET, HEAD, OPTIONS"})
         with patch("httpx.delete", return_value=resp):
-            score, findings = check._check_method_handling("https://example.com", details)
+            score, findings = check._check_method_handling(
+                "https://example.com", details
+            )
         assert score == 1.0
         assert "Allow" in findings[0]
 
@@ -100,5 +119,7 @@ class TestMethodHandling:
         details: dict = {}
         resp = _mock_response(status=200)
         with patch("httpx.delete", return_value=resp):
-            score, findings = check._check_method_handling("https://example.com", details)
+            score, findings = check._check_method_handling(
+                "https://example.com", details
+            )
         assert score == 0.3

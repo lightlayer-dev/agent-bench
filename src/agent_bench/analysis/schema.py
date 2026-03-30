@@ -53,7 +53,16 @@ ANALYSIS_RESULT_SCHEMA: dict = {
                     "name": {
                         "type": "string",
                         "description": "Check identifier.",
-                        "enum": ["a11y", "api", "auth", "cost", "docs", "errors", "performance", "structure"],
+                        "enum": [
+                            "a11y",
+                            "api",
+                            "auth",
+                            "cost",
+                            "docs",
+                            "errors",
+                            "performance",
+                            "structure",
+                        ],
                     },
                     "score": {
                         "type": "number",

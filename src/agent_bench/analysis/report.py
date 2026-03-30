@@ -18,7 +18,9 @@ class AnalysisReport:
     url: str
     overall_score: float
     check_results: list[CheckResult] = field(default_factory=list)
-    timestamp: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    timestamp: str = field(
+        default_factory=lambda: datetime.now(timezone.utc).isoformat()
+    )
 
     def render(self, fmt: str = "table") -> str:
         """Render the report in the specified format."""
@@ -28,6 +30,7 @@ class AnalysisReport:
             return self._render_markdown()
         elif fmt == "html":
             from agent_bench.analysis.html_report import render_html_report
+
             return render_html_report(self)
         else:
             return self._render_table()

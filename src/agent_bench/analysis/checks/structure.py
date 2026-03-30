@@ -10,7 +10,19 @@ from agent_bench.analysis.models import CheckResult
 
 
 # Semantic HTML elements that indicate good structure
-SEMANTIC_ELEMENTS = {"nav", "main", "article", "section", "aside", "header", "footer", "figure", "figcaption", "details", "summary"}
+SEMANTIC_ELEMENTS = {
+    "nav",
+    "main",
+    "article",
+    "section",
+    "aside",
+    "header",
+    "footer",
+    "figure",
+    "figcaption",
+    "details",
+    "summary",
+}
 
 # Interactive elements that should have accessible labels
 INTERACTIVE_ELEMENTS = {"button", "input", "select", "textarea", "a"}
@@ -40,7 +52,8 @@ class StructureCheck(BaseCheck):
             html = response.text
         except httpx.HTTPError as e:
             return CheckResult(
-                name=self.name, score=0.0,
+                name=self.name,
+                score=0.0,
                 findings=[f"Failed to fetch page: {e}"],
             )
 
@@ -82,9 +95,13 @@ class StructureCheck(BaseCheck):
         findings.extend(link_findings)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
-    def _check_semantic_html(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_semantic_html(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check ratio of semantic elements to divs."""
         findings = []
         all_elements = soup.find_all(True)
@@ -100,7 +117,9 @@ class StructureCheck(BaseCheck):
         details["semantic_count"] = semantic_count
 
         if semantic_count == 0:
-            findings.append("No semantic HTML elements found (nav, main, article, etc.)")
+            findings.append(
+                "No semantic HTML elements found (nav, main, article, etc.)"
+            )
             return 0.0, findings
 
         # Score based on semantic-to-div ratio
@@ -108,15 +127,23 @@ class StructureCheck(BaseCheck):
         score = min(ratio * 2, 1.0)  # ratio of 0.5 = full score
 
         if score >= 0.7:
-            findings.append(f"Good semantic HTML: {semantic_count} semantic elements vs {divs} divs")
+            findings.append(
+                f"Good semantic HTML: {semantic_count} semantic elements vs {divs} divs"
+            )
         elif score >= 0.3:
-            findings.append(f"Moderate semantic HTML: {semantic_count} semantic elements vs {divs} divs")
+            findings.append(
+                f"Moderate semantic HTML: {semantic_count} semantic elements vs {divs} divs"
+            )
         else:
-            findings.append(f"Heavy div usage: {divs} divs with only {semantic_count} semantic elements")
+            findings.append(
+                f"Heavy div usage: {divs} divs with only {semantic_count} semantic elements"
+            )
 
         return score, findings
 
-    def _check_aria_labels(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_aria_labels(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if interactive elements have ARIA labels or accessible names."""
         findings = []
         interactive = soup.find_all(INTERACTIVE_ELEMENTS)
@@ -127,15 +154,17 @@ class StructureCheck(BaseCheck):
 
         labeled = 0
         for el in interactive:
-            has_label = any([
-                el.get("aria-label"),
-                el.get("aria-labelledby"),
-                el.get("title"),
-                el.get("alt"),
-                el.get("name"),
-                el.get("id") and soup.find("label", attrs={"for": el.get("id")}),
-                el.string and el.string.strip(),  # text content
-            ])
+            has_label = any(
+                [
+                    el.get("aria-label"),
+                    el.get("aria-labelledby"),
+                    el.get("title"),
+                    el.get("alt"),
+                    el.get("name"),
+                    el.get("id") and soup.find("label", attrs={"for": el.get("id")}),
+                    el.string and el.string.strip(),  # text content
+                ]
+            )
             if has_label:
                 labeled += 1
 
@@ -144,13 +173,19 @@ class StructureCheck(BaseCheck):
         details["labeled_elements"] = labeled
 
         if score >= 0.8:
-            findings.append(f"Good accessibility: {labeled}/{total} interactive elements have labels")
+            findings.append(
+                f"Good accessibility: {labeled}/{total} interactive elements have labels"
+            )
         else:
-            findings.append(f"Poor accessibility: only {labeled}/{total} interactive elements have labels")
+            findings.append(
+                f"Poor accessibility: only {labeled}/{total} interactive elements have labels"
+            )
 
         return score, findings
 
-    def _check_forms(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_forms(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check form accessibility — labels, input types, names."""
         findings = []
         forms = soup.find_all("form")
@@ -172,13 +207,19 @@ class StructureCheck(BaseCheck):
         score = (name_score + type_score) / 2
 
         if score >= 0.8:
-            findings.append(f"Forms are well-structured: {named}/{len(inputs)} inputs have names")
+            findings.append(
+                f"Forms are well-structured: {named}/{len(inputs)} inputs have names"
+            )
         else:
-            findings.append(f"Forms need work: {named}/{len(inputs)} inputs have names, {typed}/{total_inputs} have types")
+            findings.append(
+                f"Forms need work: {named}/{len(inputs)} inputs have names, {typed}/{total_inputs} have types"
+            )
 
         return score, findings
 
-    def _check_stable_selectors(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_stable_selectors(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check for data-testid, data-cy, or similar stable selector attributes."""
         findings = []
         all_elements = soup.find_all(True)
@@ -187,7 +228,13 @@ class StructureCheck(BaseCheck):
         if total == 0:
             return 0.0, ["No elements found"]
 
-        stable_attrs = ["data-testid", "data-cy", "data-test", "data-automation", "data-qa"]
+        stable_attrs = [
+            "data-testid",
+            "data-cy",
+            "data-test",
+            "data-automation",
+            "data-qa",
+        ]
         with_stable = 0
         for el in all_elements:
             if any(el.get(attr) for attr in stable_attrs):
@@ -196,7 +243,9 @@ class StructureCheck(BaseCheck):
         details["elements_with_stable_selectors"] = with_stable
 
         if with_stable == 0:
-            findings.append("No stable test selectors found (data-testid, data-cy, etc.)")
+            findings.append(
+                "No stable test selectors found (data-testid, data-cy, etc.)"
+            )
             return 0.0, findings
 
         # Even a few stable selectors is good — they're typically on key interactive elements
@@ -232,12 +281,16 @@ class StructureCheck(BaseCheck):
         is_spa = any(spa_indicators) and content_len < 200
 
         if is_spa:
-            findings.append("Likely a client-side SPA — minimal server-rendered content")
+            findings.append(
+                "Likely a client-side SPA — minimal server-rendered content"
+            )
             details["rendering"] = "client-side"
             return 0.2, findings
 
         if content_len > 500:
-            findings.append("Good server-side rendering — content available without JavaScript")
+            findings.append(
+                "Good server-side rendering — content available without JavaScript"
+            )
             details["rendering"] = "server-side"
             return 1.0, findings
 
@@ -250,7 +303,9 @@ class StructureCheck(BaseCheck):
         details["rendering"] = "minimal"
         return 0.3, findings
 
-    def _check_heading_hierarchy(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_heading_hierarchy(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if headings follow a logical hierarchy (h1 → h2 → h3)."""
         findings = []
         headings = soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"])
@@ -260,7 +315,9 @@ class StructureCheck(BaseCheck):
         details["h1_count"] = h1_count
 
         if not headings:
-            findings.append("No headings found — agents can't understand page structure")
+            findings.append(
+                "No headings found — agents can't understand page structure"
+            )
             return 0.0, findings
 
         # Check for exactly one h1
@@ -283,13 +340,19 @@ class StructureCheck(BaseCheck):
 
         score = (h1_score + skip_score) / 2
         if skips > 0:
-            findings.append(f"Heading hierarchy has {skips} level skip(s) (e.g., h1 → h3)")
+            findings.append(
+                f"Heading hierarchy has {skips} level skip(s) (e.g., h1 → h3)"
+            )
         elif score >= 0.8:
-            findings.append(f"Good heading hierarchy: {len(headings)} headings, well-structured")
+            findings.append(
+                f"Good heading hierarchy: {len(headings)} headings, well-structured"
+            )
 
         return score, findings
 
-    def _check_link_accessibility(self, soup: BeautifulSoup, details: dict) -> tuple[float, list[str]]:
+    def _check_link_accessibility(
+        self, soup: BeautifulSoup, details: dict
+    ) -> tuple[float, list[str]]:
         """Check if links have descriptive text (not just 'click here' or bare URLs)."""
         findings = []
         links = soup.find_all("a", href=True)
@@ -320,10 +383,16 @@ class StructureCheck(BaseCheck):
         score = descriptive / total if total else 1.0
 
         if empty > 0:
-            findings.append(f"{empty} links with no text or aria-label — invisible to agents")
+            findings.append(
+                f"{empty} links with no text or aria-label — invisible to agents"
+            )
         if generic > 0:
-            findings.append(f"{generic} links with generic text ('click here', 'read more')")
+            findings.append(
+                f"{generic} links with generic text ('click here', 'read more')"
+            )
         if score >= 0.8:
-            findings.append(f"Good link accessibility: {descriptive}/{total} links are descriptive")
+            findings.append(
+                f"Good link accessibility: {descriptive}/{total} links are descriptive"
+            )
 
         return score, findings

@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 
 class SiteCategory(str, Enum):
     """High-level website categories."""
+
     ECOMMERCE = "ecommerce"
     SAAS = "saas"
     DOCUMENTATION = "documentation"
@@ -27,6 +28,7 @@ class SiteCategory(str, Enum):
 @dataclass
 class SiteProfile:
     """Profile of a classified website."""
+
     url: str
     category: SiteCategory
     confidence: float  # 0.0 - 1.0
@@ -53,37 +55,99 @@ class SiteProfile:
 # Keyword signals for each category
 _CATEGORY_SIGNALS: dict[SiteCategory, list[str]] = {
     SiteCategory.ECOMMERCE: [
-        "add to cart", "add to bag", "buy now", "checkout", "shopping cart",
-        "price", "product", "shop", "store", "wishlist", "add-to-cart",
-        "shopify", "woocommerce", "bigcommerce", "magento",
+        "add to cart",
+        "add to bag",
+        "buy now",
+        "checkout",
+        "shopping cart",
+        "price",
+        "product",
+        "shop",
+        "store",
+        "wishlist",
+        "add-to-cart",
+        "shopify",
+        "woocommerce",
+        "bigcommerce",
+        "magento",
     ],
     SiteCategory.SAAS: [
-        "sign up", "free trial", "pricing", "dashboard", "get started",
-        "api key", "workspace", "team", "plan", "subscription", "upgrade",
+        "sign up",
+        "free trial",
+        "pricing",
+        "dashboard",
+        "get started",
+        "api key",
+        "workspace",
+        "team",
+        "plan",
+        "subscription",
+        "upgrade",
     ],
     SiteCategory.DOCUMENTATION: [
-        "docs", "documentation", "api reference", "getting started",
-        "guide", "tutorial", "changelog", "sdk", "endpoints",
-        "mintlify", "readme", "gitbook", "docusaurus",
+        "docs",
+        "documentation",
+        "api reference",
+        "getting started",
+        "guide",
+        "tutorial",
+        "changelog",
+        "sdk",
+        "endpoints",
+        "mintlify",
+        "readme",
+        "gitbook",
+        "docusaurus",
     ],
     SiteCategory.SOCIAL: [
-        "profile", "follow", "post", "feed", "timeline", "like",
-        "comment", "share", "notification", "message",
+        "profile",
+        "follow",
+        "post",
+        "feed",
+        "timeline",
+        "like",
+        "comment",
+        "share",
+        "notification",
+        "message",
     ],
     SiteCategory.NEWS_MEDIA: [
-        "article", "breaking news", "subscribe", "newsletter",
-        "author", "published", "byline", "opinion", "editorial",
+        "article",
+        "breaking news",
+        "subscribe",
+        "newsletter",
+        "author",
+        "published",
+        "byline",
+        "opinion",
+        "editorial",
     ],
     SiteCategory.FINANCE: [
-        "account balance", "transfer", "payment", "banking",
-        "portfolio", "investment", "stock", "trading", "transaction",
+        "account balance",
+        "transfer",
+        "payment",
+        "banking",
+        "portfolio",
+        "investment",
+        "stock",
+        "trading",
+        "transaction",
     ],
     SiteCategory.SEARCH: [
-        "search results", "web search", "image search",
+        "search results",
+        "web search",
+        "image search",
     ],
     SiteCategory.API_SERVICE: [
-        "api", "endpoint", "webhook", "rate limit", "authentication",
-        "rest api", "graphql", "openapi", "swagger",
+        "api",
+        "endpoint",
+        "webhook",
+        "rate limit",
+        "authentication",
+        "rest api",
+        "graphql",
+        "openapi",
+        "swagger",
     ],
 }
 
@@ -98,8 +162,10 @@ class SiteClassifier:
             html = resp.text
         except httpx.HTTPError as e:
             return SiteProfile(
-                url=url, category=SiteCategory.GENERIC,
-                confidence=0.0, signals=[f"Failed to fetch: {e}"],
+                url=url,
+                category=SiteCategory.GENERIC,
+                confidence=0.0,
+                signals=[f"Failed to fetch: {e}"],
             )
 
         soup = BeautifulSoup(html, "html.parser")
@@ -130,13 +196,16 @@ class SiteClassifier:
 
         if best_score < 0.1:
             return SiteProfile(
-                url=url, category=SiteCategory.GENERIC,
-                confidence=0.0, signals=["No strong category signals detected"],
+                url=url,
+                category=SiteCategory.GENERIC,
+                confidence=0.0,
+                signals=["No strong category signals detected"],
                 features=features,
             )
 
         return SiteProfile(
-            url=url, category=best,
+            url=url,
+            category=best,
             confidence=min(best_score, 1.0),
             signals=matched_signals.get(best, []),
             features=features,
@@ -149,12 +218,25 @@ class SiteClassifier:
         # Search
         search_inputs = soup.find_all("input", attrs={"type": "search"})
         search_forms = soup.find_all("form", attrs={"role": "search"})
-        search_by_name = soup.find_all("input", attrs={"name": lambda n: n and "search" in n.lower() if n else False})
+        search_by_name = soup.find_all(
+            "input",
+            attrs={"name": lambda n: n and "search" in n.lower() if n else False},
+        )
         features["search"] = bool(search_inputs or search_forms or search_by_name)
 
         # Auth / Login
         password_inputs = soup.find_all("input", attrs={"type": "password"})
-        login_links = soup.find_all("a", string=lambda s: s and any(w in s.lower() for w in ("log in", "login", "sign in", "signin")) if s else False)
+        login_links = soup.find_all(
+            "a",
+            string=lambda s: (
+                s
+                and any(
+                    w in s.lower() for w in ("log in", "login", "sign in", "signin")
+                )
+                if s
+                else False
+            ),
+        )
         features["auth"] = bool(password_inputs or login_links)
 
         # Forms (non-search, non-login)
@@ -171,7 +253,12 @@ class SiteClassifier:
 
         # Pagination
         features["pagination"] = bool(
-            soup.find("nav", attrs={"aria-label": lambda v: v and "pag" in v.lower() if v else False})
+            soup.find(
+                "nav",
+                attrs={
+                    "aria-label": lambda v: v and "pag" in v.lower() if v else False
+                },
+            )
             or soup.find(class_=lambda c: c and "pagination" in c if c else False)
             or "next page" in html
         )

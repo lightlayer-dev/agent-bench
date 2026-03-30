@@ -45,7 +45,9 @@ class ErrorsCheck(BaseCheck):
         findings.extend(f)
 
         overall = sum(sub_scores) / len(sub_scores) if sub_scores else 0.0
-        return CheckResult(name=self.name, score=overall, findings=findings, details=details)
+        return CheckResult(
+            name=self.name, score=overall, findings=findings, details=details
+        )
 
     def _fetch(self, url: str, **kwargs) -> httpx.Response | None:
         try:
@@ -53,7 +55,9 @@ class ErrorsCheck(BaseCheck):
         except httpx.HTTPError:
             return None
 
-    def _check_404_quality(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_404_quality(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Hit a nonexistent path and evaluate the error response."""
         findings = []
         # Use a clearly nonexistent path
@@ -71,7 +75,9 @@ class ErrorsCheck(BaseCheck):
 
         # Check if it returns proper 404
         if resp.status_code != 404:
-            findings.append(f"Non-existent path returned {resp.status_code} instead of 404")
+            findings.append(
+                f"Non-existent path returned {resp.status_code} instead of 404"
+            )
             # Soft 404 (200 with "not found" page) is bad for agents
             if resp.status_code == 200:
                 details["soft_404"] = True
@@ -86,27 +92,39 @@ class ErrorsCheck(BaseCheck):
         if is_json:
             try:
                 data = resp.json()
-                has_error_code = any(k in data for k in ("error", "code", "error_code", "status"))
-                has_message = any(k in data for k in ("message", "detail", "description", "error"))
+                has_error_code = any(
+                    k in data for k in ("error", "code", "error_code", "status")
+                )
+                has_message = any(
+                    k in data for k in ("message", "detail", "description", "error")
+                )
                 details["404_structured"] = has_error_code or has_message
 
                 if has_error_code and has_message:
-                    findings.append("404 returns structured JSON error with code and message")
+                    findings.append(
+                        "404 returns structured JSON error with code and message"
+                    )
                     return 1.0, findings
                 elif has_message:
                     findings.append("404 returns JSON with error message")
                     return 0.8, findings
                 else:
-                    findings.append("404 returns JSON but lacks structured error fields")
+                    findings.append(
+                        "404 returns JSON but lacks structured error fields"
+                    )
                     return 0.6, findings
             except (json.JSONDecodeError, ValueError):
-                findings.append("404 claims JSON content-type but body is not valid JSON")
+                findings.append(
+                    "404 claims JSON content-type but body is not valid JSON"
+                )
                 return 0.3, findings
         else:
             findings.append("404 returns HTML error page (not machine-readable)")
             return 0.3, findings
 
-    def _check_rate_limit_headers(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_rate_limit_headers(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check for rate limiting headers on normal responses."""
         findings = []
         resp = self._fetch(base_url)
@@ -119,9 +137,15 @@ class ErrorsCheck(BaseCheck):
 
         # Standard rate limit header patterns
         rl_patterns = [
-            "x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-reset",
-            "x-rate-limit-limit", "x-rate-limit-remaining", "x-rate-limit-reset",
-            "ratelimit-limit", "ratelimit-remaining", "ratelimit-reset",
+            "x-ratelimit-limit",
+            "x-ratelimit-remaining",
+            "x-ratelimit-reset",
+            "x-rate-limit-limit",
+            "x-rate-limit-remaining",
+            "x-rate-limit-reset",
+            "ratelimit-limit",
+            "ratelimit-remaining",
+            "ratelimit-reset",
             "retry-after",
         ]
 
@@ -136,19 +160,34 @@ class ErrorsCheck(BaseCheck):
             return 0.0, findings
 
         if "retry-after" in rate_limit_headers:
-            findings.append("Retry-After header present — agents can back off appropriately")
+            findings.append(
+                "Retry-After header present — agents can back off appropriately"
+            )
 
         remaining_key = next((k for k in rate_limit_headers if "remaining" in k), None)
-        limit_key = next((k for k in rate_limit_headers if k.endswith("limit") and "remaining" not in k), None)
+        limit_key = next(
+            (
+                k
+                for k in rate_limit_headers
+                if k.endswith("limit") and "remaining" not in k
+            ),
+            None,
+        )
 
         if remaining_key and limit_key:
-            findings.append(f"Full rate limit info: {limit_key}={rate_limit_headers[limit_key]}, {remaining_key}={rate_limit_headers[remaining_key]}")
+            findings.append(
+                f"Full rate limit info: {limit_key}={rate_limit_headers[limit_key]}, {remaining_key}={rate_limit_headers[remaining_key]}"
+            )
             return 1.0, findings
 
-        findings.append(f"Partial rate limit headers: {', '.join(rate_limit_headers.keys())}")
+        findings.append(
+            f"Partial rate limit headers: {', '.join(rate_limit_headers.keys())}"
+        )
         return 0.6, findings
 
-    def _check_method_handling(self, base_url: str, details: dict) -> tuple[float, list[str]]:
+    def _check_method_handling(
+        self, base_url: str, details: dict
+    ) -> tuple[float, list[str]]:
         """Check how the server handles wrong HTTP methods."""
         findings = []
 
@@ -178,5 +217,7 @@ class ErrorsCheck(BaseCheck):
             findings.append("Server accepts DELETE on main page (no method validation)")
             return 0.3, findings
         else:
-            findings.append(f"Unexpected status {resp.status_code} for DELETE on main page")
+            findings.append(
+                f"Unexpected status {resp.status_code} for DELETE on main page"
+            )
             return 0.4, findings

@@ -155,7 +155,9 @@ class SiteResult:
     category: str
     robots_txt_url: str = ""
     robots_txt_status: str = ""  # "ok", "not_found", "error", "timeout"
-    bots: dict = field(default_factory=dict)  # bot_name -> "allowed" | "blocked" | "unknown"
+    bots: dict = field(
+        default_factory=dict
+    )  # bot_name -> "allowed" | "blocked" | "unknown"
 
 
 def check_site(domain: str, category: str) -> SiteResult:
@@ -165,7 +167,9 @@ def check_site(domain: str, category: str) -> SiteResult:
     result.robots_txt_url = url
 
     try:
-        resp = requests.get(url, timeout=15, headers={"User-Agent": "agent-bench-research/1.0"})
+        resp = requests.get(
+            url, timeout=15, headers={"User-Agent": "agent-bench-research/1.0"}
+        )
         if resp.status_code == 200:
             result.robots_txt_status = "ok"
             robots_content = resp.text
@@ -224,7 +228,11 @@ def main():
                 result = future.result()
                 all_results.append(result)
                 blocked = sum(1 for v in result.bots.values() if v == "blocked")
-                status = f"{blocked}/{len(AI_BOTS)} blocked" if result.robots_txt_status == "ok" else result.robots_txt_status
+                status = (
+                    f"{blocked}/{len(AI_BOTS)} blocked"
+                    if result.robots_txt_status == "ok"
+                    else result.robots_txt_status
+                )
                 print(f"  [{i}/{len(tasks)}] {domain}: {status}")
             except Exception as e:
                 print(f"  [{i}/{len(tasks)}] {domain}: FAILED - {e}", file=sys.stderr)
@@ -237,7 +245,11 @@ def main():
     csv_path = out_dir / "robots_txt_survey.csv"
     with open(csv_path, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["domain", "category", "robots_txt_status"] + AI_BOTS + ["bots_blocked", "bots_allowed"])
+        writer.writerow(
+            ["domain", "category", "robots_txt_status"]
+            + AI_BOTS
+            + ["bots_blocked", "bots_allowed"]
+        )
         for r in all_results:
             blocked = sum(1 for v in r.bots.values() if v == "blocked")
             allowed = sum(1 for v in r.bots.values() if v == "allowed")
@@ -269,43 +281,55 @@ def main():
         json_data["summary"][bot] = {
             "blocked": blocked,
             "allowed": len(ok_results) - blocked,
-            "blocked_pct": round(blocked / len(ok_results) * 100, 1) if ok_results else 0,
+            "blocked_pct": round(blocked / len(ok_results) * 100, 1)
+            if ok_results
+            else 0,
         }
 
     # Category summary
     cat_summary = {}
     for cat in SITES:
         cat_results = [r for r in ok_results if r.category == cat]
-        blocks_any = sum(1 for r in cat_results if any(v == "blocked" for v in r.bots.values()))
+        blocks_any = sum(
+            1 for r in cat_results if any(v == "blocked" for v in r.bots.values())
+        )
         cat_summary[cat] = {
             "total": len(cat_results),
             "blocking_any": blocks_any,
-            "blocking_pct": round(blocks_any / len(cat_results) * 100, 1) if cat_results else 0,
+            "blocking_pct": round(blocks_any / len(cat_results) * 100, 1)
+            if cat_results
+            else 0,
         }
     json_data["category_summary"] = cat_summary
 
     for r in all_results:
-        json_data["sites"].append({
-            "domain": r.domain,
-            "category": r.category,
-            "robots_txt_status": r.robots_txt_status,
-            "bots": r.bots,
-        })
+        json_data["sites"].append(
+            {
+                "domain": r.domain,
+                "category": r.category,
+                "robots_txt_status": r.robots_txt_status,
+                "bots": r.bots,
+            }
+        )
 
     with open(json_path, "w") as f:
         json.dump(json_data, f, indent=2)
     print(f"Wrote {json_path}")
 
     # Print summary
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"SUMMARY: {len(all_results)} sites checked")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
     for cat, stats in cat_summary.items():
-        print(f"  {cat}: {stats['blocking_any']}/{stats['total']} block at least one bot ({stats['blocking_pct']}%)")
+        print(
+            f"  {cat}: {stats['blocking_any']}/{stats['total']} block at least one bot ({stats['blocking_pct']}%)"
+        )
     print()
     for bot in AI_BOTS:
         s = json_data["summary"][bot]
-        print(f"  {bot}: blocked by {s['blocked']}/{len(ok_results)} sites ({s['blocked_pct']}%)")
+        print(
+            f"  {bot}: blocked by {s['blocked']}/{len(ok_results)} sites ({s['blocked_pct']}%)"
+        )
 
 
 if __name__ == "__main__":
