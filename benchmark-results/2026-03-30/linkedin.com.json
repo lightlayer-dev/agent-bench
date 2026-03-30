@@ -1,0 +1,263 @@
+{
+  "url": "https://linkedin.com",
+  "timestamp": "2026-03-30T07:15:15.441251+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.379,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.55,
+      "findings": [
+        "Cloudflare detected (passive \u2014 no active challenge)",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 no password field (possibly SSO/OAuth only)"
+      ],
+      "details": {
+        "bot_detection": [
+          "Cloudflare"
+        ],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden",
+          "hidden"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 11
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.04,
+      "findings": [
+        "robots.txt blocks all bots (Disallow: /)",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_blocks_all": true,
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.759,
+      "findings": [
+        "Moderate semantic HTML: 16 semantic elements vs 57 divs",
+        "Poor accessibility: only 155/207 interactive elements have labels",
+        "Forms are well-structured: 4/4 inputs have names",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Good server-side rendering \u2014 content available without JavaScript",
+        "Good heading hierarchy: 17 headings, well-structured",
+        "Good link accessibility: 161/161 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 758,
+        "div_count": 57,
+        "semantic_count": 16,
+        "interactive_elements": 207,
+        "labeled_elements": 155,
+        "form_count": 2,
+        "input_count": 4,
+        "named_inputs": 4,
+        "elements_with_stable_selectors": 0,
+        "content_length": 4478,
+        "script_count": 6,
+        "has_noscript": false,
+        "rendering": "server-side",
+        "heading_count": 17,
+        "h1_count": 1,
+        "total_links": 161,
+        "descriptive_links": 161,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.25,
+      "findings": [
+        "Page is ~35,386 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 4% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 17 \u2014 moderately nested",
+        "CSS class attributes consume ~9,465 tokens (27% of page) \u2014 utility class bloat",
+        "Reading this page costs $0.04\u2013$0.53 per load ($0.22\u2013$2.65 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 35385,
+        "signal_tokens": 1299,
+        "signal_ratio": 0.037,
+        "max_dom_depth": 17,
+        "class_token_ratio": 0.267,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1062,
+          "gpt-4o": 0.0885,
+          "claude-opus": 0.5308,
+          "gemini-pro": 0.0442
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.5308,
+          "gpt-4o": 0.4423,
+          "claude-opus": 2.6539,
+          "gemini-pro": 0.2212
+        },
+        "internal_links": 8
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.96,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "All 7 images have alt attributes (2 descriptive, 5 decorative)",
+        "Found 1 skip link(s) \u2014 helps agents jump to main content",
+        "Found 3 live region(s) \u2014 agents can detect dynamic content changes",
+        "1 custom elements made focusable via tabindex=0",
+        "2 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 7,
+        "images_with_alt": 2,
+        "images_decorative": 5,
+        "images_missing_alt": 0,
+        "skip_links": [
+          {
+            "href": "#main-content",
+            "text": "Skip to main content"
+          }
+        ],
+        "live_regions": 3,
+        "aria_live_values": [
+          "polite"
+        ],
+        "tabindex_positive": 0,
+        "tabindex_zero": 1,
+        "tabindex_negative": 2
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.951,
+      "findings": [
+        "Fast response: 325ms",
+        "Moderate payload: 139KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 2 scripts, 1 styles, 7 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 324.8,
+        "payload_size_kb": 138.5,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://linkedin.com"
+        ],
+        "script_count": 2,
+        "stylesheet_count": 1,
+        "image_count": 7,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}
