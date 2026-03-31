@@ -228,7 +228,7 @@ class AuthCheck(BaseCheck):
 
             # Check complexity indicators
             has_csrf = any(
-                inp.get("name", "").lower()
+                str(inp.get("name", "")).lower()
                 in (
                     "csrf",
                     "_token",

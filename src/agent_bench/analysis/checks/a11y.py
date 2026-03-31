@@ -167,7 +167,7 @@ class A11yCheck(BaseCheck):
             alt = img.get("alt")
             if alt is None:
                 missing_alt += 1
-            elif alt.strip() == "":
+            elif isinstance(alt, str) and alt.strip() == "":
                 empty_alt += 1
             else:
                 with_alt += 1
@@ -267,7 +267,8 @@ class A11yCheck(BaseCheck):
 
         for el in tabindex_els:
             try:
-                val = int(el.get("tabindex", 0))
+                raw_tabindex = el.get("tabindex")
+                val = int(str(raw_tabindex)) if raw_tabindex is not None else 0
             except (ValueError, TypeError):
                 continue
             if val > 0:

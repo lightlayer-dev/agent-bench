@@ -268,7 +268,7 @@ class CostCheck(BaseCheck):
         base_domain = urlparse(self.url).netloc
         count = 0
         for a in soup.find_all("a", href=True):
-            href = a["href"]
+            href = str(a["href"])
             if href.startswith("/") or href.startswith("#"):
                 count += 1
             else:
@@ -281,7 +281,7 @@ class CostCheck(BaseCheck):
         """Estimate tokens consumed by class attributes."""
         total_chars = 0
         for tag in soup.find_all(True):
-            classes = tag.get("class", [])
-            if classes:
-                total_chars += len(" ".join(classes))
+            classes = tag.get("class")
+            if classes and isinstance(classes, list):
+                total_chars += len(" ".join(str(c) for c in classes))
         return total_chars / CHARS_PER_TOKEN

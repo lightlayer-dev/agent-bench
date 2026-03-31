@@ -256,16 +256,16 @@ def compare(
     if before and after:
         from agent_bench.results.compare import compare_analyses
 
-        comparison = compare_analyses(Path(before), Path(after))
-        console.print(comparison.render(fmt))
+        analysis_cmp = compare_analyses(Path(before), Path(after))
+        console.print(analysis_cmp.render(fmt))
     elif runs:
         from agent_bench.results.compare import compare_runs
 
         if len(runs) < 2:
             console.print("[red]Provide at least two result files to compare.[/red]")
             return
-        comparison = compare_runs([Path(r) for r in runs])
-        console.print(comparison.render(fmt))
+        runs_cmp = compare_runs([Path(r) for r in runs])
+        console.print(runs_cmp.render(fmt))
     else:
         console.print(
             "[red]Use --before/--after for analysis diffs, or --runs for live run comparison.[/red]"

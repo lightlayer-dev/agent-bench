@@ -161,7 +161,8 @@ class StructureCheck(BaseCheck):
                     el.get("title"),
                     el.get("alt"),
                     el.get("name"),
-                    el.get("id") and soup.find("label", attrs={"for": el.get("id")}),
+                    el.get("id")
+                    and soup.find("label", attrs={"for": str(el.get("id"))}),
                     el.string and el.string.strip(),  # text content
                 ]
             )
