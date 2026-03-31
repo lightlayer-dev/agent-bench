@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-29",
+    "date": "2026-03-31",
     "total_sites": 239,
     "sites_with_llms_txt": 66,
     "adoption_rate_pct": 27.6,
@@ -156,7 +156,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 221871
+      "content_length_bytes": 222195
     },
     {
       "domain": "qwik.dev",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 8037
+      "content_length_bytes": 8012
     },
     {
       "domain": "puppet.com",
@@ -468,7 +468,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 342946
+      "content_length_bytes": 347978
     },
     {
       "domain": "anthropic.com",
@@ -564,7 +564,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 17114
+      "content_length_bytes": 17120
     },
     {
       "domain": "openai.com",
@@ -876,7 +876,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 195657
+      "content_length_bytes": 195828
     },
     {
       "domain": "onelogin.com",
@@ -956,7 +956,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 2189583
+      "content_length_bytes": 2189934
     },
     {
       "domain": "webflow.com",
@@ -1060,7 +1060,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 44561
+      "content_length_bytes": 44562
     },
     {
       "domain": "nim-lang.org",
@@ -1220,7 +1220,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 25648
+      "content_length_bytes": 25854
     },
     {
       "domain": "planetscale.com",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 123098
+      "content_length_bytes": 123076
     },
     {
       "domain": "arstechnica.com",
@@ -1529,8 +1529,8 @@
     {
       "domain": "instagram.com",
       "category": "Consumer Web",
-      "status": "http_429",
-      "status_code": 429,
+      "status": "html_page",
+      "status_code": 200,
       "content_type": "text/html; charset=\"utf-8\"",
       "content_length_bytes": 0
     },
@@ -1689,9 +1689,9 @@
     {
       "domain": "docs.oracle.com",
       "category": "Documentation Platforms",
-      "status": "not_found",
-      "status_code": 404,
-      "content_type": "text/html;charset=utf-8",
+      "status": "timeout",
+      "status_code": 0,
+      "content_type": "",
       "content_length_bytes": 0
     },
     {

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "AI bot blocking survey of popular websites via robots.txt",
-    "date": "2026-03-29",
+    "date": "2026-03-31",
     "total_sites": 99,
     "ai_bots_checked": [
       "GPTBot",
