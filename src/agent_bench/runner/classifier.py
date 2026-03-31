@@ -220,7 +220,7 @@ class SiteClassifier:
         search_forms = soup.find_all("form", attrs={"role": "search"})
         search_by_name = soup.find_all(
             "input",
-            attrs={"name": lambda n: n and "search" in n.lower() if n else False},
+            attrs={"name": lambda n: bool(n and "search" in n.lower()) if n else False},
         )
         features["search"] = bool(search_inputs or search_forms or search_by_name)
 
@@ -256,7 +256,9 @@ class SiteClassifier:
             soup.find(
                 "nav",
                 attrs={
-                    "aria-label": lambda v: v and "pag" in v.lower() if v else False
+                    "aria-label": lambda v: (
+                        bool(v and "pag" in v.lower()) if v else False
+                    )
                 },
             )
             or soup.find(class_=lambda c: c and "pagination" in c if c else False)
