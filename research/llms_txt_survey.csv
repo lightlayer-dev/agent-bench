@@ -32,7 +32,7 @@ svelte.dev,JS Frameworks,found,200,text/plain; charset=utf-8,1673,"# Svelte Docu
 > Svelte is a UI framework that uses a compiler to let you write breathtakingly concise components that do minimal work in the browser, using languages you already know — HTML, CSS and JavaScript."
 turbo.build,JS Frameworks,found,200,text/markdown; charset=utf-8,10346,"# Turborepo documentation
 
-Generated at: Thu, 02 Apr 2026 18:40:41 GMT"
+Generated at: Thu, 02 Apr 2026 21:38:18 GMT"
 vite.dev,JS Frameworks,found,200,text/plain; charset=UTF-8,3555,"# Vite
 
 > The Build Tool for the Web"
@@ -49,7 +49,7 @@ circleci.com,Developer Tools,found,200,text/plain; charset=UTF-8,5924,"﻿# Circ
 > CircleCI is a cloud-native continuous integration and delivery (CI/CD) platform that enables software teams to automate build, test, and deployment workflows. The platform supports Docker, Linux, macOS, Windows, GPU, and Android environments for flexible, scalable execution across diverse application types.  "
 cloud.google.com,Developer Tools,not_found,404,text/html; charset=utf-8,0,
 cloudflare.com,Developer Tools,not_found,404,text/plain; charset=UTF-8,0,
-datadog.com,Developer Tools,found,200,text/plain; charset=utf-8,46160,"# Datadog
+datadog.com,Developer Tools,found,200,text/plain; charset=utf-8,46191,"# Datadog
 
 > AI-Powered Observability and Security. See inside any stack, any app, at any scale, anywhere."
 digitalocean.com,Developer Tools,not_found,404,text/html; charset=utf-8,0,
@@ -76,7 +76,7 @@ pagerduty.com,Developer Tools,found,200,text/plain,22403,"PagerDuty - AI and Mac
 postman.com,Developer Tools,found,200,text/plain,138809,"# llms.txt
 
 ## Site: https://www.postman.com/"
-pulumi.com,Developer Tools,found,200,text/plain; charset=utf-8,7962,"# Pulumi
+pulumi.com,Developer Tools,found,200,text/plain; charset=utf-8,7151,"# Pulumi
 
 > Infrastructure as code in real programming languages. Define, deploy, and manage cloud infrastructure on AWS, Azure, Google Cloud, Kubernetes, and 150+ providers using TypeScript, Python, Go, C#, Java, or YAML."
 puppet.com,Developer Tools,not_found,404,text/html; charset=UTF-8,0,
@@ -94,9 +94,7 @@ supabase.com,Developer Tools,found,200,text/plain; charset=utf-8,546,"# Supabase
 - [Supabase Guides](https://supabase.com/llms/guides.txt)"
 terraform.io,Developer Tools,html_page,200,text/html; charset=utf-8,0,
 travis-ci.com,Developer Tools,not_found,404,text/html; charset=UTF-8,0,
-vercel.com,Developer Tools,found,200,text/plain; charset=utf-8,348470,"# Documentation
-
-# Vercel Documentation"
+vercel.com,Developer Tools,timeout,0,,0,
 anthropic.com,AI / ML Platforms,not_found,404,text/html; charset=utf-8,0,
 anyscale.com,AI / ML Platforms,html_page,200,text/html; charset=utf-8,0,
 cohere.com,AI / ML Platforms,found,200,text/plain; charset=utf-8,4799,"# Cohere
@@ -123,7 +121,7 @@ modal.com,AI / ML Platforms,found,200,text/plain,17120,"# Modal llms.txt
 > Modal is a platform for running Python code in the cloud with minimal"
 openai.com,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
 perplexity.ai,AI / ML Platforms,http_403,403,text/html; charset=UTF-8,0,
-pinecone.io,AI / ML Platforms,found,200,text/plain; charset=utf-8,32648,"# Pinecone
+pinecone.io,AI / ML Platforms,found,200,text/plain; charset=utf-8,32810,"# Pinecone
 > Search through billions of items for similar matches to any object, in milliseconds. It’s the next generation of search, an API call away.
 "
 qdrant.tech,AI / ML Platforms,found,200,text/plain; charset=UTF-8,11745,"# https://qdrant.tech/ llms.txt
@@ -334,7 +332,7 @@ docusaurus.io,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
 doxygen.nl,Documentation Platforms,not_found,404,text/html,0,
 gitbook.com,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
 hexdocs.pm,Documentation Platforms,not_found,404,text/html,0,
-javadoc.io,Documentation Platforms,html_page,200,text/html; charset=UTF-8,0,
+javadoc.io,Documentation Platforms,timeout,0,,0,
 mkdocs.org,Documentation Platforms,"error: HTTPSConnectionPool(host='mkdocs.org', port=443): Max retries exceeded with url:",0,,0,
 pkg.go.dev,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
 readthedocs.org,Documentation Platforms,not_found,404,text/html; charset=utf-8,0,
