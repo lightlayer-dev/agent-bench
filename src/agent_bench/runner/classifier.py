@@ -226,17 +226,15 @@ class SiteClassifier:
 
         # Auth / Login
         password_inputs = soup.find_all("input", attrs={"type": "password"})
-        login_links = soup.find_all(
-            "a",
-            string=lambda s: (
-                s
-                and any(
-                    w in s.lower() for w in ("log in", "login", "sign in", "signin")
-                )
-                if s
-                else False
-            ),
-        )
+        login_links = [
+            a
+            for a in soup.find_all("a")
+            if a.string
+            and any(
+                w in a.string.lower()
+                for w in ("log in", "login", "sign in", "signin")
+            )
+        ]
         features["auth"] = bool(password_inputs or login_links)
 
         # Forms (non-search, non-login)
