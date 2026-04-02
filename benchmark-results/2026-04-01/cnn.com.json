@@ -1,0 +1,261 @@
+{
+  "url": "https://cnn.com",
+  "timestamp": "2026-04-01T14:12:03.206877+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.395,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.25,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "CORS: open access (Access-Control-Allow-Origin: *)",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "*",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.575,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: arkose, recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 simple, 2 inputs"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "arkose",
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "email",
+          "password"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 0
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.32,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, anthropic, claude, google-extended, ccbot",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Found 1 JSON-LD blocks: WebPage",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "anthropic",
+          "claude",
+          "google-extended",
+          "ccbot"
+        ],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 1,
+        "json_ld_types": [
+          "WebPage"
+        ],
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.499,
+      "findings": [
+        "Heavy div usage: 1878 divs with only 162 semantic elements",
+        "Poor accessibility: only 395/709 interactive elements have labels",
+        "Forms are well-structured: 20/20 inputs have names",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "No h1 heading \u2014 page lacks a clear title for agents",
+        "25 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 641/666 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 5469,
+        "div_count": 1878,
+        "semantic_count": 162,
+        "interactive_elements": 709,
+        "labeled_elements": 395,
+        "form_count": 3,
+        "input_count": 20,
+        "named_inputs": 20,
+        "elements_with_stable_selectors": 0,
+        "content_length": -1792897,
+        "script_count": 13,
+        "has_noscript": false,
+        "rendering": "minimal",
+        "heading_count": 39,
+        "h1_count": 0,
+        "total_links": 666,
+        "descriptive_links": 641,
+        "empty_links": 25,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.433,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Proper 405 with Allow header: GET, HEAD, POST, PUT, DELETE, OPTIONS"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=utf-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 405,
+        "allow_header": "GET, HEAD, POST, PUT, DELETE, OPTIONS"
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.3,
+      "findings": [
+        "Page is ~1,239,524 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 31 \u2014 deeply nested structure",
+        "Reading this page costs $1.55\u2013$18.59 per load ($7.75\u2013$92.96 for a 5-page session)",
+        "292 internal links \u2014 agents may waste tokens exploring"
+      ],
+      "details": {
+        "raw_tokens": 1239523,
+        "signal_tokens": 5206,
+        "signal_ratio": 0.004,
+        "max_dom_depth": 31,
+        "class_token_ratio": 0.046,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 3.7186,
+          "gpt-4o": 3.0988,
+          "claude-opus": 18.5929,
+          "gemini-pro": 1.5494
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 18.5929,
+          "gpt-4o": 15.494,
+          "claude-opus": 92.9643,
+          "gemini-pro": 7.747
+        },
+        "internal_links": 292
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.66,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation, search",
+        "All 143 images have alt attributes (143 descriptive, 0 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "8 custom elements made focusable via tabindex=0"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation",
+          "search"
+        ],
+        "landmark_count": 5,
+        "images_total": 143,
+        "images_with_alt": 143,
+        "images_decorative": 0,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 8,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.862,
+      "findings": [
+        "Fast response: 82ms",
+        "Moderate payload: 542KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "Compression enabled: br"
+      ],
+      "details": {
+        "response_time_ms": 81.9,
+        "payload_size_kb": 542.4,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://cnn.com"
+        ],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "br"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}

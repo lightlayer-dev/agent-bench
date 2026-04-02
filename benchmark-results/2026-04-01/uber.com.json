@@ -1,0 +1,212 @@
+{
+  "url": "https://uber.com",
+  "timestamp": "2026-04-01T14:14:29.682769+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.376,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=UTF-8",
+          "html_request_ct": "text/html; charset=UTF-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.0,
+      "findings": [
+        "No robots.txt found",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Could not fetch page for structured data check",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": false,
+        "sitemap": false,
+        "openapi": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.471,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "No interactive elements to check",
+        "No form inputs found",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "No headings found \u2014 agents can't understand page structure",
+        "No links to check"
+      ],
+      "details": {
+        "total_elements": 3,
+        "div_count": 0,
+        "semantic_count": 0,
+        "elements_with_stable_selectors": 0,
+        "content_length": 24,
+        "script_count": 0,
+        "has_noscript": false,
+        "rendering": "minimal",
+        "heading_count": 0,
+        "h1_count": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "Non-existent path returned 429 instead of 404",
+        "No rate limit headers found",
+        "Unexpected status 429 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 429,
+        "404_content_type": "text/html; charset=UTF-8",
+        "rate_limit_headers": {},
+        "delete_main_status": 429
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.9,
+      "findings": [
+        "Page is ~36 tokens raw \u2014 efficient",
+        "Signal-to-noise ratio is 18% \u2014 room for improvement",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 1 \u2014 clean structure",
+        "Page read cost: <$0.05 per load \u2014 affordable"
+      ],
+      "details": {
+        "raw_tokens": 35,
+        "signal_tokens": 6,
+        "signal_ratio": 0.176,
+        "max_dom_depth": 1,
+        "class_token_ratio": 0.0,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0001,
+          "gpt-4o": 0.0001,
+          "claude-opus": 0.0005,
+          "gemini-pro": 0.0
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.0005,
+          "gpt-4o": 0.0004,
+          "claude-opus": 0.0027,
+          "gemini-pro": 0.0002
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "No images found",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 0,
+        "images_with_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.86,
+      "findings": [
+        "Fast response: 169ms",
+        "Compact payload: 0KB",
+        "No redirects \u2014 direct access",
+        "Lean resources: 0 scripts, 0 styles, 0 images",
+        "No compression \u2014 larger transfers for agents"
+      ],
+      "details": {
+        "response_time_ms": 169.0,
+        "payload_size_kb": 0.1,
+        "redirect_count": 0,
+        "redirect_chain": [],
+        "script_count": 0,
+        "stylesheet_count": 0,
+        "image_count": 0,
+        "iframe_count": 0,
+        "content_encoding": "none"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}
