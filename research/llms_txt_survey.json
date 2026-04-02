@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46160
+      "content_length_bytes": 46191
     },
     {
       "domain": "digitalocean.com",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 7962
+      "content_length_bytes": 7151
     },
     {
       "domain": "puppet.com",
@@ -588,7 +588,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 32648
+      "content_length_bytes": 32810
     },
     {
       "domain": "qdrant.tech",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 123259
+      "content_length_bytes": 123408
     },
     {
       "domain": "arstechnica.com",
