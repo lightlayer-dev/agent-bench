@@ -44,7 +44,7 @@ gitlab.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,a
 hashicorp.com,Tech / Developer,http_429,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0
 heroku.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 medium.com,Tech / Developer,ok,blocked,allowed,blocked,allowed,allowed,allowed,allowed,blocked,3,5
-netlify.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
+netlify.com,Tech / Developer,not_found,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 openai.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 slack.com,Tech / Developer,ok,allowed,allowed,allowed,allowed,allowed,allowed,allowed,allowed,0,8
 stackoverflow.com,Tech / Developer,http_418,unknown,unknown,unknown,unknown,unknown,unknown,unknown,unknown,0,0

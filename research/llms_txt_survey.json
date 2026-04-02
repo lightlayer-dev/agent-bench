@@ -1,10 +1,10 @@
 {
   "metadata": {
     "description": "llms.txt adoption survey across popular websites",
-    "date": "2026-03-29",
+    "date": "2026-04-02",
     "total_sites": 239,
-    "sites_with_llms_txt": 66,
-    "adoption_rate_pct": 27.6,
+    "sites_with_llms_txt": 65,
+    "adoption_rate_pct": 27.2,
     "methodology": "Fetched /llms.txt from each domain over HTTPS. Counted as 'found' if 200 status with non-HTML text content of 10+ characters."
   },
   "category_summary": {
@@ -50,8 +50,8 @@
     },
     "Documentation Platforms": {
       "total": 15,
-      "found": 1,
-      "adoption_pct": 6.7
+      "found": 0,
+      "adoption_pct": 0.0
     },
     "Government & Education": {
       "total": 10,
@@ -156,7 +156,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 221871
+      "content_length_bytes": 222195
     },
     {
       "domain": "qwik.dev",
@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46104
+      "content_length_bytes": 46160
     },
     {
       "domain": "digitalocean.com",
@@ -321,9 +321,9 @@
     {
       "domain": "gitlab.com",
       "category": "Developer Tools",
-      "status": "http_403",
-      "status_code": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
       "content_length_bytes": 0
     },
     {
@@ -331,7 +331,7 @@
       "category": "Developer Tools",
       "status": "not_found",
       "status_code": 404,
-      "content_type": "text/html",
+      "content_type": "text/html; charset=utf-8",
       "content_length_bytes": 0
     },
     {
@@ -348,7 +348,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 6074
+      "content_length_bytes": 7196
     },
     {
       "domain": "jenkins.io",
@@ -396,7 +396,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 138985
+      "content_length_bytes": 138809
     },
     {
       "domain": "pulumi.com",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 8037
+      "content_length_bytes": 7962
     },
     {
       "domain": "puppet.com",
@@ -428,7 +428,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 31841
+      "content_length_bytes": 32954
     },
     {
       "domain": "sentry.io",
@@ -468,7 +468,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 342946
+      "content_length_bytes": 348470
     },
     {
       "domain": "anthropic.com",
@@ -507,7 +507,7 @@
       "category": "AI / ML Platforms",
       "status": "not_found",
       "status_code": 404,
-      "content_type": "text/html",
+      "content_type": "text/html; charset=utf-8",
       "content_length_bytes": 0
     },
     {
@@ -564,7 +564,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 17114
+      "content_length_bytes": 17120
     },
     {
       "domain": "openai.com",
@@ -588,7 +588,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 32577
+      "content_length_bytes": 32648
     },
     {
       "domain": "qdrant.tech",
@@ -660,7 +660,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain;charset=utf-8",
-      "content_length_bytes": 5568
+      "content_length_bytes": 5657
     },
     {
       "domain": "you.com",
@@ -708,7 +708,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain",
-      "content_length_bytes": 403289
+      "content_length_bytes": 403141
     },
     {
       "domain": "bubble.io",
@@ -876,7 +876,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 195657
+      "content_length_bytes": 196024
     },
     {
       "domain": "onelogin.com",
@@ -956,7 +956,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 2189583
+      "content_length_bytes": 2191185
     },
     {
       "domain": "webflow.com",
@@ -1060,7 +1060,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 44561
+      "content_length_bytes": 44715
     },
     {
       "domain": "nim-lang.org",
@@ -1220,7 +1220,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 25648
+      "content_length_bytes": 25851
     },
     {
       "domain": "planetscale.com",
@@ -1228,7 +1228,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 96287
+      "content_length_bytes": 96652
     },
     {
       "domain": "postgresql.org",
@@ -1244,7 +1244,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=UTF-8",
-      "content_length_bytes": 195298
+      "content_length_bytes": 195742
     },
     {
       "domain": "redis.io",
@@ -1268,7 +1268,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 123098
+      "content_length_bytes": 123259
     },
     {
       "domain": "arstechnica.com",
@@ -1529,8 +1529,8 @@
     {
       "domain": "instagram.com",
       "category": "Consumer Web",
-      "status": "http_429",
-      "status_code": 429,
+      "status": "html_page",
+      "status_code": 200,
       "content_type": "text/html; charset=\"utf-8\"",
       "content_length_bytes": 0
     },
@@ -1785,10 +1785,10 @@
     {
       "domain": "sphinx-doc.org",
       "category": "Documentation Platforms",
-      "status": "found",
-      "status_code": 200,
-      "content_type": "text/markdown; charset=utf-8",
-      "content_length_bytes": 297
+      "status": "not_found",
+      "status_code": 404,
+      "content_type": "text/html; charset=utf-8",
+      "content_length_bytes": 0
     },
     {
       "domain": "berkeley.edu",
