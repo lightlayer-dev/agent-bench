@@ -3,8 +3,8 @@
     "description": "llms.txt adoption survey across popular websites",
     "date": "2026-04-02",
     "total_sites": 239,
-    "sites_with_llms_txt": 64,
-    "adoption_rate_pct": 26.8,
+    "sites_with_llms_txt": 65,
+    "adoption_rate_pct": 27.2,
     "methodology": "Fetched /llms.txt from each domain over HTTPS. Counted as 'found' if 200 status with non-HTML text content of 10+ characters."
   },
   "category_summary": {
@@ -15,8 +15,8 @@
     },
     "Developer Tools": {
       "total": 30,
-      "found": 13,
-      "adoption_pct": 43.3
+      "found": 14,
+      "adoption_pct": 46.7
     },
     "AI / ML Platforms": {
       "total": 25,
@@ -284,7 +284,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 46191
+      "content_length_bytes": 46160
     },
     {
       "domain": "digitalocean.com",
@@ -404,7 +404,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 7151
+      "content_length_bytes": 7962
     },
     {
       "domain": "puppet.com",
@@ -465,10 +465,10 @@
     {
       "domain": "vercel.com",
       "category": "Developer Tools",
-      "status": "timeout",
-      "status_code": 0,
-      "content_type": "",
-      "content_length_bytes": 0
+      "status": "found",
+      "status_code": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "content_length_bytes": 348470
     },
     {
       "domain": "anthropic.com",
@@ -588,7 +588,7 @@
       "status": "found",
       "status_code": 200,
       "content_type": "text/plain; charset=utf-8",
-      "content_length_bytes": 32810
+      "content_length_bytes": 32648
     },
     {
       "domain": "qdrant.tech",
@@ -1745,9 +1745,9 @@
     {
       "domain": "javadoc.io",
       "category": "Documentation Platforms",
-      "status": "timeout",
-      "status_code": 0,
-      "content_type": "",
+      "status": "html_page",
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
       "content_length_bytes": 0
     },
     {
