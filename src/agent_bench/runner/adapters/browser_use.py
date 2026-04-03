@@ -31,7 +31,7 @@ def _get_llm(model_config: ModelConfig):
                 f"API key not found. Set {api_key_env or 'ANTHROPIC_API_KEY'} environment variable."
             )
         try:
-            from browser_use import ChatAnthropic
+            from browser_use import ChatAnthropic  # type: ignore[assignment]
 
             return ChatAnthropic(
                 model=model_config.model_id,
@@ -40,7 +40,7 @@ def _get_llm(model_config: ModelConfig):
                 max_tokens=model_config.max_tokens,
             )
         except ImportError:
-            from langchain_anthropic import ChatAnthropic
+            from langchain_anthropic import ChatAnthropic  # type: ignore[assignment]
 
             return ChatAnthropic(
                 model=model_config.model_id,
@@ -56,7 +56,7 @@ def _get_llm(model_config: ModelConfig):
                 f"API key not found. Set {api_key_env or 'OPENAI_API_KEY'} environment variable."
             )
         try:
-            from browser_use import ChatOpenAI
+            from browser_use import ChatOpenAI  # type: ignore[no-redef]
 
             return ChatOpenAI(
                 model=model_config.model_id,
@@ -64,13 +64,13 @@ def _get_llm(model_config: ModelConfig):
                 temperature=model_config.temperature,
             )
         except ImportError:
-            from langchain_openai import ChatOpenAI
+            from langchain_openai import ChatOpenAI  # type: ignore[no-redef]
 
             return ChatOpenAI(
                 model=model_config.model_id,
                 api_key=api_key,
                 temperature=model_config.temperature,
-                max_tokens=model_config.max_tokens,
+                max_tokens=model_config.max_tokens,  # type: ignore[call-arg]
             )
 
     elif model_config.provider == ModelProvider.GOOGLE:
@@ -134,7 +134,7 @@ class BrowserUseAdapter(BaseAdapter):
             browser_profile=BrowserProfile(headless=True),
         )
 
-        agent = Agent(
+        agent: Agent = Agent(
             task=prompt,
             llm=llm,
             browser=browser,
@@ -164,7 +164,10 @@ class BrowserUseAdapter(BaseAdapter):
             metrics.error = str(e)
             return False
         finally:
-            await browser.close()
+            if hasattr(browser, "close"):
+                await browser.close()  # type: ignore[attr-defined]
+            elif hasattr(browser, "stop"):
+                await browser.stop()
 
     def _build_prompt(self, task: Task) -> str:
         """Build a natural language prompt from a task definition."""
