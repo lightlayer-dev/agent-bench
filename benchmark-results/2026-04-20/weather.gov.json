@@ -1,0 +1,228 @@
+{
+  "url": "https://weather.gov",
+  "timestamp": "2026-04-20T07:54:33.229328+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.357,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.25,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "CORS: open access (Access-Control-Allow-Origin: *)",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "*",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=UTF-8",
+          "html_request_ct": "text/html; charset=UTF-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.825,
+      "findings": [
+        "No bot detection systems detected",
+        "No CAPTCHA detected on main page or login",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.0,
+      "findings": [
+        "No robots.txt found",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": false,
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.575,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "Good accessibility: 108/119 interactive elements have labels",
+        "Forms are well-structured: 8/11 inputs have names",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 1 headings, well-structured",
+        "5 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 103/108 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 680,
+        "div_count": 124,
+        "semantic_count": 0,
+        "interactive_elements": 119,
+        "labeled_elements": 108,
+        "form_count": 3,
+        "input_count": 11,
+        "named_inputs": 8,
+        "elements_with_stable_selectors": 0,
+        "content_length": -525,
+        "script_count": 16,
+        "has_noscript": false,
+        "rendering": "minimal",
+        "heading_count": 1,
+        "h1_count": 1,
+        "total_links": 108,
+        "descriptive_links": 103,
+        "empty_links": 5,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.233,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Unexpected status 501 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=UTF-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 501
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.4,
+      "findings": [
+        "Page is ~30,761 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 25 \u2014 moderately nested",
+        "Page read cost: $0.038\u2013$0.461 per load"
+      ],
+      "details": {
+        "raw_tokens": 30760,
+        "signal_tokens": 648,
+        "signal_ratio": 0.021,
+        "max_dom_depth": 25,
+        "class_token_ratio": 0.011,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.0923,
+          "gpt-4o": 0.0769,
+          "claude-opus": 0.4614,
+          "gemini-pro": 0.0385
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.4614,
+          "gpt-4o": 0.3845,
+          "claude-opus": 2.3071,
+          "gemini-pro": 0.1923
+        },
+        "internal_links": 14
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.373,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "4/12 images missing alt text \u2014 agents can't understand these images",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 12,
+        "images_with_alt": 8,
+        "images_decorative": 0,
+        "images_missing_alt": 4,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.916,
+      "findings": [
+        "Fast response: 207ms",
+        "Moderate payload: 120KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Resource heavy: 12 scripts, 7 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 207.4,
+        "payload_size_kb": 120.2,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://weather.gov"
+        ],
+        "script_count": 12,
+        "stylesheet_count": 7,
+        "image_count": 12,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}

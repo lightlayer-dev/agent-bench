@@ -1,0 +1,243 @@
+{
+  "url": "https://twitter.com",
+  "timestamp": "2026-04-20T07:49:13.225580+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.371,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.55,
+      "findings": [
+        "Cloudflare detected (passive \u2014 no active challenge)",
+        "CAPTCHA detected: arkose",
+        "No OAuth/OIDC discovery endpoint found",
+        "Login form at /login \u2014 no password field (possibly SSO/OAuth only)"
+      ],
+      "details": {
+        "bot_detection": [
+          "Cloudflare"
+        ],
+        "captcha_detected": [
+          "arkose"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": true,
+        "login_path": "/login",
+        "login_input_types": [
+          "hidden"
+        ],
+        "login_has_csrf": false,
+        "login_hidden_inputs": 1
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.34,
+      "findings": [
+        "robots.txt blocks all bots (Disallow: /)",
+        "sitemap.xml exists but appears empty or malformed",
+        "No OpenAPI/Swagger specification found",
+        "No JSON-LD structured data found",
+        "llms.txt found at /llms.txt (249914 chars)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_blocks_all": true,
+        "sitemap": true,
+        "sitemap_urls": 0,
+        "openapi": false,
+        "json_ld": false,
+        "llms_txt": true,
+        "llms_txt_path": "/llms.txt",
+        "llms_txt_length": 249914
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.614,
+      "findings": [
+        "No semantic HTML elements found (nav, main, article, etc.)",
+        "Good accessibility: 8/8 interactive elements have labels",
+        "Forms are well-structured: 1/1 inputs have names",
+        "No stable test selectors found (data-testid, data-cy, etc.)",
+        "Very little content without JavaScript",
+        "Good heading hierarchy: 1 headings, well-structured",
+        "Good link accessibility: 6/6 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 106,
+        "div_count": 10,
+        "semantic_count": 0,
+        "interactive_elements": 8,
+        "labeled_elements": 8,
+        "form_count": 1,
+        "input_count": 1,
+        "named_inputs": 1,
+        "elements_with_stable_selectors": 0,
+        "content_length": -221414,
+        "script_count": 10,
+        "has_noscript": true,
+        "rendering": "minimal",
+        "heading_count": 1,
+        "h1_count": 1,
+        "total_links": 6,
+        "descriptive_links": 6,
+        "empty_links": 0,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.167,
+      "findings": [
+        "Non-existent path returned 200 instead of 404",
+        "Soft 404 detected \u2014 returns 200 for missing pages",
+        "No rate limit headers found",
+        "Unexpected status 403 for DELETE on main page"
+      ],
+      "details": {
+        "404_status": 200,
+        "404_content_type": "text/html; charset=utf-8",
+        "soft_404": true,
+        "rate_limit_headers": {},
+        "delete_main_status": 403
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.45,
+      "findings": [
+        "Page is ~62,529 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 0% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 11 \u2014 clean structure",
+        "Reading this page costs $0.08\u2013$0.94 per load ($0.39\u2013$4.69 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 62529,
+        "signal_tokens": 42,
+        "signal_ratio": 0.001,
+        "max_dom_depth": 11,
+        "class_token_ratio": 0.003,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 0.1876,
+          "gpt-4o": 0.1563,
+          "claude-opus": 0.9379,
+          "gemini-pro": 0.0782
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 0.9379,
+          "gpt-4o": 0.7816,
+          "claude-opus": 4.6897,
+          "gemini-pro": 0.3908
+        },
+        "internal_links": 0
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.44,
+      "findings": [
+        "No landmark roles or elements found \u2014 agents cannot navigate page structure",
+        "All 1 images have alt attributes (1 descriptive, 0 decorative)",
+        "No skip links found \u2014 agents must traverse entire page to find content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "No custom tabindex \u2014 relying on natural focus order (fine for simple pages)"
+      ],
+      "details": {
+        "landmarks_found": [],
+        "landmark_count": 0,
+        "images_total": 1,
+        "images_with_alt": 1,
+        "images_decorative": 0,
+        "images_missing_alt": 0,
+        "skip_links": [],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 0
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.928,
+      "findings": [
+        "Fast response: 229ms",
+        "Moderate payload: 244KB",
+        "1 redirect(s) \u2014 acceptable",
+        "Lean resources: 3 scripts, 0 styles, 1 images",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 228.9,
+        "payload_size_kb": 244.3,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://twitter.com"
+        ],
+        "script_count": 3,
+        "stylesheet_count": 0,
+        "image_count": 1,
+        "iframe_count": 0,
+        "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.167,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "Payment/x402 references found in agents.txt"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false,
+        "x402_in_agents_txt": true
+      }
+    }
+  ]
+}
