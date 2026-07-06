@@ -1,0 +1,265 @@
+{
+  "url": "https://nytimes.com",
+  "timestamp": "2026-07-06T09:55:21.615663+00:00",
+  "schema_version": "1.0.0",
+  "overall_score": 0.401,
+  "checks": [
+    {
+      "name": "api",
+      "score": 0.05,
+      "findings": [
+        "No API endpoints found at common paths",
+        "No GraphQL endpoint found",
+        "No CORS headers \u2014 API may not be accessible from browser-based agents",
+        "Server always returns HTML regardless of Accept header \u2014 no API content negotiation"
+      ],
+      "details": {
+        "discovered_endpoints": [],
+        "endpoint_count": 0,
+        "graphql": false,
+        "cors_origin": "",
+        "cors_methods": "",
+        "content_negotiation": {
+          "json_request_ct": "text/html; charset=utf-8",
+          "html_request_ct": "text/html; charset=utf-8"
+        }
+      }
+    },
+    {
+      "name": "auth",
+      "score": 0.625,
+      "findings": [
+        "No bot detection systems detected",
+        "CAPTCHA detected: recaptcha, captcha",
+        "No OAuth/OIDC discovery endpoint found",
+        "No login form found at common paths"
+      ],
+      "details": {
+        "bot_detection": [],
+        "captcha_detected": [
+          "recaptcha",
+          "captcha"
+        ],
+        "oauth_discovery": false,
+        "login_form_found": false
+      }
+    },
+    {
+      "name": "docs",
+      "score": 0.32,
+      "findings": [
+        "robots.txt blocks AI bots: gptbot, chatgpt, anthropic, claude, google-extended, ccbot",
+        "robots.txt references a sitemap",
+        "No sitemap.xml found",
+        "No OpenAPI/Swagger specification found",
+        "Found 2 JSON-LD blocks: WebSite, NewsMediaOrganization",
+        "No llms.txt found (emerging standard for LLM-friendly docs)"
+      ],
+      "details": {
+        "robots_txt": true,
+        "robots_has_sitemap_ref": true,
+        "blocked_ai_bots": [
+          "gptbot",
+          "chatgpt",
+          "anthropic",
+          "claude",
+          "google-extended",
+          "ccbot"
+        ],
+        "sitemap": false,
+        "openapi": false,
+        "json_ld": true,
+        "json_ld_count": 2,
+        "json_ld_types": [
+          "WebSite",
+          "NewsMediaOrganization"
+        ],
+        "llms_txt": false
+      }
+    },
+    {
+      "name": "structure",
+      "score": 0.716,
+      "findings": [
+        "Heavy div usage: 2741 divs with only 193 semantic elements",
+        "Poor accessibility: only 819/1053 interactive elements have labels",
+        "Forms are well-structured: 1/1 inputs have names",
+        "Found 165 elements with stable test selectors",
+        "Likely a client-side SPA \u2014 minimal server-rendered content",
+        "Heading hierarchy has 1 level skip(s) (e.g., h1 \u2192 h3)",
+        "8 links with no text or aria-label \u2014 invisible to agents",
+        "Good link accessibility: 960/968 links are descriptive"
+      ],
+      "details": {
+        "total_elements": 6496,
+        "div_count": 2741,
+        "semantic_count": 193,
+        "interactive_elements": 1053,
+        "labeled_elements": 819,
+        "form_count": 1,
+        "input_count": 1,
+        "named_inputs": 1,
+        "elements_with_stable_selectors": 165,
+        "content_length": -1192194,
+        "script_count": 57,
+        "has_noscript": true,
+        "rendering": "client-side",
+        "heading_count": 188,
+        "h1_count": 1,
+        "total_links": 968,
+        "descriptive_links": 960,
+        "empty_links": 8,
+        "generic_links": 0
+      }
+    },
+    {
+      "name": "errors",
+      "score": 0.433,
+      "findings": [
+        "404 returns HTML error page (not machine-readable)",
+        "No rate limit headers found",
+        "Proper 405 with Allow header: GET, HEAD"
+      ],
+      "details": {
+        "404_status": 404,
+        "404_content_type": "text/html; charset=UTF-8",
+        "404_is_json": false,
+        "rate_limit_headers": {},
+        "delete_main_status": 405,
+        "allow_header": "GET, HEAD"
+      }
+    },
+    {
+      "name": "cost",
+      "score": 0.35,
+      "findings": [
+        "Page is ~423,609 tokens raw \u2014 very expensive for agents (>15,000 threshold)",
+        "Signal-to-noise ratio is 2% \u2014 most of the page is noise",
+        "Inline scripts/styles are 0% of page \u2014 reasonable",
+        "Max DOM depth is 36 \u2014 deeply nested structure",
+        "Reading this page costs $0.53\u2013$6.35 per load ($2.65\u2013$31.77 for a 5-page session)"
+      ],
+      "details": {
+        "raw_tokens": 423608,
+        "signal_tokens": 6648,
+        "signal_ratio": 0.016,
+        "max_dom_depth": 36,
+        "class_token_ratio": 0.035,
+        "inline_bloat_ratio": 0.0,
+        "cost_per_page_usd": {
+          "claude-sonnet": 1.2708,
+          "gpt-4o": 1.059,
+          "claude-opus": 6.3541,
+          "gemini-pro": 0.5295
+        },
+        "cost_5_pages_usd": {
+          "claude-sonnet": 6.3541,
+          "gpt-4o": 5.2951,
+          "claude-opus": 31.7707,
+          "gemini-pro": 2.6476
+        },
+        "internal_links": 18
+      }
+    },
+    {
+      "name": "a11y",
+      "score": 0.791,
+      "findings": [
+        "Good landmark coverage: banner, contentinfo, main, navigation",
+        "6/128 images missing alt text \u2014 agents can't understand these images",
+        "Found 3 skip link(s) \u2014 helps agents jump to main content",
+        "No ARIA live regions \u2014 dynamic content changes may be invisible to agents",
+        "12 elements with tabindex=-1 (programmatic focus)"
+      ],
+      "details": {
+        "landmarks_found": [
+          "banner",
+          "contentinfo",
+          "main",
+          "navigation"
+        ],
+        "landmark_count": 4,
+        "images_total": 128,
+        "images_with_alt": 84,
+        "images_decorative": 38,
+        "images_missing_alt": 6,
+        "skip_links": [
+          {
+            "href": "#site-content",
+            "text": "Skip to content"
+          },
+          {
+            "href": "#site-index",
+            "text": "Skip to site index"
+          },
+          {
+            "href": "#after-dfp-ad-top",
+            "text": "SKIP ADVERTISEMENT"
+          }
+        ],
+        "live_regions": 0,
+        "aria_live_values": [],
+        "tabindex_positive": 0,
+        "tabindex_zero": 0,
+        "tabindex_negative": 12
+      }
+    },
+    {
+      "name": "performance",
+      "score": 0.74,
+      "findings": [
+        "Fast response: 182ms",
+        "Large payload: 1655KB \u2014 increases token cost for agents",
+        "1 redirect(s) \u2014 acceptable",
+        "Resource heavy: 77 stylesheets",
+        "Compression enabled: gzip"
+      ],
+      "details": {
+        "response_time_ms": 182.2,
+        "payload_size_kb": 1655.1,
+        "redirect_count": 1,
+        "redirect_chain": [
+          "https://nytimes.com"
+        ],
+        "script_count": 9,
+        "stylesheet_count": 77,
+        "image_count": 128,
+        "iframe_count": 1,
+        "content_encoding": "gzip"
+      }
+    },
+    {
+      "name": "agents_txt",
+      "score": 0.0,
+      "findings": [
+        "No agents.txt found \u2014 agents have no machine-readable permission manifest"
+      ],
+      "details": {
+        "agents_txt_found": false
+      }
+    },
+    {
+      "name": "a2a",
+      "score": 0.0,
+      "findings": [
+        "No A2A Agent Card found (/.well-known/agent.json) \u2014 agents can't discover this service's capabilities"
+      ],
+      "details": {
+        "a2a_found": false
+      }
+    },
+    {
+      "name": "x402",
+      "score": 0.0,
+      "findings": [
+        "No x402 discovery endpoint found",
+        "No HTTP 402 responses detected on common paths",
+        "No payment protocol signals detected"
+      ],
+      "details": {
+        "x402_discovery": false,
+        "x402_402_found": false
+      }
+    }
+  ]
+}
