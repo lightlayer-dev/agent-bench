@@ -3001,6 +3001,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:50:40.434648+00:00",
+      "overall_score": 0.405,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.614,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://etsy.com": [
@@ -3598,6 +3615,23 @@
     },
     {
       "timestamp": "2026-07-06T09:54:32.802055+00:00",
+      "overall_score": 0.432,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.16,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:46:19.860262+00:00",
       "overall_score": 0.432,
       "check_scores": {
         "api": 0.5,
@@ -4318,6 +4352,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:48:50.341350+00:00",
+      "overall_score": 0.429,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.612,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.835,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://github.com": [
@@ -4962,6 +5013,23 @@
         "cost": 0.3,
         "a11y": 0.92,
         "performance": 0.8,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:42:17.300136+00:00",
+      "overall_score": 0.472,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.5,
+        "docs": 0.36,
+        "structure": 0.688,
+        "errors": 0.467,
+        "cost": 0.2,
+        "a11y": 0.92,
+        "performance": 0.797,
         "agents_txt": 0.0,
         "a2a": 0.0,
         "x402": 0.0
@@ -5614,6 +5682,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:42:33.009482+00:00",
+      "overall_score": 0.467,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.745,
+        "errors": 0.2,
+        "cost": 0.35,
+        "a11y": 0.87,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://discord.com": [
@@ -6248,6 +6333,23 @@
     },
     {
       "timestamp": "2026-07-06T09:50:46.096351+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.4,
+        "structure": 0.542,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.86,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:42:43.599633+00:00",
       "overall_score": 0.402,
       "check_scores": {
         "api": 0.05,
@@ -6910,6 +7012,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:43:07.121191+00:00",
+      "overall_score": 0.529,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.875,
+        "docs": 0.6,
+        "structure": 0.742,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://zoom.us": [
@@ -7544,6 +7663,23 @@
     },
     {
       "timestamp": "2026-07-06T09:50:58.889763+00:00",
+      "overall_score": 0.452,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.525,
+        "docs": 0.6,
+        "structure": 0.518,
+        "errors": 0.333,
+        "cost": 0.25,
+        "a11y": 0.97,
+        "performance": 0.928,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:43:19.733092+00:00",
       "overall_score": 0.452,
       "check_scores": {
         "api": 0.25,
@@ -8206,6 +8342,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:43:36.805979+00:00",
+      "overall_score": 0.326,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://linkedin.com": [
@@ -8827,6 +8980,23 @@
       "check_scores": {
         "api": 0.05,
         "auth": 0.575,
+        "docs": 0.04,
+        "structure": 0.759,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.96,
+        "performance": 0.951,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:43:54.587731+00:00",
+      "overall_score": 0.379,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
         "docs": 0.04,
         "structure": 0.759,
         "errors": 0.233,
@@ -9468,6 +9638,23 @@
         "a2a": 0.0,
         "x402": 0.167
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:44:18.154766+00:00",
+      "overall_score": 0.359,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.375,
+        "docs": 0.34,
+        "structure": 0.614,
+        "errors": 0.167,
+        "cost": 0.45,
+        "a11y": 0.44,
+        "performance": 0.925,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
     }
   ],
   "https://figma.com": [
@@ -10099,6 +10286,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:44:46.943079+00:00",
+      "overall_score": 0.437,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.596,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.9,
+        "performance": 0.943,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://reddit.com": [
@@ -10716,6 +10920,23 @@
     },
     {
       "timestamp": "2026-07-06T09:53:28.309384+00:00",
+      "overall_score": 0.31,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:44:53.112588+00:00",
       "overall_score": 0.31,
       "check_scores": {
         "api": 0.05,
@@ -11361,6 +11582,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:45:26.231302+00:00",
+      "overall_score": 0.355,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.08,
+        "structure": 0.543,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://ebay.com": [
@@ -11958,6 +12196,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:46:07.838167+00:00",
+      "overall_score": 0.369,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.375,
+        "docs": 0.12,
+        "structure": 0.715,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.92,
+        "performance": 0.842,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://shopify.com": [
@@ -12541,6 +12796,23 @@
     },
     {
       "timestamp": "2026-07-06T09:54:47.495372+00:00",
+      "overall_score": 0.446,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.528,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:46:38.020381+00:00",
       "overall_score": 0.446,
       "check_scores": {
         "api": 0.05,
@@ -13152,6 +13424,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:46:56.009509+00:00",
+      "overall_score": 0.502,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.743,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.98,
+        "performance": 0.835,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://target.com": [
@@ -13749,6 +14038,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:47:13.637629+00:00",
+      "overall_score": 0.442,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.666,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.96,
+        "performance": 0.796,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://nytimes.com": [
@@ -14341,6 +14647,23 @@
         "errors": 0.433,
         "cost": 0.35,
         "a11y": 0.791,
+        "performance": 0.74,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:47:31.699778+00:00",
+      "overall_score": 0.401,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.32,
+        "structure": 0.715,
+        "errors": 0.433,
+        "cost": 0.35,
+        "a11y": 0.788,
         "performance": 0.74,
         "agents_txt": 0.0,
         "a2a": 0.0,
@@ -14943,6 +15266,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:47:50.010990+00:00",
+      "overall_score": 0.389,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.567,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.7,
+        "performance": 0.774,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://cnn.com": [
@@ -15540,6 +15880,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:48:19.194352+00:00",
+      "overall_score": 0.396,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.512,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://medium.com": [
@@ -16106,6 +16463,23 @@
     },
     {
       "timestamp": "2026-07-06T09:55:59.413595+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:48:23.236302+00:00",
       "overall_score": 0.374,
       "check_scores": {
         "api": 0.05,
@@ -16700,6 +17074,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:48:28.043375+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://stackoverflow.com": [
@@ -17266,6 +17657,23 @@
     },
     {
       "timestamp": "2026-07-06T09:56:03.991827+00:00",
+      "overall_score": 0.359,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:48:32.747519+00:00",
       "overall_score": 0.359,
       "check_scores": {
         "api": 0.05,
@@ -17860,6 +18268,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:49:25.171151+00:00",
+      "overall_score": 0.49,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.794,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.86,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://usa.gov": [
@@ -18409,6 +18834,23 @@
     },
     {
       "timestamp": "2026-07-06T09:56:58.389000+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.587,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:50:59.264908+00:00",
       "overall_score": 0.456,
       "check_scores": {
         "api": 0.05,
@@ -18986,6 +19428,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:51:11.144424+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.574,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.916,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://airbnb.com": [
@@ -19549,6 +20008,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-07-13T08:51:46.999947+00:00",
+      "overall_score": 0.359,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.525,
+        "docs": 0.32,
+        "structure": 0.663,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.974,
+        "performance": 0.653,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://uber.com": [
@@ -20098,6 +20574,23 @@
     },
     {
       "timestamp": "2026-07-06T09:57:36.998252+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-07-13T08:51:59.288144+00:00",
       "overall_score": 0.376,
       "check_scores": {
         "api": 0.05,
