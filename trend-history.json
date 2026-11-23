@@ -3324,6 +3324,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:47:46.061120+00:00",
+      "overall_score": 0.437,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.16,
+        "structure": 0.604,
+        "errors": 0.433,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://etsy.com": [
@@ -4244,6 +4261,23 @@
     },
     {
       "timestamp": "2026-11-16T14:12:14.574206+00:00",
+      "overall_score": 0.456,
+      "check_scores": {
+        "api": 0.5,
+        "auth": 0.7,
+        "docs": 0.36,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:44:54.057418+00:00",
       "overall_score": 0.456,
       "check_scores": {
         "api": 0.5,
@@ -5287,6 +5321,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:47:07.007313+00:00",
+      "overall_score": 0.425,
+      "check_scores": {
+        "api": 0.175,
+        "auth": 0.625,
+        "docs": 0.6,
+        "structure": 0.612,
+        "errors": 0.233,
+        "cost": 0.3,
+        "a11y": 0.78,
+        "performance": 0.792,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://github.com": [
@@ -6258,6 +6309,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:41:09.991939+00:00",
+      "overall_score": 0.475,
+      "check_scores": {
+        "api": 0.55,
+        "auth": 0.5,
+        "docs": 0.32,
+        "structure": 0.729,
+        "errors": 0.467,
+        "cost": 0.15,
+        "a11y": 0.94,
+        "performance": 0.866,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://docs.github.com": [
@@ -7215,6 +7283,23 @@
     },
     {
       "timestamp": "2026-11-16T14:09:27.715337+00:00",
+      "overall_score": 0.476,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.36,
+        "structure": 0.748,
+        "errors": 0.2,
+        "cost": 0.4,
+        "a11y": 0.9,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:41:29.811291+00:00",
       "overall_score": 0.476,
       "check_scores": {
         "api": 0.25,
@@ -8200,6 +8285,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:41:39.460545+00:00",
+      "overall_score": 0.402,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.65,
+        "docs": 0.4,
+        "structure": 0.542,
+        "errors": 0.2,
+        "cost": 0.3,
+        "a11y": 0.86,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://slack.com": [
@@ -9171,6 +9273,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:41:47.478922+00:00",
+      "overall_score": 0.57,
+      "check_scores": {
+        "api": 0.392,
+        "auth": 0.675,
+        "docs": 0.6,
+        "structure": 0.751,
+        "errors": 0.2,
+        "cost": 0.75,
+        "a11y": 0.98,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://zoom.us": [
@@ -10128,6 +10247,23 @@
     },
     {
       "timestamp": "2026-11-16T14:09:57.585848+00:00",
+      "overall_score": 0.457,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.45,
+        "docs": 0.6,
+        "structure": 0.516,
+        "errors": 0.333,
+        "cost": 0.35,
+        "a11y": 0.973,
+        "performance": 0.913,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:41:57.572559+00:00",
       "overall_score": 0.457,
       "check_scores": {
         "api": 0.25,
@@ -11113,6 +11249,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:42:14.364613+00:00",
+      "overall_score": 0.322,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.5,
+        "docs": 0.2,
+        "structure": 0.452,
+        "errors": 0.333,
+        "cost": 0.45,
+        "a11y": 0.46,
+        "performance": 0.78,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://linkedin.com": [
@@ -12053,6 +12206,23 @@
     },
     {
       "timestamp": "2026-11-16T14:10:16.178455+00:00",
+      "overall_score": 0.387,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.625,
+        "docs": 0.46,
+        "structure": 0.329,
+        "errors": 0.133,
+        "cost": 0.6,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:42:23.878441+00:00",
       "overall_score": 0.387,
       "check_scores": {
         "api": 0.25,
@@ -13021,6 +13191,23 @@
         "a2a": 0.0,
         "x402": 0.167
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:42:41.537932+00:00",
+      "overall_score": 0.385,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.55,
+        "docs": 0.24,
+        "structure": 0.59,
+        "errors": 0.133,
+        "cost": 0.55,
+        "a11y": 0.6,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.167
+      }
     }
   ],
   "https://figma.com": [
@@ -13975,6 +14162,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:43:34.201751+00:00",
+      "overall_score": 0.436,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.675,
+        "docs": 0.52,
+        "structure": 0.607,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.9,
+        "performance": 0.918,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://reddit.com": [
@@ -14915,6 +15119,23 @@
     },
     {
       "timestamp": "2026-11-16T14:11:14.656654+00:00",
+      "overall_score": 0.313,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.85,
+        "docs": 0.04,
+        "structure": 0.443,
+        "errors": 0.433,
+        "cost": 0.45,
+        "a11y": 0.24,
+        "performance": 0.801,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:43:41.412395+00:00",
       "overall_score": 0.313,
       "check_scores": {
         "api": 0.05,
@@ -15883,6 +16104,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:44:01.086332+00:00",
+      "overall_score": 0.355,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.625,
+        "docs": 0.08,
+        "structure": 0.586,
+        "errors": 0.2,
+        "cost": 0.7,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://ebay.com": [
@@ -16803,6 +17041,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:44:41.787252+00:00",
+      "overall_score": 0.375,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.657,
+        "errors": 0.233,
+        "cost": 0.7,
+        "a11y": 0.5,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://shopify.com": [
@@ -17709,6 +17964,23 @@
     },
     {
       "timestamp": "2026-11-16T14:12:23.077930+00:00",
+      "overall_score": 0.417,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.775,
+        "docs": 0.56,
+        "structure": 0.493,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.86,
+        "performance": 0.957,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:45:06.270903+00:00",
       "overall_score": 0.417,
       "check_scores": {
         "api": 0.05,
@@ -18643,6 +18915,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:45:20.252115+00:00",
+      "overall_score": 0.501,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.625,
+        "docs": 0.7,
+        "structure": 0.744,
+        "errors": 0.233,
+        "cost": 0.35,
+        "a11y": 0.98,
+        "performance": 0.829,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://target.com": [
@@ -19559,6 +19848,23 @@
         "cost": 0.3,
         "a11y": 0.96,
         "performance": 0.781,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:45:37.443273+00:00",
+      "overall_score": 0.435,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.6,
+        "structure": 0.673,
+        "errors": 0.333,
+        "cost": 0.3,
+        "a11y": 0.96,
+        "performance": 0.776,
         "agents_txt": 0.0,
         "a2a": 0.0,
         "x402": 0.0
@@ -20483,6 +20789,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:45:54.581030+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.7,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.44,
+        "performance": 0.82,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://bbc.com": [
@@ -21395,6 +21718,23 @@
         "auth": 0.8,
         "docs": 0.52,
         "structure": 0.567,
+        "errors": 0.333,
+        "cost": 0.2,
+        "a11y": 0.702,
+        "performance": 0.772,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:46:07.503641+00:00",
+      "overall_score": 0.389,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.8,
+        "docs": 0.52,
+        "structure": 0.568,
         "errors": 0.333,
         "cost": 0.2,
         "a11y": 0.702,
@@ -22323,6 +22663,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:46:36.212576+00:00",
+      "overall_score": 0.392,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.575,
+        "docs": 0.32,
+        "structure": 0.506,
+        "errors": 0.433,
+        "cost": 0.3,
+        "a11y": 0.66,
+        "performance": 0.829,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://medium.com": [
@@ -23212,6 +23569,23 @@
     },
     {
       "timestamp": "2026-11-16T14:13:44.484821+00:00",
+      "overall_score": 0.374,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.12,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:46:39.624463+00:00",
       "overall_score": 0.374,
       "check_scores": {
         "api": 0.05,
@@ -24129,6 +24503,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:46:43.418928+00:00",
+      "overall_score": 0.397,
+      "check_scores": {
+        "api": 0.075,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.514,
+        "errors": 0.233,
+        "cost": 1.0,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://stackoverflow.com": [
@@ -25028,6 +25419,23 @@
         "cost": 0.75,
         "a11y": 0.47,
         "performance": 1.0,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:46:47.570348+00:00",
+      "overall_score": 0.345,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.6,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.75,
+        "a11y": 0.47,
+        "performance": 0.86,
         "agents_txt": 0.0,
         "a2a": 0.0,
         "x402": 0.0
@@ -25935,6 +26343,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:47:39.000429+00:00",
+      "overall_score": 0.524,
+      "check_scores": {
+        "api": 0.3,
+        "auth": 0.775,
+        "docs": 0.76,
+        "structure": 0.774,
+        "errors": 0.233,
+        "cost": 0.25,
+        "a11y": 0.98,
+        "performance": 0.959,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://usa.gov": [
@@ -26807,6 +27232,23 @@
     },
     {
       "timestamp": "2026-11-16T14:15:01.859404+00:00",
+      "overall_score": 0.455,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.6,
+        "structure": 0.584,
+        "errors": 0.2,
+        "cost": 0.45,
+        "a11y": 0.84,
+        "performance": 0.96,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:48:02.321752+00:00",
       "overall_score": 0.455,
       "check_scores": {
         "api": 0.05,
@@ -27707,6 +28149,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:48:29.018261+00:00",
+      "overall_score": 0.357,
+      "check_scores": {
+        "api": 0.25,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.575,
+        "errors": 0.233,
+        "cost": 0.4,
+        "a11y": 0.373,
+        "performance": 0.915,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://airbnb.com": [
@@ -28593,6 +29052,23 @@
         "a2a": 0.0,
         "x402": 0.0
       }
+    },
+    {
+      "timestamp": "2026-11-23T16:48:58.638244+00:00",
+      "overall_score": 0.386,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.525,
+        "docs": 0.32,
+        "structure": 0.658,
+        "errors": 0.233,
+        "cost": 0.15,
+        "a11y": 0.975,
+        "performance": 0.922,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
     }
   ],
   "https://uber.com": [
@@ -29465,6 +29941,23 @@
     },
     {
       "timestamp": "2026-11-16T14:16:05.209515+00:00",
+      "overall_score": 0.376,
+      "check_scores": {
+        "api": 0.05,
+        "auth": 0.825,
+        "docs": 0.0,
+        "structure": 0.471,
+        "errors": 0.233,
+        "cost": 0.9,
+        "a11y": 0.44,
+        "performance": 0.86,
+        "agents_txt": 0.0,
+        "a2a": 0.0,
+        "x402": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-11-23T16:49:12.961790+00:00",
       "overall_score": 0.376,
       "check_scores": {
         "api": 0.05,
